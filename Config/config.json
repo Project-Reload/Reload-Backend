@@ -1,0 +1,24 @@
+{
+    "moderators": ["discordId"],
+  "discord": {
+    "bot_token": ""
+  },
+  "mongodb": {
+    "database": "mongodb://127.0.0.1/Reload"
+  },
+    "chat": {
+        "//": "Disabling global chat can help the server to perform faster as less resources are used.",
+        "EnableGlobalChat": false
+    },
+
+    "port": 3551,
+    "matchmakerIP": "127.0.0.1:80",
+    "gameServerIP": "127.0.0.1:7777",
+    
+    "//": "For 'BattlePassSeason' enter only the number of your season (from 2 to 10)",
+    "EnableBattlepass": false,
+    "BattlePassSeason": 2,
+
+    "//": "If bCompletedSeasonalQuests is set to 'true' it will set all quests except daily quests as completed",
+    "bCompletedSeasonalQuests": false
+}
