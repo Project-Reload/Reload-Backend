@@ -1,6 +1,6 @@
 # Reload Backend
 
-<img src="https://cdn.discordapp.com/attachments/1252374830225948672/1264398829365624852/IMG_1826.png?ex=669dbaac&is=669c692c&hm=98920ffe4722f079e8c11f916f14165a3e25d18d42d361f7bc0fa544a7ee22fe&" alt="Banner" width="300"/>
+<img src="https://cdn.discordapp.com/attachments/1252374830225948672/1264398829365624852/IMG_1826.png?ex=669dbaac&is=669c692c&hm=98920ffe4722f079e8c11f916f14165a3e25d18d42d361f7bc0fa544a7ee22fe&" alt="Banner" width="800"/>
 
 Reload Backend is a universal Fortnite private server backend written in JavaScript
 
