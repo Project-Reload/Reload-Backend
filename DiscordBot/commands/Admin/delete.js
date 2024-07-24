@@ -45,6 +45,6 @@ module.exports = {
         })
         .setTimestamp();
     await interaction.reply({ embeds: [embed], ephemeral: true });
-    await interaction.options.getUser('username').send({ content: "Your account has been deleted by an **administrator**" });
+    await interaction.options.getUser('username').send({ content: `Your account has been deleted by <@${interaction.user.id}>` });
 }
 }

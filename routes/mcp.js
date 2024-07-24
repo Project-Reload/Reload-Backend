@@ -380,6 +380,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
         }];
     }
 
+
     res.json({
         profileRevision: profile.rvn || 0,
         profileId: req.query.profileId,
@@ -388,7 +389,6 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
         notifications: Notifications,
         profileCommandRevision: profile.commandRevision || 0,
         serverTime: new Date().toISOString(),
-        //multiUpdate: MultiUpdate,
         responseVersion: 1
     });
 });
