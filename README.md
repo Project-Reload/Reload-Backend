@@ -1,6 +1,6 @@
 # Reload Backend
 
-<img src="https://imgur.com/a/mjh8D4B" alt="Banner" width="650"/>
+![Banner](https://imgur.com/a/mjh8D4B)
 
 Reload Backend is a universal Fortnite private server backend written in JavaScript
 
