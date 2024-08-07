@@ -18,8 +18,8 @@
     "gameServerIP": "127.0.0.1:7777",
     
     "//": "For 'BattlePassSeason' enter only the number of your season (from 2 to 10)",
-    "EnableBattlepass": false,
-    "BattlePassSeason": 2,
+    "bEnableBattlepass": false,
+    "bBattlePassSeason": 2,
 
     "//": "If bCompletedSeasonalQuests is set to 'true' it will set all quests except daily quests as completed",
     "bCompletedSeasonalQuests": false

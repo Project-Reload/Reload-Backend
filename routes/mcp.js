@@ -496,7 +496,6 @@ app.post("/fortnite/api/game/v2/profile/*/client/FortRerollDailyQuest", verifyTo
     })
 });
 
-// NIGGER CODE
 app.post("/fortnite/api/game/v2/profile/*/client/MarkNewQuestNotificationSent", verifyToken, async (req, res) => {
     const profiles = await Profile.findOne({ accountId: req.user.accountId });
     let profile = profiles.profiles[req.query.profileId];
@@ -1004,9 +1003,9 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
         [req.body.offerId], 16027, undefined, 400, res
     );
 
-    if (config.EnableBattlepass === true) {
-    if (memory.season == config.BattlePassSeason) {
-        var season = `Season${config.BattlePassSeason}`; // Don't change it if you don't know what it is
+    if (config.bEnableBattlepass === true) {
+    if (memory.season == config.bBattlePassSeason) {
+        var season = `Season${config.bBattlePassSeason}`; // Don't change it if you don't know what it is
         var ItemExists = false;
         let BattlePass = JSON.parse(fs.readFileSync(path.join(__dirname, "../responses/Athena/BattlePass/", `${season}.json`), "utf8"));
         if (!BattlePass)
