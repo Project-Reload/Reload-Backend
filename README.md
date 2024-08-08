@@ -82,7 +82,7 @@ Created by Burlone, This is a modded backend, all main backend credits to [Lawin
 
 ## Credits
 ### Credits to:
-[Lawin](https://github.com/Lawin0129) - For the backend base (LawinServerV2)
-[Burlone](https://github.com/burlone0) - For having modded most things, let's say he modded everything
-[NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
-[zvivsp](https://github.com/zvivsp) - For creating the graphics
+* [Lawin](https://github.com/Lawin0129) - For the backend base (LawinServerV2)
+* [Burlone](https://github.com/burlone0) - For having modded most things, let's say he modded everything
+* [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
+* [zvivsp](https://github.com/zvivsp) - For creating the graphics
