@@ -36,7 +36,7 @@ module.exports = {
         .setTimestamp()
         .setFooter({
             text: "Reload Backend",
-            iconURL: "https://cdn.discordapp.com/attachments/1252374830225948672/1263993256136675378/IMG_1736.png?ex=669c40f4&is=669aef74&hm=5ded3e4588c05a56f271e0a07f7631317a3ebd72eae7497c4de5ee712a4db6dd&"
+            iconURL: "https://i.imgur.com/2RImwlb.png"
         })
 
         interaction.editReply({ content: "Successfully generated an exchange code.", embeds: [embed], ephemeral: true });
