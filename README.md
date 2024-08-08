@@ -4,7 +4,7 @@
 
 Reload Backend is a universal Fortnite private server backend written in [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-Created by Burlone, This is a modded backend, all main backend credits to [Lawin](https://github.com/Lawin0129)
+Created by [Burlone](https://github.com/burlone0), This is a modded backend, all main backend credits to [Lawin](https://github.com/Lawin0129)
 
 ## Features
 * Locker:
