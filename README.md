@@ -7,32 +7,32 @@ Reload Backend is a universal Fortnite private server backend written in JavaScr
 Created by Burlone, This is a modded backend, all main backend credits to [Lawin](https://github.com/Lawin0129)
 
 ## Features
-- Locker:
+* Locker:
     [x] Changing items.
     [x] Changing banner icon and banner color.
     [x] Changing item edit styles.
     [x] Favoriting items.
     [x] Marking items as seen.
-- Friends:
+* Friends:
     [x] Adding friends.
     [x] Accepting friend requests.
     [x] Removing friends.
     [x] Blocking friends.
     [x] Setting nicknames.
     [x] Removing nicknames.
-- Item Shop:
+* Item Shop:
     [x] Customizable Item Shop.
     [x] Purchasing items from the Item Shop.
     [x] Gifting items to your friends.
-- BattlePass (s2-s10):
+* BattlePass (s2-s10):
     [x] Possibility to buy the battle pass
     [x] Possibility to purchase pass levels
-- Challenges:
+* Challenges:
     [x] Daily missions worked (Backend Part)
     [x] Working weekly missions (Backend Part)
-- SAC (Support A Creator):
+* SAC (Support A Creator):
     [x] It supports a supported creator, you can set it using the "/createsac" command on discord
-- Matchmaker:
+* Matchmaker:
     [x] An improved matchmaker
 ### XMPP Features
 - Parties (builds 3.5 to 14.50).
