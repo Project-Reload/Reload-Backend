@@ -218,7 +218,7 @@
           "spotlight": false
         },
         {
-          "image": "https://cdn.discordapp.com/attachments/927739901540188200/930882658546876506/lawin.jpg",
+          "image": "https://imgur.com/L06O0IJ.png",
           "hidden": false,
           "_type": "CommonUI Simple Message Base",
           "adspace": "ENJOY!",
@@ -1184,18 +1184,18 @@
       "tournaments": [
         {
           "title_color": "FFFFFF",
-          "loading_screen_image": "https://cdn.discordapp.com/attachments/927739901540188200/930882658546876506/lawin.jpg",
+          "loading_screen_image": "https://imgur.com/L06O0IJ.png",
           "background_text_color": "1B1B1B",
           "background_right_color": "DD091A",
-          "poster_back_image": "https://cdn.discordapp.com/attachments/927739901540188200/930882658546876506/lawin.jpg",
+          "poster_back_image": "https://imgur.com/L06O0IJ.png",
           "_type": "Tournament Display Info",
-          "pin_earned_text": "lawin is the winner!",
+          "pin_earned_text": "Burlone is the winner!",
           "tournament_display_id": "s11_switchcup",
           "highlight_color": "FFFFFF",
           "schedule_info": "November 2nd & 3rd: 2pm - 5pm JST",
           "primary_color": "FFFFFF",
           "flavor_description": "cool",
-          "poster_front_image": "https://cdn.discordapp.com/attachments/927739901540188200/930882658546876506/lawin.jpg",
+          "poster_front_image": "https://imgur.com/L06O0IJ.png",
           "short_format_title": "Event Sessions",
           "title_line_2": "boomer",
           "title_line_1": "Solo",
@@ -1205,7 +1205,7 @@
           "long_format_title": "nice",
           "poster_fade_color": "DD091A",
           "secondary_color": "1B1B1B",
-          "playlist_tile_image": "https://cdn.discordapp.com/attachments/927739901540188200/930882658546876506/lawin.jpg",
+          "playlist_tile_image": "https://imgur.com/L06O0IJ.png",
           "base_color": "FFFFFF"
         }
       ],
@@ -6024,7 +6024,7 @@
           "spotlight": false
         },
         {
-          "image": "https://cdn.discordapp.com/attachments/927739901540188200/930882658546876506/lawin.jpg",
+          "image": "https://imgur.com/L06O0IJ.png",
           "hidden": false,
           "_type": "CommonUI Simple Message Base",
           "adspace": "ENJOY!",

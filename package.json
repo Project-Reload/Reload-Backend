@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lawin0129/LawinServerV2.git"
+    "url": "git+https://github.com/Project-Reload/Reload-Backend.git"
   },
   "keywords": [
     "fortnite",
@@ -33,10 +33,10 @@
     "server",
     "v2"
   ],
-  "author": "Lawin0129",
+  "author": "burlone0",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/Lawin0129/LawinServerV2/issues"
+    "url": "https://github.com/Project-Reload/Reload-Backend/issues"
   },
-  "homepage": "https://github.com/Lawin0129/LawinServerV2#readme"
+  "homepage": "https://github.com/Project-Reload/Reload-Backend#readme"
 }
