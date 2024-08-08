@@ -2,6 +2,7 @@ const express = require("express");
 const app = express.Router();
 
 const functions = require("../structs/functions.js");
+const log = require("../structs/log.js");
 
 const Friends = require("../model/friends.js");
 const friendManager = require("../structs/friend.js");
@@ -9,18 +10,22 @@ const friendManager = require("../structs/friend.js");
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");
 
 app.get("/friends/api/v1/*/settings", (req, res) => {
+    log.debug("GET /friends/api/v1/*/settings called");
     res.json({});
 });
 
 app.get("/friends/api/v1/*/blocklist", (req, res) => {
+    log.debug("GET /friends/api/v1/*/blocklist called");
     res.json([]);
 });
 
 app.get("/friends/api/public/list/fortnite/*/recentPlayers", (req, res) => {
+    log.debug("GET /friends/api/public/list/fortnite/*/recentPlayers called");
     res.json([]);
 });
 
 app.all("/friends/api/v1/*/friends/:friendId/alias", verifyToken, getRawBody, async (req, res) => {
+    log.debug(`ALL /friends/api/v1/*/friends/${req.params.friendId}/alias called with method ${req.method}`);
     let friends = await Friends.findOne({ accountId: req.user.accountId });
 
     let validationFail = () => error.createError(
@@ -38,7 +43,7 @@ app.all("/friends/api/v1/*/friends/:friendId/alias", verifyToken, getRawBody, as
     if (!friends.list.accepted.find(i => i.accountId == req.params.friendId)) return error.createError(
         "errors.com.epicgames.friends.friendship_not_found",
         `Friendship between ${req.user.accountId} and ${req.params.friendId} does not exist`, 
-        [req.user.accountId,req.params.friendId], 14004, undefined, 404, res
+        [req.user.accountId, req.params.friendId], 14004, undefined, 404, res
     );
 
     const friendIndex = friends.list.accepted.findIndex(i => i.accountId == req.params.friendId);
@@ -63,6 +68,7 @@ app.all("/friends/api/v1/*/friends/:friendId/alias", verifyToken, getRawBody, as
 });
 
 app.get("/friends/api/public/friends/:accountId", verifyToken, async (req, res) => {
+    log.debug(`GET /friends/api/public/friends/${req.params.accountId} called`);
     let response = [];
 
     const friends = await Friends.findOne({ accountId: req.user.accountId }).lean();
@@ -101,6 +107,7 @@ app.get("/friends/api/public/friends/:accountId", verifyToken, async (req, res) 
 });
 
 app.post("/friends/api/*/friends*/:receiverId", verifyToken, async (req, res) => {
+    log.debug(`POST /friends/api/*/friends*/${req.params.receiverId} called`);
     let sender = await Friends.findOne({ accountId: req.user.accountId });
     let receiver = await Friends.findOne({ accountId: req.params.receiverId });
     if (!sender || !receiver) return res.status(403).end();
@@ -118,6 +125,7 @@ app.post("/friends/api/*/friends*/:receiverId", verifyToken, async (req, res) =>
 });
 
 app.delete("/friends/api/*/friends*/:receiverId", verifyToken, async (req, res) => {
+    log.debug(`DELETE /friends/api/*/friends*/${req.params.receiverId} called`);
     let sender = await Friends.findOne({ accountId: req.user.accountId });
     let receiver = await Friends.findOne({ accountId: req.params.receiverId });
     if (!sender || !receiver) return res.status(403).end();
@@ -131,6 +139,7 @@ app.delete("/friends/api/*/friends*/:receiverId", verifyToken, async (req, res) 
 });
 
 app.post("/friends/api/*/blocklist*/:receiverId", verifyToken, async (req, res) => {
+    log.debug(`POST /friends/api/*/blocklist*/${req.params.receiverId} called`);
     let sender = await Friends.findOne({ accountId: req.user.accountId });
     let receiver = await Friends.findOne({ accountId: req.params.receiverId });
     if (!sender || !receiver) return res.status(403).end();
@@ -144,6 +153,7 @@ app.post("/friends/api/*/blocklist*/:receiverId", verifyToken, async (req, res) 
 });
 
 app.delete("/friends/api/*/blocklist*/:receiverId", verifyToken, async (req, res) => {
+    log.debug(`DELETE /friends/api/*/blocklist*/${req.params.receiverId} called`);
     let sender = await Friends.findOne({ accountId: req.user.accountId });
     let receiver = await Friends.findOne({ accountId: req.params.receiverId });
     if (!sender || !receiver) return res.status(403).end();
@@ -154,6 +164,7 @@ app.delete("/friends/api/*/blocklist*/:receiverId", verifyToken, async (req, res
 });
 
 app.get("/friends/api/v1/:accountId/summary", verifyToken, async (req, res) => {
+    log.debug(`GET /friends/api/v1/${req.params.accountId}/summary called`);
     let response = {
         "friends": [],
         "incoming": [],
@@ -205,6 +216,7 @@ app.get("/friends/api/v1/:accountId/summary", verifyToken, async (req, res) => {
 });
 
 app.get("/friends/api/public/blocklist/*", verifyToken, async (req, res) => {
+    log.debug("GET /friends/api/public/blocklist/* called");
     let friends = await Friends.findOne({ accountId: req.user.accountId }).lean();
 
     res.json({

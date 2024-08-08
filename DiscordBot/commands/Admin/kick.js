@@ -44,11 +44,6 @@ module.exports = {
 
         if (accessToken != -1 || refreshToken != -1) {
             functions.UpdateTokens();
-
-            const logChannel = interaction.client.channels.cache.get(config.logChannelKickId);
-            if (logChannel) {
-                logChannel.send(`<@${interaction.user.id}> / ${interaction.user.tag} has kicked **${targetUser.username}**`);
-            }
             
             return interaction.editReply({ content: `Successfully kicked ${targetUser.username}`, ephemeral: true });
         }

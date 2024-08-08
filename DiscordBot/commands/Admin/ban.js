@@ -48,10 +48,5 @@ module.exports = {
         if (accessToken != -1 || refreshToken != -1) functions.UpdateTokens();
 
         interaction.editReply({ content: `Successfully banned ${targetUser.username}`, ephemeral: true });
-
-        const logChannel = interaction.client.channels.cache.get(config.logChannelBanId);
-        if (logChannel) {
-            logChannel.send(`<@${interaction.user.id}> / ${interaction.user.tag} has banned **${targetUser.username}**`);
-        }
     }
 }

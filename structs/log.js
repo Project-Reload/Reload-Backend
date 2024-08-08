@@ -1,46 +1,37 @@
-function backend() {
-    let msg = "";
+const fs = require("fs");
+const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 
-    for (let i in backend.arguments) {
-        msg += `${i == "0" ? "" : " "}${backend.arguments[i]}`;
-    }
-
+function backend(...args) {
+    let msg = args.join(" ");
     console.log(`\x1b[32mReload Backend Log\x1b[0m: ${msg}`);
 }
 
-function bot() {
-    let msg = "";
-
-    for (let i in bot.arguments) {
-        msg += `${i == "0" ? "" : " "}${bot.arguments[i]}`;
-    }
-
+function bot(...args) {
+    let msg = args.join(" ");
     console.log(`\x1b[33mReload Bot Log\x1b[0m: ${msg}`);
 }
 
-function xmpp() {
-    let msg = "";
-
-    for (let i in xmpp.arguments) {
-        msg += `${i == "0" ? "" : " "}${xmpp.arguments[i]}`;
-    }
-
+function xmpp(...args) {
+    let msg = args.join(" ");
     console.log(`\x1b[34mReload Xmpp Log\x1b[0m: ${msg}`);
 }
 
-function error() {
-    let msg = "";
-
-    for (let i in error.arguments) {
-        msg += `${i == "0" ? "" : " "}${error.arguments[i]}`;
-    }
-
+function error(...args) {
+    let msg = args.join(" ");
     console.log(`\x1b[31mReload Error Log\x1b[0m: ${msg}`);
+}
+
+function debug(...args) {
+    if (config.bEnableDebugLogs === true) {
+        let msg = args.join(" ");
+        console.log(`\x1b[35mReload Debug Log\x1b[0m: ${msg}`);
+    }
 }
 
 module.exports = {
     backend,
     bot,
     xmpp,
-    error
-}
+    error,
+    debug
+};

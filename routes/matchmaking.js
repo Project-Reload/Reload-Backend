@@ -2,18 +2,23 @@ const express = require("express");
 const app = express.Router();
 const fs = require("fs");
 const functions = require("../structs/functions.js");
+const log = require("../structs/log.js");
 
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");
 
 let buildUniqueId = {};
 
 app.get("/fortnite/api/matchmaking/session/findPlayer/*", (req, res) => {
+    log.debug("GET /fortnite/api/matchmaking/session/findPlayer/* called");
     res.status(200).end();
 });
 
 app.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/*", verifyToken, (req, res) => {
+    log.debug("GET /fortnite/api/game/v2/matchmakingservice/ticket/player/* called");
     if (typeof req.query.bucketId != "string") return res.status(400).end();
     if (req.query.bucketId.split(":").length != 4) return res.status(400).end();
+    if (req.user.isServer == true) return res.status(403).end();
+    if (req.user.matchmakingId == null) return res.status(400).end();
 
     buildUniqueId[req.user.accountId] = req.query.bucketId.split(":")[0];
 
@@ -22,13 +27,14 @@ app.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/*", verifyToken,
     res.json({
         "serviceUrl": `ws://${config.matchmakerIP}`,
         "ticketType": "mms-player",
-        "payload": "69=",
-        "signature": "420="
+        "payload": `${req.user.matchmakingId}`,
+        "signature": "account"
     });
     res.end();
 });
 
 app.get("/fortnite/api/game/v2/matchmaking/account/:accountId/session/:sessionId", (req, res) => {
+    log.debug(`GET /fortnite/api/game/v2/matchmaking/account/${req.params.accountId}/session/${req.params.sessionId} called`);
     res.json({
         "accountId": req.params.accountId,
         "sessionId": req.params.sessionId,
@@ -37,6 +43,7 @@ app.get("/fortnite/api/game/v2/matchmaking/account/:accountId/session/:sessionId
 });
 
 app.get("/fortnite/api/matchmaking/session/:sessionId", verifyToken, (req, res) => {
+    log.debug(`GET /fortnite/api/matchmaking/session/${req.params.sessionId} called`);
     const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 
     let gameServerInfo = {
@@ -98,10 +105,12 @@ app.get("/fortnite/api/matchmaking/session/:sessionId", verifyToken, (req, res) 
 });
 
 app.post("/fortnite/api/matchmaking/session/*/join", (req, res) => {
+    log.debug("POST /fortnite/api/matchmaking/session/*/join called");
     res.status(204).end();
 });
 
 app.post("/fortnite/api/matchmaking/session/matchMakingRequest", (req, res) => {
+    log.debug("POST /fortnite/api/matchmaking/session/matchMakingRequest called");
     res.json([]);
 });
 

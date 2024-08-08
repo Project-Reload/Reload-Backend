@@ -46,4 +46,21 @@ client.on("interactionCreate", async interaction => {
     executeCommand(path.join(__dirname, "commands"), interaction.commandName);
 });
 
+//AntiCrash Sysyem
+client.on("error", (err) => {
+    console.log("Discord API Error:", err);
+});
+  
+process.on("unhandledRejection", (reason, p) => {
+    console.log("Unhandled promise rejection:", reason, p);
+});
+  
+process.on("uncaughtException", (err, origin) => {
+    console.log("Uncaught Exception:", err, origin);
+});
+  
+process.on("uncaughtExceptionMonitor", (err, origin) => {
+    console.log("Uncaught Exception Monitor:", err, origin);
+});
+
 client.login(config.discord.bot_token);

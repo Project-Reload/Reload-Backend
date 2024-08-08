@@ -15,7 +15,7 @@ if (!fs.existsSync("./ClientSettings")) fs.mkdirSync("./ClientSettings");
 global.JWT_SECRET = functions.MakeID();
 const PORT = config.port;
 
-console.log('Welcome to Reload Backend\n')
+console.log('Welcome to Reload Backend\n');
 
 const tokens = JSON.parse(fs.readFileSync("./tokenManager/tokens.json").toString());
 
@@ -54,22 +54,37 @@ fs.readdirSync("./routes").forEach(fileName => {
     app.use(require(`./routes/${fileName}`));
 });
 
-app.listen(PORT, () => {
+app.get("/unknown", (req, res) => {
+    log.debug('GET /unknown endpoint called');
+    res.json({ msg: "Reboot Backend - Made by Burlone" });
+});
 
+app.listen(PORT, () => {
     log.backend(`App started listening on port ${PORT}`);
 
     require("./xmpp/xmpp.js");
-    require("./DiscordBot");
+    if(config.discord.bUseDiscordBot === true) {
+        require("./DiscordBot");
+    }
 }).on("error", async (err) => {
     if (err.code == "EADDRINUSE") {
         log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
-        await functions.sleep(3000)
+        await functions.sleep(3000);
         process.exit(0);
     } else throw err;
 });
 
-// if endpoint not found, return this error
+const loggedUrls = new Set();
 app.use((req, res, next) => {
+    const url = req.originalUrl;
+    if (loggedUrls.has(url)) {
+        return next();
+    }
+    log.debug(`Missing endpoint: ${req.method} ${url} request port ${req.socket.localPort}`);
+    if (req.url.includes("..")) {
+        res.redirect("https://youtu.be/dQw4w9WgXcQ");
+        return;
+    }
     error.createError(
         "errors.com.epicgames.common.not_found", 
         "Sorry the resource you were trying to find could not be found", 
@@ -83,3 +98,5 @@ function DateAddHours(pdate, number) {
 
     return date;
 }
+
+module.exports = app;

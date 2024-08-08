@@ -19,7 +19,6 @@ module.exports = {
     execute: async (interaction) => {
 
     if (!config.moderators.includes(interaction.user.id)) {
-        console.log("User does not have moderator permissions.");
         return interaction.reply({ content: "You do not have moderator permissions.", ephemeral: true });
     }
 
@@ -46,5 +45,5 @@ module.exports = {
         .setTimestamp();
     await interaction.reply({ embeds: [embed], ephemeral: true });
     await interaction.options.getUser('username').send({ content: `Your account has been deleted by <@${interaction.user.id}>` });
-}
+    }
 }

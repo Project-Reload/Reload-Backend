@@ -29,10 +29,5 @@ module.exports = {
         await targetUser.updateOne({ $set: { banned: false } });
         
         interaction.editReply({ content: `Successfully unbanned ${targetUser.username}`, ephemeral: true });
-
-        const logChannel = interaction.client.channels.cache.get(config.logChannelUnbanId);
-        if (logChannel) {
-            logChannel.send(`<@${interaction.user.id}> / ${interaction.user.tag} has unbanned **${targetUser.username}**`);
-        }
     }
 }

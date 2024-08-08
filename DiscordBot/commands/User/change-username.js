@@ -24,21 +24,12 @@ module.exports = {
         if (!user)
             return interaction.editReply({ content: "You are not registered!", ephemeral: true });
 
-        const validUsernameRegex = /^[a-zA-Z0-9]+$/;
         const username = interaction.options.getString('username');
-        if (!validUsernameRegex.test(username) || badwords.isProfane(username)) {
-            return interaction.editReply({ content: "Invalid username. Username must contain only letters and numbers, and no spaces or special characters. Additionally, it should not contain inappropriate language." });
+        if (!badwords.isProfane(username)) {
+            return interaction.editReply({ content: "Invalid username. Username must not contain inappropriate language." });
         }
 
         const plainUsername = interaction.options.getString('username');
-    
-        if (plainUsername.length < 3) {
-            return interaction.editReply({ content: "Invalid username. Username must have at least 3 characters." });
-        }
-    
-        if (plainUsername.length > 20) {
-            return interaction.editReply({ content: "Invalid username. Username must be 20 characters or less" });
-        }
 
         const existingUser = await User.findOne({ username: plainUsername });
         if (existingUser) {

@@ -1,6 +1,7 @@
 {
-    "moderators": ["discordId"],
+    "moderators": ["discordId", "discordId2"],
   "discord": {
+    "bUseDiscordBot": true,
     "bot_token": ""
   },
   "mongodb": {
@@ -10,6 +11,8 @@
         "//": "Disabling global chat can help the server to perform faster as less resources are used.",
         "EnableGlobalChat": false
     },
+
+    "bEnableDebugLogs": false,
 
     "//": "If you want to use the backend on reboot, leave 3551 as the port",
     "port": 3551, 

@@ -24,7 +24,6 @@ module.exports = {
     execute: async (interaction) => {
 
     if (!config.moderators.includes(interaction.user.id)) {
-        console.log("User does not have moderator permissions.");
         return interaction.reply({ content: "You do not have moderator permissions.", ephemeral: true });
     }
         

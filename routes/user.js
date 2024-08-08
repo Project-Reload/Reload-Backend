@@ -2,11 +2,13 @@ const express = require("express");
 const app = express.Router();
 
 const error = require("../structs/error.js");
+const log = require("../structs/log.js");
 
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");
 const User = require("../model/user.js");
 
 app.get("/account/api/public/account", async (req, res) => {
+    log.debug("GET /account/api/public/account called");
     let response = [];
 
     if (typeof req.query.accountId == "string") {
@@ -41,8 +43,15 @@ app.get("/account/api/public/account", async (req, res) => {
 });
 
 app.get("/account/api/public/account/displayName/:displayName", async (req, res) => {
+    log.debug(`GET /account/api/public/account/displayName/${req.params.displayName} called`);
     let user = await User.findOne({ username_lower: req.params.displayName.toLowerCase(), banned: false }).lean();
     if (!user) return error.createError(
+        "errors.com.epicgames.account.account_not_found",
+        `Sorry, we couldn't find an account for ${req.params.displayName}`, 
+        [req.params.displayName], 18007, undefined, 404, res
+    );
+
+    if (user.isServer == true) return error.createError(
         "errors.com.epicgames.account.account_not_found",
         `Sorry, we couldn't find an account for ${req.params.displayName}`, 
         [req.params.displayName], 18007, undefined, 404, res
@@ -56,6 +65,7 @@ app.get("/account/api/public/account/displayName/:displayName", async (req, res)
 });
 
 app.get("/persona/api/public/account/lookup", async (req, res) => {
+    log.debug("GET /persona/api/public/account/lookup called");
     if (typeof req.query.q != "string" || !req.query.q) return error.createError(
         "errors.com.epicgames.bad_request",
         "Required String parameter 'q' is invalid or not present", 
@@ -77,6 +87,7 @@ app.get("/persona/api/public/account/lookup", async (req, res) => {
 });
 
 app.get("/api/v1/search/:accountId", async (req, res) => {
+    log.debug(`GET /api/v1/search/${req.params.accountId} called`);
     let response = [];
 
     if (typeof req.query.prefix != "string" || !req.query.prefix) return error.createError(
@@ -108,6 +119,7 @@ app.get("/api/v1/search/:accountId", async (req, res) => {
 });
 
 app.get("/account/api/public/account/:accountId", verifyToken, (req, res) => {
+    log.debug(`GET /account/api/public/account/${req.params.accountId} called`);
     res.json({
         id: req.user.accountId,
         displayName: req.user.username,
@@ -131,6 +143,7 @@ app.get("/account/api/public/account/:accountId", verifyToken, (req, res) => {
 });
 
 app.get("/account/api/public/account/*/externalAuths", (req, res) => {
+    log.debug("GET /account/api/public/account/*/externalAuths called");
     res.json([]);
 });
 
