@@ -31,7 +31,7 @@ Created by Burlone, This is a modded backend, all main backend credits to [Lawin
     * [x] Daily missions worked (Backend Part).
     * [x] Working weekly missions (Backend Part).
 * SAC (Support A Creator):
-    * [x] It supports a supported creator, you can set it using the "/createsac" command on discord.
+    * [x] It supports a supported creator, you can set it using the `/createsac {code} {ingame-username}` command on discord.
 * Matchmaker:
     * [x] An improved matchmaker.
 ### XMPP Features
@@ -40,8 +40,8 @@ Created by Burlone, This is a modded backend, all main backend credits to [Lawin
 - Friends.
 
 ## TO-DO
-- [] Create an automatic shop
-- [] Create a support with save the world
+- [ ] Create an automatic shop
+- [ ] Create a support with save the world
 
 ## Discord Bot Commands
 ### User Commands:
