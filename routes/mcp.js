@@ -3,6 +3,8 @@ const app = express.Router();
 
 const Friends = require("../model/friends");
 const Profile = require("../model/profiles.js");
+const User = require("../model/user.js");
+const SACCodeModel = require('../model/saccodes.js');
 const profileManager = require("../structs/profile.js");
 const error = require("../structs/error.js");
 const functions = require("../structs/functions.js");
@@ -1739,6 +1741,42 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
             "profile": profile
         }];
     }
+
+    if (config.bEnableSACRewards === true) {
+        const user = await User.findOne({ accountId: req.user.accountId });
+        
+        if (user && user.currentSACCode) {
+            const sacCodeEntry = await SACCodeModel.findOne({ 
+                $or: [
+                    { code: user.currentSACCode },
+                    { code_lower: user.currentSACCode.toLowerCase() },
+                    { code_higher: user.currentSACCode.toUpperCase() }
+                ]
+            });
+            
+            if (sacCodeEntry) {
+                let findOfferId = functions.getOfferID(req.body.offerId);
+                let purchaseQuantity = req.body.purchaseQuantity || 1;
+                let totalPrice = findOfferId.offerId.prices[0].finalPrice * purchaseQuantity;
+                const rewardAmount = (totalPrice * config.bPercentageSACRewards) / 100;
+
+                const profile = await Profile.findOneAndUpdate(
+                    { accountId: sacCodeEntry.owneraccountId }, 
+                    { $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': rewardAmount } }
+                );
+    
+                if (!profile) {
+                    log.debug(`PurchaseCatalogEntry: Failed to find account for SAC owner with accountId: ${sacCodeEntry.owneraccountId}`);
+                } else {
+                    log.debug(`PurchaseCatalogEntry: Added ${rewardAmount} V-Bucks to the SAC owner with accountId: ${sacCodeEntry.owneraccountId}`);
+                }
+            } else {
+                log.debug(`PurchaseCatalogEntry: SAC code ${user.currentSACCode} is not valid.`);
+            }
+        } else {
+            log.debug(`PurchaseCatalogEntry: User with accountId: ${req.user.accountId} is not supporting any creator. No V-Bucks awarded.`);
+        }
+    }    
 
     res.json({
         profileRevision: profile.rvn || 0,

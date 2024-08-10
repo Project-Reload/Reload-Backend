@@ -3,6 +3,7 @@ const app = express.Router();
 
 const codes = require("./../model/saccodes.js");
 const Profile = require("../model/profiles.js");
+const User = require("./../model/user.js");
 
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");
 const log = require("../structs/log.js");
@@ -62,6 +63,8 @@ app.post("/fortnite/api/game/v2/profile/*/client/SetAffiliateName", verifyToken,
 
     profile.stats.attributes.mtx_affiliate_set_time = new Date().toISOString();
     profile.stats.attributes.mtx_affiliate = code.code;
+
+    await User.updateOne({ accountId: req.user.accountId }, { $set: { currentSACCode: code.code } });
 
     StatChanged = true;
 
