@@ -32,6 +32,7 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
     * [x] Working weekly missions (Backend Part).
 * SAC (Support A Creator):
     * [x] It supports a supported creator, you can set it using the `/createsac {code} {ingame-username}` command on discord.
+    * [x] Rewards in vbucks for those who support a creator.
 * Matchmaker:
     * [x] An improved matchmaker.
 ### XMPP Features
