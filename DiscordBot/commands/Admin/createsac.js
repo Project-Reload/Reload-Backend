@@ -8,7 +8,7 @@ module.exports = {
         options: [
             {
                 name: "code",
-                description: "The SUpport A Creator Code.",
+                description: "The Support A Creator Code.",
                 required: true,
                 type: 3
             },            
@@ -24,7 +24,7 @@ module.exports = {
         await interaction.deferReply({ ephemeral: true });
 
         if (!config.moderators.includes(interaction.user.id)) {
-            return interaction.reply({ content: "You do not have moderator permissions.", ephemeral: true });
+            return interaction.editReply({ content: "You do not have moderator permissions.", ephemeral: true });
         }
 
         const { options } = interaction;

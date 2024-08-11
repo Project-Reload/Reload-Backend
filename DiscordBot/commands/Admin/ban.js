@@ -19,10 +19,7 @@ module.exports = {
     execute: async (interaction) => {
         await interaction.deferReply({ ephemeral: true });
         
-        const userRoles = interaction.member.roles.cache.map(role => role.id);
-        const hasModeratorRole = userRoles.some(roleId => config.realmoderatorsrole && config.realmoderatorsrole.includes(roleId));
-
-        if (!config.moderators.includes(interaction.user.id) && !hasModeratorRole) {
+        if (!config.moderators.includes(interaction.user.id)) {
             return interaction.editReply({ content: "You do not have moderator permissions.", ephemeral: true });
         }
     

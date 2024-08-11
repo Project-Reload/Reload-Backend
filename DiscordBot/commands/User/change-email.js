@@ -22,7 +22,7 @@ module.exports = {
 
         const emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if (!emailFilter.test(plainEmail)) {
-            return interaction.editReply({ content: "You did not provide a valid email address!", ephemeral: true });
+            return interaction.reply({ content: "You did not provide a valid email address!", ephemeral: true });
         }
 
         const existingUser = await Users.findOne({ email: plainEmail });
