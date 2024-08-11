@@ -26,9 +26,12 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
     * [x] Customizable Item Shop.
     * [x] Purchasing items from the Item Shop.
     * [x] Gifting items to your friends.
+* Discord Bot:
+    * [x] Being able to activate/deactivate the Discord bot.
+    * [x] Commands with very useful functions.
 * BattlePass (s2-s10):
     * [x] Possibility to buy the battle pass.
-    * [x] Possibility to purchase pass levels.
+    * [x] Possibility to purchase battle pass levels.
 * Challenges:
     * [x] Daily missions worked (Backend Part).
     * [x] Working weekly missions (Backend Part).
@@ -44,6 +47,7 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 
 ## TO-DO
 - [ ] Create an automatic shop
+- [ ] Create a Website system where you can create an account
 - [ ] Create a support with save the world
 
 ## Discord Bot Commands
