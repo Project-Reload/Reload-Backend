@@ -40,6 +40,8 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
     * [x] Rewards in vbucks for those who support a creator.
 * Matchmaker:
     * [x] An improved matchmaker.
+* Website:
+    * [x] A simple website where you can create an account to join the game.
 ### XMPP Features
 - Parties (builds 3.5 to 14.50).
 - Chat (whispering, global chat, party chat).
@@ -47,7 +49,6 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 
 ## TO-DO
 - [ ] Create an automatic shop
-- [ ] Create a Website system where you can create an account
 - [ ] Create a support with save the world
 
 ## Discord Bot Commands
