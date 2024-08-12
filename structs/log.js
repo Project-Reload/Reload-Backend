@@ -28,10 +28,16 @@ function debug(...args) {
     }
 }
 
+function website(...args) {
+    let msg = args.join(" ");
+    console.log(`\x1b[36mReload Website Log\x1b[0m: ${msg}`);
+}
+
 module.exports = {
     backend,
     bot,
     xmpp,
     error,
-    debug
+    debug,
+    website
 };

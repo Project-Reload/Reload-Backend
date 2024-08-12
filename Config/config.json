@@ -17,6 +17,14 @@
     "//": "If you want to use the backend on reboot, leave 3551 as the port",
     "port": 3551, 
     
+    "Website": {
+      "bUseWebsite": false,
+      "clientId": "your-client-id-here",
+      "clientSecret": "your-client-secret-here",
+      "redirectUri": "http://127.0.0.1:${websiteport}/oauth2/callback",
+      "websiteport": 100
+    },
+
     "matchmakerIP": "127.0.0.1:80",
     "gameServerIP": "127.0.0.1:7777",
     

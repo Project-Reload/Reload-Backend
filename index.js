@@ -1,19 +1,26 @@
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 const fs = require("fs");
 const rateLimit = require("express-rate-limit");
 const jwt = require("jsonwebtoken");
+const path = require("path");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 
 const log = require("./structs/log.js");
 const error = require("./structs/error.js");
 const functions = require("./structs/functions.js");
 
+const app = express();
+
 if (!fs.existsSync("./ClientSettings")) fs.mkdirSync("./ClientSettings");
 
 global.JWT_SECRET = functions.MakeID();
 const PORT = config.port;
+const WEBSITEPORT = config.Website.websiteport;
+
+if (!fs.existsSync("./ClientSettings")) fs.mkdirSync("./ClientSettings");
+
+global.JWT_SECRET = functions.MakeID();
 
 console.log('Welcome to Reload Backend\n');
 
@@ -60,26 +67,39 @@ app.get("/unknown", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    log.backend(`App started listening on port ${PORT}`);
+    log.backend(`Backend started listening on port ${PORT}`);
 
     require("./xmpp/xmpp.js");
-    if(config.discord.bUseDiscordBot === true) {
+    if (config.discord.bUseDiscordBot === true) {
         require("./DiscordBot");
     }
 }).on("error", async (err) => {
-    if (err.code == "EADDRINUSE") {
+    if (err.code === "EADDRINUSE") {
         log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
         await functions.sleep(3000);
         process.exit(0);
     } else throw err;
 });
 
-const loggedUrls = new Set();
+if (config.Website.bUseWebsite === true) {
+    const websiteApp = express();
+    require('./Website/website')(websiteApp);
+
+    websiteApp.listen(WEBSITEPORT, () => {
+        log.website(`Website started listening on port ${WEBSITEPORT}`);
+    }).on("error", async (err) => {
+        if (err.code === "EADDRINUSE") {
+            log.error(`Website port ${WEBSITEPORT} is already in use!\nClosing in 3 seconds...`);
+            await functions.sleep(3000);
+            process.exit(1);
+        } else {
+            throw err;
+        }
+    });
+}
+
 app.use((req, res, next) => {
     const url = req.originalUrl;
-    if (loggedUrls.has(url)) {
-        return next();
-    }
     log.debug(`Missing endpoint: ${req.method} ${url} request port ${req.socket.localPort}`);
     if (req.url.includes("..")) {
         res.redirect("https://youtu.be/dQw4w9WgXcQ");
@@ -91,12 +111,5 @@ app.use((req, res, next) => {
         undefined, 1004, undefined, 404, res
     );
 });
-
-function DateAddHours(pdate, number) {
-    let date = pdate;
-    date.setHours(date.getHours() + number);
-
-    return date;
-}
 
 module.exports = app;
