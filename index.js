@@ -112,4 +112,11 @@ app.use((req, res, next) => {
     );
 });
 
+function DateAddHours(pdate, number) {
+    let date = pdate;
+    date.setHours(date.getHours() + number);
+
+    return date;
+}
+
 module.exports = app;
