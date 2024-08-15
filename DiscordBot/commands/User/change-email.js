@@ -15,19 +15,21 @@ module.exports = {
         ]
     },
     execute: async (interaction) => {
+        await interaction.deferReply({ ephemeral: true });
+
         const user = await Users.findOne({ discordId: interaction.user.id });
         if (!user)
-            return interaction.reply({ content: "You are not registered!", ephemeral: true });
+            return interaction.editReply({ content: "You are not registered!", ephemeral: true });
         const plainEmail = interaction.options.getString('email');
 
         const emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if (!emailFilter.test(plainEmail)) {
-            return interaction.reply({ content: "You did not provide a valid email address!", ephemeral: true });
+            return interaction.editReply({ content: "You did not provide a valid email address!", ephemeral: true });
         }
 
         const existingUser = await Users.findOne({ email: plainEmail });
         if (existingUser) {
-            return interaction.reply({ content: "Email is already in use, please choose another one.", ephemeral: true });
+            return interaction.editReply({ content: "Email is already in use, please choose another one.", ephemeral: true });
         }
         
         await user.updateOne({ $set: { email: plainEmail } });
@@ -40,6 +42,6 @@ module.exports = {
             iconURL: "https://i.imgur.com/2RImwlb.png",
         })
             .setTimestamp();
-        await interaction.reply({ embeds: [embed], ephemeral: true });
+        await interaction.editReply({ embeds: [embed], ephemeral: true });
     }
 }

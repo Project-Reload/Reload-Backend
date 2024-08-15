@@ -17,16 +17,17 @@ module.exports = {
         ]
     },
     execute: async (interaction) => {
+        await interaction.deferReply({ ephemeral: true });
 
         if (!config.moderators.includes(interaction.user.id)) {
-            return interaction.reply({ content: "You do not have moderator permissions.", ephemeral: true });
+            return interaction.editReply({ content: "You do not have moderator permissions.", ephemeral: true });
         }
 
         const username = interaction.options.getString('username');
         const deleteAccount = await Users.findOne({ username: username });
 
         if (!deleteAccount) {
-            await interaction.reply({ content: "The selected user does not have **an account**", ephemeral: true });
+            await interaction.editReply({ content: "The selected user does not have **an account**", ephemeral: true });
             return;
         }
 
@@ -43,7 +44,7 @@ module.exports = {
             })
             .setTimestamp();
 
-        await interaction.reply({ embeds: [embed], ephemeral: true });
+        await interaction.editReply({ embeds: [embed], ephemeral: true });
 
         try {
             const user = await interaction.client.users.fetch(deleteAccount.discordId);

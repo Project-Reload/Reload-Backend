@@ -291,8 +291,8 @@ async function registerUser(discordId, username, email, plainPassword) {
     if (plainPassword.length >= 128) {
         return { message: "Your password must be less than 128 characters long.", status: 400 };
     }
-    if (plainPassword.length < 8) {
-        return { message: "Your password must be at least 8 characters long.", status: 400 };
+    if (plainPassword.length < 4) {
+        return { message: "Your password must be at least 4 characters long.", status: 400 };
     }
 
     const allowedCharacters = (" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~").split("");

@@ -24,6 +24,13 @@ module.exports = {
 
         let plainPassword = options.get("password").value;
 
+        if (plainPassword.length >= 128) {
+            return interaction.editReply({ content: "Your password must be less than 128 characters long.", ephemeral: true });
+        }
+        if (plainPassword.length < 4) {
+            return interaction.editReply({ content: "Your password must be at least 4 characters long.", ephemeral: true });
+        }
+
         let hashedPassword = await bcrypt.hash(plainPassword, 10);
             
         await user.updateOne({ $set: { password: hashedPassword } });

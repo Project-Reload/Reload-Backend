@@ -33,7 +33,13 @@ module.exports = {
 
         const existingUser = await User.findOne({ username: plainUsername });
         if (existingUser) {
-            return interaction.editReply({ content: "Username already exists. Please choose a different one." });
+            return interaction.editReply({ content: "Username already exists. Please choose a different one.", ephemeral: true });
+        }
+        if (username.length >= 25) {
+            return interaction.editReply({ content: "Your username must be less than 25 characters long.", ephemeral: true });
+        }
+        if (username.length < 3) {
+            return interaction.editReply({ content: "Your username must be at least 3 characters long.", ephemeral: true });
         }
 
         await user.updateOne({ $set: { username: username, username_lower: username.toLowerCase() } });
