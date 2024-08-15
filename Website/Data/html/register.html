@@ -10,6 +10,13 @@
 <body class="dark-theme">
     <div class="register-container">
         <h1>REGISTER</h1>
+        <p class="signin-text">Sign In</p>
+
+        <div id="error-message" class="error-message hidden">
+            <span id="error-text"></span>
+            <span class="close-error" onclick="closeErrorMessage()">✖️</span>
+        </div>
+
         <form id="registerForm">
             <div class="input-container">
                 <input type="text" id="username" placeholder="Username" required>
@@ -21,7 +28,7 @@
                 <input type="password" id="password" placeholder="Password" required>
                 <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
             </div>
-            <input type="submit" value="Create Your Account">
+            <input type="submit" id="submitBtn" value="Create Your Account">
         </form>
     </div>
 
@@ -43,6 +50,11 @@
 
             document.getElementById('registerForm').addEventListener('submit', function(event) {
                 event.preventDefault();
+                
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = true; 
+                submitBtn.value = "Please wait..."; 
+
                 const username = document.getElementById('username').value;
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
@@ -55,11 +67,19 @@
                     body: JSON.stringify({ discordId, username, email, password })
                 }).then(response => response.json())
                   .then(data => {
-                      alert(data.message);
                       if (data.success) {
                           window.location.href = '/';
+                      } else {
+                          showErrorMessage(data.message);
+                          submitBtn.disabled = false; 
+                          submitBtn.value = "Create Your Account"; 
                       }
-                  }).catch(error => console.error('Error:', error));
+                  }).catch(error => {
+                      console.error('Error:', error);
+                      showErrorMessage('Failed to create account due to a server error.');
+                      submitBtn.disabled = false; 
+                      submitBtn.value = "Create Your Account"; 
+                  });
             });
 
             const themeToggle = document.getElementById('themeToggle');
@@ -79,6 +99,25 @@
                 passwordInput.type = 'password';
                 eyeIcon.textContent = '👁️';
             }
+        }
+
+        function showErrorMessage(message) {
+            const errorMessageDiv = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+            
+            errorText.textContent = message;
+            errorMessageDiv.classList.remove('hidden');
+            errorMessageDiv.classList.add('visible');
+
+            setTimeout(() => {
+                closeErrorMessage();
+            }, 5000);
+        }
+
+        function closeErrorMessage() {
+            const errorMessageDiv = document.getElementById('error-message');
+            errorMessageDiv.classList.remove('visible');
+            errorMessageDiv.classList.add('hidden');
         }
     </script>
 </body>
