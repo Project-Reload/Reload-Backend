@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const User = require("../../../model/user.js")
 const functions = require("../../../structs/functions.js");
 
 module.exports = {
@@ -39,7 +40,7 @@ module.exports = {
         const plainEmail = options.get('email').value;
         const plainUsername = options.get('username').value;
 
-        const existingEmail = await Users.findOne({ email: plainEmail });
+        const existingEmail = await User.findOne({ email: plainEmail });
         const existingUser = await User.findOne({ username: plainUsername });
 
         const emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
