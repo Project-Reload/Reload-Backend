@@ -1,0 +1,1324 @@
+{
+	"events": [
+		{
+			"announcementTime": "2024-03-01T01:36:52Z",
+			"appId": null,
+			"beginTime": "2024-02-29T01:36:52Z",
+			"displayDataId": "ArenaDuos",
+			"endTime": "9999-12-31T23:59:59.000Z",
+			"environment": null,
+			"eventGroup": "",
+			"eventId": "epicgames_Arena_S8_Duos",
+			"eventWindows": [
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division1_Duos",
+					"eventWindowId": "Arena_S8_Division1_Duos",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 25,
+						"divisionRank": 0
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division1"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 0,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division2_Duos",
+					"eventWindowId": "Arena_S8_Division2_Duos",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 75,
+						"divisionRank": 1
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division2"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 1,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division3_Duos",
+					"eventWindowId": "Arena_S8_Division3_Duos",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 125,
+						"divisionRank": 2
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division3"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 2,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division4_Duos",
+					"eventWindowId": "Arena_S8_Division4_Duos",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 175,
+						"divisionRank": 3
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division4"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 3,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division5_Duos",
+					"eventWindowId": "Arena_S8_Division5_Duos",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 225,
+						"divisionRank": 4
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division5"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 4,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division6_Duos",
+					"eventWindowId": "Arena_S8_Division6_Duos",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 300,
+						"divisionRank": 5
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division6"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division7"
+					],
+					"round": 5,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division7_Duos",
+					"eventWindowId": "Arena_S8_Division7_Duos",
+					"isTBD": true,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 9999999999,
+						"divisionRank": 6
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division7"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6"
+					],
+					"round": 6,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				}
+			],
+			"gameId": "Fortnite",
+			"link": null,
+			"metadata": {
+				"TrackedStats": [
+					"PLACEMENT_STAT_INDEX",
+					"TEAM_ELIMS_STAT_INDEX",
+					"MATCH_PLAYED_STAT"
+				],
+				"minimumAccountLevel": 1
+			},
+			"platformMappings": {},
+			"platforms": [
+				"PS4",
+				"XboxOne",
+				"Switch",
+				"Android",
+				"IOS",
+				"Windows"
+			],
+			"regionMappings": {},
+			"regions": [
+				"NAE",
+				"ME",
+				"NAW",
+				"OCE",
+				"ASIA",
+				"EU",
+				"BR"
+			]
+		},
+		{
+			"announcementTime": "2024-03-01T01:36:52Z",
+			"appId": null,
+			"beginTime": "2024-02-29T01:36:52Z",
+			"displayDataId": "ArenaSolo",
+			"endTime": "9999-12-31T23:59:59.000Z",
+			"environment": null,
+			"eventGroup": "",
+			"eventId": "epicgames_Arena_S8_Solo",
+			"eventWindows": [
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division1_Solo",
+					"eventWindowId": "Arena_S8_Division1_Solo",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 25,
+						"divisionRank": 0
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division1"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 0,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division2_Solo",
+					"eventWindowId": "Arena_S8_Division2_Solo",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 75,
+						"divisionRank": 1
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division2"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 1,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division3_Solo",
+					"eventWindowId": "Arena_S8_Division3_Solo",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 125,
+						"divisionRank": 2
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division3"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 2,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division4_Solo",
+					"eventWindowId": "Arena_S8_Division4_Solo",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 175,
+						"divisionRank": 3
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division4"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 3,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division5_Solo",
+					"eventWindowId": "Arena_S8_Division5_Solo",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 225,
+						"divisionRank": 4
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division5"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division6",
+						"ARENA_S8_Division7"
+					],
+					"round": 4,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division6_Solo",
+					"eventWindowId": "Arena_S8_Division6_Solo",
+					"isTBD": false,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 300,
+						"divisionRank": 5
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division6"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division7"
+					],
+					"round": 5,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				},
+				{
+					"additionalRequirements": [],
+					"beginTime": "2024-02-29T01:36:52Z",
+					"blackoutPeriods": [],
+					"canLiveSpectate": false,
+					"countdownBeginTime": "2023-06-15T15:00:00.000Z",
+					"endTime": "9999-12-31T23:59:59.000Z",
+					"eventTemplateId": "eventTemplate_Arena_S8_Division7_Solo",
+					"eventWindowId": "Arena_S8_Division7_Solo",
+					"isTBD": true,
+					"metadata": {
+						"RoundType": "Arena",
+						"ThresholdToAdvanceDivision": 9999999999,
+						"divisionRank": 6
+					},
+					"payoutDelay": 30,
+					"requireAllTokens": [
+						"ARENA_S8_Division7"
+					],
+					"requireAllTokensCaller": [],
+					"requireAnyTokens": [],
+					"requireAnyTokensCaller": [],
+					"requireNoneTokensCaller": [
+						"ARENA_S8_Division1",
+						"ARENA_S8_Division2",
+						"ARENA_S8_Division3",
+						"ARENA_S8_Division4",
+						"ARENA_S8_Division5",
+						"ARENA_S8_Division6"
+					],
+					"round": 6,
+					"scoreLocations": [],
+					"teammateEligibility": "any",
+					"visibility": "public"
+				}
+			],
+			"gameId": "Fortnite",
+			"link": null,
+			"metadata": {
+				"TrackedStats": [
+					"PLACEMENT_STAT_INDEX",
+					"TEAM_ELIMS_STAT_INDEX",
+					"MATCH_PLAYED_STAT"
+				],
+				"minimumAccountLevel": 1
+			},
+			"platformMappings": {},
+			"platforms": [
+				"PS4",
+				"XboxOne",
+				"Switch",
+				"Android",
+				"IOS",
+				"Windows"
+			],
+			"regionMappings": {},
+			"regions": [
+				"NAE",
+				"ME",
+				"NAW",
+				"OCE",
+				"ASIA",
+				"EU",
+				"BR"
+			]
+		}
+	],
+	"player": {
+		"accountId": "fc192ce0a4724e679074b03d14b2e481",
+		"gameId": "Fortnite",
+		"groupIdentity": {},
+		"pendingPayouts": [],
+		"pendingPenalties": {},
+		"persistentScores": {
+			"Hype": 15
+		},
+		"teams": {},
+		"tokens": [
+			"ARENA_S8_Division1"
+		]
+	},
+	"templates": [
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division1_Duos",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Duos",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 3,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 7,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 12,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division2_Duos",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Duos",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 3,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 7,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 12,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division3_Duos",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Duos",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 3,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 7,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 12,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division4_Duos",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Duos",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 3,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 7,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 12,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gtw",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": -2
+						}
+					],
+					"trackedStat": "MATCH_PLAYED_STAT"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division5_Duos",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Duos",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 3,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 7,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 12,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gtw",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": -4
+						}
+					],
+					"trackedStat": "MATCH_PLAYED_STAT"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division6_Duos",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Duos",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 3,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 7,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 12,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gtw",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": -6
+						}
+					],
+					"trackedStat": "MATCH_PLAYED_STAT"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division7_Duos",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Duos",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 3,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 7,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 12,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gtw",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": -8
+						}
+					],
+					"trackedStat": "MATCH_PLAYED_STAT"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division1_Solo",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Solo",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 5,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 15,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 25,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division2_Solo",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Solo",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 5,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 15,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 25,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division3_Solo",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Solo",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 5,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 15,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 25,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division4_Solo",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Solo",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 5,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 15,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 25,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gtw",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": -2
+						}
+					],
+					"trackedStat": "MATCH_PLAYED_STAT"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division5_Solo",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Solo",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 5,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 15,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 25,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gtw",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": -4
+						}
+					],
+					"trackedStat": "MATCH_PLAYED_STAT"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division6_Solo",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Solo",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 5,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 15,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 25,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gtw",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": -6
+						}
+					],
+					"trackedStat": "MATCH_PLAYED_STAT"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		},
+		{
+			"eventTemplateId": "eventTemplate_Arena_S8_Division7_Solo",
+			"gameId": "Fortnite",
+			"matchCap": 100,
+			"persistentScoreId": "Hype",
+			"playlistId": "Playlist_ShowdownAlt_Solo",
+			"scoringRules": [
+				{
+					"matchRule": "lte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": 3
+						},
+						{
+							"keyValue": 5,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 15,
+							"multiplicative": false,
+							"pointsEarned": 2
+						},
+						{
+							"keyValue": 25,
+							"multiplicative": false,
+							"pointsEarned": 3
+						}
+					],
+					"trackedStat": "PLACEMENT_STAT_INDEX"
+				},
+				{
+					"matchRule": "gtw",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": false,
+							"pointsEarned": -8
+						}
+					],
+					"trackedStat": "MATCH_PLAYED_STAT"
+				},
+				{
+					"matchRule": "gte",
+					"rewardTiers": [
+						{
+							"keyValue": 1,
+							"multiplicative": true,
+							"pointsEarned": 1
+						}
+					],
+					"trackedStat": "TEAM_ELIMS_STAT_INDEX"
+				}
+			]
+		}
+	]
+}
