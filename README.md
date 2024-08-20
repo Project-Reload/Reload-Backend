@@ -84,5 +84,5 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
 ### Credits to:
 * [Lawin](https://github.com/Lawin0129) - For the backend base (LawinServerV2)
 * [Burlone](https://github.com/burlone0) - For having modded most things, let's say he modded everything
-* [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
+* [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part) and arena
 * [zvivsp](https://github.com/zvivsp) - For creating the graphics
