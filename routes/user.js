@@ -85,6 +85,10 @@ app.get("/persona/api/public/account/lookup", async (req, res) => {
         externalAuths: {}
     });
 });
+app.get("/api/v1/events/Fortnite/download/:accountid", verifyToken, async (req,res) => {
+    const arenaevent = JSON.parse(JSON.stringify(require("./../responses/arenaevent.json")));
+    res.json(arenaevent);
+});
 
 app.get("/api/v1/search/:accountId", async (req, res) => {
     log.debug(`GET /api/v1/search/${req.params.accountId} called`);
