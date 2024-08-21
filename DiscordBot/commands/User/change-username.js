@@ -13,7 +13,7 @@ module.exports = {
                 name: "username",
                 description: "Your new username.",
                 required: true,
-                type: 3 // string
+                type: 3
             }
         ]
     },
@@ -41,7 +41,7 @@ module.exports = {
         if (username.length < 3) {
             return interaction.editReply({ content: "Your username must be at least 3 characters long.", ephemeral: true });
         }
-
+        
         await user.updateOne({ $set: { username: username, username_lower: username.toLowerCase() } });
 
         const embed = new MessageEmbed()

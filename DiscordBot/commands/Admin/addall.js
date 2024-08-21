@@ -50,7 +50,16 @@ module.exports = {
                 }
             });
 
-            await interaction.editReply({ content: "Successfully added all skins to the selected account" });
+            const embed = new MessageEmbed()
+                .setTitle("Full Locker Added")
+                .setDescription("Successfully added all skins (Full Locker) to the selected account")
+                .setColor("GREEN")
+                .setFooter({
+                    text: "Reload Backend",
+                    iconURL: "https://i.imgur.com/2RImwlb.png"
+                })
+                .setTimestamp();
+            await interaction.editReply({ embeds: [embed], ephemeral: true });
         } catch (error) {
             console.error("An error occurred:", error);
             interaction.editReply({ content: "An error occurred while processing the request." });

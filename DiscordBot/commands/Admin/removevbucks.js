@@ -22,21 +22,22 @@ module.exports = {
         ]
     },
     execute: async (interaction) => {
+    await interaction.deferReply({ ephemeral: true });
 
     if (!config.moderators.includes(interaction.user.id)) {
-        return interaction.reply({ content: "You do not have moderator permissions.", ephemeral: true });
+        return interaction.editReply({ content: "You do not have moderator permissions.", ephemeral: true });
     }
         
     const selectedUser = interaction.options.getUser('user');
     const selectedUserId = selectedUser?.id;
     const user = await Users.findOne({ discordId: selectedUserId });
     if (!user)
-        return interaction.reply({ content: "That user does not own an account", ephemeral: true });
+        return interaction.editReply({ content: "That user does not own an account", ephemeral: true });
     const vbucks = parseInt(interaction.options.getInteger('vbucks'));
     const profile = await Profiles.findOneAndUpdate({ accountId: user.accountId }, { $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': - vbucks } });
     if (!profile)
-        return interaction.reply({ content: "That user does not own an account", ephemeral: true });
+        return interaction.editReply({ content: "That user does not own an account", ephemeral: true });
 
-    await interaction.reply({ content: "have been successfully removed **" + vbucks + "** vbucks for <@" + selectedUserId + ">", ephemeral: true });
+    await interaction.editReply({ content: "have been successfully removed **" + vbucks + "** vbucks for <@" + selectedUserId + ">", ephemeral: true });
 }
 }

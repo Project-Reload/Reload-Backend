@@ -11,7 +11,7 @@ module.exports = {
                 name: "username",
                 description: "Target username.",
                 required: true,
-                type: 3 // string
+                type: 3
             }
         ]
     },

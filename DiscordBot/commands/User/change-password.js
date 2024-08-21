@@ -10,7 +10,7 @@ module.exports = {
                 name: "password",
                 description: "Your new password.",
                 required: true,
-                type: 3 // string
+                type: 3
             }
         ]
     },
@@ -35,6 +35,15 @@ module.exports = {
             
         await user.updateOne({ $set: { password: hashedPassword } });
 
-        interaction.editReply({ content: `Successfully changed your password.`, ephemeral: true });
+        const embed = new MessageEmbed()
+            .setTitle("Passwork changed")
+            .setDescription("Your account password has been changed")
+            .setColor("GREEN")
+            .setFooter({
+            text: "Reload Backend",
+            iconURL: "https://i.imgur.com/2RImwlb.png",
+        })
+            .setTimestamp();
+        await interaction.editReply({ embeds: [embed], ephemeral: true });
     }
 }

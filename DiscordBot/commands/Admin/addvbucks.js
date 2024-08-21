@@ -22,21 +22,32 @@ module.exports = {
         ]
     },
     execute: async (interaction) => {
+    await interaction.deferReply({ ephemeral: true });
 
     if (!config.moderators.includes(interaction.user.id)) {
-        return interaction.reply({ content: "You do not have moderator permissions.", ephemeral: true });
+        return interaction.editReply({ content: "You do not have moderator permissions.", ephemeral: true });
     }
 
     const selectedUser = interaction.options.getUser('user');
     const selectedUserId = selectedUser?.id;
     const user = await Users.findOne({ discordId: selectedUserId });
     if (!user)
-        return interaction.reply({ content: "That user does not own an account", ephemeral: true });
+        return interaction.editReply({ content: "That user does not own an account", ephemeral: true });
     const vbucks = parseInt(interaction.options.getInteger('vbucks'));
     const profile = await Profiles.findOneAndUpdate({ accountId: user.accountId }, { $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': vbucks } });
     if (!profile)
-        return interaction.reply({ content: "That user does not own an account", ephemeral: true });
+        return interaction.editReply({ content: "That user does not own an account", ephemeral: true });
+    
+    const embed = new MessageEmbed()
+        .setTitle("Vbucks Changed")
+        .setDescription("Successfully changed the amount of vbucks for <@" + selectedUserId + "> by **" + vbucks + "**")
+        .setColor("GREEN")
+        .setFooter({
+            text: "Reload Backend",
+            iconURL: "https://i.imgur.com/2RImwlb.png"
+        })
+        .setTimestamp();
 
-    await interaction.reply({ content: "Successfully changed the amount of vbucks for <@" + selectedUserId + "> by **" + vbucks + "**", ephemeral: true });
-}
+    await interaction.editReply({ embeds: [embed], ephemeral: true });
+    }
 }

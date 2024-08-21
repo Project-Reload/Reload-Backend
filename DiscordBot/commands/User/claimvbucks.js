@@ -1,0 +1,48 @@
+const { EmbedBuilder, SlashCommandBuilder } = require("discord.js");
+const Users = require('../../../models/user.js');
+const Profiles = require('../../../models/profiles.js');
+
+module.exports = {
+    data: new SlashCommandBuilder()
+        .setName('claimvbucks')
+        .setDescription('Claim your daily 250 V-Bucks'),
+    async execute(interaction) {
+    try {
+        await interaction.deferReply({ ephemeral: true });
+
+        const user = await Users.findOne({ discordId: interaction.user.id });
+        if (!user) {
+            return interaction.followUp({ content: "You are not registered", ephemeral: true });
+        }
+
+        const userProfile = await Profiles.findOne({ accountId: user?.accountId });
+        
+        const lastClaimed = userProfile?.profiles?.lastVbucksClaim;
+        if (lastClaimed && (Date.now() - new Date(lastClaimed).getTime() < 24 * 60 * 60 * 1000)) {
+            const timeLeft = 24 - Math.floor((Date.now() - new Date(lastClaimed).getTime()) / (1000 * 60 * 60));
+            return interaction.followUp({
+                content: `You have already claimed your daily **V-Bucks.** Please wait the remainder: **${timeLeft} hours.**`,
+                ephemeral: true
+            });
+        }
+
+        await Profiles.findOneAndUpdate(
+            { accountId: user?.accountId },
+            {
+                $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': 250 }, //250 is vbucks for day
+                'profiles.lastVbucksClaim': Date.now()
+            }
+        );
+
+        const embed = new EmbedBuilder()
+            .setTitle("Daily V-Bucks Claimed!")
+            .setDescription(`You have claimed your daily 250 V-Bucks!`)
+            .setThumbnail("https://media.discordapp.net/attachments/1134514551606476810/1152156761793511425/250vbucks.png")
+            .setColor("#1eff00")
+        
+        await interaction.followUp({ embeds: [embed], ephemeral: true });
+    } catch (error) {
+        console.error(error);
+    }
+}
+}
