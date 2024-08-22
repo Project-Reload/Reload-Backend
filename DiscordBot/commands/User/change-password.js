@@ -1,3 +1,4 @@
+const { MessageEmbed } = require("discord.js");
 const User = require("../../../model/user.js");
 const bcrypt = require("bcrypt");
 
