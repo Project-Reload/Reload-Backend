@@ -49,6 +49,7 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 - Friends.
 
 ## TO-DO
+- [ ] New supported battle passes to be added (s14 and later)
 - [ ] Create a support with save the world
 
 ## Discord Bot Commands
