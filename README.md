@@ -29,7 +29,7 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 * Discord Bot:
     * [x] Being able to activate/deactivate the Discord bot.
     * [x] Commands with very useful functions.
-* BattlePass (s2-s10):
+* BattlePass (s2-s13):
     * [x] Possibility to buy the battle pass.
     * [x] Possibility to purchase battle pass levels.
 * Challenges:
