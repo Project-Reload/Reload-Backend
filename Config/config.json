@@ -1,7 +1,7 @@
 {
     "moderators": ["discordId", "discordId2"],
   "discord": {
-    "bUseDiscordBot": true,
+    "bUseDiscordBot": false,
     "bot_token": ""
   },
   "mongodb": {
@@ -37,5 +37,13 @@
 
     "//": "If 'bEnableSACRewards' is enabled it will give the person who supports a creator a percentage of vbucks based on how much percentage you put in 'bPercentageSACRewards' it will give in vbucks, so if you set '25%' and there is a 1000 item in the shop vbucks will give 250 vbucks to the one who supports a creator",
     "bEnableSACRewards": false,
-    "bPercentageSACRewards": 0
+    "bPercentageSACRewards": 0,
+
+    "//": "If 'bUseAutoRotate' is enabled it will automatically rotate the item shop using the time you put in 'bAutoRotateTimeout', you can select the season limit with 'bSeasonLimit' (please only do up to season 10, it might be a bit broken after!), 'bRotateTime' means what time the shop rotates (it is UTC and uses the 24 hour clock, not 12 hour), for 'bItemShopWebhook' you have to generate a webhook to your item shop channel and put the link here, you can select how many cosmetics are in daily: 'bDailyItemsAmount' and featured: 'bFeaturedItemsAmount'",
+    "bUseAutoRotate": false,
+    "bSeasonlimit": 10,
+    "bRotateTime": 1,
+    "bItemShopWebhook": "",
+    "bDailyItemsAmount": 6,
+    "bFeaturedItemsAmount": 2
 }
