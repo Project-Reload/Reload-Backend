@@ -26,6 +26,7 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
     * [x] Customizable Item Shop.
     * [x] Purchasing items from the Item Shop.
     * [x] Gifting items to your friends.
+    * [x] Working Item Shop Rotation (in beta).
 * Discord Bot:
     * [x] Being able to activate/deactivate the Discord bot.
     * [x] Commands with very useful functions.
@@ -94,3 +95,5 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 * [Burlone](https://github.com/burlone0) - For having modded most things, let's say he modded everything
 * [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
 * [zvivsp](https://github.com/zvivsp) - For creating the graphics
+* [joaco](https://github.com/ojotaa0124) - For helping with CloudStorage and responses stuff
+* [nade](https://github.com/gn1e) - For creating Auto Item Shop (Even if [Burlone](https://github.com/burlone0) solved many problems heheheh)

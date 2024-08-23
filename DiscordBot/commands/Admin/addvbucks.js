@@ -44,7 +44,7 @@ module.exports = {
         .setColor("GREEN")
         .setFooter({
             text: "Reload Backend",
-            iconURL: "https://i.imgur.com/2RImwlb.png"
+            iconURL: "https://i.imgur.com/yLbihQa.png"
         })
         .setTimestamp();
 

@@ -33,11 +33,19 @@ function website(...args) {
     console.log(`\x1b[36mReload Website Log\x1b[0m: ${msg}`);
 }
 
+function AutoRotation(...args) {
+    if (config.bEnableAutoRotateDebugLogs === true) {
+        let msg = args.join(" ");
+        console.log(`\x1b[36mReload AutoRotation Debug Log\x1b[0m: ${msg}`);
+    }
+}
+
 module.exports = {
     backend,
     bot,
     xmpp,
     error,
     debug,
-    website
+    website,
+    AutoRotation
 };
