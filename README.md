@@ -26,6 +26,7 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
     * [x] Customizable Item Shop.
     * [x] Purchasing items from the Item Shop.
     * [x] Gifting items to your friends.
+    * [x] Working Auto Item Shop (In Beta).
 * Discord Bot:
     * [x] Being able to activate/deactivate the Discord bot.
     * [x] Commands with very useful functions.
