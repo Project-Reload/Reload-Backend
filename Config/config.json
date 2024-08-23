@@ -1,7 +1,7 @@
 {
     "moderators": ["discordId", "discordId2"],
   "discord": {
-    "bUseDiscordBot": false,
+    "bUseDiscordBot": true,
     "bot_token": ""
   },
   "mongodb": {
