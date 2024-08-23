@@ -73,6 +73,9 @@ app.listen(PORT, () => {
     if (config.discord.bUseDiscordBot === true) {
         require("./DiscordBot");
     }
+    if (config.bUseAutoRotate === true) {
+        require("./ItemShop/autorotate.js")
+    }
 }).on("error", async (err) => {
     if (err.code === "EADDRINUSE") {
         log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
