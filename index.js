@@ -74,7 +74,7 @@ app.listen(PORT, () => {
         require("./DiscordBot");
     }
     if (config.bUseAutoRotate === true) {
-        require("./ItemShop/autorotate.js")
+        require("./structs/autorotate.js")
     }
 }).on("error", async (err) => {
     if (err.code === "EADDRINUSE") {
