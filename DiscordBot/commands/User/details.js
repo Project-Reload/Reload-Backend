@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const User = require("../../../model/user.js");
+const Profiles = require('../../../model/profiles.js');
 
 module.exports = {
     commandInfo: {
@@ -10,6 +11,8 @@ module.exports = {
         await interaction.deferReply({ ephemeral: true });
 
         const user = await User.findOne({ discordId: interaction.user.id }).lean();
+        const vbucksamount = await Profiles.findOne({ accountId: user?.accountId });
+        const currency = vbucksamount?.profiles.common_core.items["Currency:MtxPurchased"].quantity;
         if (!user) return interaction.editReply({ content: "You do not have a registered account!", ephemeral: true });
 
         let onlineStatus = global.Clients.some(i => i.accountId == user.accountId);
@@ -18,11 +21,12 @@ module.exports = {
         .setColor("GREEN")
         .setDescription("These are your account details")
         .setFields(
-            { name: 'Username', value: user.username },
-            { name: 'Email', value: `${user.email}` },
-            { name: "Online", value: `${onlineStatus ? "Yes" : "No"}` },
-            { name: "Banned", value: `${user.banned ? "Yes" : "No"}` },
-            { name: "Account ID", value: user.accountId })
+            { name: 'Username:', value: user.username },
+            { name: 'Email:', value: `${user.email}` },
+            { name: "Online:", value: `${onlineStatus ? "Yes" : "No"}` },
+            { name: "Banned:", value: `${user.banned ? "Yes" : "No"}` },
+            { name: 'Vbucks:', value: `${currency} V-Bucks` },
+            { name: "Account ID:", value: user.accountId })
         .setTimestamp()
         .setThumbnail(interaction.user.avatarURL())
         .setFooter({
