@@ -35,7 +35,7 @@ app.all("/friends/api/v1/*/friends/:friendId/alias", verifyToken, getRawBody, as
     );
 
     const allowedCharacters = (" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~").split("");
-    
+
     for (let character of req.rawBody) {
         if (!allowedCharacters.includes(character)) return validationFail();
     }
@@ -43,7 +43,7 @@ app.all("/friends/api/v1/*/friends/:friendId/alias", verifyToken, getRawBody, as
     if (!friends.list.accepted.find(i => i.accountId == req.params.friendId)) return error.createError(
         "errors.com.epicgames.friends.friendship_not_found",
         `Friendship between ${req.user.accountId} and ${req.params.friendId} does not exist`, 
-        [req.user.accountId, req.params.friendId], 14004, undefined, 404, res
+        [req.user.accountId,req.params.friendId], 14004, undefined, 404, res
     );
 
     const friendIndex = friends.list.accepted.findIndex(i => i.accountId == req.params.friendId);
@@ -51,15 +51,15 @@ app.all("/friends/api/v1/*/friends/:friendId/alias", verifyToken, getRawBody, as
     switch (req.method) {
         case "PUT":
             if ((req.rawBody < 3) || (req.rawBody > 16)) return validationFail();
-            
+
             friends.list.accepted[friendIndex].alias = req.rawBody;
-            
+
             await friends.updateOne({ $set: { list: friends.list } });
         break;
 
         case "DELETE":
             friends.list.accepted[friendIndex].alias = "";
-            
+
             await friends.updateOne({ $set: { list: friends.list } });
         break;
     }
