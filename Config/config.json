@@ -35,6 +35,7 @@
     "//": "If 'bUseAutoRotate' is enabled it will automatically rotate the item shop using the time you put in 'bRotateTime', you can select the season limit with 'bSeasonLimit' (please only do up to season 10, it might be a bit broken after!), 'bRotateTime' means what time the shop rotates (it is UTC and uses the 24 hour clock, not 12 hour), for 'bItemShopWebhook' you have to generate a webhook to your item shop channel and put the link here, you can select how many cosmetics are in daily: 'bDailyItemsAmount' and featured: 'bFeaturedItemsAmount'",
     "bUseAutoRotate": false,
     "bEnableAutoRotateDebugLogs": false,
+    "bEnableDiscordWebhook": false,
     "bSeasonlimit": 10,
     "bRotateTime": "00:00",
     "bItemShopWebhook": "",

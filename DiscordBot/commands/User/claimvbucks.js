@@ -30,7 +30,7 @@ module.exports = {
         await Profiles.findOneAndUpdate(
             { accountId: user?.accountId },
             {
-                $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': 250 }, //250 is vbucks for day
+                $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': 250 }, //250 is vbucks for day but u can change it
                 'profiles.lastVbucksClaim': Date.now()
             }
         );

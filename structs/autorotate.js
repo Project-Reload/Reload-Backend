@@ -346,7 +346,7 @@ async function discordpost(itemShop) {
                 const itemPrice = `**${notproperpricegen(item)} V-Bucks**`;
                 return `${itemName}\nRarity: ${itemRarity}\nPrice: ${itemPrice}`;
             }).join('\n\n'),
-            inline: false
+            inline: true
         });
     }
 
@@ -359,12 +359,14 @@ async function discordpost(itemShop) {
                 const itemPrice = `**${notproperpricegen(item)} V-Bucks**`;
                 return `${itemName}\nRarity: ${itemRarity}\nPrice: ${itemPrice}`;
             }).join('\n\n'),
-            inline: false
+            inline: true
         });
     }
 
     try {
-        await axios.post(webhook, { embeds: [embed] });
+        if (config.bEnableDiscordWebhook === true) {
+            await axios.post(webhook, { embeds: [embed] });
+        }
     } catch (error) {
         log.error("Error sending item shop to Discord:", error.message || error);
     }
