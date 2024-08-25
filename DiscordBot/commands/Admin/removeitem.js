@@ -1,3 +1,4 @@
+const { MessageEmbed } = require("discord.js");
 const Users = require('../../../model/user.js');
 const Profiles = require('../../../model/profiles.js');
 const fs = require('fs');

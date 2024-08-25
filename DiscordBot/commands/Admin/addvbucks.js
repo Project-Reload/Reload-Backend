@@ -1,6 +1,7 @@
 const Users = require('../../../model/user');
 const Profiles = require('../../../model/profiles');
 const config = require('../../../Config/config.json')
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     commandInfo: {

@@ -1,4 +1,4 @@
-const { MessageEmbed, PermissionFlagsBits, SlashCommandBuilder } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const Users = require('../../../model/user.js');
 const Profiles = require('../../../model/profiles.js');
 const config = require('../../../Config/config.json')
