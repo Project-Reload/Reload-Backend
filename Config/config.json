@@ -26,7 +26,8 @@
     },
 
     "matchmakerIP": "127.0.0.1:80",
-    "gameServerIP": "127.0.0.1:7777",
+    "gameServerIP": ["127.0.0.1:7777:playlist_defaultsolo:eu"],
+    "//": "to add more gs in the [] add ip:port:paylist:region NOTE REGION DOESNT WORK XD",
     
     "//": "For 'BattlePassSeason' enter only the number of your season (from 2 to 13)",
     "bEnableBattlepass": false,

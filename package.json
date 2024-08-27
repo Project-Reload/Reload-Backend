@@ -4,23 +4,30 @@
   "description": "Created by Burlone, This is a modded backend, all main backend credits to lawin",
   "main": "index.js",
   "dependencies": {
+    "axios": "^1.7.4",
     "bad-words": "^3.0.4",
     "bcrypt": "^5.1.0",
+    "canvas": "^2.11.2",
     "destr": "^2.0.3",
     "discord.js": "^13.7.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-rate-limit": "^6.7.0",
-    "jsonwebtoken": "^8.5.1",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "keyv": "^4.5.2",
     "mongoose": "^6.6.5",
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.3",
     "path": "^0.12.7",
     "uuid": "^9.0.0",
+    "winston": "^3.14.2",
     "ws": "^8.9.0",
     "xml-parser": "^1.2.1",
     "xmlbuilder": "^15.1.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
