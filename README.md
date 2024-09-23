@@ -49,7 +49,8 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 - Friends.
 
 ## TO-DO
-- [ ] New supported battle passes to be added (s14 and later)
+- [ ] New supported battle passes to be added (s14 to s16)
+- [ ] Create a support for winterfest presents (11.31, 19.01 & 23.10)
 - [ ] Create a support with save the world
 
 ## Discord Bot Commands
@@ -63,6 +64,7 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 - `/change-password {newPassword}` - You can change your password using this command.
 - `/sign-out-of-all-sessions` - Signs you out if you have an active session.
 - `/vbucksamount` - Shows how many vbucks to the user
+- `/giftvbucks {username}` - Send another user your V-Bucks.
 - `/claimvbucks` - Claim your daily {idk the default is 250} V-Bucks
 ### Admin Commands:
 - You can only use the admin commands if you are a moderator.
@@ -72,6 +74,8 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 - `/ban {targetUsername}` - Ban a user from the backend by their username.
 - `/createsac {code} {ingame-username}` - Creates a Support A Creator Code.
 - `/delete {username}` - Deletes a users account
+- `/deletediscord {username}` - Deletes a users account
+- `/deletesac {username}` - Deletes a Support A Creator Code.
 - `/kick {targetUsername}` - Kick someone out of their current session by their username.
 - `/removevbucks {user} {vbucks}` - Lets you change a users amount of vbucks
 - `/removeitem {user} {cosmeticname}` - Allows you to remove a cosmetic (skin, pickaxe, glider, etc.) from a user
@@ -99,4 +103,5 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 * [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
 * [zvivsp](https://github.com/zvivsp) - For creating the graphics
 * [joaco](https://github.com/ojotaa0124) - For helping with CloudStorage and responses stuff
-* [nade](https://github.com/gn1e) - For creating Auto Item Shop (Even if [Burlone](https://github.com/burlone0) solved many problems heheheh)
+* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes
+* [nade](https://github.com/gn1e) - For creating the base of the Auto Item Shop (Even if [Burlone](https://github.com/burlone0) solved many problems heheheh)

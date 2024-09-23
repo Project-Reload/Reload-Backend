@@ -135,7 +135,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
         }
 
         if (req.query.profileId == "athena") {
-            DailyQuestIDS = AthenaQuestIDS.Daily
+            DailyQuestIDS = AthenaQuestIDS.BattleRoyale.Daily
 
             if (AthenaQuestIDS.hasOwnProperty(`Season${SeasonPrefix}`)) {
                 SeasonQuestIDS = AthenaQuestIDS[`Season${SeasonPrefix}`]
@@ -415,28 +415,34 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
 });
 
 app.post("/fortnite/api/game/v2/profile/*/client/FortRerollDailyQuest", verifyToken, async (req, res) => {
-     const profiles = await Profile.findOne({ accountId: req.user.accountId });
-     let profile = profiles.profiles[req.query.profileId];
-
+    const profiles = await Profile.findOne({ accountId: req.user.accountId });
+    let profile = profiles.profiles[req.query.profileId];
+    
     // do not change any of these or you will end up breaking it
     var ApplyProfileChanges = [];
     var Notifications = [];
     var BaseRevision = profile.rvn || 0;
     var QueryRevision = req.query.rvn || -1;
     var StatChanged = false;
-
-    var DailyQuestPath = req.query.profileId == "profile0" == "./../responses/quests.json";
-    var DailyQuestIDS = JSON.parse(JSON.stringify(require(DailyQuestPath))).Daily;
-
+    
+    var DailyQuestPath;
+    if (req.query.profileId == "profile0" || req.query.profileId == "campaign") {
+        DailyQuestPath = "./../responses/quests.json";
+        var DailyQuestIDS = JSON.parse(JSON.stringify(require(DailyQuestPath))).SaveTheWorld.Daily;
+    } else {
+        DailyQuestPath = "./../responses/quests.json";
+        var DailyQuestIDS = JSON.parse(JSON.stringify(require(DailyQuestPath))).BattleRoyale.Daily;
+    }
+    
     const NewQuestID = functions.MakeID();
     var randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
-
+    
     for (var key in profile.items) {
         while (DailyQuestIDS[randomNumber].templateId.toLowerCase() == profile.items[key].templateId.toLowerCase()) {
             randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
         }
     }
-
+    
     if (req.body.questId && profile.stats.attributes.quest_manager.dailyQuestRerolls >= 1) {
         profile.stats.attributes.quest_manager.dailyQuestRerolls -= 1;
 
@@ -460,7 +466,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/FortRerollDailyQuest", verifyTo
         };
 
         for (var i in DailyQuestIDS[randomNumber].objectives) {
-            profile.items[NewQuestID].attributes[`completion_${DailyQuestIDS[randomNumber].objectives[i].toLowerCase()}`] = 0
+            profile.items[NewQuestID].attributes[`completion_${DailyQuestIDS[randomNumber].objectives[i].toLowerCase()}`] = 0;
         }
 
         StatChanged = true;
@@ -475,29 +481,29 @@ app.post("/fortnite/api/game/v2/profile/*/client/FortRerollDailyQuest", verifyTo
             "changeType": "statModified",
             "name": "quest_manager",
             "value": profile.stats.attributes.quest_manager
-        })
+        });
 
         ApplyProfileChanges.push({
             "changeType": "itemAdded",
             "itemId": NewQuestID,
             "item": profile.items[NewQuestID]
-        })
+        });
 
         ApplyProfileChanges.push({
             "changeType": "itemRemoved",
             "itemId": req.body.questId
-        })
+        });
 
         Notifications.push({
             "type": "dailyQuestReroll",
             "primary": true,
             "newQuestId": DailyQuestIDS[randomNumber].templateId
-        })
+        });
 
         await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
     }
 
-    // this doesn't work properly on version v12.20 and above but whatever
+    // This doesn't work properly on version v12.20 and above but whatever
     if (QueryRevision != BaseRevision) {
         ApplyProfileChanges = [{
             "changeType": "fullProfileUpdate",
@@ -514,7 +520,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/FortRerollDailyQuest", verifyTo
         "profileCommandRevision": profile.commandRevision || 0,
         "serverTime": new Date().toISOString(),
         "responseVersion": 1
-    })
+    });
 });
 
 app.post("/fortnite/api/game/v2/profile/*/client/MarkNewQuestNotificationSent", verifyToken, async (req, res) => {
@@ -2756,6 +2762,52 @@ app.post("/fortnite/api/game/v2/profile/:accountId/dedicated_server/:operation",
         serverTime: new Date().toISOString(),
         responseVersion: 1
     });
+});
+
+// Set party assist quest
+app.post("/fortnite/api/game/v2/profile/*/client/SetPartyAssistQuest", async (req, res) => {
+    const profile = await Profile.findOne({ accountId: req.user.accountId });
+
+    // do not change any of these or you will end up breaking it
+    var ApplyProfileChanges = [];
+    var BaseRevision = profile.rvn;
+    var ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+    var QueryRevision = req.query.rvn || -1;
+    var StatChanged = false;
+
+    if (profile.athena.stats.attributes.hasOwnProperty("party_assist_quest")) {
+        profile.athena.stats.attributes.party_assist_quest = req.body.questToPinAsPartyAssist || "";
+        StatChanged = true;
+    }
+
+    if (StatChanged == true) {
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+
+        ApplyProfileChanges.push({
+            "changeType": "statModified",
+            "name": "party_assist_quest",
+            "value": profile.athena.stats.attributes.party_assist_quest
+        })
+    }
+
+if (QueryRevision != ProfileRevisionCheck) {
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    }
+
+    res.json({
+        "profileRevision": profile.rvn || 0,
+        "profileId": req.query.profileId || "athena",
+        "profileChangesBaseRevision": BaseRevision,
+        "profileChanges": ApplyProfileChanges,
+        "profileCommandRevision": profile.commandRevision || 0,
+        "serverTime": new Date().toISOString(),
+        "responseVersion": 1
+    })
+    res.end();
 });
 
 function checkFields(fields, body) {

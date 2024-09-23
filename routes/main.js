@@ -196,4 +196,22 @@ app.post("/datarouter/api/v1/public/data", (req, res) => {
     res.end();
 });
 
+app.post("/api/v1/assets/Fortnite/*/*", async (req, res) => {
+    log.debug("POST /api/v1/assets/Fortnite/*/* called");
+    if (req.body.hasOwnProperty("FortCreativeDiscoverySurface") && req.body.FortCreativeDiscoverySurface == 0) {
+        const discovery_api_assets = require("./../responses/Discovery/discovery_api_assets.json");
+        res.json(discovery_api_assets)
+    }
+    else {
+        res.json({
+            "FortCreativeDiscoverySurface": {
+                "meta": {
+                    "promotion": req.body.FortCreativeDiscoverySurface || 0
+                },
+                "assets": {}
+            }
+        })
+    }
+})
+
 module.exports = app;

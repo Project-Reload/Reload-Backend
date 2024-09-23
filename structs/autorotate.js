@@ -323,49 +323,80 @@ function updatecfgomg(dailyItems, featuredItems) {
 }
 
 async function discordpost(itemShop) {
-    const embed = {
-        title: "Reload Item Shop",
-        description: `These are the cosmetics for today!`,
-        color: 0x00FF7F,
-        thumbnail: {
-            url: "https://i.imgur.com/2RImwlb.png"
-        },
-        fields: [],
-    };
+    const embeds = [];
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     }
 
+    function formatItemEmbed(item, authorTitle = null) {
+        const itemName = `**${capitalizeFirstLetter(item.name || "Unknown Item")}**`;
+        const itemRarity = `Rarity: **${capitalizeFirstLetter(item.rarity?.displayValue || "Unknown")}**`;
+        const itemPrice = `Price: **${notproperpricegen(item)} V-Bucks**`;
+
+        const embed = {
+            title: itemName,
+            color: 0x00FF7F,
+            description: `${itemRarity}\n${itemPrice}`,
+            thumbnail: {
+                url: item.images?.icon || "https://i.imgur.com/a7kIOt3.png"
+            }
+        };
+
+        if (authorTitle) {
+            embed.author = { name: authorTitle };
+        }
+
+        return embed;
+    }
+
+    function getNextRotationTime() {
+        const now = new Date();
+        const [localHour, localMinute] = config.bRotateTime.split(':').map(Number);
+        const nextRotation = new Date(now);
+
+        nextRotation.setHours(localHour, localMinute, 0, 0);
+
+        if (now >= nextRotation) {
+            nextRotation.setDate(nextRotation.getDate() + 1);
+        }
+
+        return Math.floor(nextRotation.getTime() / 1000);
+    }
+
+    embeds.push({
+            title: "Reload Item Shop",
+            description: `These are the cosmetics for today!`,
+            color: 0x00FF7F,
+            thumbnail: {
+                url: "https://i.imgur.com/2RImwlb.png"
+            },
+            fields: [],
+    });
+
     if (itemShop.featured.length > 0) {
-        embed.fields.push({
-            name: "Featured Items",
-            value: itemShop.featured.map(item => {
-                const itemName = `**${capitalizeFirstLetter(item.name || "Unknown Item")}**`;
-                const itemRarity = `**${capitalizeFirstLetter(item.rarity?.displayValue || "Unknown")}**`;
-                const itemPrice = `**${notproperpricegen(item)} V-Bucks**`;
-                return `${itemName}\nRarity: ${itemRarity}\nPrice: ${itemPrice}`;
-            }).join('\n\n'),
-            inline: true
+        itemShop.featured.forEach((item, index) => {
+            const embed = formatItemEmbed(item, index === 0 ? "Feature Item" : null);
+            embeds.push(embed);
         });
     }
 
     if (itemShop.daily.length > 0) {
-        embed.fields.push({
-            name: "Daily Items",
-            value: itemShop.daily.map(item => {
-                const itemName = `**${capitalizeFirstLetter(item.name || "Unknown Item")}**`;
-                const itemRarity = `**${capitalizeFirstLetter(item.rarity?.displayValue || "Unknown")}**`;
-                const itemPrice = `**${notproperpricegen(item)} V-Bucks**`;
-                return `${itemName}\nRarity: ${itemRarity}\nPrice: ${itemPrice}`;
-            }).join('\n\n'),
-            inline: true
+        itemShop.daily.forEach((item, index) => {
+            const embed = formatItemEmbed(item, index === 0 ? "Daily Item" : null);
+            embeds.push(embed);
         });
     }
 
+    const nextRotationTimestamp = getNextRotationTime();
+    embeds.push({
+        description: `The next shop will be updated at <t:${nextRotationTimestamp}:t>.`,
+        color: 0x00FF7F
+    });
+
     try {
         if (config.bEnableDiscordWebhook === true) {
-            await axios.post(webhook, { embeds: [embed] });
+            await axios.post(webhook, { embeds: embeds });
         }
     } catch (error) {
         log.error("Error sending item shop to Discord:", error.message || error);

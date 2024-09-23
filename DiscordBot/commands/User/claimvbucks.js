@@ -1,4 +1,4 @@
-const { MessageBuilder } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const Users = require('../../../model/user.js');
 const Profiles = require('../../../model/profiles.js');
 
@@ -35,7 +35,7 @@ module.exports = {
             }
         );
 
-        const embed = new MessageBuilder()
+        const embed = new MessageEmbed()
             .setTitle("Daily V-Bucks Claimed!")
             .setDescription(`You have claimed your daily 250 V-Bucks!`)
             .setThumbnail("https://media.discordapp.net/attachments/1134514551606476810/1152156761793511425/250vbucks.png")
