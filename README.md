@@ -103,5 +103,5 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 * [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
 * [zvivsp](https://github.com/zvivsp) - For creating the graphics
 * [joaco](https://github.com/ojotaa0124) - For helping with CloudStorage and responses stuff
-* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes
+* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11~s16)
 * [nade](https://github.com/gn1e) - For creating the base of the Auto Item Shop (Even if [Burlone](https://github.com/burlone0) solved many problems heheheh)
