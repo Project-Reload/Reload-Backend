@@ -1,0 +1,449 @@
+{
+  "battleBundleOfferId": "87C3990F72DB42C2A6116D2F5C8CAC57",
+  "battlePassOfferId": "7A973F444663B3A522172FAE32751346",
+  "tierOfferId": "50558EA040438C481ACC59897D1B7AE4",
+  "paidRewards": [
+    {
+      "Token:athenaseasonxpboost": 50,
+      "Token:athenaseasonfriendxpboost": 60,
+      "AthenaCharacter:cid_989_athena_commando_m_progressivejonesy": 1,
+      "ChallengeBundleSchedule:season16_alternatestyles_schedule_00": 1,
+      "ChallengeBundleSchedule:season16_alternatestyles_schedule_01": 1,
+      "ChallengeBundleSchedule:season16_alternatestyles_schedule_02": 1,
+      "ChallengeBundleSchedule:season16_alternatestyles_schedule_03": 1,
+      "ChallengeBundleSchedule:season16_alternatestyles_schedule_04": 1,
+      "ChallengeBundleSchedule:season16_alternatestyles_schedule_05": 1,
+      "ChallengeBundleSchedule:season16_alternatestyles_schedule_06": 1,
+      "ChallengeBundleSchedule:season16_alternatestyles_schedule_07": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_01": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_02": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_03": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_04": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_05": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_06": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_07": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_08": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_09": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_10": 1,
+      "ChallengeBundleSchedule:season16_bicycle_schedule_11": 1,
+      "ChallengeBundleSchedule:season16_superstyles_t1_schedule_01": 1,
+      "ChallengeBundleSchedule:season16_superstyles_t1_schedule_02": 1,
+      "ChallengeBundleSchedule:season16_superstyles_t1_schedule_03": 1,
+      "ChallengeBundleSchedule:season16_superstyles_t2_schedule_01": 1,
+      "ChallengeBundleSchedule:season16_superstyles_t2_schedule_02": 1,
+      "ChallengeBundleSchedule:season16_superstyles_t2_schedule_03": 1,
+      "ChallengeBundleSchedule:season16_superstyles_t3_schedule_01": 1,
+      "ChallengeBundleSchedule:season16_superstyles_t3_schedule_02": 1,
+      "ChallengeBundleSchedule:season16_superstyles_t3_schedule_03": 1,
+      "Quest:quest_s16_tribute_q01": 1
+    },
+    {},
+    {
+      "AthenaDance:spid_250_agentjonesy": 1
+    },
+    {},
+    {
+      "AthenaLoadingScreen:lsid_283_agentjonesy": 1
+    },
+    {},
+    {
+      "AthenaDance:emoji_s16_agentjonesy": 1
+    },
+    {
+      "AthenaMusicPack:musicpack_080_s15_endevent": 1
+    },
+    {},
+    {
+      "AthenaBackpack:bid_720_temple": 1
+    },
+    {
+      "AthenaDance:emoji_s16_temple": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {
+      "AthenaBackpack:bid_718_progressivejonesy": 1,
+      "ChallengeBundleSchedule:season16_narrative_schedule_02": 1
+    },
+    {
+      "AthenaCharacter:cid_a_040_athena_commando_f_temple": 1
+    },
+    {
+      "AthenaPickaxe:pickaxe_id_570_temple": 1
+    },
+    {
+      "AthenaDance:eid_temple": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "HomebaseBannerIcon:brs16_temple": 1
+    },
+    {
+      "CosmeticVariantToken:VTID_949_Temple_StyleB": 1
+    },
+    {
+      "AthenaDance:spid_249_dinohunter": 1
+    },
+    {},
+    {
+      "AthenaDance:emoji_s16_dinohunter": 1
+    },
+    {
+      "AthenaPickaxe:pickaxe_id_566_dinohunterfemale": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "CosmeticVariantToken:VTID_934_ProgressiveJonesy_Backbling_StyleB": 1,
+      "ChallengeBundleSchedule:season16_narrative_schedule_05": 1
+    },
+    {},
+    {
+     "AthenaCharacter:cid_a_037_athena_commando_f_dinohunter": 1
+    },
+    {
+      "AthenaGlider:glider_id_282_dinohunterfemale": 1
+    },
+    {
+      "AthenaDance:eid_suits": 1
+    },
+    {
+      "AthenaLoadingScreen:lsid_282_dinohunter": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaSkyDiveContrail:trails_id_113_dinohunter": 1
+    },
+    {
+      "CosmeticVariantToken:VTID_940_DinoHunter_StyleB": 1
+    },
+    {
+      "AthenaPickaxe:pickaxe_id_564_cubeninjamale": 1
+    },
+    {},
+    {
+      "AthenaDance:spid_248_cubeninja": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "HomebaseBannerIcon:brs16_cubeninja": 1
+    },
+    {
+      "AthenaLoadingScreen:lsid_281_cubeninja": 1
+    },
+    {},
+    {
+      "AthenaGlider:glider_id_280_cubeninjamale": 1
+    },
+    {
+      "AthenaBackpack:bid_719_cubeninja": 1
+    },
+    {
+      "AthenaSkyDiveContrail:trails_id_112_cubeninja": 1
+    },
+    {
+      "CosmeticVariantToken:VTID_937_ProgressiveJonesy_Backbling_StyleE": 1,
+      "ChallengeBundleSchedule:season16_narrative_schedule_04": 1
+    },
+    {},
+    {
+      "AthenaCharacter:cid_a_041_athena_commando_m_cubeninja": 1
+    },
+    {
+      "AthenaDance:emoji_s16_cubeninja": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "ItemAccessToken:iatid_015_emote_cubeninja": 1
+    },
+    {},
+    {
+      "AthenaLoadingScreen:lsid_284_chickenwarrior": 1
+    },
+    {
+      "AthenaBackpack:bid_716_chickenwarrior": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaGlider:glider_id_279_chickenwarriormale": 1
+    },
+    {},
+    {
+      "CosmeticVariantToken:VTID_935_ProgressiveJonesy_Backbling_StyleC": 1,
+      "ChallengeBundleSchedule:season16_narrative_schedule_01": 1
+    },
+    {
+      "AthenaCharacter:cid_a_039_athena_commando_m_chickenwarrior": 1
+    },
+    {
+      "AthenaDance:eid_bootsandcats": 1
+    },
+    {
+     "AthenaDance:spid_251_chickenwarrior": 1
+    },
+    {},
+    {
+      "AthenaPickaxe:pickaxe_id_563_chickenwarriormale1h": 1
+    },
+    {
+      "AthenaItemWrap:wrap_334_chickenwarrior": 1
+    },
+    {
+      "AthenaSkyDiveContrail:trails_id_093_spacewanderer": 1
+    },
+    {
+      "CosmeticVariantToken:VTID_933_ChickenWarrior_Backbling_StyleC": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "CosmeticVariantToken:VTID_943_ChickenWarrior_StyleC": 1,
+      "CosmeticVariantToken:VTID_956_ChickenWarriorGlider_StyleC": 1
+    },
+    {
+      "AthenaMusicPack:musicpack_079_s16_cine": 1
+    },
+    {
+      "AthenaGlider:glider_id_283_obsidianfemale": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaDance:emoji_s16_obsidian": 1
+    },
+    {
+      "AthenaItemWrap:wrap_340_yogurt": 1
+    },
+    {
+      "CosmeticVariantToken:VTID_936_ProgressiveJonesy_Backbling_StyleD": 1,
+      "ChallengeBundleSchedule:season16_narrative_schedule_03": 1
+    },
+    {},
+    {
+      "AthenaCharacter:cid_a_036_athena_commando_f_obsidian": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaLoadingScreen:lsid_279_obsidian": 1
+    },
+    {
+      "AthenaBackpack:bid_714_obsidian": 1
+    },
+    {
+      "AthenaDance:eid_obsidian": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {
+      "CosmeticVariantToken:VTID_938_Obsidian_StyleB": 1
+    },
+    {
+      "AthenaItemWrap:wrap_338_towersentinel": 1
+    },
+    {
+      "HomebaseBannerIcon:brs16_alt_1": 1
+    },
+    {
+      "AthenaGlider:glider_id_285_towersentinelfemale": 1
+    },
+    {
+      "AthenaDance:emoji_s16_alt_1": 1
+    },
+    {
+      "AthenaDance:spid_253_alt_1": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaSkyDiveContrail:trails_id_116_wavesoflight": 1
+    },
+    {
+      "AthenaDance:spid_247_sentinel": 1
+    },
+    {
+      "AthenaPickaxe:pickaxe_id_571_towersentinelfemale": 1
+    },
+    {
+      "HomebaseBannerIcon:brs16_sentinel": 1
+    },
+    {
+      "AthenaDance:emoji_s16_sentinel": 1
+    },
+    {},
+    {
+      "AthenaCharacter:cid_a_038_athena_commando_f_towersentinel": 1,
+      "ItemAccessToken:iatid_016_emote_towersentinel": 1
+    }
+  ],
+  "freeRewards": [
+    {},
+    {
+      "HomebaseBannerIcon:brs16_agentjonesy": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {
+      "AthenaDance:eid_custodial": 1
+    },
+    {},
+    {},
+    {
+      "AthenaLoadingScreen:lsid_289_yogurtjonesy": 1
+    },
+    {},
+    {},
+    {},
+    {
+      "AthenaDance:spid_252_temple": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaSkyDiveContrail:trails_id_114_temple": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaGlider:glider_id_284_templefemale": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaItemWrap:wrap_336_dinohunter": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "HomebaseBannerIcon:brs16_dinohunter": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaBackpack:bid_715_dinohunterfemale": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaMusicPack:musicpack_078_raisetheroof": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaSkyDiveContrail:trails_id_115_tube": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "HomebaseBannerIcon:brs16_chickenwarrior": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaDance:emoji_s16_chickenwarrior": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaDance:spid_246_obsidian": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Token:athena_s16_nobattlebundleoption_token": 1
+    },
+    {},
+    {},
+    {
+      "AthenaPickaxe:pickaxe_id_568_obsidianfemale": 1
+    },
+    {},
+    {
+      "HomebaseBannerIcon:brs16_obsidian": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaLoadingScreen:lsid_280_sentinel": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaBackpack:bid_717_towersentinel": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {}
+  ]
+}
