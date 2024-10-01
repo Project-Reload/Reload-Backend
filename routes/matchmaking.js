@@ -6,7 +6,7 @@ const MMCode = require("../model/mmcodes.js");
 const { verifyToken } = require("../tokenManager/tokenVerify.js");
 const qs = require("qs");
 const error = require("../structs/error.js");
-const kv = require("./kv/kv.js");
+const kv = require("../kv/kv.js");
 global.kv = kv;
 
 let buildUniqueId = {};
