@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const profile = require("./../model/profiles.js")
 
-const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");
+const { verifyToken } = require("../tokenManager/tokenVerify.js");
 
 
 app.get("/fortnite/api/game/v2/privacy/account/:accountId", verifyToken , async (req, res) => {

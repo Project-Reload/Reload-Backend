@@ -77,6 +77,17 @@ app.get("/Builds/Fortnite/Content/CloudDir/*.chunk", async (req, res) => {
     res.status(200).send(chunk).end();
 })
 
+app.post("/fortnite/api/game/v2/grant_access/*", async (req, res) => {
+    log.debug("POST /fortnite/api/game/v2/grant_access/* called");
+    res.json({});
+    res.status(204);
+})
+
+app.post("/api/v1/user/setting", async (req, res) => {
+    log.debug("POST /api/v1/user/setting called");
+    res.json([]);
+})
+
 app.get("/Builds/Fortnite/Content/CloudDir/*.ini", async (req, res) => {
     const ini = fs.readFileSync(path.join(__dirname, "..", "responses", "CloudDir", "Full.ini"));
 
@@ -179,6 +190,11 @@ app.post("/fortnite/api/game/v2/chat/*/recommendGeneralChatRooms/pc", (req, res)
     log.debug("POST /fortnite/api/game/v2/chat/*/recommendGeneralChatRooms/pc called");
     res.json({});
 });
+
+app.get("/presence/api/v1/_/*/last-online", async (req, res) => {
+    log.debug("GET /presence/api/v1/_/*/last-online called");
+    res.json({})
+})
 
 app.get("/fortnite/api/receipts/v1/account/*/receipts", (req, res) => {
     log.debug("GET /fortnite/api/receipts/v1/account/*/receipts called");

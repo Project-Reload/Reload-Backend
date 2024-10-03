@@ -339,7 +339,7 @@ async function discordpost(itemShop) {
             color: 0x00FF7F,
             description: `${itemRarity}\n${itemPrice}`,
             thumbnail: {
-                url: item.images?.icon || "https://i.imgur.com/a7kIOt3.png"
+                url: item.images?.icon || "https://i.imgur.com/2RImwlb.png"
             }
         };
 

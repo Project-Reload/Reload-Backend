@@ -1,4 +1,4 @@
-const { Client, Intents, ActivityType } = require("discord.js");
+const { Client, Intents } = require("discord.js");
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
 const fs = require("fs");
 const path = require("path");
@@ -46,7 +46,7 @@ client.on("interactionCreate", async interaction => {
     executeCommand(path.join(__dirname, "commands"), interaction.commandName);
 });
 
-//AntiCrash Sysyem
+//AntiCrash System
 client.on("error", (err) => {
     console.log("Discord API Error:", err);
 });

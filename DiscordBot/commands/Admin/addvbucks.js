@@ -41,11 +41,12 @@ module.exports = {
     
     const embed = new MessageEmbed()
         .setTitle("Vbucks Changed")
-        .setDescription("Successfully changed the amount of vbucks for <@" + selectedUserId + "> by **" + vbucks + "**")
+        .setDescription("Successfully changed the amount of vbucks for <@" + selectedUserId + "> to **" + vbucks + "**")
+        .setThumbnail("https://i.imgur.com/yLbihQa.png")
         .setColor("GREEN")
         .setFooter({
             text: "Reload Backend",
-            iconURL: "https://i.imgur.com/yLbihQa.png"
+            iconURL: "https://i.imgur.com/2RImwlb.png"
         })
         .setTimestamp();
 

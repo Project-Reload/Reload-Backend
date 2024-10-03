@@ -37,13 +37,13 @@ module.exports = {
         await user.updateOne({ $set: { password: hashedPassword } });
 
         const embed = new MessageEmbed()
-            .setTitle("Passwork changed")
+            .setTitle("Password changed")
             .setDescription("Your account password has been changed")
             .setColor("GREEN")
             .setFooter({
-            text: "Reload Backend",
-            iconURL: "https://i.imgur.com/2RImwlb.png",
-        })
+                text: "Reload Backend",
+                iconURL: "https://i.imgur.com/2RImwlb.png",
+            })
             .setTimestamp();
         await interaction.editReply({ embeds: [embed], ephemeral: true });
     }

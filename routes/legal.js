@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express.Router();
 const fs = require("fs")
-const eulaJson = JSON.parse(fs.readFileSync('./responses/SharedAgreements.json', 'utf8'));
+const eulaJson = JSON.parse(fs.readFileSync('./responses/eula/SharedAgreements.json', 'utf8'));
 
 app.get("/eulatracking/api/shared/agreements/fn", async (req, res) => {
     res.json(eulaJson);

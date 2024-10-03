@@ -165,7 +165,14 @@ app.get("/epic/id/v2/sdk/accounts", async (req, res) => {
     }]);
 })
 
+app.delete("/account/api/oauth/sessions/kill/*", async (req, res) => {
+    log.debug("DELETE account/api/oauth/sessions/kill/* called");
+    res.status(204);
+    res.end();
+})
+
 app.all("/v1/epic-settings/public/users/*/values", (req, res) => {
+    log.debug("ALL /v1/epic-settings/public/users/*/values called");
     res.json({});
 })
 
@@ -173,5 +180,21 @@ app.get("/account/api/public/account/*/externalAuths", (req, res) => {
     log.debug("GET /account/api/public/account/*/externalAuths called");
     res.json([]);
 });
+
+app.get("/account/api/epicdomains/ssodomains", async (req, res) => {
+    log.debug("GET /account/api/epicdomains/ssodomains called");
+    res.json([
+        "unrealengine.com",
+        "unrealtournament.com",
+        "fortnite.com",
+        "epicgames.com"
+    ])
+})
+
+app.post("/fortnite/api/game/v2/tryPlayOnPlatform/account/*", async (req, res) => {
+    log.debug("POST /fortnite/api/game/v2/tryPlayOnPlatform/account/* called");
+    res.setHeader("Content-Type", "text/plain");
+    res.send(true);
+})
 
 module.exports = app;

@@ -38,6 +38,17 @@ module.exports = {
     if (!profile)
         return interaction.editReply({ content: "That user does not own an account", ephemeral: true });
 
-    await interaction.editReply({ content: "have been successfully removed **" + vbucks + "** vbucks for <@" + selectedUserId + ">", ephemeral: true });
+    const embed = new MessageEmbed()
+        .setTitle("Vbucks Changed")
+        .setDescription("Successfully changed the amount of vbucks for <@" + selectedUserId + "> to **" + vbucks + "**")
+        .setThumbnail("https://i.imgur.com/yLbihQa.png")
+        .setColor("GREEN")
+        .setFooter({
+            text: "Reload Backend",
+            iconURL: "https://i.imgur.com/2RImwlb.png"
+        })
+        .setTimestamp();
+
+    await interaction.editReply({ embeds: [embed], ephemeral: true });
 }
 }

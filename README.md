@@ -6,8 +6,6 @@ Reload Backend is a universal Fortnite private server backend written in [JavaSc
 
 Created by [Burlone](https://github.com/burlone0), This is a modded backend, all main backend credits to [Lawin](https://github.com/Lawin0129)
 
-Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
-
 ## Features
 * Locker:
     * [x] Changing items.
@@ -26,31 +24,38 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
     * [x] Customizable Item Shop.
     * [x] Purchasing items from the Item Shop.
     * [x] Gifting items to your friends.
-    * [x] Working Auto Item Shop (In Beta).
+    * [x] Working Auto Item Shop.
 * Discord Bot:
     * [x] Being able to activate/deactivate the Discord bot.
     * [x] Commands with very useful functions.
-* BattlePass (s2-s13):
+* BattlePass (s2-s16) / (We are working on season 15 while season 14 is currently not possible :C):
     * [x] Possibility to buy the battle pass.
     * [x] Possibility to purchase battle pass levels.
-* Challenges:
-    * [x] Daily missions worked (Backend Part).
-    * [x] Working weekly missions (Backend Part).
+    * [x] Possibility to gift the battle pass (BETA).
+* Challenges (Backend Part):
+    * [x] Daily missions worked.
+    * [x] Working weekly missions.
+    * [x] You can replace daily quests.
+    * [x] You can get help from your party to complete missions.
+* In-Game Events:
+    * [x] You will be able to activate various events that occurred in the game such as the rift in the sky and much more!
+* Winterfest Event (11.31, 19.01 & 23.10 / BETA):
+    * [x] The winterfest event should work with all its rewards!
 * SAC (Support A Creator):
     * [x] It supports a supported creator, you can set it using the `/createsac {code} {ingame-username}` command on discord.
     * [x] Rewards in vbucks for those who support a creator.
 * Matchmaker:
     * [x] An improved matchmaker.
+* Multiple Gameserver Support:
+    * [x] An improved multiple gameserver.
 * Website:
     * [x] A simple website where you can create an account to join the game.
-### XMPP Features
-- Parties (builds 3.5 to 14.50).
-- Chat (whispering, global chat, party chat).
-- Friends.
+* XMPP:
+    * [x] Parties.
+    * [x] Chat (whispering, global chat, party chat).
+    * [x] Friends.
 
 ## TO-DO
-- [ ] New supported battle passes to be added (s14 to s16)
-- [ ] Create a support for winterfest presents (11.31, 19.01 & 23.10)
 - [ ] Create a support with save the world
 
 ## Discord Bot Commands
@@ -81,20 +86,28 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 - `/removeitem {user} {cosmeticname}` - Allows you to remove a cosmetic (skin, pickaxe, glider, etc.) from a user
 - `/unban {targetUsername}` - Unban a user from the backend by their username.
 ### How to set up moderators?
-1) Go to Config/config.json in the directory you extracted Reload Backend into.
-2) Open it, you should see a "moderators" section in the file.
+1) Go to **Config/config.json** in the directory you extracted Reload Backend into.
+2) Open it, you should see a **"moderators"** section in the file.
 3) You have to get your discord id and replace discordId with it.
 4) You can set multiple moderators like this `["discordId","discordId2"]`.
+### How to setup multiple gameservers
+1) Go to **Config/config.json** in the directory you extracted Reload Backend into.
+2) Open it, you should see a **"gameServerIP"** section in the file.
+3) To add more gameservers you will have to do it like this `"gameServerIP": ["127.0.0.1:7777:playlist_defaultsolo", "127.0.0.1:7777:playlist_defaultduo"],`
+4) You have now added solos and duos to your matchmaking 
 
 ## How to start Reload Backend
 1) Install [NodeJS](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/try/download/community).
-2) Download and Extract Reload Backend to a safe location.
-3) Run "install_packages.bat" to install all the required modules.
-4) Go to Config/config.json in the directory you extracted Reload Backend into.
-5) Open it, set your discord bot token (DO NOT SHARE THIS TOKEN) and save it. The discord bot will be used for creating accounts and managing your account (You can disable the discord bot by entering "bUseDiscordBot" to false in "Config/config.json").
-6) Run "start.bat", if there is no errors, it should work.
-7) Use something to redirect the Fortnite servers to localhost:8080 (Which could be fiddler, ssl bypass that redirects servers, etc...)
+2) **Download** and **Extract** Reload Backend to a safe location.
+3) Run **"install_packages.bat"** to install all the required modules.
+4) Go to **Config/config.json** in the directory you extracted Reload Backend into.
+5) Open it, set your discord bot token **(DO NOT SHARE THIS TOKEN)** and **save it**. The discord bot will be used for creating accounts and managing your account (You can disable the discord bot by entering "bUseDiscordBot" to false in "Config/config.json").
+6) Run **"start.bat"**, if there is no errors, it should work.
+7) Use something to redirect the Fortnite servers to **localhost:8080** (Which could be fiddler, ssl bypass that redirects servers, etc...)
 8) When Fortnite launches and is connected to the backend, enter your email and password (or launch with an exchange code) then press login. It should let you in and everything should be working fine.
+
+## License
+This **project/backend** is licensed under the **BSD 3-Clause License.**
 
 ## Credits
 ### Credits to:
@@ -103,5 +116,10 @@ Challenges contributed by [NotTacos](https://github.com/PhysicalDrive)
 * [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
 * [zvivsp](https://github.com/zvivsp) - For creating the graphics
 * [joaco](https://github.com/ojotaa0124) - For helping with CloudStorage and responses stuff
-* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes
+* [PRO100KatYT](https://github.com/PRO100KatYT) - For helping with some .json files
+* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11 - s16) / (We are working on season 15 while season 14 is currently not possible :C)
 * [nade](https://github.com/gn1e) - For creating the base of the Auto Item Shop (Even if [Burlone](https://github.com/burlone0) solved many problems heheheh)
+
+---
+
+**Reload Backend** is under continuous development and there may be errors of any kind, if you want to give advice on what to add and how to improve the project or report any errors you can do so via our [Discord](https://discord.gg/PmYMpY9thJ) server

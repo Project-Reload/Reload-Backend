@@ -4,6 +4,7 @@ const fs = require("fs");
 const rateLimit = require("express-rate-limit");
 const jwt = require("jsonwebtoken");
 const path = require("path");
+const kv = require("./structs/kv.js");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 
 const log = require("./structs/log.js");
@@ -41,6 +42,7 @@ fs.writeFileSync("./tokenManager/tokens.json", JSON.stringify(tokens, null, 2));
 global.accessTokens = tokens.accessTokens;
 global.refreshTokens = tokens.refreshTokens;
 global.clientTokens = tokens.clientTokens;
+global.kv = kv;
 
 global.exchangeCodes = [];
 

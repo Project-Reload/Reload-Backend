@@ -46,4 +46,22 @@ app.get("/fortnite/api*/versioncheck*", (req, res) => {
     });
 });
 
+app.get("/fortnite/api/v2/versioncheck/*", async (req, res) => {
+  res.json({
+      "type": "NO_UPDATE"
+  })
+})
+
+app.get("/fortnite/api/v2/versioncheck*", async (req, res) => {
+  res.json({
+      "type": "NO_UPDATE"
+  })
+})
+
+app.get("/fortnite/api/versioncheck*", async (req, res) => {
+  res.json({
+      "type": "NO_UPDATE"
+  })
+})
+
 module.exports = app;

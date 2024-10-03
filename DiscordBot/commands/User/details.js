@@ -25,7 +25,7 @@ module.exports = {
             { name: 'Email:', value: `${user.email}` },
             { name: "Online:", value: `${onlineStatus ? "Yes" : "No"}` },
             { name: "Banned:", value: `${user.banned ? "Yes" : "No"}` },
-            { name: 'Vbucks:', value: `${currency} V-Bucks` },
+            { name: 'V-Bucks:', value: `${currency} V-Bucks` },
             { name: "Account ID:", value: user.accountId })
         .setTimestamp()
         .setThumbnail(interaction.user.avatarURL())

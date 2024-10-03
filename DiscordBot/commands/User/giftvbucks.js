@@ -16,7 +16,7 @@ module.exports = {
                 required: true,
             },
             {
-                name: 'v-bucks',
+                name: 'vbucks',
                 type: 3,
                 description: 'The amount of V-Bucks you want to gift',
                 required: true,
@@ -61,7 +61,7 @@ module.exports = {
                 return interaction.editReply({ content: "You cannot **gift yourself**", ephemeral: true });
             }
 
-            const vbucks = parseInt(interaction.options.getString('v-bucks'));
+            const vbucks = parseInt(interaction.options.getString('vbucks'));
 
             if (isNaN(vbucks)) {
                 return interaction.editReply({ content: "You need to type a **valid number** for **V-Bucks**", ephemeral: true });
@@ -75,9 +75,13 @@ module.exports = {
     
             const embed = new EmbedBuilder()
                 .setTitle("Gift Sent!")
-                .setDescription(`Gifted ${vbucks} V-Bucks to ${recieveuser.username}`)
-                .setThumbnail("https://media.discordapp.net/attachments/1134514551606476810/1152156761793511425/250vbucks.png")
-                .setColor("#1eff00");
+                .setDescription(`Gifted **${vbucks} V-Bucks** to **${recieveuser.username}**`)
+                .setThumbnail("https://i.imgur.com/yLbihQa.png")
+                .setColor("GREEN")
+                .setFooter({
+                    text: "Reload Backend",
+                    iconURL: "https://i.imgur.com/2RImwlb.png"
+                });
 
             await interaction.editReply({ embeds: [embed], ephemeral: true });
 

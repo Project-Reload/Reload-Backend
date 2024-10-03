@@ -44,6 +44,6 @@ module.exports = {
 
         if (accessToken != -1 || refreshToken != -1) functions.UpdateTokens();
 
-        interaction.editReply({ content: `Successfully banned ${targetUser.username}`, ephemeral: true });
+        interaction.editReply({ content: `Successfully banned **${targetUser.username}**`, ephemeral: true });
     }
 }

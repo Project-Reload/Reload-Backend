@@ -37,9 +37,13 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setTitle("Daily V-Bucks Claimed!")
-            .setDescription(`You have claimed your daily 250 V-Bucks!`)
-            .setThumbnail("https://media.discordapp.net/attachments/1134514551606476810/1152156761793511425/250vbucks.png")
+            .setDescription(`You have claimed your daily **250 V-Bucks**!`)
+            .setThumbnail("https://i.imgur.com/yLbihQa.png")
             .setColor("#1eff00")
+            .setFooter({
+                text: "Reload Backend",
+                iconURL: "https://i.imgur.com/2RImwlb.png"
+            })
         
         await interaction.followUp({ embeds: [embed], ephemeral: true });
     } catch (error) {
