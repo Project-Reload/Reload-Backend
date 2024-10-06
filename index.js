@@ -79,7 +79,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 fs.readdirSync("./routes").forEach(fileName => {
-    app.use(require(`./routes/${fileName}`));
+    try {
+        app.use(require(`./routes/${fileName}`));
+    } catch (err) {
+        log.error(`Routes Error: Failed to load ${fileName}`)
+    }
 });
 
 app.get("/unknown", (req, res) => {
