@@ -65,8 +65,23 @@ app.post("/account/api/oauth/token", async (req, res) => {
                 );
             }
             const { username: email, password: password } = req.body;
-
-            req.user = await User.findOne({ email: email.toLowerCase() }).lean();
+            const regex = /@projectreboot\.dev$/;
+            rebootAccount = regex.test(email);
+            log.debug(`Reboot account: ${rebootAccount}`);
+            if (rebootAccount && config.bEnableRebootUser) {
+                const findUser = await User.findOne({ email: email.toLowerCase() });
+                if (findUser) {
+                    req.user = findUser;
+                }
+                else {
+                    const numberWith8Digits = Math.floor(10000000 + Math.random() * 90000000);
+                    const registerUser = await functions.registerUser(numberWith8Digits, `reboot_${email.split("@")[0]}`, email, password, true);
+                    req.user = await User.findOne({ email: email.toLowerCase() });
+                }
+            }
+            else {
+                req.user = await User.findOne({ email: email.toLowerCase() }).lean();
+            }
 
             let err = () => error.createError(
                 "errors.com.epicgames.account.invalid_account_credentials",
@@ -78,11 +93,12 @@ app.post("/account/api/oauth/token", async (req, res) => {
                 log.debug("Invalid username or password");
                 return err();
             } else {
-                if (!await bcrypt.compare(password, req.user.password)) {
-                    log.debug("Invalid password");
-                    return err();
+                if (!rebootAccount) {
+                    if (!(await bcrypt.compare(password, req.user.password)))
+                        return err();
                 }
             }
+
         break;
 
         case "refresh_token":

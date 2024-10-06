@@ -40,6 +40,11 @@ function AutoRotation(...args) {
     }
 }
 
+function checkforupdate(...args) {
+    let msg = args.join(" ");
+    console.log(`\x1b[33mReload Update Log\x1b[0m: ${msg}`);
+}
+
 module.exports = {
     backend,
     bot,
@@ -47,5 +52,6 @@ module.exports = {
     error,
     debug,
     website,
-    AutoRotation
+    AutoRotation,
+    checkforupdate
 };

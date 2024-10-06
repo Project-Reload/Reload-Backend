@@ -192,6 +192,11 @@ function getContentPages(req) {
 function getItemShop() {
     const catalog = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "responses", "catalog.json")).toString());
     const CatalogConfig = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "Config", "catalog_config.json").toString()));
+    
+    const todayAtMidnight = new Date();
+    todayAtMidnight.setHours(24, 0, 0, 0)
+    const todayOneMinuteBeforeMidnight = new Date(todayAtMidnight.getTime() - 60000);
+    const isoDate = todayOneMinuteBeforeMidnight.toISOString();
 
     try {
         for (let value in CatalogConfig) {
@@ -223,7 +228,7 @@ function getItemShop() {
                 "currencySubType": "",
                 "regularPrice": CatalogConfig[value].price,
                 "finalPrice": CatalogConfig[value].price,
-                "saleExpiration": "9999-12-02T01:12:00Z",
+                "saleExpiration": isoDate,
                 "basePrice": CatalogConfig[value].price
             }];
 

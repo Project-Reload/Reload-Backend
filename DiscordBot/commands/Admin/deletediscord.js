@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const Users = require('../../../model/user.js');
 const Profiles = require('../../../model/profiles.js');
+const SACCodes = require('../../../model/saccodes.js');
 const config = require('../../../Config/config.json')
 
 module.exports = {
@@ -26,6 +27,7 @@ module.exports = {
         const discordId = interaction.options.getUser('username').id;
         const user = interaction.options.getUser('username');
         const deleteAccount = await Users.findOne({ discordId: discordId })
+        const accountId = deleteAccount.accountId;
 
         if (deleteAccount == null) {
             await interaction.editReply({ content: "The selected user does not have **an account**", ephemeral: true });
@@ -34,6 +36,7 @@ module.exports = {
 
         await Users.deleteOne({ discordId: discordId })
         await Profiles.deleteOne({ discordId: discordId })
+        await SACCodes.deleteOne({ owneraccountId: accountId });
 
         const embed = new MessageEmbed()
             .setTitle("Account deleted")

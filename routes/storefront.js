@@ -10,7 +10,11 @@ const keychain = require("../responses/keychain.json");
 
 app.get("/fortnite/api/storefront/v2/catalog", (req, res) => {
     log.debug("Request to /fortnite/api/storefront/v2/catalog");
-    if (req.headers["user-agent"].includes("2870186")) return res.status(404).end();
+    if (req.headers["user-agent"] == undefined) return;
+    if (req.headers["user-agent"].includes("2870186")) {
+        return res.status(404).end();
+    }
+    
     res.json(functions.getItemShop());
 });
 

@@ -10,6 +10,7 @@ const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 const log = require("./structs/log.js");
 const error = require("./structs/error.js");
 const functions = require("./structs/functions.js");
+const CheckForUpdate = require("./structs/checkforupdate.js");
 
 const app = express();
 
@@ -45,6 +46,22 @@ global.clientTokens = tokens.clientTokens;
 global.kv = kv;
 
 global.exchangeCodes = [];
+
+const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, "./package.json")).toString());
+if (!packageJson) throw new Error("Failed to parse package.json");
+const version = packageJson.version;
+
+const checkUpdates = async () => {
+    try {
+        await CheckForUpdate.checkForUpdate(version);
+    } catch (err) {
+        log.error("Failed to check for updates");
+    }
+};
+
+checkUpdates();
+
+setInterval(checkUpdates, 60000);
 
 mongoose.set('strictQuery', true);
 

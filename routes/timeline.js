@@ -6,6 +6,11 @@ const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 
 app.get("/fortnite/api/calendar/v1/timeline", async (req, res) => {
     const memory = functions.GetVersionInfo(req);
+    
+    const todayAtMidnight = new Date();
+    todayAtMidnight.setHours(24, 0, 0, 0)
+    const todayOneMinuteBeforeMidnight = new Date(todayAtMidnight.getTime() - 60000);
+    const isoDate = todayOneMinuteBeforeMidnight.toISOString();
 
     var activeEvents = [
     {
@@ -1140,11 +1145,11 @@ app.get("/fortnite/api/calendar/v1/timeline", async (req, res) => {
         "seasonBegin": "2020-01-01T13:00:00Z",
         "seasonEnd": "9999-01-01T14:00:00Z",
         "seasonDisplayedEnd": "9999-01-01T07:30:00Z",
-        "weeklyStoreEnd": "9999-01-01T00:00:00Z",
+        "weeklyStoreEnd": isoDate,
         "sectionStoreEnds": {
-            "Featured": "9999-01-01T00:00:00.000Z"
+            "Featured": isoDate
         },
-        "dailyStoreEnd": "9999-01-01T00:00:00Z"
+        "dailyStoreEnd": isoDate
     };
     
     var states = [{
