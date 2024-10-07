@@ -1,9 +1,10 @@
 const { Client, Intents } = require("discord.js");
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_BANS] });
 const fs = require("fs");
 const path = require("path");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 const log = require("../structs/log.js");
+const Users = require("../model/user.js");
 
 client.once("ready", () => {
     log.bot("Bot is up and running!");
@@ -44,6 +45,57 @@ client.on("interactionCreate", async interaction => {
     };
 
     executeCommand(path.join(__dirname, "commands"), interaction.commandName);
+});
+
+client.on("guildBanAdd", async (ban) => {
+    if (!config.bEnableCrossBans) 
+        return;
+
+    const memberBan = await ban.fetch();
+
+    if (memberBan.user.bot)
+        return;
+
+    const userData = await Users.findOne({ discordId: memberBan.user.id });
+
+    if (userData && userData.banned !== true) {
+        await userData.updateOne({ $set: { banned: true } });
+
+        let refreshToken = global.refreshTokens.findIndex(i => i.accountId == userData.accountId);
+
+        if (refreshToken != -1)
+            global.refreshTokens.splice(refreshToken, 1);
+        let accessToken = global.accessTokens.findIndex(i => i.accountId == userData.accountId);
+
+        if (accessToken != -1) {
+            global.accessTokens.splice(accessToken, 1);
+            let xmppClient = global.Clients.find(client => client.accountId == userData.accountId);
+            if (xmppClient)
+                xmppClient.client.close();
+        }
+
+        if (accessToken != -1 || refreshToken != -1) {
+            await functions.UpdateTokens();
+        }
+
+        log.debug(`user ${memberBan.user.username} (ID: ${memberBan.user.id}) was banned on the discord and also in the game (Cross Ban active).`);
+    }
+});
+
+client.on("guildBanRemove", async (ban) => {
+    if (!config.bEnableCrossBans) 
+        return;
+
+    if (ban.user.bot)
+        return;
+
+    const userData = await Users.findOne({ discordId: ban.user.id });
+    
+    if (userData && userData.banned === true) {
+        await userData.updateOne({ $set: { banned: false } });
+
+        log.debug(`User ${ban.user.username} (ID: ${ban.user.id}) is now unbanned.`);
+    }
 });
 
 //AntiCrash System

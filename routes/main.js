@@ -217,8 +217,7 @@ app.post("/api/v1/assets/Fortnite/*/*", async (req, res) => {
     if (req.body.hasOwnProperty("FortCreativeDiscoverySurface") && req.body.FortCreativeDiscoverySurface == 0) {
         const discovery_api_assets = require("./../responses/Discovery/discovery_api_assets.json");
         res.json(discovery_api_assets)
-    }
-    else {
+    } else {
         res.json({
             "FortCreativeDiscoverySurface": {
                 "meta": {

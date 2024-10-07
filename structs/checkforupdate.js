@@ -3,16 +3,44 @@ const fetch = require("node-fetch");
 
 class CheckForUpdate {
     static async checkForUpdate(currentVersion) {
-        const packageJson = await fetch('https://raw.githubusercontent.com/Project-Reload/Reload-Backend/refs/heads/main/package.json')
-            .then(res => res.json());
+        try {
+            const response = await fetch('https://raw.githubusercontent.com/Project-Reload/Reload-Backend/main/package.json');
+            if (!response.ok) {
+                log.error(`Failed to fetch package.json. Status: ${response.status}`);
+                return false;
+            }
 
-        const latestVersion = packageJson.version.replace(/\./g, "");
-        const currentVersionFormatted = currentVersion.replace(/\./g, "");
+            const packageJson = await response.json();
+            const latestVersion = packageJson.version;
 
-        if (parseFloat(latestVersion) > parseFloat(currentVersionFormatted)) {
-            log.checkforupdate(`A new version of the Backend has been released! ${currentVersion} -> ${packageJson.version}, Download it from the GitHub repo.`);
+            if (isNewerVersion(latestVersion, currentVersion)) {
+                log.checkforupdate(`A new version of the Backend has been released! ${currentVersion} -> ${latestVersion}, Download it from the GitHub repo.`);
+                return true;
+            } else {
+
+            }
+
+            return false;
+        } catch (error) {
+            log.error(`Error while checking for updates: ${error.message}`);
+            return false;
         }
     }
+}
+
+function isNewerVersion(latest, current) {
+    const latestParts = latest.split('.').map(Number);
+    const currentParts = current.split('.').map(Number);
+
+    for (let i = 0; i < latestParts.length; i++) {
+        if (latestParts[i] > (currentParts[i] || 0)) {
+            return true;
+        } else if (latestParts[i] < (currentParts[i] || 0)) {
+            return false;
+        }
+    }
+
+    return false;
 }
 
 module.exports = CheckForUpdate;

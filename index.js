@@ -47,13 +47,20 @@ global.kv = kv;
 
 global.exchangeCodes = [];
 
+let updateFound = false;
+
 const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, "./package.json")).toString());
 if (!packageJson) throw new Error("Failed to parse package.json");
 const version = packageJson.version;
 
 const checkUpdates = async () => {
+    if (updateFound) return;
+
     try {
-        await CheckForUpdate.checkForUpdate(version);
+        const updateAvailable = await CheckForUpdate.checkForUpdate(version);
+        if (updateAvailable) {
+            updateFound = true;
+        }
     } catch (err) {
         log.error("Failed to check for updates");
     }

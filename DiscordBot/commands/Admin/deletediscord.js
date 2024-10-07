@@ -36,7 +36,9 @@ module.exports = {
 
         await Users.deleteOne({ discordId: discordId })
         await Profiles.deleteOne({ discordId: discordId })
-        await SACCodes.deleteOne({ owneraccountId: accountId });
+        await SACCodes.deleteOne({ owneraccountId: accountId }).catch(error => {
+            // Nothing Uwu or just use: log.debug('No SAC codes found or error occurred:', error);
+        });
 
         const embed = new MessageEmbed()
             .setTitle("Account deleted")
