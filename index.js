@@ -88,7 +88,7 @@ fs.readdirSync("./routes").forEach(fileName => {
 
 app.get("/unknown", (req, res) => {
     log.debug('GET /unknown endpoint called');
-    res.json({ msg: "Reboot Backend - Made by Burlone" });
+    res.json({ msg: "Reload Backend - Made by Burlone" });
 });
 
 app.listen(PORT, () => {

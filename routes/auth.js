@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const error = require("../structs/error.js");
 const functions = require("../structs/functions.js");
 const log = require("../structs/log.js");
+const config = require('../Config/config.json')
 
 const tokenCreation = require("../tokenManager/tokenCreation.js");
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");

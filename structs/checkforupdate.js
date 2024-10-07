@@ -10,8 +10,7 @@ class CheckForUpdate {
         const currentVersionFormatted = currentVersion.replace(/\./g, "");
 
         if (parseFloat(latestVersion) > parseFloat(currentVersionFormatted)) {
-            const message = `A new version of the Backend has been released! ${currentVersion} -> ${packageJson.version}`;
-            log.checkforupdate(`${message}\nDownload it from the GitHub repo.`);
+            log.checkforupdate(`A new version of the Backend has been released! ${currentVersion} -> ${packageJson.version}, Download it from the GitHub repo.`);
         }
     }
 }
