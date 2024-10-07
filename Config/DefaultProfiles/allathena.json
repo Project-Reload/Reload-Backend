@@ -20,8 +20,8 @@
             },
             "Dance": {
               "items": [
-                "AthenaDance:EID_BoogieDown",
                 "AthenaDance:EID_DanceMoves",
+                "",
                 "",
                 "",
                 "",
@@ -35,7 +35,7 @@
             },
             "Character": {
               "items": [
-                "AthenaCharacter:CID_001_Athena_Commando_F_Default"
+                ""
               ],
               "activeVariants": [
                 {
@@ -3595,102 +3595,6 @@
     },
     "BannerToken:BannerToken_STW007_StarlightScience": {
       "templateId": "BannerToken:BannerToken_STW007_StarlightScience",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "BannerToken:BannerToken_TBD_S13_Badge_1": {
-      "templateId": "BannerToken:BannerToken_TBD_S13_Badge_1",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "BannerToken:BannerToken_TBD_S13_Badge_2": {
-      "templateId": "BannerToken:BannerToken_TBD_S13_Badge_2",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "BannerToken:BannerToken_TBD_S13_Badge_3": {
-      "templateId": "BannerToken:BannerToken_TBD_S13_Badge_3",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "BannerToken:BannerToken_TBD_S13_Badge_4": {
-      "templateId": "BannerToken:BannerToken_TBD_S13_Badge_4",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "BannerToken:BannerToken_TBD_S13_Badge_5": {
-      "templateId": "BannerToken:BannerToken_TBD_S13_Badge_5",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "BannerToken:BannerToken_TBD_S13_SeasonBanner1": {
-      "templateId": "BannerToken:BannerToken_TBD_S13_SeasonBanner1",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "BannerToken:BannerToken_TBD_S13_SeasonBanner2": {
-      "templateId": "BannerToken:BannerToken_TBD_S13_SeasonBanner2",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "BannerToken:BannerToken_TBD_S13_SpraySweater": {
-      "templateId": "BannerToken:BannerToken_TBD_S13_SpraySweater",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -18824,30 +18728,6 @@
       },
       "quantity": 1
     },
-    "AthenaBackpack:BID_NPC_CloakedAssassin": {
-      "templateId": "AthenaBackpack:BID_NPC_CloakedAssassin",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaBackpack:BID_NPC_HightowerDate": {
-      "templateId": "AthenaBackpack:BID_NPC_HightowerDate",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaBackpack:BID_STWHero": {
       "templateId": "AthenaBackpack:BID_STWHero",
       "attributes": {
@@ -18862,30 +18742,6 @@
     },
     "AthenaBackpack:BID_STWHeroNoDefaultBackpack": {
       "templateId": "AthenaBackpack:BID_STWHeroNoDefaultBackpack",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaBackpack:BID_TBD_Cosmos": {
-      "templateId": "AthenaBackpack:BID_TBD_Cosmos",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaPet:BID_TBD_MechanicalEngineer_Owl": {
-      "templateId": "AthenaPet:BID_TBD_MechanicalEngineer_Owl",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -19173,18 +19029,6 @@
       },
       "quantity": 1
     },
-    "AthenaCharacter:Character_BlingHearts_NPC": {
-      "templateId": "AthenaCharacter:Character_BlingHearts_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaCharacter:Character_BlueGlaze": {
       "templateId": "AthenaCharacter:Character_BlueGlaze",
       "attributes": {
@@ -19418,18 +19262,6 @@
             ]
           }
         ],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:Character_ChromeDJ_NPC": {
-      "templateId": "AthenaCharacter:Character_ChromeDJ_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
         "favorite": false
       },
       "quantity": 1
@@ -20181,18 +20013,6 @@
       },
       "quantity": 1
     },
-    "AthenaCharacter:Character_GrandScheme_NPC": {
-      "templateId": "AthenaCharacter:Character_GrandScheme_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaCharacter:Character_GrandScheme_Orange": {
       "templateId": "AthenaCharacter:Character_GrandScheme_Orange",
       "attributes": {
@@ -20305,18 +20125,6 @@
       },
       "quantity": 1
     },
-    "AthenaCharacter:Character_HeistSleek_NPC": {
-      "templateId": "AthenaCharacter:Character_HeistSleek_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaCharacter:Character_Hitman_Dark": {
       "templateId": "AthenaCharacter:Character_Hitman_Dark",
       "attributes": {
@@ -20361,18 +20169,6 @@
     },
     "AthenaCharacter:Character_Imitator": {
       "templateId": "AthenaCharacter:Character_Imitator",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:Character_Imitator_NPC": {
-      "templateId": "AthenaCharacter:Character_Imitator_NPC",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -21401,18 +21197,6 @@
     },
     "AthenaCharacter:Character_KeyTracker": {
       "templateId": "AthenaCharacter:Character_KeyTracker",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:Character_Knight_Boss_NPC": {
-      "templateId": "AthenaCharacter:Character_Knight_Boss_NPC",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -22909,18 +22693,6 @@
       },
       "quantity": 1
     },
-    "AthenaCharacter:Character_PossessionHologram_NPC": {
-      "templateId": "AthenaCharacter:Character_PossessionHologram_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaCharacter:Character_PrimeOrder": {
       "templateId": "AthenaCharacter:Character_PrimeOrder",
       "attributes": {
@@ -23250,18 +23022,6 @@
             ]
           }
         ],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:Character_Robot_Hologram_NPC": {
-      "templateId": "AthenaCharacter:Character_Robot_Hologram_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
         "favorite": false
       },
       "quantity": 1
@@ -23775,18 +23535,6 @@
       },
       "quantity": 1
     },
-    "AthenaCharacter:Character_TheHerald_NPC": {
-      "templateId": "AthenaCharacter:Character_TheHerald_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaCharacter:Character_TigerRootFame": {
       "templateId": "AthenaCharacter:Character_TigerRootFame",
       "attributes": {
@@ -23864,30 +23612,6 @@
             ]
           }
         ],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:Character_Titanium_NPC": {
-      "templateId": "AthenaCharacter:Character_Titanium_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:Character_TrainingGroundBot_NPC": {
-      "templateId": "AthenaCharacter:Character_TrainingGroundBot_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
         "favorite": false
       },
       "quantity": 1
@@ -26100,11 +25824,147 @@
         "xp": 0,
         "variants": [
           {
-            "channel": "Parts",
-            "active": "Stage0",
+            "channel": "JerseyColor",
+            "active": "Color.Fortnite",
             "owned": [
-              "Stage0",
-              "Stage1"
+              "Color.Fortnite",
+              "Color.Argentina",
+              "Color.Australia",
+              "Color.Belgium",
+              "Color.Brazil",
+              "Color.Canada",
+              "Color.Colombia",
+              "Color.Denmark",
+              "Color.Egypt",
+              "Color.England",
+              "Color.France",
+              "Color.Germany",
+              "Color.Iceland",
+              "Color.Italy",
+              "Color.Ireland",
+              "Color.Japan",
+              "Color.Korea",
+              "Color.Mexico",
+              "Color.Netherlands",
+              "Color.NewZealand",
+              "Color.Nigeria",
+              "Color.Norway",
+              "Color.Poland",
+              "Color.Portugal",
+              "Color.Russia",
+              "Color.Saudi",
+              "Color.Spain",
+              "Color.Sweden",
+              "Color.Switzerland",
+              "Color.Terkey",
+              "Color.Uruguay",
+              "Color.USA"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
             ]
           }
         ],
@@ -26121,12 +25981,147 @@
         "xp": 0,
         "variants": [
           {
-            "channel": "ClothingColor",
-            "active": "Mat0",
+            "channel": "JerseyColor",
+            "active": "Color.Fortnite",
             "owned": [
-              "Mat0",
-              "Mat1",
-              "Mat2"
+              "Color.Fortnite",
+              "Color.Argentina",
+              "Color.Australia",
+              "Color.Belgium",
+              "Color.Brazil",
+              "Color.Canada",
+              "Color.Colombia",
+              "Color.Denmark",
+              "Color.Egypt",
+              "Color.England",
+              "Color.France",
+              "Color.Germany",
+              "Color.Iceland",
+              "Color.Italy",
+              "Color.Ireland",
+              "Color.Japan",
+              "Color.Korea",
+              "Color.Mexico",
+              "Color.Netherlands",
+              "Color.NewZealand",
+              "Color.Nigeria",
+              "Color.Norway",
+              "Color.Poland",
+              "Color.Portugal",
+              "Color.Russia",
+              "Color.Saudi",
+              "Color.Spain",
+              "Color.Sweden",
+              "Color.Switzerland",
+              "Color.Terkey",
+              "Color.Uruguay",
+              "Color.USA"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
             ]
           }
         ],
@@ -26143,11 +26138,147 @@
         "xp": 0,
         "variants": [
           {
-            "channel": "Parts",
-            "active": "Stage1",
+            "channel": "JerseyColor",
+            "active": "Color.Fortnite",
             "owned": [
-              "Stage1",
-              "Stage2"
+              "Color.Fortnite",
+              "Color.Argentina",
+              "Color.Australia",
+              "Color.Belgium",
+              "Color.Brazil",
+              "Color.Canada",
+              "Color.Colombia",
+              "Color.Denmark",
+              "Color.Egypt",
+              "Color.England",
+              "Color.France",
+              "Color.Germany",
+              "Color.Iceland",
+              "Color.Italy",
+              "Color.Ireland",
+              "Color.Japan",
+              "Color.Korea",
+              "Color.Mexico",
+              "Color.Netherlands",
+              "Color.NewZealand",
+              "Color.Nigeria",
+              "Color.Norway",
+              "Color.Poland",
+              "Color.Portugal",
+              "Color.Russia",
+              "Color.Saudi",
+              "Color.Spain",
+              "Color.Sweden",
+              "Color.Switzerland",
+              "Color.Terkey",
+              "Color.Uruguay",
+              "Color.USA"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
             ]
           }
         ],
@@ -26162,7 +26293,152 @@
         "level": 1,
         "item_seen": true,
         "xp": 0,
-        "variants": [],
+        "variants": [
+          {
+            "channel": "JerseyColor",
+            "active": "Color.Fortnite",
+            "owned": [
+              "Color.Fortnite",
+              "Color.Argentina",
+              "Color.Australia",
+              "Color.Belgium",
+              "Color.Brazil",
+              "Color.Canada",
+              "Color.Colombia",
+              "Color.Denmark",
+              "Color.Egypt",
+              "Color.England",
+              "Color.France",
+              "Color.Germany",
+              "Color.Iceland",
+              "Color.Italy",
+              "Color.Ireland",
+              "Color.Japan",
+              "Color.Korea",
+              "Color.Mexico",
+              "Color.Netherlands",
+              "Color.NewZealand",
+              "Color.Nigeria",
+              "Color.Norway",
+              "Color.Poland",
+              "Color.Portugal",
+              "Color.Russia",
+              "Color.Saudi",
+              "Color.Spain",
+              "Color.Sweden",
+              "Color.Switzerland",
+              "Color.Terkey",
+              "Color.Uruguay",
+              "Color.USA"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
+          }
+        ],
         "favorite": false
       },
       "quantity": 1
@@ -26174,7 +26450,152 @@
         "level": 1,
         "item_seen": true,
         "xp": 0,
-        "variants": [],
+        "variants": [
+          {
+            "channel": "JerseyColor",
+            "active": "Color.Fortnite",
+            "owned": [
+              "Color.Fortnite",
+              "Color.Argentina",
+              "Color.Australia",
+              "Color.Belgium",
+              "Color.Brazil",
+              "Color.Canada",
+              "Color.Colombia",
+              "Color.Denmark",
+              "Color.Egypt",
+              "Color.England",
+              "Color.France",
+              "Color.Germany",
+              "Color.Iceland",
+              "Color.Italy",
+              "Color.Ireland",
+              "Color.Japan",
+              "Color.Korea",
+              "Color.Mexico",
+              "Color.Netherlands",
+              "Color.NewZealand",
+              "Color.Nigeria",
+              "Color.Norway",
+              "Color.Poland",
+              "Color.Portugal",
+              "Color.Russia",
+              "Color.Saudi",
+              "Color.Spain",
+              "Color.Sweden",
+              "Color.Switzerland",
+              "Color.Terkey",
+              "Color.Uruguay",
+              "Color.USA"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
+          }
+        ],
         "favorite": false
       },
       "quantity": 1
@@ -26188,19 +26609,148 @@
         "xp": 0,
         "variants": [
           {
-            "channel": "Pattern",
-            "active": "Mat0",
-            "owned": []
+            "channel": "JerseyColor",
+            "active": "Color.Fortnite",
+            "owned": [
+              "Color.Fortnite",
+              "Color.Argentina",
+              "Color.Australia",
+              "Color.Belgium",
+              "Color.Brazil",
+              "Color.Canada",
+              "Color.Colombia",
+              "Color.Denmark",
+              "Color.Egypt",
+              "Color.England",
+              "Color.France",
+              "Color.Germany",
+              "Color.Iceland",
+              "Color.Italy",
+              "Color.Ireland",
+              "Color.Japan",
+              "Color.Korea",
+              "Color.Mexico",
+              "Color.Netherlands",
+              "Color.NewZealand",
+              "Color.Nigeria",
+              "Color.Norway",
+              "Color.Poland",
+              "Color.Portugal",
+              "Color.Russia",
+              "Color.Saudi",
+              "Color.Spain",
+              "Color.Sweden",
+              "Color.Switzerland",
+              "Color.Terkey",
+              "Color.Uruguay",
+              "Color.USA"
+            ]
           },
           {
             "channel": "Numeric",
-            "active": "Numeric.69",
-            "owned": []
-          },
-          {
-            "channel": "JerseyColor",
-            "active": "Color.Germany",
-            "owned": []
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
           }
         ],
         "favorite": false
@@ -26214,7 +26764,152 @@
         "level": 1,
         "item_seen": true,
         "xp": 0,
-        "variants": [],
+        "variants": [
+          {
+            "channel": "JerseyColor",
+            "active": "Color.Fortnite",
+            "owned": [
+              "Color.Fortnite",
+              "Color.Argentina",
+              "Color.Australia",
+              "Color.Belgium",
+              "Color.Brazil",
+              "Color.Canada",
+              "Color.Colombia",
+              "Color.Denmark",
+              "Color.Egypt",
+              "Color.England",
+              "Color.France",
+              "Color.Germany",
+              "Color.Iceland",
+              "Color.Italy",
+              "Color.Ireland",
+              "Color.Japan",
+              "Color.Korea",
+              "Color.Mexico",
+              "Color.Netherlands",
+              "Color.NewZealand",
+              "Color.Nigeria",
+              "Color.Norway",
+              "Color.Poland",
+              "Color.Portugal",
+              "Color.Russia",
+              "Color.Saudi",
+              "Color.Spain",
+              "Color.Sweden",
+              "Color.Switzerland",
+              "Color.Terkey",
+              "Color.Uruguay",
+              "Color.USA"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
+          }
+        ],
         "favorite": false
       },
       "quantity": 1
@@ -26228,19 +26923,148 @@
         "xp": 0,
         "variants": [
           {
-            "channel": "Pattern",
-            "active": "Mat0",
-            "owned": []
+            "channel": "JerseyColor",
+            "active": "Color.Fortnite",
+            "owned": [
+              "Color.Fortnite",
+              "Color.Argentina",
+              "Color.Australia",
+              "Color.Belgium",
+              "Color.Brazil",
+              "Color.Canada",
+              "Color.Colombia",
+              "Color.Denmark",
+              "Color.Egypt",
+              "Color.England",
+              "Color.France",
+              "Color.Germany",
+              "Color.Iceland",
+              "Color.Italy",
+              "Color.Ireland",
+              "Color.Japan",
+              "Color.Korea",
+              "Color.Mexico",
+              "Color.Netherlands",
+              "Color.NewZealand",
+              "Color.Nigeria",
+              "Color.Norway",
+              "Color.Poland",
+              "Color.Portugal",
+              "Color.Russia",
+              "Color.Saudi",
+              "Color.Spain",
+              "Color.Sweden",
+              "Color.Switzerland",
+              "Color.Terkey",
+              "Color.Uruguay",
+              "Color.USA"
+            ]
           },
           {
             "channel": "Numeric",
             "active": "Numeric.14",
-            "owned": []
-          },
-          {
-            "channel": "JerseyColor",
-            "active": "Color.Terkey",
-            "owned": []
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
           }
         ],
         "favorite": false
@@ -27052,7 +27876,157 @@
         "level": 1,
         "item_seen": true,
         "xp": 0,
-        "variants": [],
+        "variants": [
+          {
+            "channel": "JerseyColor",
+            "active": "Color.000",
+            "owned": [
+              "Color.000",
+              "Color.001",
+              "Color.002",
+              "Color.003",
+              "Color.004",
+              "Color.005",
+              "Color.006",
+              "Color.007",
+              "Color.008",
+              "Color.009",
+              "Color.010",
+              "Color.011",
+              "Color.012",
+              "Color.013",
+              "Color.014",
+              "Color.015",
+              "Color.016",
+              "Color.017",
+              "Color.018",
+              "Color.019",
+              "Color.020",
+              "Color.021",
+              "Color.022",
+              "Color.023",
+              "Color.024",
+              "Color.025",
+              "Color.026",
+              "Color.027",
+              "Color.028",
+              "Color.029",
+              "Color.030",
+              "Color.031",
+              "Color.036",
+              "Color.032",
+              "Color.033",
+              "Color.034",
+              "Color.035"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
+          }
+        ],
         "favorite": false
       },
       "quantity": 1
@@ -27064,7 +28038,157 @@
         "level": 1,
         "item_seen": true,
         "xp": 0,
-        "variants": [],
+        "variants": [
+          {
+            "channel": "JerseyColor",
+            "active": "Color.000",
+            "owned": [
+              "Color.000",
+              "Color.001",
+              "Color.002",
+              "Color.003",
+              "Color.004",
+              "Color.005",
+              "Color.006",
+              "Color.007",
+              "Color.008",
+              "Color.009",
+              "Color.010",
+              "Color.011",
+              "Color.012",
+              "Color.013",
+              "Color.014",
+              "Color.015",
+              "Color.016",
+              "Color.017",
+              "Color.018",
+              "Color.019",
+              "Color.020",
+              "Color.021",
+              "Color.022",
+              "Color.023",
+              "Color.024",
+              "Color.025",
+              "Color.026",
+              "Color.027",
+              "Color.028",
+              "Color.029",
+              "Color.030",
+              "Color.031",
+              "Color.036",
+              "Color.032",
+              "Color.033",
+              "Color.034",
+              "Color.035"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
+          }
+        ],
         "favorite": false
       },
       "quantity": 1
@@ -27076,7 +28200,157 @@
         "level": 1,
         "item_seen": true,
         "xp": 0,
-        "variants": [],
+        "variants": [
+          {
+            "channel": "JerseyColor",
+            "active": "Color.000",
+            "owned": [
+              "Color.000",
+              "Color.001",
+              "Color.002",
+              "Color.003",
+              "Color.004",
+              "Color.005",
+              "Color.006",
+              "Color.007",
+              "Color.008",
+              "Color.009",
+              "Color.010",
+              "Color.011",
+              "Color.012",
+              "Color.013",
+              "Color.014",
+              "Color.015",
+              "Color.016",
+              "Color.017",
+              "Color.018",
+              "Color.019",
+              "Color.020",
+              "Color.021",
+              "Color.022",
+              "Color.023",
+              "Color.024",
+              "Color.025",
+              "Color.026",
+              "Color.027",
+              "Color.028",
+              "Color.029",
+              "Color.030",
+              "Color.031",
+              "Color.036",
+              "Color.032",
+              "Color.033",
+              "Color.034",
+              "Color.035"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
+          }
+        ],
         "favorite": false
       },
       "quantity": 1
@@ -27088,7 +28362,157 @@
         "level": 1,
         "item_seen": true,
         "xp": 0,
-        "variants": [],
+        "variants": [
+          {
+            "channel": "JerseyColor",
+            "active": "Color.000",
+            "owned": [
+              "Color.000",
+              "Color.001",
+              "Color.002",
+              "Color.003",
+              "Color.004",
+              "Color.005",
+              "Color.006",
+              "Color.007",
+              "Color.008",
+              "Color.009",
+              "Color.010",
+              "Color.011",
+              "Color.012",
+              "Color.013",
+              "Color.014",
+              "Color.015",
+              "Color.016",
+              "Color.017",
+              "Color.018",
+              "Color.019",
+              "Color.020",
+              "Color.021",
+              "Color.022",
+              "Color.023",
+              "Color.024",
+              "Color.025",
+              "Color.026",
+              "Color.027",
+              "Color.028",
+              "Color.029",
+              "Color.030",
+              "Color.031",
+              "Color.036",
+              "Color.032",
+              "Color.033",
+              "Color.034",
+              "Color.035"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
+          }
+        ],
         "favorite": false
       },
       "quantity": 1
@@ -27100,7 +28524,157 @@
         "level": 1,
         "item_seen": true,
         "xp": 0,
-        "variants": [],
+        "variants": [
+          {
+            "channel": "JerseyColor",
+            "active": "Color.000",
+            "owned": [
+              "Color.000",
+              "Color.001",
+              "Color.002",
+              "Color.003",
+              "Color.004",
+              "Color.005",
+              "Color.006",
+              "Color.007",
+              "Color.008",
+              "Color.009",
+              "Color.010",
+              "Color.011",
+              "Color.012",
+              "Color.013",
+              "Color.014",
+              "Color.015",
+              "Color.016",
+              "Color.017",
+              "Color.018",
+              "Color.019",
+              "Color.020",
+              "Color.021",
+              "Color.022",
+              "Color.023",
+              "Color.024",
+              "Color.025",
+              "Color.026",
+              "Color.027",
+              "Color.028",
+              "Color.029",
+              "Color.030",
+              "Color.031",
+              "Color.036",
+              "Color.032",
+              "Color.033",
+              "Color.034",
+              "Color.035"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
+          }
+        ],
         "favorite": false
       },
       "quantity": 1
@@ -27112,7 +28686,157 @@
         "level": 1,
         "item_seen": true,
         "xp": 0,
-        "variants": [],
+        "variants": [
+          {
+            "channel": "JerseyColor",
+            "active": "Color.000",
+            "owned": [
+              "Color.000",
+              "Color.001",
+              "Color.002",
+              "Color.003",
+              "Color.004",
+              "Color.005",
+              "Color.006",
+              "Color.007",
+              "Color.008",
+              "Color.009",
+              "Color.010",
+              "Color.011",
+              "Color.012",
+              "Color.013",
+              "Color.014",
+              "Color.015",
+              "Color.016",
+              "Color.017",
+              "Color.018",
+              "Color.019",
+              "Color.020",
+              "Color.021",
+              "Color.022",
+              "Color.023",
+              "Color.024",
+              "Color.025",
+              "Color.026",
+              "Color.027",
+              "Color.028",
+              "Color.029",
+              "Color.030",
+              "Color.031",
+              "Color.036",
+              "Color.032",
+              "Color.033",
+              "Color.034",
+              "Color.035"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
+            ]
+          }
+        ],
         "favorite": false
       },
       "quantity": 1
@@ -27508,45 +29232,151 @@
         "variants": [
           {
             "channel": "JerseyColor",
-            "active": "000",
+            "active": "Color.000",
             "owned": [
-              "000",
-              "001",
-              "002",
-              "003",
-              "004",
-              "005",
-              "006",
-              "007",
-              "008",
-              "009",
-              "010",
-              "011",
-              "012",
-              "013",
-              "014",
-              "015",
-              "016",
-              "017",
-              "018",
-              "019",
-              "020",
-              "021",
-              "022",
-              "023",
-              "024",
-              "025",
-              "026",
-              "027",
-              "028",
-              "029",
-              "030",
-              "031",
-              "036",
-              "032",
-              "033",
-              "034",
-              "035"
+              "Color.000",
+              "Color.001",
+              "Color.002",
+              "Color.003",
+              "Color.004",
+              "Color.005",
+              "Color.006",
+              "Color.007",
+              "Color.008",
+              "Color.009",
+              "Color.010",
+              "Color.011",
+              "Color.012",
+              "Color.013",
+              "Color.014",
+              "Color.015",
+              "Color.016",
+              "Color.017",
+              "Color.018",
+              "Color.019",
+              "Color.020",
+              "Color.021",
+              "Color.022",
+              "Color.023",
+              "Color.024",
+              "Color.025",
+              "Color.026",
+              "Color.027",
+              "Color.028",
+              "Color.029",
+              "Color.030",
+              "Color.031",
+              "Color.036",
+              "Color.032",
+              "Color.033",
+              "Color.034",
+              "Color.035"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
             ]
           }
         ],
@@ -27564,45 +29394,151 @@
         "variants": [
           {
             "channel": "JerseyColor",
-            "active": "000",
+            "active": "Color.000",
             "owned": [
-              "000",
-              "001",
-              "002",
-              "003",
-              "004",
-              "005",
-              "006",
-              "007",
-              "008",
-              "009",
-              "010",
-              "011",
-              "012",
-              "013",
-              "014",
-              "015",
-              "016",
-              "017",
-              "018",
-              "019",
-              "020",
-              "021",
-              "022",
-              "023",
-              "024",
-              "025",
-              "026",
-              "027",
-              "028",
-              "029",
-              "030",
-              "031",
-              "036",
-              "032",
-              "033",
-              "034",
-              "035"
+              "Color.000",
+              "Color.001",
+              "Color.002",
+              "Color.003",
+              "Color.004",
+              "Color.005",
+              "Color.006",
+              "Color.007",
+              "Color.008",
+              "Color.009",
+              "Color.010",
+              "Color.011",
+              "Color.012",
+              "Color.013",
+              "Color.014",
+              "Color.015",
+              "Color.016",
+              "Color.017",
+              "Color.018",
+              "Color.019",
+              "Color.020",
+              "Color.021",
+              "Color.022",
+              "Color.023",
+              "Color.024",
+              "Color.025",
+              "Color.026",
+              "Color.027",
+              "Color.028",
+              "Color.029",
+              "Color.030",
+              "Color.031",
+              "Color.036",
+              "Color.032",
+              "Color.033",
+              "Color.034",
+              "Color.035"
+            ]
+          },
+          {
+            "channel": "Numeric",
+            "active": "Numeric.14",
+            "owned": [
+              "Numeric.0",
+              "Numeric.1",
+              "Numeric.2",
+              "Numeric.3",
+              "Numeric.4",
+              "Numeric.5",
+              "Numeric.6",
+              "Numeric.7",
+              "Numeric.8",
+              "Numeric.9",
+              "Numeric.10",
+              "Numeric.11",
+              "Numeric.12",
+              "Numeric.13",
+              "Numeric.14",
+              "Numeric.15",
+              "Numeric.16",
+              "Numeric.17",
+              "Numeric.18",
+              "Numeric.19",
+              "Numeric.20",
+              "Numeric.21",
+              "Numeric.22",
+              "Numeric.23",
+              "Numeric.24",
+              "Numeric.25",
+              "Numeric.26",
+              "Numeric.27",
+              "Numeric.28",
+              "Numeric.29",
+              "Numeric.30",
+              "Numeric.31",
+              "Numeric.32",
+              "Numeric.33",
+              "Numeric.34",
+              "Numeric.35",
+              "Numeric.36",
+              "Numeric.37",
+              "Numeric.38",
+              "Numeric.39",
+              "Numeric.40",
+              "Numeric.41",
+              "Numeric.42",
+              "Numeric.43",
+              "Numeric.44",
+              "Numeric.45",
+              "Numeric.46",
+              "Numeric.47",
+              "Numeric.48",
+              "Numeric.49",
+              "Numeric.50",
+              "Numeric.51",
+              "Numeric.52",
+              "Numeric.53",
+              "Numeric.54",
+              "Numeric.55",
+              "Numeric.56",
+              "Numeric.57",
+              "Numeric.58",
+              "Numeric.59",
+              "Numeric.60",
+              "Numeric.61",
+              "Numeric.62",
+              "Numeric.63",
+              "Numeric.64",
+              "Numeric.65",
+              "Numeric.66",
+              "Numeric.67",
+              "Numeric.68",
+              "Numeric.69",
+              "Numeric.70",
+              "Numeric.71",
+              "Numeric.72",
+              "Numeric.73",
+              "Numeric.74",
+              "Numeric.75",
+              "Numeric.76",
+              "Numeric.77",
+              "Numeric.78",
+              "Numeric.79",
+              "Numeric.80",
+              "Numeric.81",
+              "Numeric.82",
+              "Numeric.83",
+              "Numeric.84",
+              "Numeric.85",
+              "Numeric.86",
+              "Numeric.87",
+              "Numeric.88",
+              "Numeric.89",
+              "Numeric.90",
+              "Numeric.91",
+              "Numeric.92",
+              "Numeric.93",
+              "Numeric.94",
+              "Numeric.95",
+              "Numeric.96",
+              "Numeric.97",
+              "Numeric.98",
+              "Numeric.99"
             ]
           }
         ],
@@ -32762,18 +34698,6 @@
       },
       "quantity": 1
     },
-    "AthenaCharacter:CID_568_Athena_Commando_M_RebirthSoldier": {
-      "templateId": "AthenaCharacter:CID_568_Athena_Commando_M_RebirthSoldier",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaCharacter:CID_570_Athena_Commando_M_SlurpMonster": {
       "templateId": "AthenaCharacter:CID_570_Athena_Commando_M_SlurpMonster",
       "attributes": {
@@ -33798,30 +35722,6 @@
     },
     "AthenaCharacter:CID_635_Athena_Commando_M_GalileoSled_FHJVM": {
       "templateId": "AthenaCharacter:CID_635_Athena_Commando_M_GalileoSled_FHJVM",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_636_Athena_Commando_M_GalileoGondola_78MFZ": {
-      "templateId": "AthenaCharacter:CID_636_Athena_Commando_M_GalileoGondola_78MFZ",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_637_Athena_Commando_M_GalileoOutrigger_7Q0YU": {
-      "templateId": "AthenaCharacter:CID_637_Athena_Commando_M_GalileoOutrigger_7Q0YU",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -36513,78 +38413,6 @@
       },
       "quantity": 1
     },
-    "AthenaCharacter:CID_789_Athena_Commando_M_HenchmanGoodShorts_B": {
-      "templateId": "AthenaCharacter:CID_789_Athena_Commando_M_HenchmanGoodShorts_B",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_790_Athena_Commando_M_HenchmanGoodShorts_C": {
-      "templateId": "AthenaCharacter:CID_790_Athena_Commando_M_HenchmanGoodShorts_C",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_791_Athena_Commando_M_HenchmanGoodShorts_D": {
-      "templateId": "AthenaCharacter:CID_791_Athena_Commando_M_HenchmanGoodShorts_D",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_792_Athena_Commando_M_HenchmanBadShorts_B": {
-      "templateId": "AthenaCharacter:CID_792_Athena_Commando_M_HenchmanBadShorts_B",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_793_Athena_Commando_M_HenchmanBadShorts_C": {
-      "templateId": "AthenaCharacter:CID_793_Athena_Commando_M_HenchmanBadShorts_C",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_794_Athena_Commando_M_HenchmanBadShorts_D": {
-      "templateId": "AthenaCharacter:CID_794_Athena_Commando_M_HenchmanBadShorts_D",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaCharacter:CID_795_Athena_Commando_M_Dummeez": {
       "templateId": "AthenaCharacter:CID_795_Athena_Commando_M_Dummeez",
       "attributes": {
@@ -37324,27 +39152,6 @@
         "item_seen": true,
         "xp": 0,
         "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_838_Athena_Commando_M_JunkSamurai": {
-      "templateId": "AthenaCharacter:CID_838_Athena_Commando_M_JunkSamurai",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [
-          {
-            "channel": "Parts",
-            "active": "Stage1",
-            "owned": [
-              "Stage1",
-              "Stage2"
-            ]
-          }
-        ],
         "favorite": false
       },
       "quantity": 1
@@ -38774,126 +40581,6 @@
             ]
           }
         ],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_873_Athena_Commando_M_RebirthDefaultE": {
-      "templateId": "AthenaCharacter:CID_873_Athena_Commando_M_RebirthDefaultE",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_874_Athena_Commando_M_RebirthDefaultF": {
-      "templateId": "AthenaCharacter:CID_874_Athena_Commando_M_RebirthDefaultF",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_875_Athena_Commando_M_RebirthDefaultG": {
-      "templateId": "AthenaCharacter:CID_875_Athena_Commando_M_RebirthDefaultG",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_876_Athena_Commando_M_RebirthDefaultH": {
-      "templateId": "AthenaCharacter:CID_876_Athena_Commando_M_RebirthDefaultH",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_877_Athena_Commando_M_RebirthDefaultI": {
-      "templateId": "AthenaCharacter:CID_877_Athena_Commando_M_RebirthDefaultI",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_878_Athena_Commando_F_RebirthDefault_E": {
-      "templateId": "AthenaCharacter:CID_878_Athena_Commando_F_RebirthDefault_E",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_879_Athena_Commando_F_RebirthDefault_F": {
-      "templateId": "AthenaCharacter:CID_879_Athena_Commando_F_RebirthDefault_F",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_880_Athena_Commando_F_RebirthDefault_G": {
-      "templateId": "AthenaCharacter:CID_880_Athena_Commando_F_RebirthDefault_G",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_881_Athena_Commando_F_RebirthDefault_H": {
-      "templateId": "AthenaCharacter:CID_881_Athena_Commando_F_RebirthDefault_H",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_882_Athena_Commando_F_RebirthDefault_I": {
-      "templateId": "AthenaCharacter:CID_882_Athena_Commando_F_RebirthDefault_I",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
         "favorite": false
       },
       "quantity": 1
@@ -52603,603 +54290,6 @@
       },
       "quantity": 1
     },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_CloakedAssassin": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_CloakedAssassin",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_CubeQueen": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_CubeQueen",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_Fallback": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_Fallback",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_HenchmanSpyDark": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_HenchmanSpyDark",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_HenchmanSpyGood": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_HenchmanSpyGood",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_MarauderElite": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_MarauderElite",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_Prime": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_Prime",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_PrimeOrder": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_PrimeOrder",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_RebirthDefault_Henchman": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_RebirthDefault_Henchman",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_F_TowerSentinel": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_F_TowerSentinel",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_AlienRobot": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_AlienRobot",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_AlienSummer": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_AlienSummer",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_Apparition_Grunt": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_Apparition_Grunt",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_Apparition_Heavy": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_Apparition_Heavy",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_Broccoli": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_Broccoli",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_CatBurglar_Ghost": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_CatBurglar_Ghost",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_CavernArmored": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_CavernArmored",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_EmperorSuit": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_EmperorSuit",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_Fallback": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_Fallback",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_HeistSummerIsland": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_HeistSummerIsland",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_HenchmanBad": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_HenchmanBad",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_HenchmanGood": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_HenchmanGood",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_HenchmanSummer": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_HenchmanSummer",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_HightowerHenchman": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_HightowerHenchman",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_HightowerHenchman_Date": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_HightowerHenchman_Date",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_Kyle": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_Kyle",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_MarauderGrunt": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_MarauderGrunt",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_MarauderHeavy": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_MarauderHeavy",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_Masterkey": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_Masterkey",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [
-          {
-            "channel": "Material",
-            "active": "Mat1",
-            "owned": [
-              "Mat1",
-              "Mat2"
-            ]
-          }
-        ],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_OrderGuardTank": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_OrderGuardTank",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_PaddedArmorArctic": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_PaddedArmorArctic",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_PaddedArmorOrder_Masked": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_PaddedArmorOrder_Masked",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_Prime": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_Prime",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_PrimeOrder": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_PrimeOrder",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_Realm": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_Realm",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_Scrapyard": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_Scrapyard",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_SpaceWanderer": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_SpaceWanderer",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_Commando_M_TacticalFishermanOil": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_Commando_M_TacticalFishermanOil",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_HenchmanBadShorts": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_HenchmanBadShorts",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_HenchmanGoodShorts": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_HenchmanGoodShorts",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_MadCommander": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_MadCommander",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_PaddedArmor": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_PaddedArmor",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_NPC_Athena_RebirthSoldier": {
-      "templateId": "AthenaCharacter:CID_NPC_Athena_RebirthSoldier",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_TBD_Athena_Commando_M_Banana_CINE": {
-      "templateId": "AthenaCharacter:CID_TBD_Athena_Commando_M_Banana_CINE",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_TBD_Athena_Commando_M_Nutcracker_CINE": {
-      "templateId": "AthenaCharacter:CID_TBD_Athena_Commando_M_Nutcracker_CINE",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_TBD_Athena_Commando_M_Turtleneck_EVENT_NOTFORSTORE": {
-      "templateId": "AthenaCharacter:CID_TBD_Athena_Commando_M_Turtleneck_EVENT_NOTFORSTORE",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_VIP_Athena_Commando_F_GalileoRocket_SG": {
-      "templateId": "AthenaCharacter:CID_VIP_Athena_Commando_F_GalileoRocket_SG",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_VIP_Athena_Commando_M_GalileoFerry_SG": {
-      "templateId": "AthenaCharacter:CID_VIP_Athena_Commando_M_GalileoFerry_SG",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaCharacter:CID_VIP_Athena_Commando_M_GalileoGondola_SG": {
-      "templateId": "AthenaCharacter:CID_VIP_Athena_Commando_M_GalileoGondola_SG",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaSkyDiveContrail:Contrail_Apprentice": {
       "templateId": "AthenaSkyDiveContrail:Contrail_Apprentice",
       "attributes": {
@@ -53425,18 +54515,6 @@
       },
       "quantity": 1
     },
-    "AthenaSkyDiveContrail:DefaultContrail": {
-      "templateId": "AthenaSkyDiveContrail:DefaultContrail",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaGlider:DefaultGlider": {
       "templateId": "AthenaGlider:DefaultGlider",
       "attributes": {
@@ -53451,30 +54529,6 @@
     },
     "AthenaPickaxe:DefaultPickaxe": {
       "templateId": "AthenaPickaxe:DefaultPickaxe",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaPickaxe:Dev_Test_Pickaxe": {
-      "templateId": "AthenaPickaxe:Dev_Test_Pickaxe",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaGlider:Duo_Umbrella": {
-      "templateId": "AthenaGlider:Duo_Umbrella",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -53547,18 +54601,6 @@
     },
     "AthenaDance:EID_AirHorn": {
       "templateId": "AthenaDance:EID_AirHorn",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_AirHornRaisin": {
-      "templateId": "AthenaDance:EID_AirHornRaisin",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -53739,30 +54781,6 @@
     },
     "AthenaDance:EID_ApprenticeSwirl": {
       "templateId": "AthenaDance:EID_ApprenticeSwirl",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Apprentice_Follower_Sync": {
-      "templateId": "AthenaDance:EID_Apprentice_Follower_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Apprentice_Sync": {
-      "templateId": "AthenaDance:EID_Apprentice_Sync",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -54073,54 +55091,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_Bargain_Owned": {
-      "templateId": "AthenaDance:EID_Bargain_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Bargain_Owned_Follower": {
-      "templateId": "AthenaDance:EID_Bargain_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Bargain_Sync": {
-      "templateId": "AthenaDance:EID_Bargain_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Bargain_Sync_Follower": {
-      "templateId": "AthenaDance:EID_Bargain_Sync_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Bargain_Y5KHN": {
       "templateId": "AthenaDance:EID_Bargain_Y5KHN",
       "attributes": {
@@ -54193,18 +55163,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_BeckonPapayaComms": {
-      "templateId": "AthenaDance:EID_BeckonPapayaComms",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_BeHere_8070H": {
       "templateId": "AthenaDance:EID_BeHere_8070H",
       "attributes": {
@@ -54267,54 +55225,6 @@
     },
     "AthenaDance:EID_Betty": {
       "templateId": "AthenaDance:EID_Betty",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Betty_Owned": {
-      "templateId": "AthenaDance:EID_Betty_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Betty_Owned_Follower": {
-      "templateId": "AthenaDance:EID_Betty_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Betty_Sync": {
-      "templateId": "AthenaDance:EID_Betty_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Betty_Sync_Follower": {
-      "templateId": "AthenaDance:EID_Betty_Sync_Follower",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -54697,18 +55607,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_BuffCat": {
-      "templateId": "AthenaDance:EID_BuffCat",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_BuffCatComic_EV4HK": {
       "templateId": "AthenaDance:EID_BuffCatComic_EV4HK",
       "attributes": {
@@ -54831,18 +55729,6 @@
     },
     "AthenaDance:EID_ByTheFire_Follower": {
       "templateId": "AthenaDance:EID_ByTheFire_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_ByTheFire_Sync": {
-      "templateId": "AthenaDance:EID_ByTheFire_Sync",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -54985,18 +55871,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_CattusRoar": {
-      "templateId": "AthenaDance:EID_CattusRoar",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Celebration": {
       "templateId": "AthenaDance:EID_Celebration",
       "attributes": {
@@ -55093,68 +55967,8 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_Checkmate_Owned": {
-      "templateId": "AthenaDance:EID_Checkmate_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Checkmate_Owned_Follower": {
-      "templateId": "AthenaDance:EID_Checkmate_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Checkmate_Sync": {
-      "templateId": "AthenaDance:EID_Checkmate_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Checkmate_Sync_Follower": {
-      "templateId": "AthenaDance:EID_Checkmate_Sync_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Cheerleading": {
       "templateId": "AthenaDance:EID_Cheerleading",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_CheerPapayaComms": {
-      "templateId": "AthenaDance:EID_CheerPapayaComms",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -55357,30 +56171,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_ClapAndWave": {
-      "templateId": "AthenaDance:EID_ClapAndWave",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_ClapPapayaComms": {
-      "templateId": "AthenaDance:EID_ClapPapayaComms",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Clapperboard": {
       "templateId": "AthenaDance:EID_Clapperboard",
       "attributes": {
@@ -55419,30 +56209,6 @@
     },
     "AthenaDance:EID_ClearRadius_Follower": {
       "templateId": "AthenaDance:EID_ClearRadius_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_ClearRadius_Follower_Sync": {
-      "templateId": "AthenaDance:EID_ClearRadius_Follower_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_ClearRadius_Sync": {
-      "templateId": "AthenaDance:EID_ClearRadius_Sync",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -55573,18 +56339,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_CoolRobotRaisin": {
-      "templateId": "AthenaDance:EID_CoolRobotRaisin",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Coping": {
       "templateId": "AthenaDance:EID_Coping",
       "attributes": {
@@ -55657,18 +56411,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_CoyoteTrail_Sync": {
-      "templateId": "AthenaDance:EID_CoyoteTrail_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_CrabDance": {
       "templateId": "AthenaDance:EID_CrabDance",
       "attributes": {
@@ -55707,18 +56449,6 @@
     },
     "AthenaDance:EID_CrazyDance": {
       "templateId": "AthenaDance:EID_CrazyDance",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_CrazyDanceRaisin": {
-      "templateId": "AthenaDance:EID_CrazyDanceRaisin",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -56067,18 +56797,6 @@
     },
     "AthenaDance:EID_Dashing": {
       "templateId": "AthenaDance:EID_Dashing",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Davinci": {
-      "templateId": "AthenaDance:EID_Davinci",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -56499,18 +57217,6 @@
     },
     "AthenaDance:EID_EgyptianDance": {
       "templateId": "AthenaDance:EID_EgyptianDance",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Elastic": {
-      "templateId": "AthenaDance:EID_Elastic",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -57157,18 +57863,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_GalileoShow_Cheer": {
-      "templateId": "AthenaDance:EID_GalileoShow_Cheer",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_GasStation_104FQ": {
       "templateId": "AthenaDance:EID_GasStation_104FQ",
       "attributes": {
@@ -57279,30 +57973,6 @@
     },
     "AthenaDance:EID_GoatDance": {
       "templateId": "AthenaDance:EID_GoatDance",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_GoatDance_Sync": {
-      "templateId": "AthenaDance:EID_GoatDance_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_GoatDance_Sync_Owned": {
-      "templateId": "AthenaDance:EID_GoatDance_Sync_Owned",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -57649,18 +58319,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_HeadBangRaisin": {
-      "templateId": "AthenaDance:EID_HeadBangRaisin",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Headset": {
       "templateId": "AthenaDance:EID_Headset",
       "attributes": {
@@ -57697,54 +58355,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_Heartsign_Sync": {
-      "templateId": "AthenaDance:EID_Heartsign_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Heartsign_Sync_Follower": {
-      "templateId": "AthenaDance:EID_Heartsign_Sync_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Heartsign_Sync_Owned": {
-      "templateId": "AthenaDance:EID_Heartsign_Sync_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Heartsign_Sync_Owned_Follower": {
-      "templateId": "AthenaDance:EID_Heartsign_Sync_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_HeelClick": {
       "templateId": "AthenaDance:EID_HeelClick",
       "attributes": {
@@ -57769,18 +58379,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_Herald_NPC": {
-      "templateId": "AthenaDance:EID_Herald_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_HiFive": {
       "templateId": "AthenaDance:EID_HiFive",
       "attributes": {
@@ -57793,188 +58391,8 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_HiFive_JoinAdHocSquads": {
-      "templateId": "AthenaDance:EID_HiFive_JoinAdHocSquads",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HiFive_Sync": {
-      "templateId": "AthenaDance:EID_HiFive_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HiFive_SyncOwned": {
-      "templateId": "AthenaDance:EID_HiFive_SyncOwned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HiFive_SyncOwned_InfiniteTolerance": {
-      "templateId": "AthenaDance:EID_HiFive_SyncOwned_InfiniteTolerance",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HiFive_Sync_InfiniteTolerance": {
-      "templateId": "AthenaDance:EID_HiFive_Sync_InfiniteTolerance",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_HighActivity": {
       "templateId": "AthenaDance:EID_HighActivity",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerDate": {
-      "templateId": "AthenaDance:EID_HightowerDate",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerDate_NPC": {
-      "templateId": "AthenaDance:EID_HightowerDate_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerGrape": {
-      "templateId": "AthenaDance:EID_HightowerGrape",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerHoneydew": {
-      "templateId": "AthenaDance:EID_HightowerHoneydew",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerMango": {
-      "templateId": "AthenaDance:EID_HightowerMango",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerSquash": {
-      "templateId": "AthenaDance:EID_HightowerSquash",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerTapas": {
-      "templateId": "AthenaDance:EID_HightowerTapas",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerTomato": {
-      "templateId": "AthenaDance:EID_HightowerTomato",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerTomato_NPC": {
-      "templateId": "AthenaDance:EID_HightowerTomato_NPC",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HightowerWasabi": {
-      "templateId": "AthenaDance:EID_HightowerWasabi",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -58105,66 +58523,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_HolidayCracker": {
-      "templateId": "AthenaDance:EID_HolidayCracker",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HolidayCracker_Owned": {
-      "templateId": "AthenaDance:EID_HolidayCracker_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HolidayCracker_Sync": {
-      "templateId": "AthenaDance:EID_HolidayCracker_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HolidayCracker_Sync_Follower": {
-      "templateId": "AthenaDance:EID_HolidayCracker_Sync_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_HolidayCracker_Sync_Owned_Follower": {
-      "templateId": "AthenaDance:EID_HolidayCracker_Sync_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Hopper": {
       "templateId": "AthenaDance:EID_Hopper",
       "attributes": {
@@ -58251,54 +58609,6 @@
     },
     "AthenaDance:EID_Huzzah": {
       "templateId": "AthenaDance:EID_Huzzah",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Huzzah_Owned": {
-      "templateId": "AthenaDance:EID_Huzzah_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Huzzah_Owned_Follower": {
-      "templateId": "AthenaDance:EID_Huzzah_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Huzzah_Sync": {
-      "templateId": "AthenaDance:EID_Huzzah_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Huzzah_Sync_Follower": {
-      "templateId": "AthenaDance:EID_Huzzah_Sync_Follower",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -58455,18 +58765,6 @@
     },
     "AthenaDance:EID_InfiniteDab": {
       "templateId": "AthenaDance:EID_InfiniteDab",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_InfiniteDabRaisin": {
-      "templateId": "AthenaDance:EID_InfiniteDabRaisin",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -58849,18 +59147,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_KeeperDreamGlowstick": {
-      "templateId": "AthenaDance:EID_KeeperDreamGlowstick",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_KeeperDreamHook": {
       "templateId": "AthenaDance:EID_KeeperDreamHook",
       "attributes": {
@@ -59043,18 +59329,6 @@
     },
     "AthenaDance:EID_LasagnaDance": {
       "templateId": "AthenaDance:EID_LasagnaDance",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_LasagnaFlex": {
-      "templateId": "AthenaDance:EID_LasagnaFlex",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -59269,18 +59543,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_LlamaBellRaisin": {
-      "templateId": "AthenaDance:EID_LlamaBellRaisin",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_LlamaFloat": {
       "templateId": "AthenaDance:EID_LlamaFloat",
       "attributes": {
@@ -59295,18 +59557,6 @@
     },
     "AthenaDance:EID_LlamaMarch": {
       "templateId": "AthenaDance:EID_LlamaMarch",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_LlamaRider_Glitter": {
-      "templateId": "AthenaDance:EID_LlamaRider_Glitter",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -59533,18 +59783,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_ManAndMonster": {
-      "templateId": "AthenaDance:EID_ManAndMonster",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Maracas": {
       "templateId": "AthenaDance:EID_Maracas",
       "attributes": {
@@ -59629,42 +59867,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_Marionette_Sync": {
-      "templateId": "AthenaDance:EID_Marionette_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Marionette_Sync_Follower": {
-      "templateId": "AthenaDance:EID_Marionette_Sync_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Marionette_Sync_Leader": {
-      "templateId": "AthenaDance:EID_Marionette_Sync_Leader",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_MartialArts": {
       "templateId": "AthenaDance:EID_MartialArts",
       "attributes": {
@@ -59725,18 +59927,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_MechPeely": {
-      "templateId": "AthenaDance:EID_MechPeely",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_MercurialStorm": {
       "templateId": "AthenaDance:EID_MercurialStorm",
       "attributes": {
@@ -59751,54 +59941,6 @@
     },
     "AthenaDance:EID_Meticulous": {
       "templateId": "AthenaDance:EID_Meticulous",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Meticulous_Owned": {
-      "templateId": "AthenaDance:EID_Meticulous_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Meticulous_Owned_Follower": {
-      "templateId": "AthenaDance:EID_Meticulous_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Meticulous_Sync": {
-      "templateId": "AthenaDance:EID_Meticulous_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Meticulous_Sync_Follower": {
-      "templateId": "AthenaDance:EID_Meticulous_Sync_Follower",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -59989,32 +60131,8 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_NeonCatSpy": {
-      "templateId": "AthenaDance:EID_NeonCatSpy",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_NeverGonna": {
       "templateId": "AthenaDance:EID_NeverGonna",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_NeverGonnaRaisin": {
-      "templateId": "AthenaDance:EID_NeverGonnaRaisin",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -60073,18 +60191,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_Nightmare_NPC_M6EXP": {
-      "templateId": "AthenaDance:EID_Nightmare_NPC_M6EXP",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Nimble": {
       "templateId": "AthenaDance:EID_Nimble",
       "attributes": {
@@ -60121,18 +60227,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_NodHeadPapayaComms": {
-      "templateId": "AthenaDance:EID_NodHeadPapayaComms",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Noodles_X6R9E": {
       "templateId": "AthenaDance:EID_Noodles_X6R9E",
       "attributes": {
@@ -60147,18 +60241,6 @@
     },
     "AthenaDance:EID_NotToday": {
       "templateId": "AthenaDance:EID_NotToday",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_NPC_ByTheFire": {
-      "templateId": "AthenaDance:EID_NPC_ByTheFire",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -60301,18 +60383,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_OstrichSpin": {
-      "templateId": "AthenaDance:EID_OstrichSpin",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_OverUnder_K3T0G": {
       "templateId": "AthenaDance:EID_OverUnder_K3T0G",
       "attributes": {
@@ -60385,56 +60455,8 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_PatPat_Sync": {
-      "templateId": "AthenaDance:EID_PatPat_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_PatPat_Sync_Follower": {
-      "templateId": "AthenaDance:EID_PatPat_Sync_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_PatPat_Sync_Owned_Follower": {
-      "templateId": "AthenaDance:EID_PatPat_Sync_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Paws": {
       "templateId": "AthenaDance:EID_Paws",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_PeelyBones": {
-      "templateId": "AthenaDance:EID_PeelyBones",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -60469,18 +60491,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_PhoneWavePapayaComms": {
-      "templateId": "AthenaDance:EID_PhoneWavePapayaComms",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Phonograph": {
       "templateId": "AthenaDance:EID_Phonograph",
       "attributes": {
@@ -60489,28 +60499,6 @@
         "item_seen": true,
         "xp": 0,
         "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Photographer": {
-      "templateId": "AthenaDance:EID_Photographer",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [
-          {
-            "channel": "Material",
-            "active": "Mat1",
-            "owned": [
-              "Mat1",
-              "Mat2",
-              "Mat3"
-            ]
-          }
-        ],
         "favorite": false
       },
       "quantity": 1
@@ -60611,18 +60599,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_PointFingerPapayaComms": {
-      "templateId": "AthenaDance:EID_PointFingerPapayaComms",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Popcorn": {
       "templateId": "AthenaDance:EID_Popcorn",
       "attributes": {
@@ -60671,18 +60647,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_PraiseStorm": {
-      "templateId": "AthenaDance:EID_PraiseStorm",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_PraiseTheTomato": {
       "templateId": "AthenaDance:EID_PraiseTheTomato",
       "attributes": {
@@ -60721,18 +60685,6 @@
     },
     "AthenaDance:EID_PresentOpening": {
       "templateId": "AthenaDance:EID_PresentOpening",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_ProfessorPup": {
-      "templateId": "AthenaDance:EID_ProfessorPup",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -61559,102 +61511,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_SecretHandshake_Owned": {
-      "templateId": "AthenaDance:EID_SecretHandshake_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretHandshake_Owned_Follower": {
-      "templateId": "AthenaDance:EID_SecretHandshake_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretHandshake_Sync": {
-      "templateId": "AthenaDance:EID_SecretHandshake_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretHandshake_Sync_Follower": {
-      "templateId": "AthenaDance:EID_SecretHandshake_Sync_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretSlash_Owned": {
-      "templateId": "AthenaDance:EID_SecretSlash_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretSlash_Owned_Follower": {
-      "templateId": "AthenaDance:EID_SecretSlash_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretSlash_Synch": {
-      "templateId": "AthenaDance:EID_SecretSlash_Synch",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretSlash_Synch_Follower": {
-      "templateId": "AthenaDance:EID_SecretSlash_Synch_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_SecretSlash_UJT33": {
       "templateId": "AthenaDance:EID_SecretSlash_UJT33",
       "attributes": {
@@ -61669,54 +61525,6 @@
     },
     "AthenaDance:EID_SecretSplit_7FOGY": {
       "templateId": "AthenaDance:EID_SecretSplit_7FOGY",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretSplit_Owned": {
-      "templateId": "AthenaDance:EID_SecretSplit_Owned",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretSplit_Owned_Follower": {
-      "templateId": "AthenaDance:EID_SecretSplit_Owned_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretSplit_Synch": {
-      "templateId": "AthenaDance:EID_SecretSplit_Synch",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SecretSplit_Synch_Follower": {
-      "templateId": "AthenaDance:EID_SecretSplit_Synch_Follower",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -61765,18 +61573,6 @@
     },
     "AthenaDance:EID_Shaka": {
       "templateId": "AthenaDance:EID_Shaka",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_ShakeHeadPapayaComms": {
-      "templateId": "AthenaDance:EID_ShakeHeadPapayaComms",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -61849,18 +61645,6 @@
     },
     "AthenaDance:EId_Shindig_Follower": {
       "templateId": "AthenaDance:EId_Shindig_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EId_Shindig_Sync": {
-      "templateId": "AthenaDance:EId_Shindig_Sync",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -61981,18 +61765,6 @@
     },
     "AthenaDance:EID_SirWolf": {
       "templateId": "AthenaDance:EID_SirWolf",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SitPapayaComms": {
-      "templateId": "AthenaDance:EID_SitPapayaComms",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -62351,18 +62123,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_SpyMale": {
-      "templateId": "AthenaDance:EID_SpyMale",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_SquishyDance": {
       "templateId": "AthenaDance:EID_SquishyDance",
       "attributes": {
@@ -62461,18 +62221,6 @@
     },
     "AthenaDance:EID_StringDance": {
       "templateId": "AthenaDance:EID_StringDance",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_SuckerPunch": {
-      "templateId": "AthenaDance:EID_SuckerPunch",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -62687,18 +62435,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_SwitchTheWitch": {
-      "templateId": "AthenaDance:EID_SwitchTheWitch",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_TacoTimeDance": {
       "templateId": "AthenaDance:EID_TacoTimeDance",
       "attributes": {
@@ -62749,18 +62485,6 @@
     },
     "AthenaDance:EID_TakeTheW": {
       "templateId": "AthenaDance:EID_TakeTheW",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_TalkingGesture": {
-      "templateId": "AthenaDance:EID_TalkingGesture",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -63023,18 +62747,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_TnTina": {
-      "templateId": "AthenaDance:EID_TnTina",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Toasted": {
       "templateId": "AthenaDance:EID_Toasted",
       "attributes": {
@@ -63049,18 +62761,6 @@
     },
     "AthenaDance:EID_Toasted_Follower": {
       "templateId": "AthenaDance:EID_Toasted_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_Toasted_Sync": {
-      "templateId": "AthenaDance:EID_Toasted_Sync",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -63191,18 +62891,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_TripleScoop": {
-      "templateId": "AthenaDance:EID_TripleScoop",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Triumphant": {
       "templateId": "AthenaDance:EID_Triumphant",
       "attributes": {
@@ -63323,30 +63011,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_TwistEternity_Sync": {
-      "templateId": "AthenaDance:EID_TwistEternity_Sync",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_TwistEternity_Sync_Follower": {
-      "templateId": "AthenaDance:EID_TwistEternity_Sync_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_TwistFire_I2VTA": {
       "templateId": "AthenaDance:EID_TwistFire_I2VTA",
       "attributes": {
@@ -63359,32 +63023,8 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_TwistRaisin": {
-      "templateId": "AthenaDance:EID_TwistRaisin",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_TwistWasp_Follower": {
       "templateId": "AthenaDance:EID_TwistWasp_Follower",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_TwistWasp_Sync": {
-      "templateId": "AthenaDance:EID_TwistWasp_Sync",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -63647,18 +63287,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:EID_WavePapayaComms": {
-      "templateId": "AthenaDance:EID_WavePapayaComms",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:EID_Wayfare": {
       "templateId": "AthenaDance:EID_Wayfare",
       "attributes": {
@@ -63709,18 +63337,6 @@
     },
     "AthenaDance:EID_Wiggle": {
       "templateId": "AthenaDance:EID_Wiggle",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:EID_WiggleRaisin": {
-      "templateId": "AthenaDance:EID_WiggleRaisin",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -63925,18 +63541,6 @@
     },
     "AthenaDance:EID_ZombieWalk": {
       "templateId": "AthenaDance:EID_ZombieWalk",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:Emoji_100APlus": {
-      "templateId": "AthenaDance:Emoji_100APlus",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -64343,18 +63947,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:Emoji_Comm": {
-      "templateId": "AthenaDance:Emoji_Comm",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:Emoji_CoolPepper": {
       "templateId": "AthenaDance:Emoji_CoolPepper",
       "attributes": {
@@ -64417,18 +64009,6 @@
     },
     "AthenaDance:Emoji_CuddleTeamHead": {
       "templateId": "AthenaDance:Emoji_CuddleTeamHead",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:Emoji_DealWithIt": {
-      "templateId": "AthenaDance:Emoji_DealWithIt",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -64535,18 +64115,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:Emoji_Explosion": {
-      "templateId": "AthenaDance:Emoji_Explosion",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:Emoji_Fiery": {
       "templateId": "AthenaDance:Emoji_Fiery",
       "attributes": {
@@ -64595,32 +64163,8 @@
       },
       "quantity": 1
     },
-    "AthenaDance:Emoji_FoamFinger": {
-      "templateId": "AthenaDance:Emoji_FoamFinger",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:Emoji_Fortnitemares": {
       "templateId": "AthenaDance:Emoji_Fortnitemares",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:Emoji_GG": {
-      "templateId": "AthenaDance:Emoji_GG",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -64705,18 +64249,6 @@
     },
     "AthenaDance:Emoji_GoodGame": {
       "templateId": "AthenaDance:Emoji_GoodGame",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:Emoji_Headshot": {
-      "templateId": "AthenaDance:Emoji_Headshot",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -65051,18 +64583,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:Emoji_Placeholder": {
-      "templateId": "AthenaDance:Emoji_Placeholder",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:Emoji_Plotting": {
       "templateId": "AthenaDance:Emoji_Plotting",
       "attributes": {
@@ -65219,18 +64739,6 @@
       },
       "quantity": 1
     },
-    "AthenaDance:Emoji_Rekt": {
-      "templateId": "AthenaDance:Emoji_Rekt",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:Emoji_RexHead": {
       "templateId": "AthenaDance:Emoji_RexHead",
       "attributes": {
@@ -65245,18 +64753,6 @@
     },
     "AthenaDance:Emoji_RIP": {
       "templateId": "AthenaDance:Emoji_RIP",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:Emoji_Rock": {
-      "templateId": "AthenaDance:Emoji_Rock",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -69726,18 +69222,6 @@
       },
       "quantity": 1
     },
-    "AthenaGlider:Glider_Broomstick": {
-      "templateId": "AthenaGlider:Glider_Broomstick",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaGlider:Glider_Candor": {
       "templateId": "AthenaGlider:Glider_Candor",
       "attributes": {
@@ -72197,18 +71681,6 @@
     },
     "AthenaGlider:Glider_ID_176_BlackMondayCape_4P79K": {
       "templateId": "AthenaGlider:Glider_ID_176_BlackMondayCape_4P79K",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaGlider:Glider_ID_176_BlackMondayCape_GrapplerAsset": {
-      "templateId": "AthenaGlider:Glider_ID_176_BlackMondayCape_GrapplerAsset",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -75523,18 +74995,6 @@
       },
       "quantity": 1
     },
-    "AthenaGlider:Glider_ProxyTest": {
-      "templateId": "AthenaGlider:Glider_ProxyTest",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaGlider:Glider_Quartz": {
       "templateId": "AthenaGlider:Glider_Quartz",
       "attributes": {
@@ -75657,18 +75117,6 @@
     },
     "AthenaGlider:Glider_Sunlit": {
       "templateId": "AthenaGlider:Glider_Sunlit",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaGlider:Glider_TestStaticParts": {
-      "templateId": "AthenaGlider:Glider_TestStaticParts",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -77463,18 +76911,6 @@
     },
     "AthenaLoadingScreen:LSID_040_Lifeguard": {
       "templateId": "AthenaLoadingScreen:LSID_040_Lifeguard",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaLoadingScreen:LSID_041_SupplyLlama": {
-      "templateId": "AthenaLoadingScreen:LSID_041_SupplyLlama",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -82465,18 +81901,6 @@
       },
       "quantity": 1
     },
-    "AthenaLoadingScreen:LSID_DefaultBG": {
-      "templateId": "AthenaLoadingScreen:LSID_DefaultBG",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaLoadingScreen:LSID_STW001_HitTheRoad": {
       "templateId": "AthenaLoadingScreen:LSID_STW001_HitTheRoad",
       "attributes": {
@@ -82527,30 +81951,6 @@
     },
     "AthenaLoadingScreen:LSID_STW003_HitTheRoad_MTL": {
       "templateId": "AthenaLoadingScreen:LSID_STW003_HitTheRoad_MTL",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaMusicPack:MusicPack_000_Default": {
-      "templateId": "AthenaMusicPack:MusicPack_000_Default",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaMusicPack:MusicPack_000_STW_Default": {
-      "templateId": "AthenaMusicPack:MusicPack_000_STW_Default",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -82707,18 +82107,6 @@
     },
     "AthenaMusicPack:MusicPack_013_RoboTrack": {
       "templateId": "AthenaMusicPack:MusicPack_013_RoboTrack",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaMusicPack:MusicPack_013_RoboTrackRaisin": {
-      "templateId": "AthenaMusicPack:MusicPack_013_RoboTrackRaisin",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -82959,18 +82347,6 @@
     },
     "AthenaMusicPack:MusicPack_034_SXRocketEvent": {
       "templateId": "AthenaMusicPack:MusicPack_034_SXRocketEvent",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaMusicPack:MusicPack_034_SXRocketEventRaisin": {
-      "templateId": "AthenaMusicPack:MusicPack_034_SXRocketEventRaisin",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -84908,18 +84284,6 @@
       },
       "quantity": 1
     },
-    "AthenaBackpack:PetCarrier_TBD_DarkWolf": {
-      "templateId": "AthenaBackpack:PetCarrier_TBD_DarkWolf",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaPet:PetID_001_Dog": {
       "templateId": "AthenaPet:PetID_001_Dog",
       "attributes": {
@@ -85078,30 +84442,6 @@
     },
     "AthenaPet:PetID_016_Invader": {
       "templateId": "AthenaPet:PetID_016_Invader",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaPet:PetID_TBD_Cosmos": {
-      "templateId": "AthenaPet:PetID_TBD_Cosmos",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaPet:PetID_TBD_HightowerRadish": {
-      "templateId": "AthenaPet:PetID_TBD_HightowerRadish",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -97913,30 +97253,6 @@
       },
       "quantity": 1
     },
-    "AthenaPickaxe:Pickaxe_ID_TBD_CosmosWeapon": {
-      "templateId": "AthenaPickaxe:Pickaxe_ID_TBD_CosmosWeapon",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaPickaxe:Pickaxe_ID_TBD_CrystalShard": {
-      "templateId": "AthenaPickaxe:Pickaxe_ID_TBD_CrystalShard",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaPickaxe:Pickaxe_Imitator": {
       "templateId": "AthenaPickaxe:Pickaxe_Imitator",
       "attributes": {
@@ -99170,30 +98486,6 @@
       },
       "quantity": 1
     },
-    "AthenaGlider:PreSeasonGlider": {
-      "templateId": "AthenaGlider:PreSeasonGlider",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaGlider:PreSeasonGlider_Elite": {
-      "templateId": "AthenaGlider:PreSeasonGlider_Elite",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaPickaxe:SickleBatPickaxe": {
       "templateId": "AthenaPickaxe:SickleBatPickaxe",
       "attributes": {
@@ -99220,30 +98512,6 @@
     },
     "AthenaGlider:Solo_Umbrella": {
       "templateId": "AthenaGlider:Solo_Umbrella",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:SPID_000_TestSpray": {
-      "templateId": "AthenaDance:SPID_000_TestSpray",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaDance:SPID_001_BasicBanner": {
-      "templateId": "AthenaDance:SPID_001_BasicBanner",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -106142,18 +105410,6 @@
       },
       "quantity": 1
     },
-    "AthenaGlider:Squad_Umbrella": {
-      "templateId": "AthenaGlider:Squad_Umbrella",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaDance:TOY_001_Basketball": {
       "templateId": "AthenaDance:TOY_001_Basketball",
       "attributes": {
@@ -108308,18 +107564,6 @@
     },
     "AthenaGlider:Umbrella_Season_24": {
       "templateId": "AthenaGlider:Umbrella_Season_24",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
-    "AthenaGlider:Umbrella_Silver": {
-      "templateId": "AthenaGlider:Umbrella_Silver",
       "attributes": {
         "max_level_bonus": 0,
         "level": 1,
@@ -114558,18 +113802,6 @@
       },
       "quantity": 1
     },
-    "AthenaItemWrap:Wrap_CatBurglarGameplay": {
-      "templateId": "AthenaItemWrap:Wrap_CatBurglarGameplay",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "variants": [],
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaItemWrap:Wrap_Chainmail": {
       "templateId": "AthenaItemWrap:Wrap_Chainmail",
       "attributes": {
@@ -115738,7 +114970,7 @@
   "stats": {
     "attributes": {
       "past_seasons": [],
-      "season_match_boost": 999999999,
+      "season_match_boost": 999,
       "loadouts": [
         "sandbox_loadout",
         "reload0-loadout"
@@ -115749,23 +114981,23 @@
         "dailyLoginInterval": "",
         "dailyQuestRerolls": 1
       },
-      "book_level": 1,
-      "season_num": 0,
+      "book_level": 100,
+      "season_num": 8,
       "favorite_consumableemote": "",
-      "banner_color": "DefaultColor1",
+      "banner_color": "",
       "favorite_callingcard": "",
       "favorite_character": "",
       "favorite_spray": [],
       "book_xp": 0,
       "favorite_loadingscreen": "",
-      "book_purchased": false,
-      "lifetime_wins": 1,
+      "book_purchased": true,
+      "lifetime_wins": 0,
       "favorite_hat": "",
-      "level": 1,
+      "level": 100,
       "favorite_battlebus": "",
       "favorite_mapmarker": "",
       "favorite_vehicledeco": "",
-      "accountLevel": 1,
+      "accountLevel": 100,
       "favorite_backpack": "",
       "favorite_dance": [
         "",
@@ -115778,14 +115010,14 @@
       "inventory_limit_bonus": 0,
       "last_applied_loadout": "",
       "favorite_skydivecontrail": "",
-      "favorite_pickaxe": "",
-      "favorite_glider": "",
+      "favorite_pickaxe": "AthenaPickaxe:DefaultPickaxe",
+      "favorite_glider": "AthenaGlider:DefaultGlider",
       "daily_rewards": {},
-      "xp": 999,
-      "season_friend_match_boost": 0,
+      "xp": 0,
+      "season_friend_match_boost": 999,
       "active_loadout_index": 0,
       "favorite_musicpack": "",
-      "banner_icon": "StandardBanner1",
+      "banner_icon": "",
       "favorite_itemwraps": [
         "",
         "",
