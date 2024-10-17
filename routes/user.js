@@ -165,6 +165,17 @@ app.get("/epic/id/v2/sdk/accounts", async (req, res) => {
     }]);
 })
 
+app.all("/fortnite/api/game/v2/profileToken/verify/:accountId", (req, res) => {
+    log.debug(`ALL /fortnite/api/game/v2/profileToken/verify/${req.params.accountId} called`);
+    
+    if (req.method != "POST") {
+        const err = error.method(req);
+        return res.header(err.header).status(405).send(err.error);
+    }
+
+    res.status(204).send();
+});
+
 app.delete("/account/api/oauth/sessions/kill/*", async (req, res) => {
     log.debug("DELETE account/api/oauth/sessions/kill/* called");
     res.status(204);
