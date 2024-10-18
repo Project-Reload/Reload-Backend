@@ -25,6 +25,8 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
     * [x] Purchasing items from the Item Shop.
     * [x] Gifting items to your friends.
     * [x] Working Auto Item Shop.
+* Refunding:
+    * [x] Working refunding stuff.
 * Discord Bot:
     * [x] Being able to activate/deactivate the Discord bot.
     * [x] Commands with very useful functions.
