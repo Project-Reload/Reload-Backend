@@ -11,6 +11,7 @@ const log = require("./structs/log.js");
 const error = require("./structs/error.js");
 const functions = require("./structs/functions.js");
 const CheckForUpdate = require("./structs/checkforupdate.js");
+const AutoBackendRestart = require("./structs/autobackendrestart.js");
 
 const app = express();
 
@@ -125,6 +126,10 @@ app.listen(PORT, () => {
         process.exit(0);
     } else throw err;
 });
+
+if (config.bEnableAutoBackendRestart === true) {
+    AutoBackendRestart.scheduleRestart(config.bRestartTime);
+}
 
 if (config.Website.bUseWebsite === true) {
     const websiteApp = express();

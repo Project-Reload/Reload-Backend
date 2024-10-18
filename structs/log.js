@@ -91,6 +91,15 @@ function checkforupdate(...args) {
     }
 }
 
+function autobackendrestart(...args) {
+    let msg = args.join(" ");
+    if (config.bEnableFormattedLogs) {
+        formatLog("\x1b[92m", "Reload Auto Backend Restart Log", ...args);
+    } else {
+        console.log(`\x1b[92mReload Auto Backend Restart\x1b[0m: ${msg}`);
+    }
+}
+
 module.exports = {
     backend,
     bot,
@@ -99,5 +108,6 @@ module.exports = {
     debug,
     website,
     AutoRotation,
-    checkforupdate
+    checkforupdate,
+    autobackendrestart
 };

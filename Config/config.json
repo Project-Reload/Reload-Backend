@@ -57,6 +57,10 @@
     "bEnableSACRewards": false,
     "bPercentageSACRewards": 0,
 
+    "//": "For 'bRestartTime' use this format: [number][y, M, w, d, h, m, s] so 5m, for Month u need to add the big M not the m",
+    "bEnableAutoBackendRestart": false,
+    "bRestartTime": "",
+
     "//": "These are all the events you can add to the game, like the rift in the sky!",
     "bEnableGeodeEvent": false,
     "geodeEventStartDate": "2020-01-01T00:00:00.000Z",
