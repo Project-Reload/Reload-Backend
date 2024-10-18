@@ -1380,6 +1380,104 @@ app.post("/fortnite/api/game/v2/profile/*/client/UpdateQuestClientObjectives", v
     })
 });
 
+app.post("/fortnite/api/game/v2/profile/*/client/RefundMtxPurchase", verifyToken, async (req, res) => {
+    const profiles = await Profile.findOne({ accountId: req.params[0] });
+    let profile = profiles.profiles[req.query.profileId];
+
+    const ItemProfile = profiles.profiles.athena;
+    const memory = functions.GetVersionInfo(req);
+
+    var ApplyProfileChanges = [];
+    var MultiUpdate = [];
+    var BaseRevision = profile.rvn || 0;
+    var QueryRevision = req.query.rvn || -1;
+    let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+    var ItemGuids = [];
+
+    if (req.body.purchaseId) {
+        MultiUpdate.push({
+            "profileRevision": ItemProfile.rvn || 0,
+            "profileId": "athena",
+            "profileChangesBaseRevision": ItemProfile.rvn || 0,
+            "profileChanges": [],
+            "profileCommandRevision": ItemProfile.commandRevision || 0,
+        })
+
+        profile.stats.attributes.mtx_purchase_history.refundsUsed += 1;
+        profile.stats.attributes.mtx_purchase_history.refundCredits -= 1;
+        for (var i in profile.stats.attributes.mtx_purchase_history.purchases) {
+            if (profile.stats.attributes.mtx_purchase_history.purchases[i].purchaseId == req.body.purchaseId) {
+                for (var x in profile.stats.attributes.mtx_purchase_history.purchases[i].lootResult) {
+                    ItemGuids.push(profile.stats.attributes.mtx_purchase_history.purchases[i].lootResult[x].itemGuid)
+                }
+                profile.stats.attributes.mtx_purchase_history.purchases[i].refundDate = new Date().toISOString();
+                for (var key in profile.items) {
+                    if (profile.items[key].templateId.toLowerCase().startsWith("currency:mtx")) {
+                        if (profile.items[key].attributes.platform.toLowerCase() == profile.stats.attributes.current_mtx_platform.toLowerCase() || profile.items[key].attributes.platform.toLowerCase() == "shared") {
+                            profile.items[key].quantity += profile.stats.attributes.mtx_purchase_history.purchases[i].totalMtxPaid;
+        
+                            ApplyProfileChanges.push({
+                                "changeType": "itemQuantityChanged",
+                                "itemId": key,
+                                "quantity": profile.items[key].quantity
+                            })
+        
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        for (var i in ItemGuids) {
+			try {
+				delete ItemProfile.items[ItemGuids[i]]
+				MultiUpdate[0].profileChanges.push({
+					"changeType": "itemRemoved",
+					"itemId": ItemGuids[i]
+				})
+			} catch (err) {}
+        }
+        ItemProfile.rvn += 1;
+        ItemProfile.commandRevision += 1;
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+        StatChanged = true;
+    }
+
+    if (ApplyProfileChanges.length > 0) {
+        
+        ApplyProfileChanges.push({
+            "changeType": "statModified",
+            "name": "mtx_purchase_history",
+            "value": profile.stats.attributes.mtx_purchase_history
+        })
+        MultiUpdate[0].profileRevision = ItemProfile.rvn || 0;
+        MultiUpdate[0].profileCommandRevision = ItemProfile.commandRevision || 0;
+
+        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile} });
+        await profiles.updateOne({ $set: { [`profiles.athena`]: ItemProfile} });
+    }
+
+    if (QueryRevision != ProfileRevisionCheck) {
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    }
+    
+    res.json({
+        profileRevision: profile.rvn || 0,
+        profileId: req.query.profileId,
+        profileChangesBaseRevision: BaseRevision,
+        profileChanges: ApplyProfileChanges,
+        profileCommandRevision: profile.commandRevision || 0,
+        serverTime: new Date().toISOString(),
+        multiUpdate: MultiUpdate,
+        responseVersion: 1
+    })
+});
+
 app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyToken, async (req, res) => {
     log.debug(`PurchaseCatalogEntry: Request received with body: ${JSON.stringify(req.body)}`);
 
@@ -2045,6 +2143,20 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                         `You cannot afford this item (${findOfferId.offerId.prices[0].finalPrice}).`,
                         [`${findOfferId.offerId.prices[0].finalPrice}`], 1040, undefined, 400, res
                     );
+                }
+
+                if (findOfferId.offerId.itemGrants.length != 0) {
+
+                    var purchaseId = functions.MakeID();
+                    profile.stats.attributes.mtx_purchase_history.purchases.push({"purchaseId":purchaseId,"offerId":`v2:/${purchaseId}`,"purchaseDate":new Date().toISOString(),"freeRefundEligible":false,"fulfillments":[],"lootResult":Notifications[0].lootResult.items,"totalMtxPaid":findOfferId.offerId.prices[0].finalPrice,"metadata":{},"gameContext":""})
+
+                    ApplyProfileChanges.push({
+                        "changeType": "statModified",
+                        "name": "mtx_purchase_history",
+                        "value": profile.stats.attributes.mtx_purchase_history
+                    })
+
+                    log.debug(`PurchaseCatalogEntry: Successfully added the item to refunding tab`);
                 }
             }
 
