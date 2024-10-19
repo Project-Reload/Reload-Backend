@@ -322,6 +322,21 @@ function updatecfgomg(dailyItems, featuredItems) {
     log.AutoRotation("The item shop has rotated!");
 }
 
+async function fetchItemIcon(itemName) {
+    try {
+        const response = await axios.get(`https://fortnite-api.com/v2/cosmetics/br/search?name=${encodeURIComponent(itemName)}`);
+        if (response.data && response.data.data && response.data.data.images && response.data.data.images.smallIcon) {
+            return response.data.data.images.smallIcon;
+        } else {
+            log.error(`No small icon found for ${itemName}`);
+            return null;
+        }
+    } catch (error) {
+        log.error(`Error fetching icon for ${itemName}:`, error.message || error);
+        return null;
+    }
+}
+
 async function discordpost(itemShop) {
     const embeds = [];
 
@@ -329,17 +344,18 @@ async function discordpost(itemShop) {
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     }
 
-    function formatItemEmbed(item, authorTitle = null) {
+    async function formatItemEmbed(item, authorTitle = null) {
         const itemName = `**${capitalizeFirstLetter(item.name || "Unknown Item")}**`;
         const itemRarity = `Rarity: **${capitalizeFirstLetter(item.rarity?.displayValue || "Unknown")}**`;
         const itemPrice = `Price: **${notproperpricegen(item)} V-Bucks**`;
+        const itemIcon = await fetchItemIcon(item.name);
 
         const embed = {
             title: itemName,
             color: 0x00FF7F,
             description: `${itemRarity}\n${itemPrice}`,
             thumbnail: {
-                url: item.images?.icon || "https://i.imgur.com/2RImwlb.png"
+                url: itemIcon || 'https://via.placeholder.com/150' // prevents crash with placeholder images
             }
         };
 
@@ -365,27 +381,24 @@ async function discordpost(itemShop) {
     }
 
     embeds.push({
-            title: "Reload Item Shop",
-            description: `These are the cosmetics for today!`,
-            color: 0x00FF7F,
-            thumbnail: {
-                url: "https://i.imgur.com/2RImwlb.png"
-            },
-            fields: [],
+        title: "Reload Item Shop",
+        description: `These are the cosmetics for today!`,
+        color: 0x00FF7F,
+        fields: [],
     });
 
     if (itemShop.featured.length > 0) {
-        itemShop.featured.forEach((item, index) => {
-            const embed = formatItemEmbed(item, index === 0 ? "Feature Item" : null);
+        for (const [index, item] of itemShop.featured.entries()) {
+            const embed = await formatItemEmbed(item, index === 0 ? "Feature Item" : null);
             embeds.push(embed);
-        });
+        }
     }
 
     if (itemShop.daily.length > 0) {
-        itemShop.daily.forEach((item, index) => {
-            const embed = formatItemEmbed(item, index === 0 ? "Daily Item" : null);
+        for (const [index, item] of itemShop.daily.entries()) {
+            const embed = await formatItemEmbed(item, index === 0 ? "Daily Item" : null);
             embeds.push(embed);
-        });
+        }
     }
 
     const nextRotationTimestamp = getNextRotationTime();
@@ -396,18 +409,27 @@ async function discordpost(itemShop) {
 
     try {
         if (config.bEnableDiscordWebhook === true) {
-            await axios.post(webhook, { embeds: embeds });
+            const chunkSize = 10;
+            for (let i = 0; i < embeds.length; i += chunkSize) {
+                const embedChunk = embeds.slice(i, i + chunkSize);
+                const response = await axios.post(webhook, { embeds: embedChunk });
+                log.AutoRotation(`Item shop posted successfully to Discord (chunk ${i / chunkSize + 1}):`, response.status);
+            }
         }
     } catch (error) {
-        log.error("Error sending item shop to Discord:", error.message || error);
+        log.error(`Error sending item shop to Discord: ${error.message}`);
+        if (error.response && error.response.data) {
+            log.error(`Discord API response: ${JSON.stringify(error.response.data, null, 2)}`);
+        }
     }
 }
+
 
 async function rotateshop() {
     try {
         const cosmetics = await fetchitems();
         if (cosmetics.length === 0) {
-            log.error('No cosmetics found?');
+            log.error('No cosmetics found?'); // target was here!
             return;
         }
 
