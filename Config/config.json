@@ -64,9 +64,9 @@
     "//": "Use HTTPS (For VPS Side Only, Or If You Were To Setup  A Type Record To Your Own Public Adress From Your Domain) (You Also Need To Change The Examples In SSl Folder!)",
     "bEnableHTTPS": false, "//": "Only Enable if You Have SSL Certificate In The ssl Folder",
     "ssl": {
-        "cert": "./ssl/certificate.crt",
-        "//ca//": "./ssl/ca_bundle.crt", "//": "Optional (Only If You Have A CA Bundle from your ssl certificate)",
-        "key": "./ssl/private.key"
+        "cert": "./ssl/example_certificate.crt",
+        "//ca//": "./ssl/example_ca_bundle.crt", "//": "Optional (Only If You Have A CA Bundle from your ssl certificate)",
+        "key": "./ssl/example_private.key"
     },
 
     "//": "These are all the events you can add to the game, like the rift in the sky!",
