@@ -7,7 +7,7 @@ const path = require("path");
 const kv = require("./structs/kv.js");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 const WebSocket = require('ws');
-const https = require("https"); // Import the https module
+const https = require("https");
 
 const log = require("./structs/log.js");
 const error = require("./structs/error.js");
@@ -23,17 +23,12 @@ global.JWT_SECRET = functions.MakeID();
 const PORT = config.port;
 const WEBSITEPORT = config.Website.websiteport;
 
-// Declare httpsServer once
 let httpsServer;
 
-// Check if HTTPS is enabled
 if (config.bEnableHTTPS) {
-    const https = require('https'); // Import the https module
-
-    // Load SSL certificate options from config
     const httpsOptions = {
         cert: fs.readFileSync(config.ssl.cert),
-        ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined, // Optional
+        ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined,
         key: fs.readFileSync(config.ssl.key)
     };
 
@@ -126,12 +121,10 @@ app.get("/unknown", (req, res) => {
     res.json({ msg: "Reload Backend - Made by Burlone" });
 });
 
-// Start the server
 let server;
 if (config.bEnableHTTPS) {
     server = httpsServer.listen(PORT, () => {
         log.backend(`Backend started listening on port ${PORT} (HTTPS)`);
-        // Load additional modules
         require("./xmpp/xmpp.js");
         if (config.discord.bUseDiscordBot === true) {
             require("./DiscordBot");
@@ -151,7 +144,6 @@ if (config.bEnableHTTPS) {
 } else {
     server = app.listen(PORT, () => {
         log.backend(`Backend started listening on port ${PORT} (HTTP)`);
-        // Load additional modules
         require("./xmpp/xmpp.js");
         if (config.discord.bUseDiscordBot === true) {
             require("./DiscordBot");
@@ -179,17 +171,15 @@ if (config.Website.bUseWebsite === true) {
     const websiteApp = express();
     require('./Website/website')(websiteApp);
 
-    // Load SSL certificate options if HTTPS is enabled
     let httpsOptions;
     if (config.bEnableHTTPS) {
         httpsOptions = {
             cert: fs.readFileSync(config.ssl.cert),
-            ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined, // Optional
+            ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined,
             key: fs.readFileSync(config.ssl.key)
         };
     }
 
-    // Create the HTTPS server for the website
     if (config.bEnableHTTPS) {
         const httpsServer = https.createServer(httpsOptions, websiteApp);
         httpsServer.listen(config.Website.websiteport, () => {
@@ -204,7 +194,6 @@ if (config.Website.bUseWebsite === true) {
             }
         });
     } else {
-        // Fallback to HTTP server
         websiteApp.listen(config.Website.websiteport, () => {
             log.website(`Website started listening on port ${config.Website.websiteport} (HTTP)`);
         }).on("error", async (err) => {

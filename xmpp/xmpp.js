@@ -3,7 +3,7 @@ const XMLBuilder = require("xmlbuilder");
 const XMLParser = require("xml-parser");
 const express = require("express");
 const fs = require("fs");
-const https = require("https"); // Import the https module
+const https = require("https");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 
 const app = express();
@@ -12,20 +12,18 @@ const functions = require("../structs/functions.js");
 const User = require("../model/user.js");
 const Friends = require("../model/friends.js");
 
-const port = config.bEnableHTTPS ? 443 : 80; // Use port 443 for HTTPS, 80 for HTTP
+const port = config.bEnableHTTPS ? 443 : 80;
 let wss;
 
-// Load SSL certificate options if HTTPS is enabled
 let httpsOptions;
 if (config.bEnableHTTPS) {
     httpsOptions = {
         cert: fs.readFileSync(config.ssl.cert),
-        ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined, // Optional
+        ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined,
         key: fs.readFileSync(config.ssl.key)
     };
 }
 
-// Create the WebSocket server
 if (config.bEnableHTTPS) {
     const httpsServer = https.createServer(httpsOptions, app);
     wss = new WebSocket({ server: httpsServer });
@@ -39,7 +37,7 @@ if (config.bEnableHTTPS) {
 
 global.xmppDomain = "prod.ol.epicgames.com";
 global.Clients = [];
-global.MUCs = {}; // Multi-user chat rooms
+global.MUCs = {};
 
 app.get("/", (req, res) => {
     res.type("application/json");
