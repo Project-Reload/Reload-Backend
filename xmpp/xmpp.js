@@ -2,24 +2,44 @@ const WebSocket = require("ws").Server;
 const XMLBuilder = require("xmlbuilder");
 const XMLParser = require("xml-parser");
 const express = require("express");
-const app = express();
+const fs = require("fs");
+const https = require("https"); // Import the https module
+const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 
+const app = express();
 const log = require("../structs/log.js");
 const functions = require("../structs/functions.js");
-
 const User = require("../model/user.js");
 const Friends = require("../model/friends.js");
 
-const port = 80;
-const wss = new WebSocket({ server: app.listen(port) });
-const matchmaker = require("../matchmaker/matchmaker.js");
+const port = config.bEnableHTTPS ? 443 : 80; // Use port 443 for HTTPS, 80 for HTTP
+let wss;
+
+// Load SSL certificate options if HTTPS is enabled
+let httpsOptions;
+if (config.bEnableHTTPS) {
+    httpsOptions = {
+        cert: fs.readFileSync(config.ssl.cert),
+        ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined, // Optional
+        key: fs.readFileSync(config.ssl.key)
+    };
+}
+
+// Create the WebSocket server
+if (config.bEnableHTTPS) {
+    const httpsServer = https.createServer(httpsOptions, app);
+    wss = new WebSocket({ server: httpsServer });
+    httpsServer.listen(port, () => {
+        log.xmpp(`XMPP and Matchmaker started listening on port ${port} (HTTPS)`);
+    });
+} else {
+    wss = new WebSocket({ server: app.listen(port) });
+    log.xmpp(`XMPP and Matchmaker started listening on port ${port} (HTTP)`);
+}
 
 global.xmppDomain = "prod.ol.epicgames.com";
-
 global.Clients = [];
-
-// multi user chat rooms (global chat/party chat)
-global.MUCs = {};
+global.MUCs = {}; // Multi-user chat rooms
 
 app.get("/", (req, res) => {
     res.type("application/json");

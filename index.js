@@ -6,6 +6,8 @@ const jwt = require("jsonwebtoken");
 const path = require("path");
 const kv = require("./structs/kv.js");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const WebSocket = require('ws');
+const https = require("https"); // Import the https module
 
 const log = require("./structs/log.js");
 const error = require("./structs/error.js");
@@ -20,6 +22,23 @@ if (!fs.existsSync("./ClientSettings")) fs.mkdirSync("./ClientSettings");
 global.JWT_SECRET = functions.MakeID();
 const PORT = config.port;
 const WEBSITEPORT = config.Website.websiteport;
+
+// Declare httpsServer once
+let httpsServer;
+
+// Check if HTTPS is enabled
+if (config.bEnableHTTPS) {
+    const https = require('https'); // Import the https module
+
+    // Load SSL certificate options from config
+    const httpsOptions = {
+        cert: fs.readFileSync(config.ssl.cert),
+        ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined, // Optional
+        key: fs.readFileSync(config.ssl.key)
+    };
+
+    httpsServer = https.createServer(httpsOptions, app);
+}
 
 if (!fs.existsSync("./ClientSettings")) fs.mkdirSync("./ClientSettings");
 
@@ -107,45 +126,97 @@ app.get("/unknown", (req, res) => {
     res.json({ msg: "Reload Backend - Made by Burlone" });
 });
 
-app.listen(PORT, () => {
-    log.backend(`Backend started listening on port ${PORT}`);
-
-    require("./xmpp/xmpp.js");
-    if (config.discord.bUseDiscordBot === true) {
-        require("./DiscordBot");
-    }
-    
-    if (config.bUseAutoRotate === true) {
-        require("./structs/autorotate.js")
-    }
-
-}).on("error", async (err) => {
-    if (err.code === "EADDRINUSE") {
-        log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
-        await functions.sleep(3000);
-        process.exit(0);
-    } else throw err;
-});
+// Start the server
+let server;
+if (config.bEnableHTTPS) {
+    server = httpsServer.listen(PORT, () => {
+        log.backend(`Backend started listening on port ${PORT} (HTTPS)`);
+        // Load additional modules
+        require("./xmpp/xmpp.js");
+        if (config.discord.bUseDiscordBot === true) {
+            require("./DiscordBot");
+        }
+        if (config.bUseAutoRotate === true) {
+            require("./structs/autorotate.js");
+        }
+    }).on("error", async (err) => {
+        if (err.code === "EADDRINUSE") {
+            log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
+            await functions.sleep(3000);
+            process.exit(0);
+        } else {
+            throw err;
+        }
+    });
+} else {
+    server = app.listen(PORT, () => {
+        log.backend(`Backend started listening on port ${PORT} (HTTP)`);
+        // Load additional modules
+        require("./xmpp/xmpp.js");
+        if (config.discord.bUseDiscordBot === true) {
+            require("./DiscordBot");
+        }
+        if (config.bUseAutoRotate === true) {
+            require("./structs/autorotate.js");
+        }
+    }).on("error", async (err) => {
+        if (err.code === "EADDRINUSE") {
+            log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
+            await functions.sleep(3000);
+            process.exit(0);
+        } else {
+            throw err;
+        }
+    });
+}
 
 if (config.bEnableAutoBackendRestart === true) {
     AutoBackendRestart.scheduleRestart(config.bRestartTime);
 }
 
+
 if (config.Website.bUseWebsite === true) {
     const websiteApp = express();
     require('./Website/website')(websiteApp);
 
-    websiteApp.listen(WEBSITEPORT, () => {
-        log.website(`Website started listening on port ${WEBSITEPORT}`);
-    }).on("error", async (err) => {
-        if (err.code === "EADDRINUSE") {
-            log.error(`Website port ${WEBSITEPORT} is already in use!\nClosing in 3 seconds...`);
-            await functions.sleep(3000);
-            process.exit(1);
-        } else {
-            throw err;
-        }
-    });
+    // Load SSL certificate options if HTTPS is enabled
+    let httpsOptions;
+    if (config.bEnableHTTPS) {
+        httpsOptions = {
+            cert: fs.readFileSync(config.ssl.cert),
+            ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined, // Optional
+            key: fs.readFileSync(config.ssl.key)
+        };
+    }
+
+    // Create the HTTPS server for the website
+    if (config.bEnableHTTPS) {
+        const httpsServer = https.createServer(httpsOptions, websiteApp);
+        httpsServer.listen(config.Website.websiteport, () => {
+            log.website(`Website started listening on port ${config.Website.websiteport} (HTTPS)`);
+        }).on("error", async (err) => {
+            if (err.code === "EADDRINUSE") {
+                log.error(`Website port ${config.Website.websiteport} is already in use!\nClosing in 3 seconds...`);
+                await functions.sleep(3000);
+                process.exit(1);
+            } else {
+                throw err;
+            }
+        });
+    } else {
+        // Fallback to HTTP server
+        websiteApp.listen(config.Website.websiteport, () => {
+            log.website(`Website started listening on port ${config.Website.websiteport} (HTTP)`);
+        }).on("error", async (err) => {
+            if (err.code === "EADDRINUSE") {
+                log.error(`Website port ${config.Website.websiteport} is already in use!\nClosing in 3 seconds...`);
+                await functions.sleep(3000);
+                process.exit(1);
+            } else {
+                throw err;
+            }
+        });
+    }
 }
 
 app.use((req, res, next) => {
