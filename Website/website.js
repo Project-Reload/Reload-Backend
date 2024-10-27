@@ -28,7 +28,7 @@ module.exports = function(websiteApp) {
     const oauthCallback = require('./Data/js/oauthCallback')(DISCORD_API_URL, CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
     websiteApp.get('/oauth2/callback', oauthCallback);
 
-    websiteApp.post('/register-user', require('./Data/js/registerUser'));
+    websiteApp.post('/register-user', require('./Data/js/registerUser '));
 
     websiteApp.get('/register', (req, res) => {
         res.sendFile(path.join(__dirname, './Data/html/register.html'));
