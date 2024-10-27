@@ -28,11 +28,11 @@ if (config.bEnableHTTPS) {
     const httpsServer = https.createServer(httpsOptions, app);
     wss = new WebSocket({ server: httpsServer });
     httpsServer.listen(port, () => {
-        log.xmpp(`XMPP and Matchmaker started listening on port ${port} (HTTPS)`);
+        log.xmpp(`XMPP and Matchmaker started listening on port ${port} (SSL Enabled)`);
     });
 } else {
     wss = new WebSocket({ server: app.listen(port) });
-    log.xmpp(`XMPP and Matchmaker started listening on port ${port} (HTTP)`);
+    log.xmpp(`XMPP and Matchmaker started listening on port ${port} (SSL Disabled)`);
 }
 
 global.xmppDomain = "prod.ol.epicgames.com";

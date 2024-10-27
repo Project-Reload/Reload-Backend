@@ -124,7 +124,7 @@ app.get("/unknown", (req, res) => {
 let server;
 if (config.bEnableHTTPS) {
     server = httpsServer.listen(PORT, () => {
-        log.backend(`Backend started listening on port ${PORT} (HTTPS)`);
+        log.backend(`Backend started listening on port ${PORT} (SSL Enabled)`);
         require("./xmpp/xmpp.js");
         if (config.discord.bUseDiscordBot === true) {
             require("./DiscordBot");
@@ -143,7 +143,7 @@ if (config.bEnableHTTPS) {
     });
 } else {
     server = app.listen(PORT, () => {
-        log.backend(`Backend started listening on port ${PORT} (HTTP)`);
+        log.backend(`Backend started listening on port ${PORT} (SSL Disabled)`);
         require("./xmpp/xmpp.js");
         if (config.discord.bUseDiscordBot === true) {
             require("./DiscordBot");
@@ -183,7 +183,7 @@ if (config.Website.bUseWebsite === true) {
     if (config.bEnableHTTPS) {
         const httpsServer = https.createServer(httpsOptions, websiteApp);
         httpsServer.listen(config.Website.websiteport, () => {
-            log.website(`Website started listening on port ${config.Website.websiteport} (HTTPS)`);
+            log.website(`Website started listening on port ${config.Website.websiteport} (SSL Enabled)`);
         }).on("error", async (err) => {
             if (err.code === "EADDRINUSE") {
                 log.error(`Website port ${config.Website.websiteport} is already in use!\nClosing in 3 seconds...`);
@@ -195,7 +195,7 @@ if (config.Website.bUseWebsite === true) {
         });
     } else {
         websiteApp.listen(config.Website.websiteport, () => {
-            log.website(`Website started listening on port ${config.Website.websiteport} (HTTP)`);
+            log.website(`Website started listening on port ${config.Website.websiteport} (SSL Disabled)`);
         }).on("error", async (err) => {
             if (err.code === "EADDRINUSE") {
                 log.error(`Website port ${config.Website.websiteport} is already in use!\nClosing in 3 seconds...`);
