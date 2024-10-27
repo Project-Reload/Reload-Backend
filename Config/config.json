@@ -79,10 +79,10 @@
     "bEnableCubeLake": false,
     "cubeLakeDate": "2020-01-01T00:00:00.000Z"
 
-    // Use HTTPS (For VPS Side Only, Or If You Were To Setup  A Type Record To Your Own Public Adress From Your Domain)
+    "//": "Use HTTPS (For VPS Side Only, Or If You Were To Setup  A Type Record To Your Own Public Adress From Your Domain)",
     "bEnableHTTPS": true, 
     "ssl": {
-        "cert": "./ssl/certificate.crt", // Path to SSL certificate
-        "ca": "./ssl/ca_bundle.crt", // Path to CA bundle (optional)
-        "key": "./ssl/private.key" // Path to private key
+        "cert": "./ssl/certificate.crt", "//": "Path to SSL certificate",
+        "ca": "./ssl/ca_bundle.crt", "//": "Path to CA bundle (optional)",
+        "key": "./ssl/private.key" "//": "Path to private key",
 }
