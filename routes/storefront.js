@@ -4,6 +4,7 @@ const Profile = require("../model/profiles.js");
 const Friends = require("../model/friends.js");
 const functions = require("../structs/functions.js");
 const log = require("../structs/log.js");
+const error = require("../structs/error.js");
 
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");
 const keychain = require("../responses/keychain.json");
