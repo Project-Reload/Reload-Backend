@@ -175,17 +175,44 @@ if (config.Website.bUseWebsite === true) {
     const websiteApp = express();
     require('./Website/website')(websiteApp);
 
-    websiteApp.listen(WEBSITEPORT, () => {
-        log.website(`Website started listening on port ${WEBSITEPORT}`);
-    }).on("error", async (err) => {
-        if (err.code === "EADDRINUSE") {
-            log.error(`Website port ${WEBSITEPORT} is already in use!\nClosing in 3 seconds...`);
-            await functions.sleep(3000);
-            process.exit(1);
-        } else {
-            throw err;
-        }
-    });
+    // Load SSL certificate options if HTTPS is enabled
+    let httpsOptions;
+    if (config.bEnableHTTPS) {
+        httpsOptions = {
+            cert: fs.readFileSync(config.ssl.cert),
+            ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined, // Optional
+            key: fs.readFileSync(config.ssl.key)
+        };
+    }
+
+    // Create the HTTPS server for the website
+    if (config.bEnableHTTPS) {
+        const httpsServer = https.createServer(httpsOptions, websiteApp);
+        httpsServer.listen(config.Website.websiteport, () => {
+            log.website(`Website started listening on port ${config.Website.websiteport} (HTTPS)`);
+        }).on("error", async (err) => {
+            if (err.code === "EADDRINUSE") {
+                log.error(`Website port ${config.Website.websiteport} is already in use!\nClosing in 3 seconds...`);
+                await functions.sleep(3000);
+                process.exit(1);
+            } else {
+                throw err;
+            }
+        });
+    } else {
+        // Fallback to HTTP server
+        websiteApp.listen(config.Website.websiteport, () => {
+            log.website(`Website started listening on port ${config.Website.websiteport} (HTTP)`);
+        }).on("error", async (err) => {
+            if (err.code === "EADDRINUSE") {
+                log.error(`Website port ${config.Website.websiteport} is already in use!\nClosing in 3 seconds...`);
+                await functions.sleep(3000);
+                process.exit(1);
+            } else {
+                throw err;
+            }
+        });
+    }
 }
 
 app.use((req, res, next) => {
