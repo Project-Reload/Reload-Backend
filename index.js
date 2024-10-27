@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const path = require("path");
 const kv = require("./structs/kv.js");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const WebSocket = require('ws');
 
 const log = require("./structs/log.js");
 const error = require("./structs/error.js");
@@ -21,8 +22,10 @@ global.JWT_SECRET = functions.MakeID();
 const PORT = config.port;
 const WEBSITEPORT = config.Website.websiteport;
 
-// Check if HTTPS is enabled
+// Declare httpsServer once
 let httpsServer;
+
+// Check if HTTPS is enabled
 if (config.bEnableHTTPS) {
     const https = require('https'); // Import the https module
 
@@ -123,20 +126,18 @@ app.get("/unknown", (req, res) => {
 });
 
 // Start the server
-const startServer = (server) => {
-    server.listen(PORT, () => {
-        log.backend(`Backend started listening on port ${PORT}`);
-
+let server;
+if (config.bEnableHTTPS) {
+    server = httpsServer.listen(PORT, () => {
+        log.backend(`Backend started listening on port ${PORT} (HTTPS)`);
         // Load additional modules
         require("./xmpp/xmpp.js");
         if (config.discord.bUseDiscordBot === true) {
             require("./DiscordBot");
         }
-        
         if (config.bUseAutoRotate === true) {
             require("./structs/autorotate.js");
         }
-
     }).on("error", async (err) => {
         if (err.code === "EADDRINUSE") {
             log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
@@ -146,30 +147,32 @@ const startServer = (server) => {
             throw err;
         }
     });
-};
-
-// Check if HTTPS is enabled
-if (config.bEnableHTTPS) {
-    const httpsOptions = {
-        cert: fs.readFileSync(config.ssl.cert),
-        ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined, // Optional
-        key: fs.readFileSync(config.ssl.key)
-    };
-
-    const httpsServer = https.createServer(httpsOptions, app);
-    wss = new WebSocket({ server: httpsServer });
-
-    // Start the HTTPS server
-    startServer(httpsServer);
 } else {
-    // Start the HTTP server
-    wss = new WebSocket({ server: app.listen(PORT) });
-    startServer(app);
+    server = app.listen(PORT, () => {
+        log.backend(`Backend started listening on port ${PORT} (HTTP)`);
+        // Load additional modules
+        require("./xmpp/xmpp.js");
+        if (config.discord.bUseDiscordBot === true) {
+            require("./DiscordBot");
+        }
+        if (config.bUseAutoRotate === true) {
+            require("./structs/autorotate.js");
+        }
+    }).on("error", async (err) => {
+        if (err.code === "EADDRINUSE") {
+            log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
+            await functions.sleep(3000);
+            process.exit(0);
+        } else {
+            throw err;
+        }
+    });
 }
 
 if (config.bEnableAutoBackendRestart === true) {
     AutoBackendRestart.scheduleRestart(config.bRestartTime);
 }
+
 
 if (config.Website.bUseWebsite === true) {
     const websiteApp = express();
