@@ -7,6 +7,7 @@ const path = require("path");
 const kv = require("./structs/kv.js");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 const WebSocket = require('ws');
+const https = require("https"); // Import the https module
 
 const log = require("./structs/log.js");
 const error = require("./structs/error.js");
