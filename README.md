@@ -119,6 +119,7 @@ This **project/backend** is licensed under the **BSD 3-Clause License.**
 * [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
 * [zvivsp](https://github.com/zvivsp) - For creating the graphics
 * [joaco](https://github.com/ojotaa0124) - For helping with CloudStorage and responses stuff
+* [VoxyB89](https://github.com/VoxyB89) - For adding https/ssl support
 * [xLoigi](https://github.com/xLoigi) - For helping with some files and support a creator stuff
 * [PRO100KatYT](https://github.com/PRO100KatYT) - For helping with some .json files
 * [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11 - s16) / (We are working on season 15 while season 14 is currently not possible :C)
