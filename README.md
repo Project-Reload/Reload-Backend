@@ -56,8 +56,11 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
     * [x] Parties.
     * [x] Chat (whispering, global chat, party chat).
     * [x] Friends.
+* HTTPS/SSL Support:
+    * [x] A working https/ssl system.
 
 ## TO-DO
+- [ ] Differentiate ports between xmpp and matchmaker
 - [ ] Create a support with save the world
 
 ## Discord Bot Commands
