@@ -30,7 +30,7 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
 * Discord Bot:
     * [x] Being able to activate/deactivate the Discord bot.
     * [x] Commands with very useful functions.
-* BattlePass (s2-s16) / (We are working on season 15 while season 14 is currently not possible :C):
+* BattlePass (s2-s16) / (We are working on season 15):
     * [x] Possibility to buy the battle pass.
     * [x] Possibility to purchase battle pass levels.
     * [x] Possibility to gift the battle pass (BETA).
@@ -125,7 +125,7 @@ This **project/backend** is licensed under the **BSD 3-Clause License.**
 * [VoxyB89](https://github.com/VoxyB89) - For adding https/ssl support
 * [xLoigi](https://github.com/xLoigi) - For helping with some files and support a creator stuff
 * [PRO100KatYT](https://github.com/PRO100KatYT) - For helping with some .json files
-* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11 - s16) / (We are working on season 15 while season 14 is currently not possible :C)
+* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11 - s16) / (We are working on season 15)
 * [nade](https://github.com/gn1e) - For creating the base of the Auto Item Shop (Even if [Burlone](https://github.com/burlone0) solved many problems heheheh)
 
 ---

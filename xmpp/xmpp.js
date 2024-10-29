@@ -11,6 +11,7 @@ const log = require("../structs/log.js");
 const functions = require("../structs/functions.js");
 const User = require("../model/user.js");
 const Friends = require("../model/friends.js");
+const matchmaker = require("../matchmaker/matchmaker.js")
 
 const port = config.bEnableHTTPS ? 443 : 80;
 let wss;

@@ -1,0 +1,459 @@
+{
+    "battleBundleOfferId": "CFD41EF842ABF9D3D84A84B0F717D900",
+    "battlePassOfferId": "6EFAD8A54BBFAF4F24FA17BFCA8A879E",
+    "tierOfferId": "461F34C046269604EAC31481F34BC405",
+    "paidRewards": [
+      {
+        "Token:athenaseasonxpboost": 50,
+        "Token:athenaseasonfriendxpboost": 60,
+        "AthenaCharacter:CID_845_Athena_Commando_M_HightowerTapas": 1,
+        "ChallengeBundleSchedule:Season14_Wasabi_Schedule_01": 1,
+        "ChallengeBundleSchedule:Season14_Wasabi_Schedule_02": 1,
+        "ChallengeBundleSchedule:Season14_Wasabi_Schedule_03": 1,
+        "ChallengeBundleSchedule:Season14_Wasabi_Schedule_04": 1,
+        "ChallengeBundleSchedule:Season14_Wasabi_Schedule_05": 1,
+        "ChallengeBundleSchedule:Season14_Wasabi_Schedule_06": 1,
+        "ChallengeBundleSchedule:Season14_Wasabi_Schedule_07": 1,
+        "ChallengeBundleSchedule:Season14_Wasabi_Schedule_08": 1,
+        "ChallengeBundleSchedule:Season14_Wasabi_Schedule_09": 1,
+        "ChallengeBundleSchedule:Season14_AlternateStyles_Schedule_01": 1,
+        "ChallengeBundleSchedule:Season14_AlternateStyles_Schedule_02": 1,
+        "ChallengeBundleSchedule:Season14_AlternateStyles_Schedule_03": 1,
+        "ChallengeBundleSchedule:Season14_AlternateStyles_Schedule_04": 1,
+        "ChallengeBundleSchedule:Season14_AlternateStyles_Schedule_05": 1,
+        "ChallengeBundleSchedule:Season14_AlternateStyles_Schedule_06": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_S_Tapas_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_S_HoneyDew_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_S_Grape_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_S_Squash_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_S_Date_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_S_Mango_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_S_Tomato_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_S_Wasabi_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_G_Tapas_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_G_HoneyDew_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_G_Grape_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_G_Squash_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_G_Date_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_G_Mango_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_G_Tomato_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_G_Wasabi_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_H_Tapas_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_H_HoneyDew_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_H_Grape_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_H_Squash_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_H_Date_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_H_Mango_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_H_Tomato_Schedule": 1,
+        "ChallengeBundleSchedule:Season14_SuperLevel_H_Wasabi_Schedule": 1
+      },
+      {},
+      { "AthenaDance:SPID_224_S14_HighTowerTapas": 1 },
+      {},
+      {
+        "AthenaBackpack:BID_600_HightowerTapas": 1
+      },
+      {},
+      {
+        "BannerToken:BannerToken_062_S14_HighTowerTapas": 1
+      },
+      {
+        "ChallengeBundleSchedule:Season14_Awakenings_HightowerTapas1H_Schedule": 1,
+        "AthenaPickaxe:Pickaxe_ID_458_HightowerTapas1H": 1
+      },
+      {},
+      {
+        "AthenaItemWrap:Wrap_272_HightowerTapas": 1
+      },
+      {
+        "CosmeticVariantToken:VTID_743_HighTowerGlider_Tapas": 1
+      },
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {},
+      {
+        "AthenaGlider:Glider_ID_236_HightowerTapasMale": 1
+      },
+      {
+        "ChallengeBundleSchedule:Season14_Awakenings_HightowerTapas_Schedule": 1,
+        "AthenaDance:EID_HightowerTapas": 1
+      },
+      {
+        "AthenaItemWrap:Wrap_269_HightowerHoneydew": 1
+      },
+      {
+        "AthenaDance:SPID_220_S14_HighTowerHoneyDew": 1
+      },
+      {},
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "AthenaLoadingScreen:LSID_254_S14SeasonalA": 1
+      },
+      {
+        "CosmeticVariantToken:VTID_740_HighTowerGlider_Honeydew": 1
+      },
+      {
+        "AthenaCharacter:CID_842_Athena_Commando_F_HightowerHoneydew": 1
+      },
+      {},
+      {
+        "BannerToken:BannerToken_058_S14_HighTowerHoneyDew": 1
+      },
+      {
+        "AthenaPickaxe:Pickaxe_ID_455_HightowerHoneydew1H": 1
+      },
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "AthenaLoadingScreen:LSID_248_HighTowerHoneyDew": 1
+      },
+      {},
+      {
+        "ChallengeBundleSchedule:Season14_Awakenings_HightowerHoneyDew_Schedule": 1,
+        "AthenaDance:EID_HightowerHoneydew": 1
+      },
+      {
+        "AthenaSkyDiveContrail:Trails_ID_096_HightowerGrape": 1
+      },
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "ChallengeBundleSchedule:Season14_Awakenings_HightowerGrapeB_Schedule": 1,
+        "AthenaBackpack:BID_598_HightowerGrape": 1
+      },
+      {},
+      {
+        "AthenaDance:SPID_219_S14_HighTowerGrape": 1
+      },
+      {
+        "AthenaMusicPack:MusicPack_057_S14_Hero": 1
+      },
+      {
+        "BannerToken:BannerToken_057_S14_HighTowerGrape": 1
+      },
+      {},
+      {
+        "AthenaCharacter:CID_840_Athena_Commando_M_HightowerGrape": 1
+      },
+      {
+        "CosmeticVariantToken:VTID_739_HighTowerGlider_Grape": 1
+      },
+      {
+        "AthenaDance:Emoji_S14_HighTowerGrape": 1
+      },
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "AthenaGlider:Glider_ID_234_HightowerGrape": 1
+      },
+      {},
+      {
+        "AthenaLoadingScreen:LSID_247_HighTowerGrape": 1
+      },
+      {
+        "BannerToken:BannerToken_060_S14_HighTowerRadish": 1
+      },
+      {
+        "ChallengeBundleSchedule:Season14_Awakenings_HightowerGrape_Schedule": 1,
+        "AthenaDance:EID_HightowerGrape": 1
+      },
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {},
+      {
+        "AthenaDance:Emoji_S14_HighTowerSquash": 1
+      },
+      {
+        "AthenaSkyDiveContrail:Trails_ID_098_HightowerSquash": 1
+      },
+      {
+        "BannerToken:BannerToken_061_S14_HighTowerSquash": 1
+      },
+      {},
+      {
+        "AthenaCharacter:CID_839_Athena_Commando_F_HightowerSquash": 1
+      },
+      {
+        "CosmeticVariantToken:VTID_742_HighTowerGlider_Squash": 1
+      },
+      {
+        "AthenaPickaxe:Pickaxe_ID_457_HightowerSquash1H": 1
+      },
+      {
+        "AthenaLoadingScreen:LSID_250_HighTowerSquash": 1
+      },
+      {
+        "AthenaGlider:Glider_ID_235_HightowerSquashFemale": 1
+      },
+      {},
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "ChallengeBundleSchedule:Season14_Awakenings_HightowerSquash_Schedule": 1,
+        "AthenaDance:EID_HightowerSquash": 1
+      },
+      {
+        "AthenaMusicPack:MusicPack_058_S14_Villain": 1
+      },
+      {
+        "AthenaDance:Emoji_S14_HighTowerDate": 1
+      },
+      {},
+      {
+        "AthenaPickaxe:Pickaxe_ID_453_HightowerDate": 1
+      },
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "AthenaItemWrap:Wrap_267_HightowerDate": 1
+      },
+      {
+        "AthenaCharacter:CID_846_Athena_Commando_M_HightowerDate": 1,
+        "AthenaBackpack:BID_605_HightowerDate_Cape": 1
+      },
+      {},
+      {
+        "CosmeticVariantToken:VTID_738_HighTowerGlider_Date": 1
+      },
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "AthenaGlider:Glider_ID_232_HightowerDate": 1
+      },
+      {},
+      {
+        "AthenaSkyDiveContrail:Trails_ID_095_HightowerDate": 1
+      },
+      {
+        "ChallengeBundleSchedule:Season14_Awakenings_HightowerDate_Schedule": 1,
+        "AthenaDance:EID_HightowerDate": 1
+      },
+      {
+        "CosmeticVariantToken:VTID_741_HighTowerGlider_Mango": 1
+      },
+      {
+        "AthenaDance:Emoji_S14_HighTowerMango": 1
+      },
+      {},
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "AthenaLoadingScreen:LSID_249_HighTowerMango": 1
+      },
+      {
+        "AthenaCharacter:CID_844_Athena_Commando_F_HightowerMango": 1
+      },
+      {
+        "AthenaBackpack:BID_595_HightowerMango": 1
+      },
+      {
+        "AthenaDance:SPID_221_S14_HighTowerMango": 1
+      },
+      {
+        "AthenaPickaxe:Pickaxe_ID_456_HightowerMango1H": 1
+      },
+      {},
+      {
+        "AthenaItemWrap:Wrap_270_HightowerMango": 1
+      },
+      {
+        "ChallengeBundleSchedule:Season14_Awakenings_HightowerMango_Schedule": 1,
+        "AthenaDance:EID_HightowerMango": 1
+      },
+      {
+        "AthenaLoadingScreen:LSID_252_HighTowerTomato": 1
+      },
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "AthenaBackpack:BID_596_HightowerTomato": 1
+      },
+      {
+        "BannerToken:BannerToken_063_S14_HighTowerTomato": 1
+      },
+      {},
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {
+        "AthenaCharacter:CID_843_Athena_Commando_M_HightowerTomato_Casual": 1
+      },
+      {
+        "CosmeticVariantToken:VTID_744_HighTowerGlider_Tomato": 1
+      },
+      {
+        "AthenaDance:SPID_225_S14_HighTowerTomato": 1
+      },
+      {
+        "AthenaPickaxe:Pickaxe_ID_459_HightowerTomato1H": 1
+      },
+      {
+        "AthenaDance:Emoji_S14_HighTowerTomato": 1
+      },
+      {
+        "AthenaGlider:Glider_ID_237_HightowerTomato": 1
+      },
+      {},
+      {
+        "ChallengeBundleSchedule:Season14_Awakenings_HightowerTomato_Schedule": 1,
+        "AthenaDance:EID_HightowerTomato": 1
+      }
+    ],
+    "freeRewards": [
+      {},
+      {
+        "AthenaSkyDiveContrail:Trails_ID_099_HightowerTapas": 1
+      },
+      {},
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {},
+      {
+        "AthenaGlider:Glider_ID_233_HightowerDefault": 1
+      },
+      {},
+      {},
+      {
+        "AthenaLoadingScreen:LSID_251_HighTowerTapas": 1
+      },
+      {},
+      {},
+      {},
+      {
+        "AthenaDance:Emoji_S14_HighTowerTapas": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaMusicPack:MusicPack_056_S14_Cine": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaBackpack:BID_594_HightowerHoneydew": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaDance:Emoji_S14_HighTowerHoneyDew": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaItemWrap:Wrap_268_HightowerGrape": 1
+      },
+      {},
+      {},
+      {},
+      {
+        "AthenaPickaxe:Pickaxe_ID_454_HightowerGrapeMale1H": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaDance:SPID_222_S14_HighTowerRadish": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaItemWrap:Wrap_271_HightowerSquash": 1
+      },
+      {},
+      {},
+      {},
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaDance:SPID_223_S14_HighTowerSquash": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "BannerToken:BannerToken_056_S14_HighTowerDate": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaBackpack:BID_599_HightowerDate": 1
+      },
+      {},
+      {},
+      {},
+      {
+        "AthenaLoadingScreen:LSID_246_HighTowerDate": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "BannerToken:BannerToken_059_S14_HighTowerMango": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaSkyDiveContrail:Trails_ID_097_HightowerSpeedlines": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        "AthenaItemWrap:Wrap_273_HightowerTomato": 1
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        "Currency:mtxgiveaway": 100
+      },
+      {}
+    ]
+  }
+  
