@@ -2788,6 +2788,53 @@ app.post("/fortnite/api/game/v2/profile/*/client/EquipBattleRoyaleCustomization"
     });
 });
 
+app.post("/fortnite/api/game/v2/profile/*/client/RequestRestedStateIncrease", async (req, res) => {
+    const profiles = await Profile.findOne({ accountId: req.params[0] });
+    let profile = profiles.profiles[req.query.profileId];
+    const memory = Version.GetVersionInfo(req);
+    let ApplyProfileChanges = [];
+    let BaseRevision = profile.rvn;
+    let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+    let QueryRevision = req.query.rvn || -1;
+    let StatChanged = false;
+    let xp = profile.stats.attributes["book_xp"] + req.body.restedXpGenAccumulated;
+    if (xp !== profile.stats.attributes["book_xp"]) {
+        StatChanged = true;
+        profile.stats.attributes["book_xp"] = xp;
+        profile.stats.attributes["xp"] = xp;
+    }
+    if (StatChanged == true) {
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+        ApplyProfileChanges.push({
+            "changeType": "statModified",
+            "name": "book_xp",
+            "value": profile.stats.attributes.book_xp
+        },
+        {
+            "changeType": "statModified",
+            "name": "xp",
+            "value": profile.stats.attributes.xp
+        });
+        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
+    }
+    if (QueryRevision != ProfileRevisionCheck) {
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    }
+    res.json({
+        profileRevision: profile.rvn || 0,
+        profileId: req.query.profileId,
+        profileChangesBaseRevision: BaseRevision,
+        profileChanges: ApplyProfileChanges,
+        profileCommandRevision: profile.commandRevision || 0,
+        serverTime: new Date().toISOString(),
+        responseVersion: 1
+    });
+});
+
 app.post("/fortnite/api/game/v2/profile/*/client/SetCosmeticLockerBanner", verifyToken, async (req, res) => {
     const profiles = await Profile.findOne({ accountId: req.user.accountId });
 
