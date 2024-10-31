@@ -4,19 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Exists</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" href="/Images/reload.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .dark-theme {
+            background-color: #343a40;
+            color: white;
+        }
+        .light-theme {
+            background-color: #f8f9fa;
+            color: black;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
 <body class="dark-theme">
-    <div class="container">
-        <h1>Account Exists</h1>
-        <p>The Discord user <strong id="username"></strong> already has an account.</p>
+    <div class="container text-center mt-5">
+        <h1 class="display-4">Account Exists</h1>
+        <p class="lead">The Discord user <strong id="username"></strong> already has an account. (This also means if you just registered its done)</p>
     </div>
 
-    <button class="theme-toggle" id="themeToggle"></button>
+    <button class="theme-toggle btn btn-secondary" id="themeToggle">Toggle Theme</button>
 
-    <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; color: gray; font-size: 14px; padding: 10px;">
-        Powered by Reload Backend - © 2024
+    <footer class="footer mt-auto py-3 text-center">
+        <div class="container">
+            <span class="text-muted">Powered by Reload Backend</span>
+        </div>
     </footer>
 
     <script>
@@ -30,5 +50,8 @@
             document.body.classList.toggle('dark-theme');
         });
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
