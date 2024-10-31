@@ -4,38 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" href="/Images/reload.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .dark-theme {
+            background-color: #343a40;
+            color: white;
+        }
+        .light-theme {
+            background-color: #f8f9fa;
+            color: black;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.5rem;
+        }
+        .register-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-container {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .error-message {
+            display: none;
+        }
+        .error-message.visible {
+            display: block;
+        }
+        .close-error {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="dark-theme">
-    <div class="register-container">
-        <h1>REGISTER</h1>
-        <p class="signin-text">Sign In</p>
+    <div class="container register-container bg-light">
+        <h1 class="text-center">REGISTER</h1>
+        <p class="text-center text-muted">Sign In</p>
 
-        <div id="error-message" class="error-message hidden">
+        <div id="error-message" class="alert alert-danger error-message">
             <span id="error-text"></span>
-            <span class="close-error" onclick="closeErrorMessage()">✖️</span>
+            <span class="close-error float-right" onclick="closeErrorMessage()">âœ–ï¸</span>
         </div>
 
         <form id="registerForm">
-            <div class="input-container">
-                <input type="text" id="username" placeholder="Username" required>
+            <div class="form-group">
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
             </div>
-            <div class="input-container">
-                <input type="email" id="email" placeholder="Email" required>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
             </div>
-            <div class="input-container">
-                <input type="password" id="password" placeholder="Password" required>
-                <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+            <div class="form-group input-container">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()">ðŸ‘ï¸</span>
             </div>
-            <input type="submit" id="submitBtn" value="Create Your Account">
+            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Create Your Account</button>
         </form>
     </div>
 
-    <button class="theme-toggle" id="themeToggle"></button>
+    <button class="theme-toggle btn btn-secondary" id="themeToggle">Toggle Theme</button>
 
-    <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; color: gray; font-size: 14px; padding: 10px;">
-        Powered by Reload Backend - © 2024
+    <footer class="footer mt-auto py-3 text-center">
+        <div class="container">
+            <span class="text-muted">Powered by Reload Backend</span>
+        </div>
     </footer>
 
     <script>
@@ -53,7 +99,7 @@
                 
                 const submitBtn = document.getElementById('submitBtn');
                 submitBtn.disabled = true; 
-                submitBtn.value = "Please wait..."; 
+                submitBtn.textContent = "Please wait..."; 
 
                 const username = document.getElementById('username').value;
                 const email = document.getElementById('email').value;
@@ -72,13 +118,13 @@
                       } else {
                           showErrorMessage(data.message);
                           submitBtn.disabled = false; 
-                          submitBtn.value = "Create Your Account"; 
+                          submitBtn.textContent = "Create Your Account"; 
                       }
                   }).catch(error => {
                       console.error('Error:', error);
                       showErrorMessage('Failed to create account due to a server error.');
                       submitBtn.disabled = false; 
-                      submitBtn.value = "Create Your Account"; 
+                      submitBtn.textContent = "Create Your Account"; 
                   });
             });
 
@@ -94,10 +140,10 @@
             const eyeIcon = document.querySelector('.toggle-password');
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
-                eyeIcon.textContent = '🙈';
+                eyeIcon.textContent = 'ðŸ™ˆ';
             } else {
                 passwordInput.type = 'password';
-                eyeIcon.textContent = '👁️';
+                eyeIcon.textContent = 'ðŸ‘ï¸';
             }
         }
 
@@ -106,7 +152,6 @@
             const errorText = document.getElementById('error-text');
             
             errorText.textContent = message;
-            errorMessageDiv.classList.remove('hidden');
             errorMessageDiv.classList.add('visible');
 
             setTimeout(() => {
@@ -117,8 +162,10 @@
         function closeErrorMessage() {
             const errorMessageDiv = document.getElementById('error-message');
             errorMessageDiv.classList.remove('visible');
-            errorMessageDiv.classList.add('hidden');
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
