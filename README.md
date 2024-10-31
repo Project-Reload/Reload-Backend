@@ -105,6 +105,7 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
 2) Create a DNS record: set the type as "A", the name as you want (for example: "api"), and the IPv4 address as your admin or VPS IP. Then save the record.
 3) Changes may take a bit, but it will work.
 4) Enter the domain, Heres an example: https://api.targeteater.xyz/ <-- this isnt what you are supposed to do put your own domain
+5) **Note:** Remember that this isn't the most efficient way to set up a custom domain, and you should consider using the standard method. There’s a YouTube tutorial available for that. The reason this method isn’t the best is that it may restrict certain functionalities, such as registering with websites. There is a workaround using http://domain.xyz, but that can be quite unconventional.
 
 ## How to start Reload Backend
 1) Install [NodeJS](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/try/download/community).
