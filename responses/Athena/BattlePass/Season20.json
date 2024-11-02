@@ -1,0 +1,221 @@
+{
+  "battleBundleOfferId": "C6A175814C40EE7AE38C3899B891B732",
+  "battlePassOfferId": "12D84F2D4B6A9FCA152F71A317AAA83E",
+  "tierOfferId": "ABA50BB54BEFFD925095869DD16DC561",
+  "paidRewards": [
+    {
+      "Emoji_S20_CyberArmor": 1,
+      "Pickaxe_ID_768_CyberArmorFemale": 1,
+      "MtxGiveaway": 100,
+      "Glider_ID_356_CyberArmorFemale": 1,
+      "Wrap_454_CyberArmor": 1,
+      "LSID_412_CyberArmor": 1,
+      "CID_A_369_Athena_Commando_F_CyberArmor": 1
+    },
+    {},
+    {
+      "Pickaxe_ID_773_OrderGuardMale": 1
+    },
+    {},
+    {
+      "CID_A_370_Athena_Commando_M_OrderGuard": 1
+    },
+    {},
+    {
+      "BRS20_OrderGuard": 1
+    },
+    {
+      "BID_970_OrderGuard": 1
+    },
+    {},
+    {
+      "Glider_ID_361_OrderGuardMale": 1
+    },
+    {
+      "SPID_365_CyberArmor": 1
+    },
+    {
+      "MtxGiveaway": 100
+    },
+    {},
+    {
+      "VTID_A_523_OrderGuard_StyleB": 1
+    },
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "LSID_418_S20_Drill": 1
+    },
+    {
+      "EID_CyberArmor": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "VTID_A_524_OrderGuard_ColorB": 1
+    },
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "MusicPack_129_OrderGuard": 1
+    },
+    {
+      "LSID_419_S20_AllOutWar": 1
+    },
+    {
+      "BID_974_Binary": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "Pickaxe_ID_767_CadetFemale": 1
+    },
+    {
+      "BRS20_Cadet": 1
+    },
+    {
+      "Emoji_S20_Cadet": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "CID_A_374_Athena_Commando_F_Binary": 1
+    },
+    {
+      "LSID_410_Cadet": 1
+    },
+    {
+      "Pickaxe_ID_766_BinaryFemale": 1
+    },
+    {
+      "MusicPack_127_Cadet": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "BID_971_Cadet": 1
+    },
+    {
+      "Emoji_S20_KnightCat": 1
+    },
+    {
+      "EID_KnightCat": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "CID_A_372_Athena_Commando_F_KnightCat": 1
+    },
+    {
+      "LSID_413_KnightCat": 1
+    },
+    {
+      "BID_972_KnightCat_Female": 1
+    },
+    {
+      "VTID_A_540_OriginPrisoner_ColorB": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "Pickaxe_ID_776_TheOriginMale": 1
+    }
+  ],
+  "freeRewards": [
+    {},
+    {
+      "SPID_370_MysticAmulet": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {},
+    {
+      "BID_969_CyberArmor": 1
+    },
+    {},
+    {},
+    {
+      "LSID_414_OrderGuard": 1
+    },
+    {},
+    {},
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {},
+    {},
+    {},
+    {
+      "SPID_372_OrderGuard": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "BRS20_CadetCat": 1
+    },
+    {
+      "EID_OrderGuard": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "Pickaxe_ID_766_BinaryFemale": 1
+    },
+    {
+      "BRS20_Binary": 1
+    },
+    {
+      "SPID_372_OrderGuard": 1
+    },
+    {
+      "Wrap_456_OriginPrison": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "SPID_371_MysticRunes": 1
+    },
+    {
+      "Emoji_S20_CubeKing": 1
+    },
+    {
+      "EID_KnightCat": 1
+    },
+    {},
+    {
+      "MtxGiveaway": 100
+    },
+    {
+      "CID_A_367_Athena_Commando_M_Mystic": 1
+    },
+    {
+      "LSID_416_Mystic": 1
+    }
+  ]
+}

@@ -32,7 +32,7 @@
     "matchmakerIP": "127.0.0.1:80",
     "gameServerIP": ["127.0.0.1:7777:playlist_defaultsolo"],
     
-    "//": "For 'BattlePassSeason' enter only the number of your season (from 2 to 16) / (We are working on season 15)",
+    "//": "For 'BattlePassSeason' enter only the number of your season (from 2 to 20)",
     "bEnableBattlepass": false,
     "bBattlePassSeason": 2,
 

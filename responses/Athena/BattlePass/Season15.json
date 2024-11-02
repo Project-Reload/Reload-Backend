@@ -1,0 +1,418 @@
+{
+  "battleBundleOfferId": "DACC300C4373FE1D97F4F6BEE90DB41B",
+  "battlePassOfferId": "73EBC6CE41D5BDB460059EB324D07A00",
+  "tierOfferId": "19D35E9B40B07AE37CD165AB4CF7AB33",
+  "paidRewards": [
+    {
+      "Token:athenaseasonxpboost": 50,
+      "Token:athenaseasonfriendxpboost": 60,
+      "AthenaCharacter:cid_960_athena_commando_m_cosmos": 1,
+      "AthenaCharacter:cid_965_athena_commando_f_spacefighter": 1,
+      "ChallengeBundleSchedule:season15_buildabrella_schedule": 1,
+      "ChallengeBundleSchedule:season15_styles_schedule": 1,
+      "ChallengeBundleSchedule:season15_sandcastle_schedule": 1
+    },
+    {},
+    {
+      "AthenaSkyDiveContrail:trails_id_109_spacefighter": 1
+    },
+    {},
+    {
+      "AthenaGlider:glider_id_254_cosmosmale": 1
+    },
+    {},
+    {
+      "AthenaItemWrap:wrap_310_spacefighter": 1
+    },
+    {
+      "AthenaMusicPack:musicpack_068_s15": 1
+    },
+    {},
+    {
+      "AthenaPickaxe:pickaxe_id_515_spacefighterfemale1h": 1
+    },
+    {
+      "BannerToken:bannertoken_001_s15": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {
+      "AthenaGlider:glider_id_261_spacefighterfemale": 1
+    },
+    {
+      "Token:athenatoken_brs15_umbrellaselection_01_token": 1
+    },
+    {
+      "AthenaLoadingScreen:lsid_266_mando": 1
+    },
+    {
+      "AthenaDance:spid_999_cosmicdance": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaCharacter:cid_962_athena_commando_m_flapjackwrangler": 1
+    },
+    {
+      "AthenaDance:eid_dancespace": 1
+    },
+    {
+      "AthenaDance:emoji_s15_flight": 1
+    },
+    {},
+    {
+      "AthenaSkyDiveContrail:trails_id_110_flight": 1
+    },
+    {
+      "BannerToken:bannertoken_002_s15": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaGlider:glider_id_255_flight": 1
+    },
+    {},
+    {
+      "AthenaLoadingScreen:lsid_267_spacebattle": 1
+    },
+    {
+      "AthenaPickaxe:pickaxe_id_512_spacefightersword": 1
+    },
+    {
+      "BannerToken:bannertoken_003_s15": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {
+      "AthenaDance:spid_210_flightdance": 1
+    },
+    {
+      "Token:athenatoken_brs15_umbrellaselection_02_token": 1
+    },
+    {
+      "AthenaGlider:glider_id_256_flightmale": 1
+    },
+    {
+      "AthenaDance:emoji_s15_flightvictory": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaCharacter:cid_967_athena_commando_m_ancientgladiator": 1
+    },
+    {
+      "AthenaDance:spid_999_ancientdance": 1
+    },
+    {
+      "AthenaBackpack:bid_660_ancientgladiator": 1
+    },
+    {},
+    {
+      "AthenaLoadingScreen:lsid_268_ancientbattle": 1
+    },
+    {
+      "AthenaItemWrap:wrap_307_ancientgladiator": 1
+    },
+    {
+      "AthenaPickaxe:pickaxe_id_505_ancientgladiatormale1h": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {
+      "AthenaGlider:glider_id_260_ancientgladiatorfemale": 1
+    },
+    {
+      "CosmeticVariantToken:vtid_888_ancientgladiator_styleb": 1
+    },
+    {
+      "AthenaLoadingScreen:lsid_269_ancientdefender": 1
+    },
+    {
+      "AthenaDance:emoji_s15_ancientgladiator": 1
+    },
+    {},
+    {
+      "AthenaDance:eid_ancientgladiator": 1
+    },
+    {
+      "Token:athenatoken_brs15_umbrellaselection_03_token": 1
+    },
+    {
+      "BannerToken:bannertoken_004_s15": 1
+    },
+    {
+      "AthenaDance:spid_210_ancientgladiator": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaCharacter:cid_966_athena_commando_m_future_samurai": 1
+    },
+    {
+      "AthenaGlider:glider_id_259_future_samuraifemale": 1
+    },
+    {
+      "AthenaDance:emoji_s15_future_samurai": 1
+    },
+    {},
+    {
+      "AthenaItemWrap:wrap_308_futuresamurai": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaSkyDiveContrail:trails_id_110_future_samurai": 1
+    },
+    {
+      "AthenaDance:eid_future_samurai": 1
+    },
+    {},
+    {
+      "AthenaLoadingScreen:lsid_270_futurebattle": 1
+    },
+    {
+      "AthenaPickaxe:pickaxe_id_505_future_samurai": 1
+    },
+    {
+      "AthenaItemWrap:wrap_306_futuresamurai": 1
+    },
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {
+      "AthenaLoadingScreen:lsid_271_fightsamurai": 1
+    },
+    {
+      "Token:athenatoken_brs15_umbrellaselection_04_token": 1
+    },
+    {
+      "AthenaDance:spid_210_futuresamurai": 1
+    },
+    {
+      "AthenaBackpack:bid_661_futuresamurai": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaCharacter:cid_963_athena_commando_f_futuresamurai": 1
+    },
+    {
+      "AthenaLoadingScreen:lsid_272_futuresamurai": 1
+    },
+    {
+      "AthenaPickaxe:pickaxe_id_506_futuresamuraifemale1h": 1
+    },
+    {
+      "AthenaDance:emoji_s15_futuresamurai": 1
+    },
+    {
+      "AthenaDance:eid_finale": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaSkyDiveContrail:trails_id_110_finalbattle": 1
+    },
+    {
+      "AthenaLoadingScreen:lsid_273_finalbattle": 1
+    },
+    {
+      "AthenaMusicPack:musicpack_070_finalbattle": 1
+    },
+    {
+      "AthenaGlider:glider_id_257_finalbattlefemale": 1
+    },
+    {
+      "AthenaPickaxe:pickaxe_id_505_finalbattle": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {
+      "AthenaDance:eid_handsup": 1
+    },
+    {
+      "Token:athenatoken_brs15_umbrellaselection_05_token": 1
+    },
+    {
+      "AthenaGlider:glider_id_258_finalbattlefemale": 1
+    },
+    {
+      "BannerToken:bannertoken_005_s15": 1
+    },
+    {
+      "AthenaBackpack:bid_662_finalbattlefemale": 1
+    },
+    {},
+    {
+      "AthenaCharacter:cid_967_athena_commando_m_finalbattle": 1,
+      "CosmeticVariantToken:vtid_889_finalbattle_stylec": 1
+    }
+  ],
+  "freeRewards": [
+    {},
+    {
+      "AthenaDance:eid_futureflip": 1
+    },
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {
+      "AthenaBackpack:bid_659_spacefighter": 1
+    },
+    {},
+    {},
+    {
+      "AthenaLoadingScreen:lsid_274_cosmicbattle": 1
+    },
+    {},
+    {},
+    {},
+    {
+      "AthenaDance:emoji_s15_cosmicbattle": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaItemWrap:wrap_306_cosmicbattle": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaBackpack:bid_658_flightfury": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaDance:spid_213_flightdance": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaDance:eid_flightready": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaPickaxe:pickaxe_id_511_flight_pickaxe": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaSkyDiveContrail:trails_id_110_finalbattle": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaMusicPack:musicpack_069_finalbattle": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaLoadingScreen:lsid_275_finalbattle": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaBackpack:bid_657_finalbattle": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "BannerToken:bannertoken_006_s15": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaGlider:glider_id_255_finalbattle": 1
+    },
+    {},
+    {},
+    {
+      "Token:athena_s15_nobattlebundleoption_token": 1
+    },
+    {},
+    {
+      "BannerToken:bannertoken_007_s15": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaDance:spid_212_futuredance": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "AthenaItemWrap:wrap_241_finalbattemografie": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "Currency:mtxgiveaway": 100
+    },
+    {}
+  ]
+}
