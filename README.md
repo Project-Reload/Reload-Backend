@@ -125,7 +125,7 @@ This **project/backend** is licensed under the **BSD 3-Clause License.**
 * [VoxyB89](https://github.com/VoxyB89) - For adding https/ssl support
 * [xLoigi](https://github.com/xLoigi) - For helping with some files and support a creator stuff
 * [PRO100KatYT](https://github.com/PRO100KatYT) - For helping with some .json files
-* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11 - s14)
+* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11 - s14, s16) and for camp fire xp on 11.31
 * [ironweb10](https://github.com/ironweb10) - For helping with Battle passes (s15, s19 and s20)
 * [nade](https://github.com/gn1e) - For creating the base of the Auto Item Shop (Even if [Burlone](https://github.com/burlone0) solved many problems heheheh)
 
