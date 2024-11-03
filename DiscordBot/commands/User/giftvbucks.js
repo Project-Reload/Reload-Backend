@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder, MessageEmbed } = require("discord.js");
 const Users = require("../../../model/user.js");
 const Profiles = require("../../../model/profiles.js");
 
@@ -73,7 +73,7 @@ module.exports = {
 
             const currentuser = await Profiles.findOne({ accountId: sender?.accountId });
     
-            const embed = new EmbedBuilder()
+            const embed = new MessageEmbed()
                 .setTitle("Gift Sent!")
                 .setDescription(`Gifted **${vbucks} V-Bucks** to **${recieveuser.username}**`)
                 .setThumbnail("https://i.imgur.com/yLbihQa.png")
