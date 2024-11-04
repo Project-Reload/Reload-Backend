@@ -131,4 +131,4 @@ This **project/backend** is licensed under the **BSD 3-Clause License.**
 
 ---
 
-**Reload Backend** is under continuous development and there may be errors of any kind, if you want to give advice on what to add and how to improve the project or report any errors you can do so via our [Discord](https://discord.gg/PmYMpY9thJ) server
+**Reload Backend** is under continuous development and there may be errors of any kind, if you want to give advice on what to add and how to improve the project or report any errors you can do so via our [Discord](https://discord.gg/ogfncenter) server

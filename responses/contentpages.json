@@ -209,12 +209,12 @@
       "_type": "Battle Royale News",
       "messages": [
         {
-          "image": "https://cdn.discordapp.com/attachments/927739901540188200/930882355818823720/1_of9OCSRWoAoS3_lNVKqM2g.png",
+          "image": "https://i.imgur.com/L06O0IJ.png",
           "hidden": false,
           "_type": "CommonUI Simple Message Base",
           "adspace": "DISCORD!",
           "title": "Reload Backend",
-          "body": "https://discord.gg/PmYMpY9thJ",
+          "body": "https://discord.gg/ogfncenter",
           "spotlight": false
         },
         {
@@ -6029,7 +6029,7 @@
           "bHidden": false,
           "sectionId": "Featured",
           "bShowTimer": true,
-          "sectionDisplayName": "LawinServer Item Shop",
+          "sectionDisplayName": "Reload Item Shop",
           "bShowIneligibleOffers": true
         }
       ]
@@ -6045,12 +6045,12 @@
       "_type": "Battle Royale News",
       "messages": [
         {
-          "image": "https://cdn.discordapp.com/attachments/927739901540188200/930882355818823720/1_of9OCSRWoAoS3_lNVKqM2g.png",
+          "image": "https://i.imgur.com/L06O0IJ.png",
           "hidden": false,
           "_type": "CommonUI Simple Message Base",
           "adspace": "DISCORD!",
-          "title": "Join my discord server!",
-          "body": "https://discord.gg/KJ8UaHZ",
+          "title": "Join OGFN Center Discord Server!",
+          "body": "https://discord.gg/ogfncenter",
           "spotlight": false
         },
         {

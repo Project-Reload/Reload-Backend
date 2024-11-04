@@ -8,7 +8,6 @@ const config = require('../Config/config.json');
 const log = require("../structs/log.js");
 
 app.post("/fortnite/api/game/v2/toxicity/account/:unsafeReporter/report/:reportedPlayer", verifyToken, async (req, res) => {
-
     if (config.bEnableReports === true) {
         try {
             log.debug(`POST /fortnite/api/game/v2/toxicity/account/${req.params.unsafeReporter}/report/${req.params.reportedPlayer} called`);
