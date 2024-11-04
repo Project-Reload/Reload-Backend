@@ -99,7 +99,13 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
 1) Go to **Config/config.json** in the directory you extracted Reload Backend into.
 2) Open it, you should see a **"gameServerIP"** section in the file.
 3) To add more gameservers you will have to do it like this `"gameServerIP": ["127.0.0.1:7777:playlist_defaultsolo", "127.0.0.1:7777:playlist_defaultduo"],`
-4) You have now added solos and duos to your matchmaking 
+4) You have now added solos and duos to your matchmaking
+### How to Set Up a Custom Domain
+1) First, go to your domain provider.
+2) Create a DNS record: set the type as "A", the name as you want (for example: "api"), and the IPv4 address as your admin or VPS IP. Then save the record.
+3) Changes may take a bit, but it will work.
+4) Enter the domain, Heres an example: https://api.targeteater.xyz/ <-- this isnt what you are supposed to do put your own domain
+5) **Note:** Remember that this isn't the most efficient way to set up a custom domain, and you should consider using the standard method. There’s a YouTube tutorial available for that. The reason this method isn’t the best is that it may restrict certain functionalities, such as registering with websites. There is a workaround using http://domain.xyz, but that can be quite unconventional.
 
 ## How to start Reload Backend
 1) Install [NodeJS](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/try/download/community).
