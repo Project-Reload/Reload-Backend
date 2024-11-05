@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const guids = require("./guids.json")
 
-const config = JSON.parse(fs.readFileSync("../src/config.json").toString());
+const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 
 var CalderaGenerated = 0;
 

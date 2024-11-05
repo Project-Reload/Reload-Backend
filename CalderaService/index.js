@@ -4,7 +4,7 @@ const fs = require("fs");
 
 const tokencreator = require("./tokencreator.js");
 
-const config = JSON.parse(fs.readFileSync("../Config/config.json").toString());
+const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 
 const Port = config.bCalderaServicePort;
 
