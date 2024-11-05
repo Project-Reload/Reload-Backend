@@ -111,6 +111,51 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
 7) Use something to redirect the Fortnite servers to **localhost:8080** (Which could be fiddler, ssl bypass that redirects servers, etc...)
 8) When Fortnite launches and is connected to the backend, enter your email and password (or launch with an exchange code) then press login. It should let you in and everything should be working fine.
 
+# Caldera Service
+
+Recreates a service that is used for the startup of newer Fortnite builds.
+
+## For login
+
+-> You need to use the FortniteLauncher.exe and with that also the Anti Cheat 😔
+
+-> If you use fiddler you can use this script :
+
+    import Fiddler;
+    
+    class Handlers
+    {
+        static function OnBeforeRequest(oSession: Session) {
+    
+            if (oSession.PathAndQuery.Contains("/caldera/api/v1/launcher/racp"))
+            {
+                if (oSession.HTTPMethodIs("CONNECT"))
+                {
+                    oSession["x-replywithtunnel"] = "ServerTunnel";
+                    return;
+                }
+                oSession.fullUrl = "http://127.0.0.1:5000" + oSession.PathAndQuery
+            }
+            if (oSession.hostname.Contains("epicgames"))
+            {
+                if (oSession.HTTPMethodIs("CONNECT"))
+                {
+                    oSession["x-replywithtunnel"] = "ServerTunnel";
+                    return;
+                }
+                oSession.fullUrl = "http://127.0.0.1:3551" + oSession.PathAndQuery
+            }
+        }
+    }
+	
+
+## Tested versions: 
+
+-> Right now the only tested version is 27.11, if you test version, have questions or anything please make a Ticket or a pull request [in this repo](https://github.com/xLoigi/CalderaService).
+
+#All Credits for the Caldera Service go to [xLoigi](https://github.com/xLoigi)
+
+
 ## License
 This **project/backend** is licensed under the **BSD 3-Clause License.**
 
@@ -128,7 +173,6 @@ This **project/backend** is licensed under the **BSD 3-Clause License.**
 * [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11 - s14, s16) and for camp fire xp on 11.31
 * [ironweb10](https://github.com/ironweb10) - For helping with Battle passes (s15, s19 and s20)
 * [nade](https://github.com/gn1e) - For creating the base of the Auto Item Shop (Even if [Burlone](https://github.com/burlone0) solved many problems heheheh)
-
 ---
 
 **Reload Backend** is under continuous development and there may be errors of any kind, if you want to give advice on what to add and how to improve the project or report any errors you can do so via our [Discord](https://discord.gg/ogfncenter) server

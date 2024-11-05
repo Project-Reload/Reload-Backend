@@ -69,6 +69,11 @@
         "key": "./ssl/example_private.key"
     },
 
+    "//": "The Caldera Service is used for newer versions of the game!",
+    "bEnableCalderaService": false,
+    "bGameVersion": "27.11",
+    "bCalderaServicePort": "5000",
+
     "//": "These are all the events you can add to the game, like the rift in the sky!",
     "bEnableGeodeEvent": false,
     "geodeEventStartDate": "2020-01-01T00:00:00.000Z",

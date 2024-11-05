@@ -151,6 +151,9 @@ if (config.bEnableHTTPS) {
         if (config.bUseAutoRotate === true) {
             require("./structs/autorotate.js");
         }
+        if (config.bEnableCalderaService === true) {
+            require("./CalderaService/index.js")
+        }
     }).on("error", async (err) => {
         if (err.code === "EADDRINUSE") {
             log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
