@@ -66,7 +66,7 @@ app.get("/clients", (req, res) => {
 });
 
 wss.on('listening', () => {
-    log.xmpp(`XMPP and Matchmaker started listening on port ${port}`);
+    
 });
 
 wss.on('connection', async (ws) => {

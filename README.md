@@ -111,6 +111,51 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
 7) Use something to redirect the Fortnite servers to **localhost:8080** (Which could be fiddler, ssl bypass that redirects servers, etc...)
 8) When Fortnite launches and is connected to the backend, enter your email and password (or launch with an exchange code) then press login. It should let you in and everything should be working fine.
 
+## Caldera Service
+Recreates a service that is used for the startup of newer Fortnite builds.
+
+### For login
+You need to use the **FortniteLauncher.exe** and with that also the **Anti Cheat**
+
+If you use [Fiddler](https://www.telerik.com/download/fiddler/fiddler-everywhere-windows) you can use this script:
+
+```
+import Fiddler;
+
+class Handlers
+{
+    static function OnBeforeRequest(oSession: Session) {
+
+        if (oSession.PathAndQuery.Contains("/caldera/api/v1/launcher/racp"))
+        {
+            if (oSession.HTTPMethodIs("CONNECT"))
+            {
+                oSession["x-replywithtunnel"] = "ServerTunnel";
+                return;
+            }
+            oSession.fullUrl = "http://127.0.0.1:5000" + oSession.PathAndQuery
+        }
+        if (oSession.hostname.Contains("epicgames"))
+        {
+            if (oSession.HTTPMethodIs("CONNECT"))
+            {
+                oSession["x-replywithtunnel"] = "ServerTunnel";
+                return;
+            }
+            oSession.fullUrl = "http://127.0.0.1:3551" + oSession.PathAndQuery
+        }
+    }
+}
+```
+
+if u change **Caldera Service port** modify this string on **fiddler script**: `oSession.fullUrl = "http://127.0.0.1:urport" + oSession.PathAndQuery`
+if u change **Backend port** modify this string on **fiddler script**: `oSession.fullUrl = "http://127.0.0.1:urport" + oSession.PathAndQuery`
+
+For more information on how it works, join the discord server: https://discord.gg/ogfncenter
+
+### Tested versions: 
+Right now the only tested version is **27.11**, if you test version, have questions or anything please make a ticket or a pull request [In the official repo](https://github.com/xLoigi/CalderaService).
+
 ## License
 This **project/backend** is licensed under the **BSD 3-Clause License.**
 
@@ -123,7 +168,7 @@ This **project/backend** is licensed under the **BSD 3-Clause License.**
 * [zvivsp](https://github.com/zvivsp) - For creating the graphics
 * [joaco](https://github.com/ojotaa0124) - For helping with CloudStorage and responses stuff
 * [VoxyB89](https://github.com/VoxyB89) - For adding https/ssl support
-* [xLoigi](https://github.com/xLoigi) - For helping with some files and support a creator stuff
+* [xLoigi](https://github.com/xLoigi) - For helping with some files and support a creator stuff and for creating Caldera Service
 * [PRO100KatYT](https://github.com/PRO100KatYT) - For helping with some .json files
 * [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11 - s14, s16) and for camp fire xp on 11.31
 * [ironweb10](https://github.com/ironweb10) - For helping with Battle passes (s15, s19 and s20)

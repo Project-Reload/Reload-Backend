@@ -100,6 +100,15 @@ function autobackendrestart(...args) {
     }
 }
 
+function calderaservice(...args) {
+    let msg = args.join(" ");
+    if (config.bEnableFormattedLogs) {
+        formatLog("\x1b[91m", "Caldera Service Log", ...args);
+    } else {
+        console.log(`\x1b[91mCaldera Service\x1b[0m: ${msg}`);
+    }
+}
+
 module.exports = {
     backend,
     bot,
@@ -109,5 +118,6 @@ module.exports = {
     website,
     AutoRotation,
     checkforupdate,
-    autobackendrestart
+    autobackendrestart,
+    calderaservice
 };

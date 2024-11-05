@@ -96,7 +96,7 @@ mongoose.connection.on("error", err => {
     throw err;
 });
 
-app.use(rateLimit({ windowMs: 0.5 * 60 * 1000, max: 45 }));
+app.use(rateLimit({ windowMs: 0.5 * 60 * 1000, max: 55 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -166,6 +166,57 @@ if (config.bEnableAutoBackendRestart === true) {
     AutoBackendRestart.scheduleRestart(config.bRestartTime);
 }
 
+if (config.bEnableCalderaService === true) {
+    const createCalderaService = require('./CalderaService/calderaservice');
+    const calderaService = createCalderaService();
+
+    let calderaHttpsOptions;
+    if (config.bEnableHTTPS) {
+        calderaHttpsOptions = {
+            cert: fs.readFileSync(config.ssl.cert),
+            ca: fs.existsSync(config.ssl.ca) ? fs.readFileSync(config.ssl.ca) : undefined,
+            key: fs.readFileSync(config.ssl.key)
+        };
+    }
+
+    if (config.bEnableHTTPS) {
+        const calderaHttpsServer = https.createServer(calderaHttpsOptions, calderaService);
+        
+        if (!config.bGameVersion) {
+            log.calderaservice("Please define a version in the config!")
+            return;
+        }
+
+        calderaHttpsServer.listen(config.bCalderaServicePort, () => {
+            log.calderaservice(`Caldera Service started listening on port ${config.bCalderaServicePort} (SSL Enabled)`);
+        }).on("error", async (err) => {
+            if (err.code === "EADDRINUSE") {
+                log.calderaservice(`Caldera Service port ${config.bCalderaServicePort} is already in use!\nClosing in 3 seconds...`);
+                await functions.sleep(3000);
+                process.exit(1);
+            } else {
+                throw err;
+            }
+        });
+    } else {
+        if (!config.bGameVersion) {
+            log.calderaservice("Please define a version in the config!")
+            return;
+        }
+
+        calderaService.listen(config.bCalderaServicePort, () => {
+            log.calderaservice(`Caldera Service started listening on port ${config.bCalderaServicePort} (SSL Disabled)`);
+        }).on("error", async (err) => {
+            if (err.code === "EADDRINUSE") {
+                log.calderaservice(`Caldera Service port ${config.bCalderaServicePort} is already in use!\nClosing in 3 seconds...`);
+                await functions.sleep(3000);
+                process.exit(1);
+            } else {
+                throw err;
+            }
+        });
+    }
+}
 
 if (config.Website.bUseWebsite === true) {
     const websiteApp = express();

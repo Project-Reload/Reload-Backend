@@ -12,6 +12,23 @@ const tokenCreation = require("../tokenManager/tokenCreation.js");
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");
 const User = require("../model/user.js");
 
+app.get("/epic/id/v2/sdk/accounts", async (req, res) => {
+    let user = await User.findOne({ accountId: req.query.accountId, banned: false }).lean();
+    if (!user) return error.createError(
+        "errors.com.epicgames.account.account_not_found",
+        `Sorry, we couldn't find an account for ${req.query.accountId}`, 
+        [req.query.accountId], 18007, undefined, 404, res
+    );
+    res.json([{
+        accountId: user.accountId,
+        displayName: user.username,
+        preferredLanguage: "en",
+        linkedAccounts: [],
+        cabinedMode: false,
+        empty: false
+    }]);
+})
+
 app.post("/account/api/oauth/token", async (req, res) => {
     let clientId;
 
