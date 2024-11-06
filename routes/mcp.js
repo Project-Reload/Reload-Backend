@@ -1383,7 +1383,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/UpdateQuestClientObjectives", v
 app.post("/fortnite/api/game/v2/profile/*/client/RequestRestedStateIncrease", async (req, res) => {
     const profiles = await Profile.findOne({ accountId: req.params[0] });
     let profile = profiles.profiles[req.query.profileId];
-    const memory = Version.GetVersionInfo(req);
+    const memory = functions.GetVersionInfo(req);
 
     // do not change any of these or you will end up breaking it
     let ApplyProfileChanges = [];

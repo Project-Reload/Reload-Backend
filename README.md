@@ -117,7 +117,7 @@ Recreates a service that is used for the startup of newer Fortnite builds.
 ### For login
 You need to use the **FortniteLauncher.exe** and with that also the **Anti Cheat**
 
-If you use [Fiddler](https://www.telerik.com/download/fiddler/fiddler-everywhere-windows) you can use this script:
+If you use [Fiddler](https://www.telerik.com/download/fiddler) you can use this script:
 
 ```
 import Fiddler;
