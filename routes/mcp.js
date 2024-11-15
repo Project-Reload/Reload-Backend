@@ -2992,6 +2992,7 @@ app.post("/fortnite/api/game/v2/profile/:accountId/client/SetCosmeticLockerName"
         responseVersion: 1
     });
 });
+
 app.post("/fortnite/api/game/v2/profile/*/client/DeleteCosmeticLoadout", verifyToken, async (req, res) => {
     const profiles = await Profile.findOne({accountId: req.user.accountId});
     let profile = profiles.profiles[req.query.profileId];
