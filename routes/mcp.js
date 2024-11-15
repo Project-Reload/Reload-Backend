@@ -2868,7 +2868,7 @@ app.post("/fortnite/api/game/v2/profile/:accountId/client/CopyCosmeticLoadout", 
     const profiles = await Profile.findOne({ accountId: req.user.accountId });
     var profile = profiles.profiles[req.query.profileId];
 
-    const memory = Version.GetVersionInfo(req);
+    const memory = functions.GetVersionInfo(req);
 
     if (!await profileManager.validateProfile(req.query.profileId, profiles)) return error.createError(
         "errors.com.epicgames.modules.profiles.operation_forbidden",
@@ -2937,7 +2937,7 @@ app.post("/fortnite/api/game/v2/profile/:accountId/client/SetCosmeticLockerName"
     const profiles = await Profile.findOne({ accountId: req.user.accountId });
     var profile = profiles.profiles[req.query.profileId];
 
-    const memory = Version.GetVersionInfo(req);
+    const memory = functions.GetVersionInfo(req);
 
     if (!await profileManager.validateProfile(req.query.profileId, profiles)) return error.createError(
         "errors.com.epicgames.modules.profiles.operation_forbidden",
@@ -2996,7 +2996,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/DeleteCosmeticLoadout", verifyT
     const profiles = await Profile.findOne({accountId: req.user.accountId});
     let profile = profiles.profiles[req.query.profileId];
 
-    const memory = Version.GetVersionInfo(req);
+    const memory = functions.GetVersionInfo(req);
 
     if (!await profileManager.validateProfile(req.query.profileId, profiles)) return error.createError(
         "errors.com.epicgames.modules.profiles.operation_forbidden",
