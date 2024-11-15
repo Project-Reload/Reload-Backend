@@ -108,107 +108,6 @@
       },
       "quantity": 1
     },
-    "reload0-loadout": {
-      "templateId": "CosmeticLocker:cosmeticlocker_athena",
-      "attributes": {
-        "locker_slots_data": {
-          "slots": {
-            "Pickaxe": {
-              "items": [
-                ""
-              ],
-              "activeVariants": []
-            },
-            "Dance": {
-              "items": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-              ]
-            },
-            "Glider": {
-              "items": [
-                ""
-              ]
-            },
-            "Character": {
-              "items": [
-                ""
-              ],
-              "activeVariants": [
-                {
-                  "variants": []
-                }
-              ]
-            },
-            "Backpack": {
-              "items": [
-                ""
-              ],
-              "activeVariants": [
-                {
-                  "variants": []
-                }
-              ]
-            },
-            "ItemWrap": {
-              "items": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-              ],
-              "activeVariants": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
-            },
-            "LoadingScreen": {
-              "items": [
-                ""
-              ],
-              "activeVariants": [
-                null
-              ]
-            },
-            "MusicPack": {
-              "items": [
-                ""
-              ],
-              "activeVariants": [
-                null
-              ]
-            },
-            "SkyDiveContrail": {
-              "items": [
-                ""
-              ],
-              "activeVariants": [
-                null
-              ]
-            }
-          }
-        },
-        "use_count": 1,
-        "banner_icon_template": "",
-        "locker_name": "RELOAD BACKEND",
-        "banner_color_template": "",
-        "item_seen": false,
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "AthenaCharacter:CID_001_Athena_Commando_F_Default": {
       "attributes": {
         "favorite": false,
@@ -454,8 +353,7 @@
     "attributes": {
       "season_match_boost": 0,
       "loadouts": [
-        "sandbox_loadout",
-        "reload0-loadout"
+        "sandbox_loadout"
       ],
       "rested_xp_overflow": 0,
       "mfa_reward_claimed": true,

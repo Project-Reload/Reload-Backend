@@ -1622,6 +1622,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
             log.debug(`PurchaseCatalogEntry: Battle Pass season ${config.bBattlePassSeason} enabled`);
 
             var season = `Season${config.bBattlePassSeason}`; // Don't change it if you don't know what it is
+            var OnlySeasonNumber = `${config.bBattlePassSeason}`;
             var ItemExists = false;
             let BattlePass = JSON.parse(fs.readFileSync(path.join(__dirname, "../responses/Athena/BattlePass/", `${season}.json`), "utf8"));
             if (!BattlePass) {
@@ -1667,6 +1668,28 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                     var lootList = [];
                     var EndingTier = athena.stats.attributes.book_level;
                     athena.stats.attributes.book_purchased = true;
+
+                    const tokenKey = `Token:Athena_S${OnlySeasonNumber}_NoBattleBundleOption_Token`;
+                    const tokenData = {
+                        "templateId": `Token:athena_s${OnlySeasonNumber}_nobattlebundleoption_token`,
+                        "attributes": {
+                            "max_level_bonus": 0,
+                            "level": 1,
+                            "item_seen": true,
+                            "xp": 0,
+                            "favorite": false
+                        },
+                        "quantity": 1
+                    };
+        
+                    profiles.profiles["common_core"].items[tokenKey] = tokenData;
+                c
+                    ApplyProfileChanges.push({
+                        "changeType": "itemAdded",
+                        "itemId": tokenKey,
+                        "item": tokenData
+                    });
+
                     if (BattlePass.battleBundleOfferId == offerId) {
                         athena.stats.attributes.book_level += 25;
                         if (athena.stats.attributes.book_level > 100)
@@ -2840,6 +2863,201 @@ app.post("/fortnite/api/game/v2/profile/*/client/EquipBattleRoyaleCustomization"
         responseVersion: 1
     });
 });
+
+app.post("/fortnite/api/game/v2/profile/:accountId/client/CopyCosmeticLoadout", verifyToken, async (req, res) => {
+    const profiles = await Profile.findOne({ accountId: req.user.accountId });
+    var profile = profiles.profiles[req.query.profileId];
+
+    const memory = Version.GetVersionInfo(req);
+
+    if (!await profileManager.validateProfile(req.query.profileId, profiles)) return error.createError(
+        "errors.com.epicgames.modules.profiles.operation_forbidden",
+        `Unable to find template configuration for profile ${req.query.profileId}`, 
+        [req.query.profileId], 12813, undefined, 403, res
+    );
+
+    let ApplyProfileChanges = [];
+    let BaseRevision = profile.rvn;
+    let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+    let QueryRevision = req.query.rvn || -1;
+    let item;
+
+    if (req.body.sourceIndex == 0) {
+        item = profile.items[`Fortnite${req.body.targetIndex}-loadout`];
+        profile.items[`Fortnite${req.body.targetIndex}-loadout`] = profile.items["sandbox_loadout"];
+        profile.items[`Fortnite${req.body.targetIndex}-loadout`].attributes["locker_name"] = req.body.optNewNameForTarget;
+        profile.stats.attributes.loadouts[req.body.targetIndex] = `Fortnite${req.body.targetIndex}-loadout`;
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    } else {
+        item = profile.items[`Fortnite${req.body.sourceIndex}-loadout`];
+        if (!item) return error.createError(
+            "errors.com.epicgames.modules.profiles.operation_forbidden",
+            `Locker item {0} not found`, 
+            [req.query.profileId], 12813, undefined, 403, res
+        );
+        
+        profile.stats.attributes["active_loadout_index"] = req.body.sourceIndex;
+        profile.stats.attributes["last_applied_loadout"] = `Fortnite${req.body.sourceIndex}-loadout`;
+        profile.items["sandbox_loadout"].attributes["locker_slots_data"] = item.attributes["locker_slots_data"];
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    
+    }
+
+    if (ApplyProfileChanges.length > 0) {
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+        profile.updated = new Date().toISOString();
+        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
+    }
+
+    if (QueryRevision != ProfileRevisionCheck) {
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    }
+
+    res.json({
+        profileRevision: profile.rvn || 0,
+        profileId: req.query.profileId,
+        profileChangesBaseRevision: BaseRevision,
+        profileChanges: ApplyProfileChanges,
+        profileCommandRevision: profile.commandRevision || 0,
+        serverTime: new Date().toISOString(),
+        responseVersion: 1
+    });
+})
+app.post("/fortnite/api/game/v2/profile/:accountId/client/SetCosmeticLockerName", verifyToken, async (req, res) => {
+    const profiles = await Profile.findOne({ accountId: req.user.accountId });
+    var profile = profiles.profiles[req.query.profileId];
+
+    const memory = Version.GetVersionInfo(req);
+
+    if (!await profileManager.validateProfile(req.query.profileId, profiles)) return error.createError(
+        "errors.com.epicgames.modules.profiles.operation_forbidden",
+        `Unable to find template configuration for profile ${req.query.profileId}`, 
+        [req.query.profileId], 12813, undefined, 403, res
+    );
+
+    let ApplyProfileChanges = [];
+    let BaseRevision = profile.rvn;
+    let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+    let QueryRevision = req.query.rvn || -1;
+    let item = profile.items[req.body.lockerItem];
+    if (!item) return error.createError(
+        "errors.com.epicgames.modules.profiles.operation_forbidden",
+        `Locker item {0} not found`,
+        [req.query.profileId], 12813, undefined, 403, res
+    );
+    if (typeof req.body.name === "string" && item.attributes.locker_name != req.body.name) {
+        
+        item.attributes["locker_name"] = req.body.name;
+        ApplyProfileChanges = [{
+            "changeType": "itemAttrChanged",
+            "itemId": req.body.lockerItem,
+            "itemName": item.templateId,
+            "item": item
+        }];
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    };
+    console.log(ApplyProfileChanges)
+    if (ApplyProfileChanges.length > 0) {
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+        profile.updated = new Date().toISOString();
+        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
+    }
+    if (QueryRevision != ProfileRevisionCheck) {
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    }
+    res.json({
+        profileRevision: profile.rvn || 0,
+        profileId: req.query.profileId,
+        profileChangesBaseRevision: BaseRevision,
+        profileChanges: ApplyProfileChanges,
+        profileCommandRevision: profile.commandRevision || 0,
+        serverTime: new Date().toISOString(),
+        responseVersion: 1
+    });
+});
+app.post("/fortnite/api/game/v2/profile/*/client/DeleteCosmeticLoadout", verifyToken, async (req, res) => {
+    const profiles = await Profile.findOne({accountId: req.user.accountId});
+    let profile = profiles.profiles[req.query.profileId];
+
+    const memory = Version.GetVersionInfo(req);
+
+    if (!await profileManager.validateProfile(req.query.profileId, profiles)) return error.createError(
+        "errors.com.epicgames.modules.profiles.operation_forbidden",
+        `Unable to find template configuration for profile ${req.query.profileId}`, 
+        [req.query.profileId], 12813, undefined, 403, res
+    );
+
+    let ApplyProfileChanges = [];
+    let BaseRevision = profile.rvn;
+    let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+    let QueryRevision = req.query.rvn || -1;
+
+    if (req.body.leaveNullSlot == false) {
+        log.debug("leaveNullSlot Called")
+    } else {
+        let loadoutname = `Fortnite${req.body.index}-loadout`;
+        if(req.body.fallbackLoadoutIndex == -1) {
+            delete profile.items[loadoutname];
+            delete profile.stats.attributes.loadouts[req.body.index];
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        } else {
+            let newLoadout = profile.stats.attributes.loadouts[req.body.fallbackLoadoutIndex]
+            profile.stats.attributes["last_applied_loadout"] = newLoadout;
+            profile.stats.attributes["active_loadout_index"] = req.body.fallbackLoadoutIndex;
+            profile.items["sandbox_loadout"].attributes["locker_slots_data"] = profile.items[newLoadout].attributes["locker_slots_data"];
+            delete profile.items[loadoutname];
+            delete profile.stats.attributes.loadouts[req.body.index];
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+    }
+
+    if (ApplyProfileChanges.length > 0) {
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+        profile.updated = new Date().toISOString();
+        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
+    }
+
+    if (QueryRevision != ProfileRevisionCheck) {
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    }
+
+    res.json({
+        profileRevision: profile.rvn || 0,
+        profileId: req.query.profileId,
+        profileChangesBaseRevision: BaseRevision,
+        profileChanges: ApplyProfileChanges,
+        profileCommandRevision: profile.commandRevision || 0,
+        serverTime: new Date().toISOString(),
+        responseVersion: 1
+    });
+})
 
 app.post("/fortnite/api/game/v2/profile/*/client/SetCosmeticLockerBanner", verifyToken, async (req, res) => {
     const profiles = await Profile.findOne({ accountId: req.user.accountId });
