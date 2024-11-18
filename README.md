@@ -166,6 +166,7 @@ This **project/backend** is licensed under the **BSD 3-Clause License.**
 * [Burlone](https://github.com/burlone0) - For having modded most things, let's say he modded everything
 * [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
 * [zvivsp](https://github.com/zvivsp) - For creating the graphics
+* [Waslyl](https://github.com/Waslyl) - For helping with some fixes
 * [joaco](https://github.com/ojotaa0124) - For helping with CloudStorage and responses stuff
 * [VoxyB89](https://github.com/VoxyB89) - For adding https/ssl support
 * [xLoigi](https://github.com/xLoigi) - For helping with some files and support a creator stuff and for creating Caldera Service

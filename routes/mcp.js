@@ -1683,7 +1683,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                     };
         
                     profiles.profiles["common_core"].items[tokenKey] = tokenData;
-                c
+                
                     ApplyProfileChanges.push({
                         "changeType": "itemAdded",
                         "itemId": tokenKey,

@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const Users = require('../../../model/user.js');
 const Profiles = require('../../../model/profiles.js');
 const SACCodes = require('../../../model/saccodes.js');
+const Friends = require('../../../model/friends.js');
 const config = require('../../../Config/config.json')
 
 module.exports = {
@@ -34,8 +35,15 @@ module.exports = {
             return;
         }
 
-        await Users.deleteOne({ discordId: discordId })
-        await Profiles.deleteOne({ discordId: discordId })
+        await Users.deleteOne({ username: username }).catch(error => {
+            // Nothing Uwu or just use: log.debug('No SAC codes found or error occurred:', error);
+        });
+        await Profiles.deleteOne({ accountId: accountId }).catch(error => {
+            // Nothing Uwu or just use: log.debug('No SAC codes found or error occurred:', error);
+        });
+        await Friends.deleteOne({ accountId: accountId }).catch(error => {
+            // Nothing Uwu or just use: log.debug('No SAC codes found or error occurred:', error);
+        });
         await SACCodes.deleteOne({ owneraccountId: accountId }).catch(error => {
             // Nothing Uwu or just use: log.debug('No SAC codes found or error occurred:', error);
         });

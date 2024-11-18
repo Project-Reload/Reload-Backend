@@ -100,7 +100,7 @@ module.exports = {
 
             const embed = new MessageEmbed()
                 .setTitle("Cosmetic Removed")
-                .setDescription(`Successfully removed for <@${selectedUser}> the cosmetic **` + cosmeticname + `**`)
+                .setDescription(`Successfully removed for ${selectedUser} the cosmetic **` + cosmeticname + `**`)
                 .setThumbnail(cosmeticimage)
                 .setColor("GREEN")
                 .setFooter({
