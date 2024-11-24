@@ -20,6 +20,14 @@
     "//": "If you want to use the backend on reboot, leave 3551 as the port",
     "port": 3551, 
     
+    "Api": {
+      "bApiKey": "ur-api-key",
+      "reasons": {
+        "Kill": 25,
+        "Win": 50
+      }
+    },
+
     "Website": {
       "bUseWebsite": false,
       "clientId": "your-client-id-here",
