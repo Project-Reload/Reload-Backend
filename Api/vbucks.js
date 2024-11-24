@@ -47,7 +47,6 @@ app.get("/api/reload/vbucks", async (req, res) => {
         const common_core = updatedProfile.profiles.common_core;
         const newQuantity = common_core.items['Currency:MtxPurchased'].quantity;
 
-        // Creazione della GiftBox
         const purchaseId = uuid.v4();
         const lootList = [{
             "itemType": "Currency:MtxGiveaway",
