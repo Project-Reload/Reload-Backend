@@ -4,7 +4,7 @@ const User = require("../model/user.js");
 const bcrypt = require("bcrypt");
 
 //Api for launcher login (If u want a POST requesto just replace "app.get" to "app.post" and "req.query" to "req.body")
-app.get("/launcher/login", async (req, res) => {
+app.get("/api/launcher/login", async (req, res) => {
     const { email, password } = req.query;
 
     if (!email) return res.status(400).send('The email was not entered.');

@@ -69,6 +69,10 @@
     "bEnableAutoBackendRestart": false,
     "bRestartTime": "",
 
+    "//": "If active it will send a message in the channel when the backend goes online",
+    "bEnableBackendStatus": false,
+    "bBackendStatusChannelId": "",
+
     "//": "Use HTTPS (For VPS Side Only, Or If You Were To Setup  A Type Record To Your Own Public Adress From Your Domain) (You Also Need To Change The Examples In SSl Folder!)",
     "bEnableHTTPS": false, "//": "Only Enable if You Have SSL Certificate In The ssl Folder",
     "ssl": {

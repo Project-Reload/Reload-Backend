@@ -1,4 +1,4 @@
-const { Client, Intents } = require("discord.js");
+const { Client, Intents, MessageEmbed } = require("discord.js");
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_BANS] });
 const fs = require("fs");
 const path = require("path");
@@ -8,6 +8,32 @@ const Users = require("../model/user.js");
 
 client.once("ready", () => {
     log.bot("Bot is up and running!");
+
+    if (config.bEnableBackendStatus) {
+        if (!config.bBackendStatusChannelId || config.bBackendStatusChannelId.trim() === "") {
+            log.error("The channel ID has not been set in config.json for bEnableBackendStatus.");
+        } else {
+            const channel = client.channels.cache.get(config.bBackendStatusChannelId);
+            if (!channel) {
+                log.error(`Cannot find the channel with ID ${config.bBackendStatusChannelId}`);
+            } else {
+                const embed = new MessageEmbed()
+                    .setTitle("Backend Online")
+                    .setDescription("Reload Backend is now online")
+                    .setColor("GREEN")
+                    .setThumbnail("https://i.imgur.com/2RImwlb.png")
+                    .setFooter({
+                        text: "Reload Backend",
+                        iconURL: "https://i.imgur.com/2RImwlb.png",
+                    })
+                    .setTimestamp();
+
+                channel.send({ embeds: [embed] }).catch(err => {
+                    log.error(err);
+                });
+            }
+        }
+    }
 
     let commands = client.application.commands;
 
