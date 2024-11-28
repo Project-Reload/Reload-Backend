@@ -184,6 +184,13 @@ function getContentPages(req) {
                 contentpages.dynamicbackgrounds.backgrounds.backgrounds[0].backgroundimage = "https://cdn2.unrealengine.com/t-s25-14dos-lobby-4096x2048-2be24969eee3.jpg"
             }
         }
+
+        if (memory.season == 27) {
+            contentpages.dynamicbackgrounds.backgrounds.backgrounds[0].stage = "rufus";
+        } else {
+            contentpages.dynamicbackgrounds.backgrounds.backgrounds[0].stage = "defaultnotris";
+            contentpages.dynamicbackgrounds.backgrounds.backgrounds[0].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/images/lightlobbybg.png";
+        }
     } catch {}
 
     return contentpages;

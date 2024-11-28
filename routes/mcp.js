@@ -962,6 +962,55 @@ app.post("/fortnite/api/game/v2/profile/*/client/GiftCatalogEntry", verifyToken,
     log.debug(`GiftCatalogEntry: Response sent with profile revision ${profile.rvn}`);
 });
 
+app.post("/fortnite/api/game/v2/profile/*/client/SetActiveArchetype", async (req, res) => {
+    const profiles = await Profile.findOne({ accountId: req.user.accountId });
+    let profile = profiles.profiles[req.query.profileId];
+
+    var ApplyProfileChanges = [];
+    var BaseRevision = profile.rvn || 0;
+    var QueryRevision = req.query.rvn || -1;
+    var StatChanged = false;
+
+    if (req.body.archetypeGroup && req.body.archetype) {
+        if (!profile.stats.attributes.hasOwnProperty("loadout_archetype_values")) {
+            profile.stats.attributes.loadout_archetype_values = {}
+        }
+
+        profile.stats.attributes.loadout_archetype_values[req.body.archetypeGroup] = req.body.archetype;
+        StatChanged = true;
+    }
+
+    if (StatChanged == true) {
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+
+        ApplyProfileChanges.push({
+            "changeType": "statModified",
+            "name": "loadout_archetype_values",
+            "value": profile.stats.attributes.loadout_archetype_values
+        })
+
+        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
+    }
+
+    if (QueryRevision != BaseRevision) {
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    }
+
+    res.json({
+        profileRevision: profile.rvn || 0,
+        profileId: req.query.profileId,
+        profileChangesBaseRevision: BaseRevision,
+        profileChanges: ApplyProfileChanges,
+        profileCommandRevision: profile.commandRevision || 0,
+        serverTime: new Date().toISOString(),
+        responseVersion: 1
+    })
+});
+
 app.post("/fortnite/api/game/v2/profile/*/client/UnlockRewardNode", verifyToken, async (req, res) => {
     const profiles = await Profile.findOne({ accountId: req.user.accountId });
     let profile = profiles.profiles[req.query.profileId];
@@ -1137,7 +1186,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/UnlockRewardNode", verifyToken,
         await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
     }
 
-if (QueryRevision != ProfileRevisionCheck) {
+    if (QueryRevision != ProfileRevisionCheck) {
         ApplyProfileChanges = [{
             "changeType": "fullProfileUpdate",
             "profile": profile
@@ -1527,6 +1576,57 @@ app.post("/fortnite/api/game/v2/profile/*/client/RefundMtxPurchase", verifyToken
         profileCommandRevision: profile.commandRevision || 0,
         serverTime: new Date().toISOString(),
         multiUpdate: MultiUpdate,
+        responseVersion: 1
+    })
+});
+
+app.post("/fortnite/api/game/v2/profile/*/client/IncrementNamedCounterStat", async (req, res) => {
+    const profiles = await Profile.findOne({ accountId: req.params[0] });
+    let profile = profiles.profiles[req.query.profileId];
+
+    // do not change any of these or you will end up breaking it
+    var ApplyProfileChanges = [];
+    var BaseRevision = profile.rvn || 0;
+    var QueryRevision = req.query.rvn || -1;
+    var StatChanged = false;
+
+    if (req.body.counterName && profile.stats.attributes.hasOwnProperty("named_counters")) {
+        if (profile.stats.attributes.named_counters.hasOwnProperty(req.body.counterName)) {
+            profile.stats.attributes.named_counters[req.body.counterName].current_count += 1;
+            profile.stats.attributes.named_counters[req.body.counterName].last_incremented_time = new Date().toISOString();
+
+            StatChanged = true;
+        }
+    }
+
+    if (StatChanged == true) {
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+
+        ApplyProfileChanges.push({
+            "changeType": "statModified",
+            "name": "named_counters",
+            "value": profile.stats.attributes.named_counters
+        })
+
+        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile} });
+    }
+
+    // this doesn't work properly on version v12.20 and above but whatever
+    if (QueryRevision != BaseRevision) {
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    }
+
+    res.json({
+        profileRevision: profile.rvn || 0,
+        profileId: req.query.profileId,
+        profileChangesBaseRevision: BaseRevision,
+        profileChanges: ApplyProfileChanges,
+        profileCommandRevision: profile.commandRevision || 0,
+        serverTime: new Date().toISOString(),
         responseVersion: 1
     })
 });
@@ -3403,6 +3503,99 @@ app.post("/fortnite/api/game/v2/profile/*/client/SetCosmeticLockerSlot", verifyT
         serverTime: new Date().toISOString(),
         responseVersion: 1
     });
+});
+
+app.post("/fortnite/api/game/v2/profile/*/client/PutModularCosmeticLoadout", async (req, res) => {
+    const profiles = await Profile.findOne({ accountId: req.user.accountId });
+    let profile = profiles.profiles[req.query.profileId];
+
+    // do not change any of these or you will end up breaking it
+    var ApplyProfileChanges = [];
+    var BaseRevision = profile.rvn || 0;
+    var QueryRevision = req.query.rvn || -1;
+    var StatChanged = false;
+
+    if (!profile.stats.attributes.hasOwnProperty("loadout_presets")) {
+        profile.stats.attributes.loadout_presets = {};
+
+        ApplyProfileChanges.push({
+            "changeType": "statModified",
+            "name": "loadout_presets",
+            "value": {}
+        })
+
+        StatChanged = true;
+    }
+
+    if (!profile.stats.attributes.loadout_presets.hasOwnProperty(req.body.loadoutType)) {
+        const NewLoadoutID = functions.MakeID();
+
+        profile.items[NewLoadoutID] = {
+            "templateId": req.body.loadoutType,
+            "attributes": {},
+            "quantity": 1
+        }
+
+        ApplyProfileChanges.push({
+            "changeType": "itemAdded",
+            "itemId": NewLoadoutID,
+            "item": profile.items[NewLoadoutID]
+        })
+
+        profile.stats.attributes.loadout_presets[req.body.loadoutType] = {
+            [req.body.presetId]: NewLoadoutID
+        };
+
+        ApplyProfileChanges.push({
+            "changeType": "statModified",
+            "name": "loadout_presets",
+            "value": profile.stats.attributes.loadout_presets
+        })
+
+        StatChanged = true;
+    }
+
+    var LoadoutGUID = [];
+
+    try {
+        LoadoutGUID = profile.stats.attributes.loadout_presets[req.body.loadoutType][req.body.presetId];
+        profile.items[LoadoutGUID].attributes = JSON.parse(req.body.loadoutData);
+
+        ApplyProfileChanges.push({
+            "changeType": "itemAttrChanged",
+            "itemId": LoadoutGUID,
+            "attributeName": "slots",
+            "attributeValue": profile.items[LoadoutGUID].attributes.slots
+        })
+
+        StatChanged = true;
+        
+    } catch (err) {}
+
+    if (StatChanged == true) {
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+
+        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
+    }
+
+    // this doesn't work properly on version v12.20 and above but whatever
+    if (QueryRevision != BaseRevision) {
+        ApplyProfileChanges = [{
+            "changeType": "fullProfileUpdate",
+            "profile": profile
+        }];
+    }
+
+    res.json({
+        profileRevision: profile.rvn || 0,
+        profileId: req.query.profileId,
+        profileChangesBaseRevision: BaseRevision,
+        profileChanges: ApplyProfileChanges,
+        profileCommandRevision: profile.commandRevision || 0,
+        serverTime: new Date().toISOString(),
+        responseVersion: 1
+    })
 });
 
 app.post("/fortnite/api/game/v2/profile/*/client/:operation", verifyToken, async (req, res) => {

@@ -2,6 +2,12 @@ const express = require("express");
 const app = express.Router();
 const functions = require("../structs/functions.js");
 
+app.get("/content/api/pages/fortnite-game/spark-tracks", async (req, res) => {
+    const sparkTracks = require("./../responses/sparkTracks.json");
+
+    res.json(sparkTracks)
+})
+
 app.get("/content/api/pages/*", async (req, res) => {
     const contentpages = functions.getContentPages(req);
 

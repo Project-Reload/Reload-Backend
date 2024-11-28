@@ -2,9 +2,21 @@ const Express = require("express");
 const app = Express.Router();
 const discovery = require("./../responses/Discovery/discovery_frontend.json");
 
+app.post("*/api/v2/discovery/surface/*", async (req, res) => {
+    res.json(discovery);
+});
+
 app.post("*/discovery/surface/*", async (req, res) => {
     res.json(discovery);
 })
+
+app.get("/fortnite/api/discovery/accessToken/:branch", async (req, res) => {
+    res.json({
+        "branchName": req.params.branch,
+        "appId": "Fortnite",
+        "token": "reloadbackendogfncenteruwuwu"
+    });
+});
 
 app.post("/links/api/fn/mnemonic", async (req, res) => {
     var MnemonicArray = [];
