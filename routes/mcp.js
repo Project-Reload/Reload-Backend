@@ -329,6 +329,9 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
 
     function ParseQuest(QuestID) {
         var Quest = SeasonQuestIDS.Quests[QuestID];
+        if (!Quest) {
+            return;
+        }
 
         if (profile.items.hasOwnProperty(QuestID)) {
             ApplyProfileChanges.push({
@@ -1417,6 +1420,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/SetPartyAssistQuest", verifyTok
 app.post("/fortnite/api/game/v2/profile/*/client/UpdateQuestClientObjectives", verifyToken, async (req, res) => {
     const profiles = await Profile.findOne({ accountId: req.user.accountId });
     let profile = profiles.profiles[req.query.profileId];
+    const memory = functions.GetVersionInfo(req);
 
     // do not change any of these or you will end up breaking it
     var ApplyProfileChanges = [];
