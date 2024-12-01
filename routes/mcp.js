@@ -97,7 +97,6 @@ app.post("/fortnite/api/game/v2/profile/*/client/SetReceiveGiftsEnabled", verify
 });
 
 app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken, async (req, res) => {
-
     const profiles = await Profile.findOne({ accountId: req.user.accountId });
 
     if (!await profileManager.validateProfile(req.query.profileId, profiles)) return error.createError(
@@ -127,7 +126,6 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
 
     try {
         if (req.query.profileId == "profile0") {
-
             for (var key in profile.items) {
                 if (profile.items[key].templateId.toLowerCase().startsWith("quest:daily")) {
                     QuestCount += 1;
@@ -136,10 +134,10 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
         }
 
         if (req.query.profileId == "athena") {
-            DailyQuestIDS = AthenaQuestIDS.Daily
+            DailyQuestIDS = AthenaQuestIDS.Daily;
 
             if (AthenaQuestIDS.hasOwnProperty(`Season${SeasonPrefix}`)) {
-                SeasonQuestIDS = AthenaQuestIDS[`Season${SeasonPrefix}`]
+                SeasonQuestIDS = AthenaQuestIDS[`Season${SeasonPrefix}`];
             }
 
             for (var key in profile.items) {
@@ -167,53 +165,63 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
         }
 
         if (QuestCount < 3 && ShouldGiveQuest == true) {
-            const NewQuestID = functions.MakeID();
-            var randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
+            const selectedQuests = [];
+            while (selectedQuests.length < 3) {
+                const randomIndex = Math.floor(Math.random() * DailyQuestIDS.length);
+                const quest = DailyQuestIDS[randomIndex];
 
-            for (var key in profile.items) {
-                while (DailyQuestIDS[randomNumber].templateId.toLowerCase() == profile.items[key].templateId.toLowerCase()) {
-                    randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
+                if (
+                    !Object.values(profile.items).some(
+                        (item) => item.templateId.toLowerCase() === quest.templateId.toLowerCase()
+                    ) &&
+                    !selectedQuests.includes(quest)
+                ) {
+                    selectedQuests.push(quest);
                 }
             }
 
-            profile.items[NewQuestID] = {
-                "templateId": DailyQuestIDS[randomNumber].templateId,
-                "attributes": {
-                    "creation_time": new Date().toISOString(),
-                    "level": -1,
-                    "item_seen": false,
-                    "sent_new_notification": false,
-                    "xp_reward_scalar": 1,
-                    "quest_state": "Active",
-                    "last_state_change_time": new Date().toISOString(),
-                    "max_level_bonus": 0,
-                    "xp": 0,
-                    "favorite": false
-                },
-                "quantity": 1
-            };
+            for (const quest of selectedQuests) {
+                const NewQuestID = functions.MakeID();
 
-            for (var i in DailyQuestIDS[randomNumber].objectives) {
-                profile.items[NewQuestID].attributes[`completion_${DailyQuestIDS[randomNumber].objectives[i].toLowerCase()}`] = 0
+                profile.items[NewQuestID] = {
+                    "templateId": quest.templateId,
+                    "attributes": {
+                        "creation_time": new Date().toISOString(),
+                        "level": -1,
+                        "item_seen": false,
+                        "sent_new_notification": false,
+                        "xp_reward_scalar": 1,
+                        "quest_state": "Active",
+                        "last_state_change_time": new Date().toISOString(),
+                        "max_level_bonus": 0,
+                        "xp": 0,
+                        "favorite": false
+                    },
+                    "quantity": 1
+                };
+
+                for (var i in quest.objectives) {
+                    profile.items[NewQuestID].attributes[`completion_${quest.objectives[i].toLowerCase()}`] = 0;
+                }
+
+                ApplyProfileChanges.push({
+                    "changeType": "itemAdded",
+                    "itemId": NewQuestID,
+                    "item": profile.items[NewQuestID]
+                });
             }
 
             profile.stats.attributes.quest_manager.dailyLoginInterval = new Date().toISOString();
 
             ApplyProfileChanges.push({
-                "changeType": "itemAdded",
-                "itemId": NewQuestID,
-                "item": profile.items[NewQuestID]
-            })
-
-            ApplyProfileChanges.push({
                 "changeType": "statModified",
                 "name": "quest_manager",
                 "value": profile.stats.attributes.quest_manager
-            })
+            });
 
             StatChanged = true;
         }
-    } catch (err) {}
+    } catch (err) { console.error(err); }
 
     for (var key in profile.items) {
         if (key.startsWith("QS") && Number.isInteger(Number(key[2])) && Number.isInteger(Number(key[3])) && key[4] === "-") {
@@ -223,7 +231,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
                 ApplyProfileChanges.push({
                     "changeType": "itemRemoved",
                     "itemId": key
-                })
+                });
 
                 StatChanged = true;
             }
@@ -239,7 +247,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
                     ApplyProfileChanges.push({
                         "changeType": "itemRemoved",
                         "itemId": ChallengeBundleScheduleID
-                    })
+                    });
                 }
 
                 var ChallengeBundleSchedule = SeasonQuestIDS.ChallengeBundleSchedules[ChallengeBundleScheduleID];
@@ -256,13 +264,13 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
                         "granted_bundles": ChallengeBundleSchedule.granted_bundles
                     },
                     "quantity": 1
-                }
+                };
 
                 ApplyProfileChanges.push({
                     "changeType": "itemAdded",
                     "itemId": ChallengeBundleScheduleID,
                     "item": profile.items[ChallengeBundleScheduleID]
-                })
+                });
 
                 StatChanged = true;
             }
@@ -272,7 +280,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
                     ApplyProfileChanges.push({
                         "changeType": "itemRemoved",
                         "itemId": ChallengeBundleID
-                    })
+                    });
                 }
 
                 var ChallengeBundle = SeasonQuestIDS.ChallengeBundles[ChallengeBundleID];
@@ -298,7 +306,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
                         "favorite": false
                     },
                     "quantity": 1
-                }
+                };
 
                 QuestsToAdd = QuestsToAdd.concat(ChallengeBundle.grantedquestinstanceids);
                 profile.items[ChallengeBundleID].attributes.num_granted_bundle_quests = ChallengeBundle.grantedquestinstanceids.length;
@@ -312,79 +320,78 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
                     "changeType": "itemAdded",
                     "itemId": ChallengeBundleID,
                     "item": profile.items[ChallengeBundleID]
-                })
+                });
 
                 StatChanged = true;
             }
         }
+    }
+
+    function ParseQuest(QuestID) {
+        var Quest = SeasonQuestIDS.Quests[QuestID];
+
+        if (profile.items.hasOwnProperty(QuestID)) {
+            ApplyProfileChanges.push({
+                "changeType": "itemRemoved",
+                "itemId": QuestID
+            });
         }
 
-        function ParseQuest(QuestID) {
-            var Quest = SeasonQuestIDS.Quests[QuestID];
+        profile.items[QuestID] = {
+            "templateId": Quest.templateId,
+            "attributes": {
+                "creation_time": new Date().toISOString(),
+                "level": -1,
+                "item_seen": true,
+                "sent_new_notification": true,
+                "challenge_bundle_id": Quest.challenge_bundle_id || "",
+                "xp_reward_scalar": 1,
+                "quest_state": "Active",
+                "last_state_change_time": new Date().toISOString(),
+                "max_level_bonus": 0,
+                "xp": 0,
+                "favorite": false
+            },
+            "quantity": 1
+        };
 
-            if (profile.items.hasOwnProperty(QuestID)) {
-                ApplyProfileChanges.push({
-                    "changeType": "itemRemoved",
-                    "itemId": QuestID
-                })
-            }
+        if (config.bCompletedSeasonalQuests == true) {
+            profile.items[QuestID].attributes.quest_state = "Claimed";
 
-            profile.items[QuestID] = {
-                "templateId": Quest.templateId,
-                "attributes": {
-                    "creation_time": new Date().toISOString(),
-                    "level": -1,
-                    "item_seen": true,
-                    "sent_new_notification": true,
-                    "challenge_bundle_id": Quest.challenge_bundle_id || "",
-                    "xp_reward_scalar": 1,
-                    "quest_state": "Active",
-                    "last_state_change_time": new Date().toISOString(),
-                    "max_level_bonus": 0,
-                    "xp": 0,
-                    "favorite": false
-                },
-                "quantity": 1
-            }
-
-            if (config.bCompletedSeasonalQuests == true) {
-                profile.items[QuestID].attributes.quest_state = "Claimed";
-
-                if (Quest.hasOwnProperty("rewards")) {
-                    for (var reward in Quest.rewards) {
-                        if (Quest.rewards[reward].templateId.startsWith("Quest:")) {
-                            for (var Q in SeasonQuestIDS.Quests) {
-                                if (SeasonQuestIDS.Quests[Q].templateId == Quest.rewards[reward].templateId) {
-                                    SeasonQuestIDS.ChallengeBundles[SeasonQuestIDS.Quests[Q].challenge_bundle_id].grantedquestinstanceids.push(Q)
-                                    ParseQuest(Q)
-                                }
+            if (Quest.hasOwnProperty("rewards")) {
+                for (var reward in Quest.rewards) {
+                    if (Quest.rewards[reward].templateId.startsWith("Quest:")) {
+                        for (var Q in SeasonQuestIDS.Quests) {
+                            if (SeasonQuestIDS.Quests[Q].templateId == Quest.rewards[reward].templateId) {
+                                SeasonQuestIDS.ChallengeBundles[SeasonQuestIDS.Quests[Q].challenge_bundle_id].grantedquestinstanceids.push(Q);
+                                ParseQuest(Q);
                             }
                         }
                     }
                 }
             }
+        }
 
-            for (var i in Quest.objectives) {
-                if (config.bCompletedSeasonalQuests == true) {
-                    profile.items[QuestID].attributes[`completion_${i}`] = Quest.objectives[i];
-                } else {
-                    profile.items[QuestID].attributes[`completion_${i}`] = 0;
-                }
+        for (var i in Quest.objectives) {
+            if (config.bCompletedSeasonalQuests == true) {
+                profile.items[QuestID].attributes[`completion_${i}`] = Quest.objectives[i];
+            } else {
+                profile.items[QuestID].attributes[`completion_${i}`] = 0;
             }
-
-            ApplyProfileChanges.push({
-                "changeType": "itemAdded",
-                "itemId": QuestID,
-                "item": profile.items[QuestID]
-            })
-
-            StatChanged = true;
         }
 
-        for (var Quest in QuestsToAdd) {
-            ParseQuest(QuestsToAdd[Quest])
-        }
-    
+        ApplyProfileChanges.push({
+            "changeType": "itemAdded",
+            "itemId": QuestID,
+            "item": profile.items[QuestID]
+        });
+
+        StatChanged = true;
+    }
+
+    for (var Quest in QuestsToAdd) {
+        ParseQuest(QuestsToAdd[Quest]);
+    }
 
     if (StatChanged == true) {
         profile.rvn += 1;
@@ -402,7 +409,6 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
         }];
     }
 
-
     res.json({
         profileRevision: profile.rvn || 0,
         profileId: req.query.profileId,
@@ -417,105 +423,172 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
 
 app.post("/fortnite/api/game/v2/profile/*/client/FortRerollDailyQuest", verifyToken, async (req, res) => {
     const profiles = await Profile.findOne({ accountId: req.user.accountId });
-    let profile = profiles.profiles[req.query.profileId];
+    const profile = profiles.profiles[req.query.profileId];
 
-   // do not change any of these or you will end up breaking it
-   var ApplyProfileChanges = [];
-   var Notifications = [];
-   var BaseRevision = profile.rvn || 0;
-   var QueryRevision = req.query.rvn || -1;
-   var StatChanged = false;
+    // do not change any of these or you will end up breaking it
+    const questsData = require("./../responses/quests.json");
+    const dailyQuests = questsData.Daily;
 
-   var DailyQuestPath = req.query.profileId == "profile0" == "./../responses/quests.json";
-   var DailyQuestIDS = JSON.parse(JSON.stringify(require(DailyQuestPath))).Daily;
+    const ApplyProfileChanges = [];
+    const Notifications = [];
+    let BaseRevision = profile.rvn || 0;
+    const QueryRevision = req.query.rvn || -1;
+    let StatChanged = false;
 
-   const NewQuestID = functions.MakeID();
-   var randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
+    const currentDate = new Date().toISOString().split("T")[0];
+    if (!profile.stats.attributes.quest_manager) {
+        profile.stats.attributes.quest_manager = {};
+    }
 
-   for (var key in profile.items) {
-       while (DailyQuestIDS[randomNumber].templateId.toLowerCase() == profile.items[key].templateId.toLowerCase()) {
-           randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
-       }
-   }
+    if (
+        !profile.stats.attributes.quest_manager.dailyLoginInterval ||
+        profile.stats.attributes.quest_manager.dailyLoginInterval.split("T")[0] !== currentDate
+    ) {
+        profile.stats.attributes.quest_manager.dailyLoginInterval = new Date().toISOString();
 
-   if (req.body.questId && profile.stats.attributes.quest_manager.dailyQuestRerolls >= 1) {
-       profile.stats.attributes.quest_manager.dailyQuestRerolls -= 1;
+        const selectedQuests = [];
+        while (selectedQuests.length < 3) {
+            const randomIndex = Math.floor(Math.random() * dailyQuests.length);
+            const quest = dailyQuests[randomIndex];
 
-       delete profile.items[req.body.questId];
+            if (
+                !Object.values(profile.items).some(
+                    (item) => item.templateId.toLowerCase() === quest.templateId.toLowerCase()
+                ) &&
+                !selectedQuests.includes(quest)
+            ) {
+                selectedQuests.push(quest);
+            }
+        }
 
-       profile.items[NewQuestID] = {
-           "templateId": DailyQuestIDS[randomNumber].templateId,
-           "attributes": {
-               "creation_time": new Date().toISOString(),
-               "level": -1,
-               "item_seen": false,
-               "sent_new_notification": false,
-               "xp_reward_scalar": 1,
-               "quest_state": "Active",
-               "last_state_change_time": new Date().toISOString(),
-               "max_level_bonus": 0,
-               "xp": 0,
-               "favorite": false
-           },
-           "quantity": 1
-       };
+        for (const quest of selectedQuests) {
+            const questId = functions.MakeID();
+            profile.items[questId] = {
+                templateId: quest.templateId,
+                attributes: {
+                    creation_time: new Date().toISOString(),
+                    level: -1,
+                    item_seen: false,
+                    sent_new_notification: false,
+                    xp_reward_scalar: 1,
+                    quest_state: "Active",
+                    last_state_change_time: new Date().toISOString(),
+                    max_level_bonus: 0,
+                    xp: 0,
+                    favorite: false,
+                },
+                quantity: 1,
+            };
 
-       for (var i in DailyQuestIDS[randomNumber].objectives) {
-           profile.items[NewQuestID].attributes[`completion_${DailyQuestIDS[randomNumber].objectives[i].toLowerCase()}`] = 0
-       }
+            for (const objective of quest.objectives) {
+                profile.items[questId].attributes[`completion_${objective.toLowerCase()}`] = 0;
+            }
 
-       StatChanged = true;
-   }
+            ApplyProfileChanges.push({
+                changeType: "itemAdded",
+                itemId: questId,
+                item: profile.items[questId],
+            });
+        }
 
-   if (StatChanged == true) {
-       profile.rvn += 1;
-       profile.commandRevision += 1;
-       profile.updated = new Date().toISOString();
+        ApplyProfileChanges.push({
+            changeType: "statModified",
+            name: "quest_manager",
+            value: profile.stats.attributes.quest_manager,
+        });
 
-       ApplyProfileChanges.push({
-           "changeType": "statModified",
-           "name": "quest_manager",
-           "value": profile.stats.attributes.quest_manager
-       })
+        StatChanged = true;
+    }
 
-       ApplyProfileChanges.push({
-           "changeType": "itemAdded",
-           "itemId": NewQuestID,
-           "item": profile.items[NewQuestID]
-       })
+    if (req.body.questId && profile.stats.attributes.quest_manager.dailyQuestRerolls > 0) {
+        profile.stats.attributes.quest_manager.dailyQuestRerolls -= 1;
 
-       ApplyProfileChanges.push({
-           "changeType": "itemRemoved",
-           "itemId": req.body.questId
-       })
+        delete profile.items[req.body.questId];
 
-       Notifications.push({
-           "type": "dailyQuestReroll",
-           "primary": true,
-           "newQuestId": DailyQuestIDS[randomNumber].templateId
-       })
+        const selectedQuests = [];
+        while (selectedQuests.length < 1) {
+            const randomIndex = Math.floor(Math.random() * dailyQuests.length);
+            const quest = dailyQuests[randomIndex];
 
-       await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
-   }
+            if (
+                !Object.values(profile.items).some(
+                    (item) => item.templateId.toLowerCase() === quest.templateId.toLowerCase()
+                ) &&
+                !selectedQuests.includes(quest)
+            ) {
+                selectedQuests.push(quest);
+            }
+        }
 
-   // this doesn't work properly on version v12.20 and above but whatever
-   if (QueryRevision != BaseRevision) {
-       ApplyProfileChanges = [{
-           "changeType": "fullProfileUpdate",
-           "profile": profile
-       }];
-   }
+        const rerollQuestID = functions.MakeID();
+        const quest = selectedQuests[0];
+        profile.items[rerollQuestID] = {
+            templateId: quest.templateId,
+            attributes: {
+                creation_time: new Date().toISOString(),
+                level: -1,
+                item_seen: false,
+                sent_new_notification: false,
+                xp_reward_scalar: 1,
+                quest_state: "Active",
+                last_state_change_time: new Date().toISOString(),
+                max_level_bonus: 0,
+                xp: 0,
+                favorite: false,
+            },
+            quantity: 1,
+        };
 
-   res.json({
-       "profileRevision": profile.rvn || 0,
-       "profileId": req.query.profileId || "athena",
-       "profileChangesBaseRevision": BaseRevision,
-       "profileChanges": ApplyProfileChanges,
-       "notifications": Notifications,
-       "profileCommandRevision": profile.commandRevision || 0,
-       "serverTime": new Date().toISOString(),
-       "responseVersion": 1
-   })
+        for (const objective of quest.objectives) {
+            profile.items[rerollQuestID].attributes[`completion_${objective.toLowerCase()}`] = 0;
+        }
+
+        ApplyProfileChanges.push({
+            changeType: "itemAdded",
+            itemId: rerollQuestID,
+            item: profile.items[rerollQuestID],
+        });
+
+        ApplyProfileChanges.push({
+            changeType: "itemRemoved",
+            itemId: req.body.questId,
+        });
+
+        Notifications.push({
+            type: "dailyQuestReroll",
+            primary: true,
+            newQuestId: quest.templateId,
+        });
+
+        StatChanged = true;
+    }
+
+    if (StatChanged) {
+        profile.rvn += 1;
+        profile.commandRevision += 1;
+        profile.updated = new Date().toISOString();
+
+        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
+    }
+
+    // this doesn't work properly on version v12.20 and above but whatever
+    if (QueryRevision !== BaseRevision) {
+        ApplyProfileChanges.splice(0, ApplyProfileChanges.length, {
+            changeType: "fullProfileUpdate",
+            profile: profile,
+        });
+    }
+
+    res.json({
+        profileRevision: profile.rvn || 0,
+        profileId: req.query.profileId || "athena",
+        profileChangesBaseRevision: BaseRevision,
+        profileChanges: ApplyProfileChanges,
+        notifications: Notifications,
+        profileCommandRevision: profile.commandRevision || 0,
+        serverTime: new Date().toISOString(),
+        responseVersion: 1,
+    });
 });
 
 app.post("/fortnite/api/game/v2/profile/*/client/MarkNewQuestNotificationSent", verifyToken, async (req, res) => {
