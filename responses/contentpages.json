@@ -6252,6 +6252,30 @@
   },
   "battleroyalenews": {
     "news": {
+      "_type": "Battle Royale News",
+      "motds": [
+        {
+          "entryType": "Website",
+          "image": "https://i.imgur.com/L06O0IJ.png",
+          "tileImage": "https://i.imgur.com/KaJkHgq.png",
+          "videoMute": false,
+          "hidden": false,
+          "tabTitleOverride": "Reload Backend",
+          "_type": "CommonUI Simple Message MOTD",
+          "title": "Welcome to Reload!",
+          "body": "Created by Burlone, This is a modded backend, all main backend credits to lawin",
+          "offerAction": "ShowOfferDetails",
+          "videoLoop": false,
+          "videoStreamingEnabled": false,
+          "sortingPriority": 1,
+          "websiteButtonText": "OGFN Discord Server",
+          "websiteURL": "https://discord.gg/ogfncenter",
+          "id": "61fb3dd8-f23d-45cc-9058-058ab223ba5c",
+          "videoAutoplay": false,
+          "videoFullscreen": false,
+          "spotlight": false
+        }
+      ],
       "platform_messages": [
         {
           "hidden": false,
@@ -6268,7 +6292,6 @@
           "platform": "android"
         }
       ],
-      "_type": "Battle Royale News",
       "messages": [
         {
           "image": "https://i.imgur.com/2RImwlb.png",
