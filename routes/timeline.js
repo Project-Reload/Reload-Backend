@@ -1153,7 +1153,7 @@ app.get("/fortnite/api/calendar/v1/timeline", async (req, res) => {
     };
     
     var states = [{
-        validFrom: "2020-01-01T00:00:00.000Z",
+        validFrom: "0001-01-01T00:00:00.000Z",
         activeEvents: activeEvents.slice(),
         state: stateTemplate
     }]
@@ -1343,11 +1343,11 @@ app.get("/fortnite/api/calendar/v1/timeline", async (req, res) => {
         "channels": {
             "client-matchmaking": {
                 "states": [],
-                "cacheExpire": "9999-01-01T22:28:47.830Z"
+                "cacheExpire": "9999-01-01T00:00:00.000Z"
             },
             "client-events": {
                 "states": states,
-                "cacheExpire": "9999-01-01T22:28:47.830Z"
+                "cacheExpire": "9999-01-01T00:00:00.000Z"
             }
         },
         "eventsTimeOffsetHrs": 0,

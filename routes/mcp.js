@@ -1245,6 +1245,16 @@ app.post("/fortnite/api/game/v2/profile/*/client/UnlockRewardNode", verifyToken,
             "attributeValue": profile.items[req.body.rewardGraphId].attributes.reward_nodes_claimed
         })
 
+        if (memory.season == 19) {
+            profile.items.S19_GIFT_KEY.quantity -= 1;
+
+            ApplyProfileChanges.push({
+                "changeType": "itemQuantityChanged",
+                "itemId": "S19_GIFT_KEY",
+                "quantity": profile.items.S19_GIFT_KEY.quantity
+            })
+        }
+
         if (memory.season == 11) {
             profile.items.S11_GIFT_KEY.quantity -= 1;
 
@@ -1292,7 +1302,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/RemoveGiftBox", verifyToken, as
 
     let profile = profiles.profiles[req.query.profileId];
 
-    if (req.query.profileId != "common_core" && req.query.profileId != "profile0") return error.createError(
+    if (req.query.profileId != "athena" && req.query.profileId != "common_core" && req.query.profileId != "profile0") return error.createError(
         "errors.com.epicgames.modules.profiles.invalid_command",
         `RemoveGiftBox is not valid on ${req.query.profileId} profile`, 
         ["RemoveGiftBox",req.query.profileId], 12801, undefined, 400, res
