@@ -39,7 +39,7 @@ module.exports = {
                 return interaction.editReply({ content: "That user does not have a profile" });
             }
 
-            // Leer los datos de los archivos cargados
+           
             const allCampaignItems = destr(fs.readFileSync(path.join(__dirname, "../../../Config/allcampaign.json"), 'utf8'));
             const campaignItems = destr(fs.readFileSync(path.join(__dirname, "../../../Config/campaign.json"), 'utf8'));
 
