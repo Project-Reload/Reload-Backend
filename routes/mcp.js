@@ -31,7 +31,7 @@ app.get('/api/v1/shopdata', async (req, res) => {
 
 app.post("/fortnite/api/game/v2/profile/*/client/SetHomebaseBanner", async (req, res) => {
     const profileId = req.query.profileId || "profile0";
-    const profilePath = path.join(__dirname, '../Config/DefaultProfiles', `${profileId}.json`);
+    const profilePath = path.join(__dirname, '../Config/DefaultProfiles/', `${profileId}.json`);
     const profile = require(profilePath);
 
     let ApplyProfileChanges = [];
@@ -104,7 +104,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/SetHomebaseBanner", async (req,
 
 app.post("/fortnite/api/game/v2/profile/*/client/SetHomebaseName", async (req, res) => {
     const profileId = req.query.profileId || "profile0";
-    const profilePath = path.join(__dirname, './../Config/DefaultProfiles', `${profileId}.json`);
+    const profilePath = path.join(__dirname, './../Config/DefaultProfiles/', `${profileId}.json`);
     const profile = require(profilePath);
 
     let ApplyProfileChanges = [];
@@ -169,7 +169,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/SetHomebaseName", async (req, r
 
 // Refresh expeditions STW
 app.post("/fortnite/api/game/v2/profile/*/client/RefreshExpeditions", async (req, res) => {
-    const profile = require(`../Config/DefaultProfiles${req.query.profileId || "campaign"}.json`);
+    const profile = require(`../Config/DefaultProfiles/${req.query.profileId || "campaign"}.json`);
     var expeditionData = require("./../responses/Campaign/expeditionData.json");
 
     // do not change any of these or you will end up breaking it
@@ -268,7 +268,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/RefreshExpeditions", async (req
         profile.rvn += 1;
         profile.commandRevision += 1;
 
-        fs.writeFileSync(`../Config/DefaultProfiles${req.query.profileId || "campaign"}.json`, JSON.stringify(profile, null, 2));
+        fs.writeFileSync(`../Config/DefaultProfiles/${req.query.profileId || "campaign"}.json`, JSON.stringify(profile, null, 2));
     }
 
     // this doesn't work properly on version v12.20 and above but whatever
