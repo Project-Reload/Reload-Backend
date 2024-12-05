@@ -268,7 +268,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/RefreshExpeditions", async (req
         profile.rvn += 1;
         profile.commandRevision += 1;
 
-        fs.writeFileSync(`../Config/DefaultProfiles/${req.query.profileId || "campaign"}.json`, JSON.stringify(profile, null, 2));
+        fs.writeFileSync(`./Config/DefaultProfiles/${req.query.profileId || "campaign"}.json`, JSON.stringify(profile, null, 2));
     }
 
     // this doesn't work properly on version v12.20 and above but whatever
@@ -290,7 +290,6 @@ app.post("/fortnite/api/game/v2/profile/*/client/RefreshExpeditions", async (req
     })
     res.end();
 });
-
 // Start an expedition STW
 app.post("/fortnite/api/game/v2/profile/*/client/StartExpedition", async (req, res) => {
     const profile = require(`./../Config/DefaultProfiles/${req.query.profileId || "campaign"}.json`);
