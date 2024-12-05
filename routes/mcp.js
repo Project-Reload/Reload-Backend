@@ -26,7 +26,7 @@ app.get('/api/v1/shopdata', async (req, res) => {
   }
 });
 
-//STW Suport Adadted by iron web10
+//STW Suport added by iron web10
 //stw start
 
 app.post("/fortnite/api/game/v2/profile/*/client/SetHomebaseBanner", async (req, res) => {
