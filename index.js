@@ -23,6 +23,9 @@ global.JWT_SECRET = functions.MakeID();
 const PORT = config.port;
 const WEBSITEPORT = config.Website.websiteport;
 
+stw.handleSTW();
+
+
 let httpsServer;
 
 if (config.bEnableHTTPS) {
