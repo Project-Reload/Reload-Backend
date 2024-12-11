@@ -1,13 +1,13 @@
 const functions = require("../../../structs/autorotate.js");
 const fs = require("fs");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
-const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
-  data: new SlashCommandBuilder()
-    .setName("rotate-shop")
-    .setDescription("Refreshing the shop."),
-  async execute(interaction) {
+    commandInfo: {
+        name: "rotate-shop",
+        description: "Refreshing the shop.",
+    },
+    execute: async (interaction) => {
     await interaction.deferReply({ ephemeral: true });
 
     if (!config.moderators.includes(interaction.user.id)) {
