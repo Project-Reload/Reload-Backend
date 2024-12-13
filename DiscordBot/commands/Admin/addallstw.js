@@ -8,7 +8,7 @@ const config = require('../../../Config/config.json')
 
 module.exports = {
     commandInfo: {
-        name: "addall",
+        name: "addallstw",
         description: "Allows you to give a user all stw. Note: This will reset all your lockers to default",
         options: [
             {
