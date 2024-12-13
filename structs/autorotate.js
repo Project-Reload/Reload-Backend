@@ -495,3 +495,7 @@ function milisecstillnextrotation() {
 }
 
 setTimeout(rotateshop, milisecstillnextrotation());
+
+module.exports = {
+    rotateshop,
+}
