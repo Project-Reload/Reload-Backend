@@ -1,0 +1,64 @@
+{
+  "created": "",
+  "updated": "",
+  "rvn": 1,
+  "wipeNumber": 1,
+  "accountId": "",
+  "profileId": "campaign",
+  "version": "no_version",
+  "items": {
+    "Token:reloadbackend": {
+      "templateId": "Token:reloadbackend",
+      "attributes": {
+        "item_seen": true
+      },
+      "quantity": 1
+    },
+    "2b375f6f-badf-45a2-a530-2b745a321d20": {
+      "templateId": "Quest:stonewoodquest_joelkarolina_savesurvivors",
+      "attributes": {
+        "completion_stonewoodquest_joelkarolina_savesurvivors": 100,
+        "level": -1,
+        "item_seen": true,
+        "sent_new_notification": true,
+        "challenge_bundle_id": "",
+        "xp_reward_scalar": 1,
+        "challenge_linked_quest_given": "",
+        "quest_pool": "",
+        "quest_state": "Claimed",
+        "last_state_change_time": "2020-01-17T13:28:02.887Z",
+        "challenge_linked_quest_parent": "",
+        "max_level_bonus": 0,
+        "xp": 0,
+        "favorite": false
+      },
+      "quantity": 1
+    },
+    "60becd3f-e281-4f91-94e0-acb9376b1555": {
+      "templateId": "Quest:achievement_savesurvivors",
+      "attributes": {
+        "level": -1,
+        "item_seen": true,
+        "completion_questcollect_survivoritemdata": 1049,
+        "sent_new_notification": true,
+        "challenge_bundle_id": "",
+        "xp_reward_scalar": 1,
+        "challenge_linked_quest_given": "",
+        "quest_pool": "",
+        "quest_state": "Active",
+        "last_state_change_time": "2020-01-25T18:55:36.621Z",
+        "challenge_linked_quest_parent": "",
+        "max_level_bonus": 0,
+        "xp": 0,
+        "favorite": false
+      },
+      "quantity": 1
+    }
+  },
+  "stats": {
+    "attributes": {
+      "inventory_limit_bonus": 0
+    }
+  },
+  "commandRevision": 0
+}
