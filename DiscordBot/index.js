@@ -6,6 +6,8 @@ const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 const log = require("../structs/log.js");
 const Users = require("../model/user.js");
 
+client.commands = new Map();
+
 client.once("ready", () => {
     log.bot("Bot is up and running!");
 
@@ -35,8 +37,6 @@ client.once("ready", () => {
         }
     }
 
-    let commands = client.application.commands;
-
     const loadCommands = (dir) => {
         fs.readdirSync(dir).forEach(file => {
             const filePath = path.join(dir, file);
@@ -44,7 +44,8 @@ client.once("ready", () => {
                 loadCommands(filePath);
             } else if (file.endsWith(".js")) {
                 const command = require(filePath);
-                commands.create(command.commandInfo);
+                const normalizedCommandName = command.commandInfo.name.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+                client.commands.set(normalizedCommandName, command);
             }
         });
     };
@@ -55,22 +56,21 @@ client.once("ready", () => {
 client.on("interactionCreate", async interaction => {
     if (!interaction.isApplicationCommand()) return;
 
-    const executeCommand = (dir, commandName) => {
-        const commandPath = path.join(dir, commandName + ".js");
-        if (fs.existsSync(commandPath)) {
-            require(commandPath).execute(interaction);
-            return true;
-        }
-        const subdirectories = fs.readdirSync(dir).filter(subdir => fs.lstatSync(path.join(dir, subdir)).isDirectory());
-        for (const subdir of subdirectories) {
-            if (executeCommand(path.join(dir, subdir), commandName)) {
-                return true;
-            }
-        }
-        return false;
-    };
+    const normalizedCommandName = interaction.commandName.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+    const command = client.commands.get(normalizedCommandName);
 
-    executeCommand(path.join(__dirname, "commands"), interaction.commandName);
+    if (!command) {
+        log.error(`Command "${interaction.commandName}" not found.`);
+        return;
+    }
+
+    try {
+        await command.execute(interaction);
+        log.bot(`Executed command: ${interaction.commandName}`);
+    } catch (error) {
+        log.error(`Error executing command "${interaction.commandName}": ${error}`);
+        interaction.reply({ content: "There was an error while executing this command!", ephemeral: true });
+    }
 });
 
 client.on("guildBanAdd", async (ban) => {
@@ -124,7 +124,6 @@ client.on("guildBanRemove", async (ban) => {
     }
 });
 
-//AntiCrash System
 client.on("error", (err) => {
     console.log("Discord API Error:", err);
 });
