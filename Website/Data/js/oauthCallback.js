@@ -1,11 +1,14 @@
 const axios = require('axios');
+const log = require("../../../structs/log.js");
 const User = require('../../../model/user.js');
 
 module.exports = (DISCORD_API_URL, CLIENT_ID, CLIENT_SECRET, REDIRECT_URI) => async (req, res) => {
     const code = req.query.code;
 
     if (!code) {
-        throw new Error('No code provided');
+        return res.json({
+            "error": "Invalid oauth code provided."
+        })
     }
 
     try {
@@ -37,7 +40,9 @@ module.exports = (DISCORD_API_URL, CLIENT_ID, CLIENT_SECRET, REDIRECT_URI) => as
             res.redirect(`/register?discordId=${discordId}&username=${username}`);
         }
     } catch (err) {
-        console.error('Error during Discord OAuth2:', err);
-        throw new Error('Authentication failed');
+        log.error('Error during Discord OAuth2:', err);
+        return res.json({
+            "error": "Authentication failed"
+        })
     }
 };
