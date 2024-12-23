@@ -160,20 +160,7 @@ Right now the only tested version is **27.11**, if you test version, have questi
 This **project/backend** is licensed under the **BSD 3-Clause License.**
 
 ## Credits
-### Credits to:
-* [Lawin](https://github.com/Lawin0129) - For the backend base (LawinServerV2)
-* [Momentum](https://github.com/Nexus-FN/Momentum) - For some files
-* [Burlone](https://github.com/burlone0) - For having modded most things, let's say he modded everything
-* [NotTacos](https://github.com/PhysicalDrive) - For adding the working challenges (Backend Part)
-* [zvivsp](https://github.com/zvivsp) - For creating the graphics
-* [Waslyl](https://github.com/Waslyl) - For helping with some fixes
-* [joaco](https://github.com/ojotaa0124) - For helping with CloudStorage and responses stuff
-* [VoxyB89](https://github.com/VoxyB89) - For adding https/ssl support
-* [xLoigi](https://github.com/xLoigi) - For helping with some files and support a creator stuff and for creating Caldera Service
-* [PRO100KatYT](https://github.com/PRO100KatYT) - For helping with some .json files
-* [Marvelco](https://github.com/MarvelcoOGFN) - For helping with Battle passes (s11 - s14, s16) and for camp fire xp on 11.31
-* [ironweb10](https://github.com/ironweb10) - For helping with Battle passes (s15, s19 and s20)
-* [nade](https://github.com/gn1e) - For creating the base of the Auto Item Shop (Even if [Burlone](https://github.com/burlone0) solved many problems heheheh)
+Credits have been moved to the **Contributors** section of github.
 
 ---
 
