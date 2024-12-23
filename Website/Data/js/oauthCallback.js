@@ -5,7 +5,9 @@ module.exports = (DISCORD_API_URL, CLIENT_ID, CLIENT_SECRET, REDIRECT_URI) => as
     const code = req.query.code;
 
     if (!code) {
-        throw new Error('No code provided');
+        return res.json({
+            "error": "Invalid oauth code provided."
+        })
     }
 
     try {
