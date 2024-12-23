@@ -8,6 +8,7 @@ const webhook = config.bItemShopWebhook;
 const fortniteapi = "https://fortnite-api.com/v2/cosmetics/br";
 const catalogcfg = path.join(__dirname, "..", 'Config', 'catalog_config.json');
 
+const chapterlimit = config.bChapterlimit; 
 const seasonlimit = config.bSeasonlimit; 
 const dailyItemsCount = config.bDailyItemsAmount;
 const featuredItemsCount = config.bFeaturedItemsAmount;
@@ -16,11 +17,32 @@ async function fetchitems() {
     try {
         const response = await axios.get(fortniteapi);
         const cosmetics = response.data.data || [];
+        const excludedItems = config.bExcludedItems || [];
 
         return cosmetics.filter(item => {
-            const { chapter, season } = item.introduction || {};
-            const rarity = item.rarity?.displayValue?.toLowerCase();
-            return chapter === '1' && season && parseInt(season, 10) <= seasonlimit && rarity !== 'common';
+            const { id, introduction, rarity } = item;
+            const chapter = introduction?.chapter ? parseInt(introduction.chapter, 10) : null;
+            const season = introduction?.season ? introduction.season.toString() : null;
+            const itemRarity = rarity?.displayValue?.toLowerCase();
+
+            if (!chapter || !season) return false;
+            if (excludedItems.includes(id)) return false;
+
+            const maxChapter = parseInt(chapterlimit, 10);
+            const maxSeason = seasonlimit.toString();
+
+            if (maxSeason === "OG") {
+                return chapter >= 1 && chapter <= maxChapter && itemRarity !== "common";
+            }
+
+            if (
+                chapter < 1 || chapter > maxChapter ||
+                (chapter === maxChapter && (season === "X" || parseInt(season, 10) > parseInt(maxSeason, 10)))
+            ) {
+                return false;
+            }
+
+            return itemRarity !== "common";
         });
     } catch (error) {
         log.error('Error fetching cosmetics:', error.message || error);
