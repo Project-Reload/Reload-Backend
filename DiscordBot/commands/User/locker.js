@@ -18,9 +18,12 @@ module.exports = {
                 required: true,
                 choices: [
                     { name: "Skins", value: "skins" },
+                    { name: "BackBlings", value: "backblings" },
                     { name: "Emotes", value: "emotes" },
                     { name: "Pickaxes", value: "pickaxes" },
                     { name: "Gliders", value: "gliders" },
+                    { name: "Warps", value: "warp" },
+                    { name: "SkyDiveContrail", value: "skydivecontrail" },
                     { name: "Loading Screens", value: "loading_screens" },
                 ],
             },
@@ -47,6 +50,12 @@ module.exports = {
             case "skins":
                 filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaCharacter:"));
                 break;
+            case "backblings":
+                filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaBackpack:"));
+                break;
+            case "emotes":
+                filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaDance:"));
+                break;
             case "emotes":
                 filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaDance:"));
                 break;
@@ -55,6 +64,12 @@ module.exports = {
                 break;
             case "gliders":
                 filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaGlider:"));
+                break;
+            case "warp":
+                filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaItemWrap:"));
+                break;
+            case "skydivecontrail":
+                filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaSkyDiveContrail:"));
                 break;
             case "loading_screens":
                 filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaLoadingScreen:"));
@@ -76,9 +91,12 @@ module.exports = {
                 itemsData = filteredItems.map(id => {
                     const itemId = id
                         .replace("AthenaCharacter:", "")
+                        .replace("AthenaBackpack:", "")
                         .replace("AthenaDance:", "")
                         .replace("AthenaPickaxe:", "")
                         .replace("AthenaGlider:", "")
+                        .replace("AthenaItemWrap:", "")
+                        .replace("AthenaSkyDiveContrail:", "")
                         .replace("AthenaLoadingScreen:", "");
                     const cosmetic = allCosmetics.find(item => item.id === itemId || item.id.includes(itemId));
                     if (cosmetic) {
@@ -100,9 +118,12 @@ module.exports = {
                 itemsData = filteredItems.map(id => {
                     const itemId = id
                         .replace("AthenaCharacter:", "")
+                        .replace("AthenaBackpack:", "")
                         .replace("AthenaDance:", "")
                         .replace("AthenaPickaxe:", "")
                         .replace("AthenaGlider:", "")
+                        .replace("AthenaItemWrap:", "")
+                        .replace("AthenaSkyDiveContrail:", "")
                         .replace("AthenaLoadingScreen:", "");
                     const cosmetic = allCosmetics.find(item => item.id === itemId || item.id.includes(itemId));
                     if (cosmetic) {
