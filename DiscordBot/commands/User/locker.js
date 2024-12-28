@@ -156,6 +156,7 @@ module.exports = {
             const logoImage = await loadImage("https://i.imgur.com/2RImwlb.png");
             const logoSize = 50;
             const logoX = 20;
+            const logoY = 20;
             
             ctx.save();
             ctx.beginPath();
