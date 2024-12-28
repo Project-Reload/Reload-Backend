@@ -101,14 +101,9 @@ module.exports = {
       return interaction.editReply({ content: "You don't own an account", ephemeral: true });
     }
 
-    const response = await fetch(`https://fortniteapi.io/v2/items/list?lang=en`, {
-      method: "GET",
-      headers: {
-        'Authorization': "44f2eb39-7a490a9c-bc5d3f68-c379966f"
-      }
-    });
+    const response = await fetch(`https://fortnite-api.com/v2/cosmetics/br`);
     const data = await response.json();
-    const itemData = data.items;
+    const itemData = data.data.items;
 
     let cosmeticToGet;
     if (getCosmetic) {
