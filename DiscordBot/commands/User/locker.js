@@ -106,7 +106,7 @@ module.exports = {
                         return {
                             id: itemId,
                             name: cosmetic.name,
-                            image: cosmetic.images.icon,
+                            image: cosmetic.type.value === "emoji" && cosmetic.images.smallIcon ? cosmetic.images.smallIcon : cosmetic.images.icon,
                             season: season,
                             chapter: chapter
                         };
@@ -135,7 +135,7 @@ module.exports = {
                                 return {
                                     id: itemId,
                                     name: cosmetic.name,
-                                    image: cosmetic.images.icon,
+                                    image: cosmetic.type.value === "emoji" && cosmetic.images.smallIcon ? cosmetic.images.smallIcon : cosmetic.images.icon,
                                     season: season,
                                     chapter: chapter
                                 };
