@@ -24,6 +24,7 @@ module.exports = {
                     { name: "Gliders", value: "gliders" },
                     { name: "Warps", value: "warp" },
                     { name: "SkyDiveContrail", value: "skydivecontrail" },
+                    { name: "Music", value: "music" },
                     { name: "Loading Screens", value: "loading_screens" },
                 ],
             },
@@ -71,6 +72,9 @@ module.exports = {
             case "skydivecontrail":
                 filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaSkyDiveContrail:"));
                 break;
+            case "music":
+                filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaMusicPack:"));
+                break;
             case "loading_screens":
                 filteredItems = Object.keys(items).filter(id => id.startsWith("AthenaLoadingScreen:"));
                 break;
@@ -97,6 +101,7 @@ module.exports = {
                         .replace("AthenaGlider:", "")
                         .replace("AthenaItemWrap:", "")
                         .replace("AthenaSkyDiveContrail:", "")
+                        .replace("AthenaMusicPack:", "")
                         .replace("AthenaLoadingScreen:", "");
                     const cosmetic = allCosmetics.find(item => item.id === itemId || item.id.includes(itemId));
                     if (cosmetic) {
@@ -124,6 +129,7 @@ module.exports = {
                         .replace("AthenaGlider:", "")
                         .replace("AthenaItemWrap:", "")
                         .replace("AthenaSkyDiveContrail:", "")
+                        .replace("AthenaMusicPack:", "")
                         .replace("AthenaLoadingScreen:", "");
                     const cosmetic = allCosmetics.find(item => item.id === itemId || item.id.includes(itemId));
                     if (cosmetic) {
