@@ -141,7 +141,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
             }
 
             for (var key in profile.items) {
-                if (profile.items[key].templateId.toLowerCase().startsWith("quest:athenadaily")) {
+                if (profile.items[key]?.templateId?.toLowerCase().startsWith("quest:athenadaily")) {
                     QuestCount += 1;
                 }
             }
