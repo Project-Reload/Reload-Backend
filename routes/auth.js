@@ -30,6 +30,8 @@ app.get("/epic/id/v2/sdk/accounts", async (req, res) => {
 })
 
 app.post("/account/api/oauth/token", async (req, res) => {
+    const memory = functions.GetVersionInfo(req);
+
     let clientId;
 
     try {
@@ -209,6 +211,17 @@ app.post("/account/api/oauth/token", async (req, res) => {
         );
     }
 
+    if (config.bEnableOnlyOneSeasonJoinable === true) {
+        if (memory.build != config.bSeasonJoinable) {
+            log.debug("Someone is logging in from a blocked version.");
+            return error.createError(
+                "errors.com.epicgames.version_not_supported",
+                "This version is blocked, change bSeasonJoinable or disable bEnableOnlyOneSeasonJoinable on Reload config.", 
+                [], -1, undefined, 400, res
+            );
+        }
+    }
+
     let refreshIndex = global.refreshTokens.findIndex(i => i.accountId == req.user.accountId);
     if (refreshIndex != -1) global.refreshTokens.splice(refreshIndex, 1);
 
@@ -251,8 +264,20 @@ app.post("/account/api/oauth/token", async (req, res) => {
 app.get("/account/api/oauth/verify", verifyToken, (req, res) => {
     let token = req.headers["authorization"].replace("bearer ", "");
     const decodedToken = jwt.decode(token.replace("eg1~", ""));
+    const memory = functions.GetVersionInfo(req);
 
     log.debug(`GET /account/api/oauth/verify called for account: ${req.user.accountId}`);
+
+    if (config.bEnableOnlyOneSeasonJoinable === true) {
+        if (memory.build != config.bSeasonJoinable) {
+            log.debug("Someone is logging in from a blocked version.");
+            return error.createError(
+                "errors.com.epicgames.version_not_supported",
+                "This version is no longer supported, change bSeasonJoinable or disable bEnableOnlyOneSeasonJoinable on Reload config.", 
+                [], -1, undefined, 400, res
+            );
+        }
+    }
 
     res.json({
         token: token,

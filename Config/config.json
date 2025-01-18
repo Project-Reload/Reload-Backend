@@ -44,6 +44,10 @@
     "bEnableBattlepass": false,
     "bBattlePassSeason": 2,
 
+    "//": "For 'bSeasonJoinable' you can set a season that is also `9.10` and not just `9`",
+    "bEnableOnlyOneSeasonJoinable": false,
+    "bSeasonJoinable": 2,
+
     "//": "If 'bUseAutoRotate' is enabled it will automatically rotate the item shop using the time you put in 'bRotateTime', you can select the season limit with 'bSeasonLimit' (please only do up to season 10, it might be a bit broken after!), 'bRotateTime' means what time the shop rotates (it is UTC and uses the 24 hour clock, not 12 hour), for 'bItemShopWebhook' you have to generate a webhook to your item shop channel and put the link here, you can select how many cosmetics are in daily: 'bDailyItemsAmount' and featured: 'bFeaturedItemsAmount'",
     "bUseAutoRotate": false,
     "bEnableAutoRotateDebugLogs": false,
