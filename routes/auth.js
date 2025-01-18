@@ -211,8 +211,8 @@ app.post("/account/api/oauth/token", async (req, res) => {
         );
     }
 
-    if (config.bEnableOnlyOneSeasonJoinable === true) {
-        if (memory.build != config.bSeasonJoinable) {
+    if (config.bEnableOnlyOneVersionJoinable === true) {
+        if (memory.build != config.bVersionJoinable) {
             log.debug("Someone is logging in from a blocked version.");
             return error.createError(
                 "errors.com.epicgames.version_not_supported",
@@ -268,8 +268,8 @@ app.get("/account/api/oauth/verify", verifyToken, (req, res) => {
 
     log.debug(`GET /account/api/oauth/verify called for account: ${req.user.accountId}`);
 
-    if (config.bEnableOnlyOneSeasonJoinable === true) {
-        if (memory.build != config.bSeasonJoinable) {
+    if (config.bEnableOnlyOneVersionJoinable === true) {
+        if (memory.build != config.bVersionJoinable) {
             log.debug("Someone is logging in from a blocked version.");
             return error.createError(
                 "errors.com.epicgames.version_not_supported",
