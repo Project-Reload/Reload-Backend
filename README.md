@@ -82,9 +82,11 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
 - `/addall {user}` - Allows you to give a user all cosmetics. Note: This will reset all your lockers to default
 - `/addvbucks {user} {vbucks}` - Lets you change a users amount of vbucks
 - `/additem {user} {cosmeticname}` - The name of the cosmetic you want to give
+- `/create-custom-match-code {code} {ip} {port}` - Create a custom matchmaking code.
 - `/ban {targetUsername}` - Ban a user from the backend by their username.
 - `/createhostaccount` - Creates a host account for Reload Backend.
 - `/createsac {code} {ingame-username}` - Creates a Support A Creator Code.
+- `/custom-match-code-list` - Lists all custom matchmaking codes.
 - `/delete {username}` - Deletes a users account
 - `/deletediscord {username}` - Deletes a users account
 - `/deletesac {username}` - Deletes a Support A Creator Code.
