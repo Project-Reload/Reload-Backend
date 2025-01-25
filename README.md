@@ -41,7 +41,7 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
     * [x] You can get help from your party to complete missions.
 * In-Game Events:
     * [x] You will be able to activate various events that occurred in the game such as the rift in the sky and much more!
-* Winterfest Event (11.31, 19.01 & 23.10 / BETA):
+* Winterfest Event (11.31, 19.01, 23.10, 33.11):
     * [x] The winterfest event should work with all its rewards!
 * SAC (Support A Creator):
     * [x] It supports a supported creator, you can set it using the `/createsac {code} {ingame-username}` command on discord.
