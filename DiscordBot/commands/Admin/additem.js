@@ -60,7 +60,7 @@ module.exports = {
                     }
 
                     const cosmeticimage = cosmeticFromAPI.images.icon;
-                    const regex = /^(?:[A-Z][a-z]*\b\s*)+$/;
+                    const regex = /^[A-Za-z0-9'°. \s]+$/;
                     if (!regex.test(cosmeticname)) {
                         return await interaction.editReply({ content: "Please check for correct casing. E.g 'Renegade Raider' is correct.", ephemeral: true });
                     }
