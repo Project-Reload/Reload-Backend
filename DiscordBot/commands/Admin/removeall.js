@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const Users = require('../../../model/user.js');
 const Profiles = require('../../../model/profiles.js');
+const log = require("../../../structs/log.js");
 const destr = require("destr");
 const config = require('../../../Config/config.json')
 
@@ -62,7 +63,7 @@ module.exports = {
                 .setTimestamp();
             await interaction.editReply({ embeds: [embed], ephemeral: true });
         } catch (error) {
-            console.error("An error occurred:", error);
+            log.error("An error occurred:", error);
             interaction.editReply({ content: "An error occurred while processing the request." });
         }
     }

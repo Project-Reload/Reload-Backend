@@ -1,6 +1,8 @@
-const { SlashCommandBuilder, MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const Users = require("../../../model/user.js");
 const Profiles = require("../../../model/profiles.js");
+const log = require("../../../structs/log.js");
+const uuid = require("uuid");
 
 const cooldowns = new Map();
 
@@ -23,7 +25,7 @@ module.exports = {
             },
         ],
     },
-    async execute(interaction, client) {
+    async execute(interaction) {
         const recieverUser = interaction.options.getUser("user");
 
         try {
@@ -72,7 +74,93 @@ module.exports = {
             }
 
             const currentuser = await Profiles.findOne({ accountId: sender?.accountId });
-    
+            const recieverProfile = await Profiles.findOne({ accountId: recieveuser?.accountId });
+
+            if (!currentuser || !recieverProfile) {
+                return interaction.editReply({ content: "Profile failure or account does not exist", ephemeral: true });
+            }
+
+            const senderCommonCore = currentuser.profiles.common_core;
+            const recieverCommonCore = recieverProfile.profiles.common_core;
+
+            const senderProfile0 = currentuser.profiles.profile0;
+            const recieverProfile0 = recieverProfile.profiles.profile0;
+
+            const sendervbucks = senderCommonCore.items['Currency:MtxPurchased'];
+            const recievervbucks = recieverCommonCore.items['Currency:MtxPurchased'];
+
+            if (!sendervbucks) {
+                return interaction.editReply({ content: "User Profile failure or account does not exist", ephemeral: true });
+            }
+
+            if (!recievervbucks) {
+                return interaction.editReply({ content: "Profile failure or account does not exist", ephemeral: true });
+            }
+
+            sendervbucks.quantity -= vbucks;
+            recievervbucks.quantity += vbucks;
+
+            senderProfile0.items['Currency:MtxPurchased'].quantity -= vbucks;
+            recieverProfile0.items['Currency:MtxPurchased'].quantity += vbucks;
+
+            const purchaseId = uuid.v4();
+            const lootList = [{
+                "itemType": "Currency:MtxGiveaway",
+                "itemGuid": "Currency:MtxGiveaway",
+                "quantity": vbucks
+            }];
+
+            recieverCommonCore.items[purchaseId] = {
+                "templateId": `GiftBox:GB_MakeGood`,
+                "attributes": {
+                    "fromAccountId": sender.accountId,
+                    "lootList": lootList,
+                    "params": {
+                        "userMessage": `You received a gift from ${sender.username || "Unknown Player"}!`
+                    },
+                    "giftedOn": new Date().toISOString()
+                },
+                "quantity": 1
+            };
+
+            senderCommonCore.rvn += 1;
+            senderCommonCore.commandRevision += 1;
+
+            recieverCommonCore.rvn += 1;
+            recieverCommonCore.commandRevision += 1;
+
+            await Profiles.updateOne({ accountId: sender?.accountId }, {
+                $set: {
+                    'profiles.common_core': senderCommonCore,
+                    'profiles.profile0': senderProfile0
+                }
+            });
+
+            await Profiles.updateOne({ accountId: recieveuser?.accountId }, {
+                $set: {
+                    'profiles.common_core': recieverCommonCore,
+                    'profiles.profile0': recieverProfile0
+                }
+            });
+
+            let ApplyProfileChanges = [
+                {
+                    "changeType": "itemQuantityChanged",
+                    "itemId": "Currency:MtxPurchased",
+                    "quantity": recieverCommonCore.items['Currency:MtxPurchased'].quantity
+                },
+                {
+                    "changeType": "itemQuantityChanged",
+                    "itemId": "Currency:MtxPurchased",
+                    "quantity": recieverProfile0.items['Currency:MtxPurchased'].quantity
+                },
+                {
+                    "changeType": "itemAdded",
+                    "itemId": purchaseId,
+                    "templateId": "GiftBox:GB_MakeGood"
+                }
+            ];
+
             const embed = new MessageEmbed()
                 .setTitle("Gift Sent!")
                 .setDescription(`Gifted **${vbucks} V-Bucks** to **${recieveuser.username}**`)
@@ -85,20 +173,17 @@ module.exports = {
 
             await interaction.editReply({ embeds: [embed], ephemeral: true });
 
-            const recievervbucks = await Profiles.findOneAndUpdate({ accountId: recieveuser?.accountId }, { $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': vbucks } });
-            const sendervbucks = await Profiles.findOneAndUpdate({ accountId: currentuser?.accountId }, { $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': -vbucks } });
-    
-            if (!sendervbucks) {
-                return interaction.editReply({ content: "User Profile failure or account does not exist", ephemeral: true });
-            }
-    
-            if (!recievervbucks) {
-                return interaction.editReply({ content: "Profile failure or account does not exist", ephemeral: true });
-            }
-
             cooldowns.set(cooldownKey, currentTime);
+
+            return {
+                profileRevision: recieverCommonCore.rvn,
+                profileCommandRevision: recieverCommonCore.commandRevision,
+                profileChanges: ApplyProfileChanges,
+                newQuantityCommonCore: recieverCommonCore.items['Currency:MtxPurchased'].quantity,
+                newQuantityProfile0: recieverProfile0.items['Currency:MtxPurchased'].quantity
+            };
         } catch (error) {
-            //console.log(error)
+            log.error(error);
         }
     },
 };

@@ -221,7 +221,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/ClientQuestLogin", verifyToken,
 
             StatChanged = true;
         }
-    } catch (err) { console.error(err); }
+    } catch (err) { log.error(err); }
 
     for (var key in profile.items) {
         if (key.startsWith("QS") && Number.isInteger(Number(key[2])) && Number.isInteger(Number(key[3])) && key[4] === "-") {
@@ -738,6 +738,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/GiftCatalogEntry", verifyToken,
     }
 
     let profile = profiles.profiles[req.query.profileId];
+    let profile0 = profiles.profiles["profile0"];
     log.debug(`GiftCatalogEntry: Validated profile for profileId: ${req.query.profileId}`);
 
     if (req.query.profileId != "common_core") {
@@ -887,12 +888,20 @@ app.post("/fortnite/api/game/v2/profile/*/client/GiftCatalogEntry", verifyToken,
                     }
 
                     profile.items[key].quantity -= price;
+                    profile0.items[key].quantity -= price;
                         
-                    ApplyProfileChanges.push({
-                        "changeType": "itemQuantityChanged",
-                        "itemId": key,
-                        "quantity": profile.items[key].quantity
-                    });
+                    ApplyProfileChanges.push(
+                        {
+                            "changeType": "itemQuantityChanged",
+                            "itemId": key,
+                            "quantity": profile.items[key].quantity
+                        },
+                        {
+                            "changeType": "itemQuantityChanged",
+                            "itemId": key,
+                            "quantity": profile0.items[key].quantity
+                        }
+                    );
 
                     paid = true;
                     log.debug(`GiftCatalogEntry: Currency deducted: ${price}, remaining ${profile.items[key].quantity}`);
@@ -985,12 +994,22 @@ app.post("/fortnite/api/game/v2/profile/*/client/GiftCatalogEntry", verifyToken,
                 }
 
                 common_core.items[giftBoxItemID] = giftBoxItem;
+                profile0.items[giftBoxItemID] = giftBoxItem;
 
-                if (receiverId == req.user.accountId) ApplyProfileChanges.push({
-                    "changeType": "itemAdded",
-                    "itemId": giftBoxItemID,
-                    "item": common_core.items[giftBoxItemID]
-                });
+                if (receiverId == req.user.accountId) {
+                    ApplyProfileChanges.push(
+                        {
+                            "changeType": "itemAdded",
+                            "itemId": giftBoxItemID,
+                            "item": common_core.items[giftBoxItemID]
+                        },
+                        {
+                            "changeType": "itemAdded",
+                            "itemId": giftBoxItemID,
+                            "item": profile0.items[giftBoxItemID]
+                        }
+                    );
+                }
 
                 athena.rvn += 1;
                 athena.commandRevision += 1;
@@ -1000,7 +1019,17 @@ app.post("/fortnite/api/game/v2/profile/*/client/GiftCatalogEntry", verifyToken,
                 common_core.commandRevision += 1;
                 common_core.updated = new Date().toISOString();
 
-                await receiverProfiles.updateOne({ $set: { [`profiles.athena`]: athena, [`profiles.common_core`]: common_core } });
+                profile0.rvn += 1;
+                profile0.commandRevision += 1;
+                profile0.updated = new Date().toISOString();
+
+                await receiverProfiles.updateOne({ 
+                    $set: { 
+                        [`profiles.athena`]: athena, 
+                        [`profiles.common_core`]: common_core,
+                        [`profiles.profile0`]: profile0
+                    } 
+                });
 
                 global.giftReceived[receiverId] = true;
 
@@ -1019,7 +1048,12 @@ app.post("/fortnite/api/game/v2/profile/*/client/GiftCatalogEntry", verifyToken,
         profile.commandRevision += 1;
         profile.updated = new Date().toISOString();
 
-        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile } });
+        await profiles.updateOne({ 
+            $set: { 
+                [`profiles.${req.query.profileId}`]: profile, 
+                [`profiles.profile0`]: profile0
+            } 
+        });
     }
 
     if (QueryRevision != ProfileRevisionCheck) {
@@ -1576,6 +1610,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/RequestRestedStateIncrease", as
 app.post("/fortnite/api/game/v2/profile/*/client/RefundMtxPurchase", verifyToken, async (req, res) => {
     const profiles = await Profile.findOne({ accountId: req.params[0] });
     let profile = profiles.profiles[req.query.profileId];
+    let profile0 = profiles.profiles["profile0"];
 
     const ItemProfile = profiles.profiles.athena;
     const memory = functions.GetVersionInfo(req);
@@ -1608,13 +1643,21 @@ app.post("/fortnite/api/game/v2/profile/*/client/RefundMtxPurchase", verifyToken
                     if (profile.items[key].templateId.toLowerCase().startsWith("currency:mtx")) {
                         if (profile.items[key].attributes.platform.toLowerCase() == profile.stats.attributes.current_mtx_platform.toLowerCase() || profile.items[key].attributes.platform.toLowerCase() == "shared") {
                             profile.items[key].quantity += profile.stats.attributes.mtx_purchase_history.purchases[i].totalMtxPaid;
-        
-                            ApplyProfileChanges.push({
-                                "changeType": "itemQuantityChanged",
-                                "itemId": key,
-                                "quantity": profile.items[key].quantity
-                            })
-        
+                            profile0.items[key].quantity += profile.stats.attributes.mtx_purchase_history.purchases[i].totalMtxPaid;
+                    
+                            ApplyProfileChanges.push(
+                                {
+                                    "changeType": "itemQuantityChanged",
+                                    "itemId": key,
+                                    "quantity": profile.items[key].quantity
+                                },
+                                {
+                                    "changeType": "itemQuantityChanged",
+                                    "itemId": key,
+                                    "quantity": profile0.items[key].quantity
+                                }
+                            );
+                    
                             break;
                         }
                     }
@@ -1635,6 +1678,8 @@ app.post("/fortnite/api/game/v2/profile/*/client/RefundMtxPurchase", verifyToken
         ItemProfile.commandRevision += 1;
         profile.rvn += 1;
         profile.commandRevision += 1;
+        profile0.rvn += 1;
+        profile0.commandRevision += 1;
         StatChanged = true;
     }
 
@@ -1648,8 +1693,13 @@ app.post("/fortnite/api/game/v2/profile/*/client/RefundMtxPurchase", verifyToken
         MultiUpdate[0].profileRevision = ItemProfile.rvn || 0;
         MultiUpdate[0].profileCommandRevision = ItemProfile.commandRevision || 0;
 
-        await profiles.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile} });
-        await profiles.updateOne({ $set: { [`profiles.athena`]: ItemProfile} });
+        await profiles.updateOne({
+            $set: {
+                [`profiles.${req.query.profileId}`]: profile,
+                [`profiles.profile0`]: profile0,
+                [`profiles.athena`]: ItemProfile
+            }
+        });
     }
 
     if (QueryRevision != ProfileRevisionCheck) {
@@ -1739,6 +1789,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
 
     let profile = profiles.profiles[req.query.profileId];
     let athena = profiles.profiles["athena"];
+    let profile0 = profiles.profiles["profile0"];
     log.debug(`PurchaseCatalogEntry: Validated profile for profileId: ${req.query.profileId}`);
 
     if (req.query.profileId != "common_core" && req.query.profileId != "profile0") {
@@ -1797,6 +1848,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
 
     if (!profile.items) profile.items = {};
     if (!athena.items) athena.items = {};
+    if (!profile0.items) profile0.items = {};
 
     let findOfferId = functions.getOfferID(req.body.offerId);
     if (!findOfferId) {
@@ -1839,11 +1891,19 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                             }
                 
                             profile.items[key].quantity -= totalPrice;
-                            ApplyProfileChanges.push({
-                                "changeType": "itemQuantityChanged",
-                                "itemId": key,
-                                "quantity": profile.items[key].quantity
-                            });
+                            profile0.items[key].quantity -= totalPrice;
+                            ApplyProfileChanges.push(
+                                {
+                                    "changeType": "itemQuantityChanged",
+                                    "itemId": key,
+                                    "quantity": profile.items[key].quantity
+                                },
+                                {
+                                    "changeType": "itemQuantityChanged",
+                                    "itemId": key,
+                                    "quantity": profile0.items[key].quantity
+                                }
+                            );                            
                             paid = true;
                             log.debug(`PurchaseCatalogEntry: Currency deducted: ${totalPrice}, remaining ${profile.items[key].quantity}`);
                             break;
@@ -1995,6 +2055,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                                     if (profile.items[key].templateId.toLowerCase().startsWith("currency:mtx")) {
                                         if (profile.items[key].attributes.platform.toLowerCase() == profile.stats.attributes.current_mtx_platform.toLowerCase() || profile.items[key].attributes.platform.toLowerCase() == "shared") {
                                             profile.items[key].quantity += PaidTier[item];
+                                            profile0.items[key].quantity += PaidTier[item];
                                             break;
                                         }
                                     }
@@ -2110,6 +2171,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                                     if (profile.items[key].templateId.toLowerCase().startsWith("currency:mtx")) {
                                         if (profile.items[key].attributes.platform.toLowerCase() == profile.stats.attributes.current_mtx_platform.toLowerCase() || profile.items[key].attributes.platform.toLowerCase() == "shared") {
                                             profile.items[key].quantity += FreeTier[item];
+                                            profile0.items[key].quantity += PaidTier[item];
                                             break;
                                         }
                                     }
@@ -2193,6 +2255,7 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                                     if (profile.items[key].templateId.toLowerCase().startsWith("currency:mtx")) {
                                         if (profile.items[key].attributes.platform.toLowerCase() == profile.stats.attributes.current_mtx_platform.toLowerCase() || profile.items[key].attributes.platform.toLowerCase() == "shared") {
                                             profile.items[key].quantity += PaidTier[item];
+                                            profile0.items[key].quantity += PaidTier[item];
                                             break;
                                         }
                                     }
@@ -2292,7 +2355,13 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                     profile.rvn += 1;
                     profile.commandRevision += 1;
                     profile.updated = new Date().toISOString();
-                    await profiles?.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile, [`profiles.athena`]: athena } });
+                    await profiles?.updateOne({ 
+                        $set: { 
+                            [`profiles.${req.query.profileId}`]: profile, 
+                            [`profiles.athena`]: athena,
+                            [`profiles.profile0`]: profile0
+                        } 
+                    });
                 }
 
                 if (QueryRevision != ProfileRevisionCheck) {
@@ -2315,7 +2384,13 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                 });
 
                 if (ApplyProfileChanges.length > 0) {
-                    await profiles?.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile, [`profiles.athena`]: athena } });
+                    await profiles?.updateOne({ 
+                        $set: { 
+                            [`profiles.${req.query.profileId}`]: profile, 
+                            [`profiles.athena`]: athena,
+                            [`profiles.profile0`]: profile0
+                        } 
+                    });
                 }
                 return;
             }
@@ -2391,12 +2466,20 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
                     }
 
                     profile.items[key].quantity -= findOfferId.offerId.prices[0].finalPrice;
+                    profile0.items[key].quantity -= findOfferId.offerId.prices[0].finalPrice;;
 
-                    ApplyProfileChanges.push({
-                        "changeType": "itemQuantityChanged",
-                        "itemId": key,
-                        "quantity": profile.items[key].quantity
-                    });
+                    ApplyProfileChanges.push(
+                        {
+                            "changeType": "itemQuantityChanged",
+                            "itemId": key,
+                            "quantity": profile.items[key].quantity
+                        },
+                        {
+                            "changeType": "itemQuantityChanged",
+                            "itemId": key,
+                            "quantity": profile0.items[key].quantity
+                        }
+                    );                    
 
                     paid = true;
                     log.debug(`PurchaseCatalogEntry: Currency deducted: ${findOfferId.offerId.prices[0].finalPrice}, remaining ${profile.items[key].quantity}`);
@@ -2414,14 +2497,29 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
 
                 if (findOfferId.offerId.itemGrants.length != 0) {
 
+                    if (!profile.stats.attributes.mtx_purchase_history) {
+                        profile.stats.attributes.mtx_purchase_history = { purchases: [] };
+                    }
+                    if (!profile0.stats.attributes.mtx_purchase_history) {
+                        profile0.stats.attributes.mtx_purchase_history = { purchases: [] };
+                    } 
+
                     var purchaseId = functions.MakeID();
                     profile.stats.attributes.mtx_purchase_history.purchases.push({"purchaseId":purchaseId,"offerId":`v2:/${purchaseId}`,"purchaseDate":new Date().toISOString(),"freeRefundEligible":false,"fulfillments":[],"lootResult":Notifications[0].lootResult.items,"totalMtxPaid":findOfferId.offerId.prices[0].finalPrice,"metadata":{},"gameContext":""})
+                    profile0.stats.attributes.mtx_purchase_history.purchases.push({"purchaseId":purchaseId,"offerId":`v2:/${purchaseId}`,"purchaseDate":new Date().toISOString(),"freeRefundEligible":false,"fulfillments":[],"lootResult":Notifications[0].lootResult.items,"totalMtxPaid":findOfferId.offerId.prices[0].finalPrice,"metadata":{},"gameContext":""})
 
-                    ApplyProfileChanges.push({
-                        "changeType": "statModified",
-                        "name": "mtx_purchase_history",
-                        "value": profile.stats.attributes.mtx_purchase_history
-                    })
+                    ApplyProfileChanges.push(
+                        {
+                            "changeType": "statModified",
+                            "name": "mtx_purchase_history",
+                            "value": profile.stats.attributes.mtx_purchase_history
+                        },
+                        {
+                            "changeType": "statModified",
+                            "name": "mtx_purchase_history",
+                            "value": profile0.stats.attributes.mtx_purchase_history
+                        }
+                    );
 
                     log.debug(`PurchaseCatalogEntry: Successfully added the item to refunding tab`);
                 }
@@ -2444,7 +2542,13 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
         profile.rvn += 1;
         profile.commandRevision += 1;
         profile.updated = new Date().toISOString();
-        await profiles?.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile, [`profiles.athena`]: athena } });
+        await profiles?.updateOne({ 
+            $set: { 
+                [`profiles.${req.query.profileId}`]: profile, 
+                [`profiles.athena`]: athena,
+                [`profiles.profile0`]: profile0
+            } 
+        });
     }
 
     if (QueryRevision != ProfileRevisionCheck) {
@@ -2503,7 +2607,13 @@ app.post("/fortnite/api/game/v2/profile/*/client/PurchaseCatalogEntry", verifyTo
     });
 
     if (ApplyProfileChanges.length > 0) {
-        await profiles?.updateOne({ $set: { [`profiles.${req.query.profileId}`]: profile, [`profiles.athena`]: athena } });
+        await profiles?.updateOne({ 
+            $set: { 
+                [`profiles.${req.query.profileId}`]: profile, 
+                [`profiles.athena`]: athena,
+                [`profiles.profile0`]: profile0
+            } 
+        });
     }
 
     return;
@@ -3160,7 +3270,7 @@ app.post("/fortnite/api/game/v2/profile/:accountId/client/SetCosmeticLockerName"
             "profile": profile
         }];
     };
-    console.log(ApplyProfileChanges)
+
     if (ApplyProfileChanges.length > 0) {
         profile.rvn += 1;
         profile.commandRevision += 1;

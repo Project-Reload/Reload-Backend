@@ -1,4 +1,5 @@
 const functions = require('../../../structs/functions');
+const log = require("../../../structs/log.js");
 
 module.exports = async (req, res) => {
     const { discordId, username, email, password } = req.body;
@@ -12,7 +13,7 @@ module.exports = async (req, res) => {
             res.json({ success: false, message: result.message });
         }
     } catch (error) {
-        console.error('Error registering user:', error);
+        log.error('Error registering user:', error);
         res.json({ success: false, message: 'Failed to create account.' });
     }
 };

@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const functions = require("../../../structs/functions.js");
 const User = require("../../../model/user.js");
+const log = require("../../../structs/log.js");
 
 module.exports = {
     commandInfo: {
@@ -58,7 +59,7 @@ module.exports = {
                 });
             });
         } catch (error) {
-            console.error(error);
+            log.error(error);
             return interaction.editReply({
                 content: "An error occurred while creating the host account.",
                 ephemeral: true

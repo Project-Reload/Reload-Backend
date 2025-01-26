@@ -44,18 +44,24 @@ module.exports = {
         }
 
         const filter = { accountId: user.accountId };
-        const update = { $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': vbucks } };
+        const updateCommonCore = { $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': vbucks } };
+        const updateProfile0 = { $inc: { 'profiles.profile0.items.Currency:MtxPurchased.quantity': vbucks } };
         const options = { new: true };
 
-        const updatedProfile = await Profiles.findOneAndUpdate(filter, update, options);
+        const updatedProfile = await Profiles.findOneAndUpdate(filter, updateCommonCore, options);
         if (!updatedProfile) {
             return interaction.editReply({ content: "That user does not own an account", ephemeral: true });
         }
 
-        const common_core = updatedProfile.profiles["common_core"];
-        const newQuantity = common_core.items['Currency:MtxPurchased'].quantity;
+        await Profiles.updateOne(filter, updateProfile0);
 
-        if (newQuantity < 0 || newQuantity >= 1000000) {
+        const common_core = updatedProfile.profiles["common_core"];
+        const profile0 = updatedProfile.profiles["profile0"];
+
+        const newQuantityCommonCore = common_core.items['Currency:MtxPurchased'].quantity;
+        const newQuantityProfile0 = profile0.items['Currency:MtxPurchased'].quantity + vbucks;
+
+        if (newQuantityCommonCore < 0 || newQuantityCommonCore >= 1000000) {
             return interaction.editReply({
                 content: "V-Bucks amount is out of valid range after the update.",
                 ephemeral: true
@@ -86,7 +92,12 @@ module.exports = {
             {
                 "changeType": "itemQuantityChanged",
                 "itemId": "Currency:MtxPurchased",
-                "quantity": newQuantity
+                "quantity": newQuantityCommonCore
+            },
+            { // for s1, s2 and s3
+                "changeType": "itemQuantityChanged",
+                "itemId": "Currency:MtxPurchased",
+                "quantity": newQuantityProfile0
             },
             {
                 "changeType": "itemAdded",
@@ -99,7 +110,12 @@ module.exports = {
         common_core.commandRevision += 1;
         common_core.updated = new Date().toISOString();
 
-        await Profiles.updateOne(filter, { $set: { 'profiles.common_core': common_core } });
+        await Profiles.updateOne(filter, {
+            $set: {
+                'profiles.common_core': common_core,
+                'profiles.profile0.items.Currency:MtxPurchased.quantity': newQuantityProfile0
+            }
+        });
 
         const embed = new MessageEmbed()
             .setTitle("V-Bucks Updated")
@@ -118,7 +134,8 @@ module.exports = {
             profileRevision: common_core.rvn,
             profileCommandRevision: common_core.commandRevision,
             profileChanges: ApplyProfileChanges,
-            newQuantity
+            newQuantityCommonCore,
+            newQuantityProfile0
         };
     }
 };

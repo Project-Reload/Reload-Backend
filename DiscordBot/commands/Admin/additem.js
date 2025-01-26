@@ -5,6 +5,7 @@ const path = require('path');
 const destr = require('destr');
 const config = require('../../../Config/config.json');
 const uuid = require("uuid");
+const log = require("../../../structs/log.js");
 const { MessageEmbed } = require('discord.js');
 
 module.exports = {
@@ -163,7 +164,7 @@ module.exports = {
                     };
                 });
         } catch (err) {
-            console.log(err);
+            log.error(err);
             await interaction.editReply({ content: "An unexpected error occurred", ephemeral: true });
         }
     }

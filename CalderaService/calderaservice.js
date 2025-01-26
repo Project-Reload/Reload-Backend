@@ -2,6 +2,7 @@ var http = require('http');
 const uuid = require("uuid");
 
 const tokencreator = require("./tokencreator.js");
+const log = require("../structs/log.js");
 
 global.JWT_SECRET = uuid.v4();
 
@@ -28,7 +29,7 @@ function createCalderaService() {
             caldera = "";
             body = "";
             } catch (error) {
-                console.log(error)
+                log.error(error)
                 res.statusCode(400);
                 res.end();
             }

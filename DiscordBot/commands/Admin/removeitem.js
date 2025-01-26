@@ -4,6 +4,7 @@ const Profiles = require('../../../model/profiles.js');
 const fs = require('fs');
 const path = require('path');
 const destr = require('destr');
+const log = require("../../../structs/log.js");
 const config = require('../../../Config/config.json');
 
 module.exports = {
@@ -28,7 +29,6 @@ module.exports = {
     execute: async (interaction) => {
 
         if (!config.moderators.includes(interaction.user.id)) {
-            console.log("User does not have moderator permissions.");
             return interaction.reply({ content: "You do not have moderator permissions.", ephemeral: true });
         }
 
@@ -110,7 +110,7 @@ module.exports = {
                 .setTimestamp();
             await interaction.editReply({ embeds: [embed] });
         } catch (err) {
-            console.log("An error occurred:", err);
+            log.error("An error occurred:", err);
             interaction.editReply({ content: "An error occurred. Please try again later." });
         }
     }

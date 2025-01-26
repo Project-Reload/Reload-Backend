@@ -2,6 +2,7 @@ const express = require("express");
 const app = express.Router();
 const User = require("../model/user.js");
 const Profile = require("../model/profiles.js");
+const log = require("../structs/log.js");
 const fs = require("fs");
 const uuid = require("uuid");
 const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
@@ -36,16 +37,22 @@ app.get("/api/reload/vbucks", async (req, res) => {
         }
 
         const filter = { accountId: user.accountId };
-        const update = { $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': addValue } };
+        const updateCommonCore = { $inc: { 'profiles.common_core.items.Currency:MtxPurchased.quantity': addValue } };
+        const updateProfile0 = { $inc: { 'profiles.profile0.items.Currency:MtxPurchased.quantity': addValue } };
         const options = { new: true };
-        const updatedProfile = await Profile.findOneAndUpdate(filter, update, options);
+
+        const updatedProfile = await Profile.findOneAndUpdate(filter, updateCommonCore, options);
 
         if (!updatedProfile) {
             return res.status(404).json({ code: "404", error: "Profile not found or V-Bucks item missing." });
         }
 
+        await Profile.updateOne(filter, updateProfile0);
+
         const common_core = updatedProfile.profiles.common_core;
-        const newQuantity = common_core.items['Currency:MtxPurchased'].quantity;
+        const newQuantityCommonCore = common_core.items['Currency:MtxPurchased'].quantity;
+        const profile0 = updatedProfile.profiles.profile0;
+        const newQuantityProfile0 = profile0.items['Currency:MtxPurchased'].quantity + addValue;
 
         const purchaseId = uuid.v4();
         const lootList = [{
@@ -71,7 +78,12 @@ app.get("/api/reload/vbucks", async (req, res) => {
             {
                 "changeType": "itemQuantityChanged",
                 "itemId": "Currency:MtxPurchased",
-                "quantity": newQuantity
+                "quantity": newQuantityCommonCore
+            },
+            { // for s1, s2 and s3
+                "changeType": "itemQuantityChanged",
+                "itemId": "Currency:MtxPurchased",
+                "quantity": newQuantityProfile0
             },
             {
                 "changeType": "itemAdded",
@@ -82,17 +94,18 @@ app.get("/api/reload/vbucks", async (req, res) => {
 
         common_core.rvn += 1;
         common_core.commandRevision += 1;
-        await Profile.updateOne(filter, { $set: { 'profiles.common_core': common_core } });
+        await Profile.updateOne(filter, { $set: { 'profiles.common_core': common_core, 'profiles.profile0.items.Currency:MtxPurchased.quantity': newQuantityProfile0 } });
 
         return res.status(200).json({
             profileRevision: common_core.rvn,
             profileCommandRevision: common_core.commandRevision,
             profileChanges: ApplyProfileChanges,
-            newQuantity
+            newQuantityCommonCore,
+            newQuantityProfile0
         });
 
     } catch (err) {
-        console.error("Server error:", err);
+        log.error("Server error:", err);
         return res.status(500).json({ code: "500", error: "Server error. Check console logs for more details." });
     }
 });

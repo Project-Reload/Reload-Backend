@@ -1,8 +1,11 @@
 const { MessageEmbed } = require("discord.js");
+const fs = require("fs");
+const path = require("path");
 const Users = require('../../../model/user.js');
 const Profiles = require('../../../model/profiles.js');
 const SACCodes = require('../../../model/saccodes.js');
 const Friends = require('../../../model/friends.js');
+const log = require("../../../structs/log.js");
 const config = require('../../../Config/config.json');
 
 module.exports = {
@@ -27,25 +30,49 @@ module.exports = {
 
         const username = interaction.options.getString('username');
         const deleteAccount = await Users.findOne({ username: username });
-        const accountId = deleteAccount.accountId;
 
         if (!deleteAccount) {
             await interaction.editReply({ content: "The selected user does not have **an account**", ephemeral: true });
             return;
         }
 
-        await Users.deleteOne({ username: username }).catch(error => {
-            // Nothing Uwu or just use: log.debug('No SAC codes found or error occurred:', error);
+        const accountId = deleteAccount.accountId;
+        let somethingDeleted = false;
+
+        await Users.deleteOne({ username: username }).then(() => {
+            somethingDeleted = true;
+        }).catch(error => {
+            log.error('Error deleting from Users:', error);
         });
-        await Profiles.deleteOne({ accountId: accountId }).catch(error => {
-            // Nothing Uwu or just use: log.debug('No SAC codes found or error occurred:', error);
+
+        await Profiles.deleteOne({ accountId: accountId }).then(() => {
+            somethingDeleted = true;
+        }).catch(error => {
+            log.error('Error deleting from Profiles:', error);
         });
-        await Friends.deleteOne({ accountId: accountId }).catch(error => {
-            // Nothing Uwu or just use: log.debug('No SAC codes found or error occurred:', error);
+
+        await Friends.deleteOne({ accountId: accountId }).then(() => {
+            somethingDeleted = true;
+        }).catch(error => {
+            log.error('Error deleting from Friends:', error);
         });
-        await SACCodes.deleteOne({ owneraccountId: accountId }).catch(error => {
-            // Nothing Uwu or just use: log.debug('No SAC codes found or error occurred:', error);
+
+        await SACCodes.deleteOne({ owneraccountId: accountId }).then(() => {
+            somethingDeleted = true;
+        }).catch(error => {
+            log.error('Error deleting from SACCodes:', error);
         });
+
+        const clientSettingsPath = path.join(__dirname, '../../../ClientSettings', accountId);
+        if (fs.existsSync(clientSettingsPath)) {
+            fs.rmSync(clientSettingsPath, { recursive: true, force: true });
+            somethingDeleted = true;
+        }
+
+        if (!somethingDeleted) {
+            await interaction.editReply({ content: `No data found to delete for **${username}**.`, ephemeral: true });
+            return;
+        }
 
         const embed = new MessageEmbed()
             .setTitle("Account deleted")
@@ -65,7 +92,7 @@ module.exports = {
                 await user.send({ content: `Your account has been deleted by <@${interaction.user.id}>` });
             }
         } catch (error) {
-            // Nothing Uwu or just use: console.error('Could not send DM:', error);
+            log.error('Could not send DM:', error);
         }
     }
 };
