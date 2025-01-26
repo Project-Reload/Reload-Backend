@@ -113,7 +113,7 @@ function getContentPages(req) {
         if (memory.build < 5.30) { 
             news.forEach(mode => {
                 contentpages[mode].news.messages[0].image = "https://cdn.discordapp.com/attachments/927739901540188200/930879507496308736/discord.png";
-                contentpages[mode].news.messages[1].image = "https://imgur.com/L06O0IJ.png";
+                contentpages[mode].news.messages[1].image = "https://i.imgur.com/ImIwpRm.png";
             });
         }
     } catch {}
