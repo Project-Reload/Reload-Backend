@@ -71,7 +71,7 @@ module.exports = {
         }
 
         if (!somethingDeleted) {
-            await interaction.editReply({ content: `No data found to delete for **${user.username}**.`, ephemeral: true });
+            await interaction.editReply({ content: `No data found to delete for **${deleteAccount.username}**.`, ephemeral: true });
             return;
         }
 
