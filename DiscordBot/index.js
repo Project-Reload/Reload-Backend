@@ -6,6 +6,28 @@ const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
 const log = require("../structs/log.js");
 const Users = require("../model/user.js");
 
+async function fetchPlayerCount() {
+    try {
+        const fetch = await import('node-fetch');
+        const response = await fetch.default('http://127.0.0.1');
+        const rawData = await response.json();
+        const data = rawData;
+        if (data && data.Clients && typeof data.Clients.amount === 'number') {
+            return data.Clients.amount;
+        } else {
+            throw new Error('Invalid response format.');
+        }
+    } catch (error) {
+        console.error('Error fetching player count:', error);
+        return 0;
+    }
+}
+
+async function updatePlayerCountActivity() {
+    const playerCount = await fetchPlayerCount();
+    client.user.setActivity(`${playerCount} players.`, { type: 'WATCHING' });
+}
+
 client.once("ready", () => {
     log.bot("Bot is up and running!");
 
