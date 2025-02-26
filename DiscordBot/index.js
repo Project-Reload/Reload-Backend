@@ -9,7 +9,7 @@ const Users = require("../model/user.js");
 async function fetchPlayerCount() {
     try {
         const fetch = await import('node-fetch');
-        const response = await fetch.default('http://127.0.0.1');
+        const response = await fetch.default(config.playercountip);
         const rawData = await response.json();
         const data = rawData;
         if (data && data.Clients && typeof data.Clients.amount === 'number') {
