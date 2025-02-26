@@ -16,6 +16,7 @@
     "bEnableFormattedLogs": false,
     "bEnableRebootUser": true,
     "bEnableCrossBans": false,
+    "playercountip": "127.0.0.1",
 
     "//": "If you want to use the backend on reboot, leave 3551 as the port",
     "port": 3551, 
