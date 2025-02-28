@@ -118,9 +118,6 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
 ## Caldera Service
 Recreates a service that is used for the startup of newer Fortnite builds.
 
-## Playercount not working??
-Go into Discordbot/index.js and set the ip to your pc/vps ip
-
 ### For login
 You need to use the **FortniteLauncher.exe** and with that also the **Anti Cheat**
 
