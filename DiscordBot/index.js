@@ -43,13 +43,13 @@ client.once("ready", () => {
                 log.error(`Cannot find the channel with ID ${config.bBackendStatusChannelId}`);
             } else {
                 const embed = new MessageEmbed()
-                    .setTitle("Evoke OGFN Backend restarting...")
-                    .setDescription("Evoke OGFN Backend restarted!")
+                    .setTitle("Backend Online")
+                    .setDescription("Reload Backend is now online")
                     .setColor("GREEN")
-                    .setThumbnail("https://i.imgur.com/dSJKsbR.png")
+                    .setThumbnail("https://i.imgur.com/2RImwlb.png")
                     .setFooter({
-                        text: "Evoke OGFN",
-                        iconURL: "https://i.imgur.com/dSJKsbR.png",
+                        text: "Reload Backend",
+                        iconURL: "https://i.imgur.com/2RImwlb.png",
                     })
                     .setTimestamp();
 
