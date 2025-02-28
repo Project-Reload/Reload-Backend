@@ -31,6 +31,9 @@ async function updatePlayerCountActivity() {
 client.once("ready", () => {
     log.bot("Bot is up and running!");
 
+    updatePlayerCountActivity();
+    setInterval(updatePlayerCountActivity, 30000);
+
     if (config.bEnableBackendStatus) {
         if (!config.bBackendStatusChannelId || config.bBackendStatusChannelId.trim() === "") {
             log.error("The channel ID has not been set in config.json for bEnableBackendStatus.");
@@ -40,13 +43,13 @@ client.once("ready", () => {
                 log.error(`Cannot find the channel with ID ${config.bBackendStatusChannelId}`);
             } else {
                 const embed = new MessageEmbed()
-                    .setTitle("Backend Online")
-                    .setDescription("Reload Backend is now online")
+                    .setTitle("Evoke OGFN Backend restarting...")
+                    .setDescription("Evoke OGFN Backend restarted!")
                     .setColor("GREEN")
-                    .setThumbnail("https://i.imgur.com/2RImwlb.png")
+                    .setThumbnail("https://i.imgur.com/dSJKsbR.png")
                     .setFooter({
-                        text: "Reload Backend",
-                        iconURL: "https://i.imgur.com/2RImwlb.png",
+                        text: "Evoke OGFN",
+                        iconURL: "https://i.imgur.com/dSJKsbR.png",
                     })
                     .setTimestamp();
 
@@ -146,7 +149,6 @@ client.on("guildBanRemove", async (ban) => {
     }
 });
 
-//AntiCrash System
 client.on("error", (err) => {
     console.log("Discord API Error:", err);
 });
