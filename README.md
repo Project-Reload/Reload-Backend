@@ -172,7 +172,7 @@ Right now the only tested version is **27.11**, if you test version, have questi
 This **project/backend** is licensed under the **BSD 3-Clause License.**
 
 ## Credits
-Credits have been moved to the **Contributors** section of github.
+Credits have been moved to the **Contributors** section of github. If I forgot to include someone, write to **burlone413** on Discord
 
 ---
 
