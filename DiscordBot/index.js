@@ -35,6 +35,17 @@ client.once("ready", () => {
         }
     }
 
+    if (config.discord.bEnableInGamePlayerCount) {
+        function updateBotStatus() {
+            if (global.Clients && Array.isArray(global.Clients)) {
+                client.user.setActivity(`${global.Clients.length} player(s)`, { type: "WATCHING" });
+            }
+        }
+
+        updateBotStatus();
+        setInterval(updateBotStatus, 10000);
+    }
+
     let commands = client.application.commands;
 
     const loadCommands = (dir) => {

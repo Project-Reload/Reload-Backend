@@ -2,7 +2,8 @@
     "moderators": ["discordId", "discordId2"],
   "discord": {
     "bUseDiscordBot": true,
-    "bot_token": ""
+    "bot_token": "",
+    "bEnableInGamePlayerCount": true
   },
   "mongodb": {
     "database": "mongodb://127.0.0.1/Reload"
