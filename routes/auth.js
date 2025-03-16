@@ -362,7 +362,7 @@ app.delete("/account/api/oauth/sessions/kill/:token", (req, res) => {
 
 app.post("/auth/v1/oauth/token", async (req, res) => {
     res.json({
-        access_token: "reloadtokenoniichan",
+        access_token: functions.MakeID(),
         token_type: "bearer",
         expires_at: "9999-12-31T23:59:59.999Z",
         features: [
@@ -370,10 +370,10 @@ app.post("/auth/v1/oauth/token", async (req, res) => {
             "Connect",
             "Ecom"
         ],
-        organization_id: "reloadtokenoniichan",
+        organization_id: functions.MakeID(),
         product_id: "prod-fn",
         sandbox_id: "fn",
-        deployment_id: "reloaddeploymentidokasanbaka",
+        deployment_id: functions.MakeID(),
         expires_in: 3599
     });
 })
@@ -434,16 +434,16 @@ app.post("/epic/oauth/v2/token", async (req, res) => {
     res.json({
         scope: req.body.scope || "basic_profile friends_list openid presence",
         token_type: "bearer",
-        access_token: "reloadtokenoniichan",
-        refresh_token: "reloadrefreshtokenotosan",
-        id_token: "reloadidtokenbaka",
+        access_token: functions.MakeID(),
+        refresh_token: functions.MakeID(),
+        id_token: functions.MakeID(),
         expires_in: 7200,
         expires_at: "9999-12-31T23:59:59.999Z",
         refresh_expires_in: 28800,
         refresh_expires_at: "9999-12-31T23:59:59.999Z",
         account_id: req.user.accountId,
         client_id: clientId,
-        application_id: "reloadsacpplicationidaishteimasu",
+        application_id: functions.MakeID(),
         selected_account_id: req.user.accountId,
         merged_accounts: []
     });

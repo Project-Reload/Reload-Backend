@@ -155,7 +155,15 @@ class Handlers
 if u change **Caldera Service port** modify this string on **fiddler script**: `oSession.fullUrl = "http://127.0.0.1:urport" + oSession.PathAndQuery`
 if u change **Backend port** modify this string on **fiddler script**: `oSession.fullUrl = "http://127.0.0.1:urport" + oSession.PathAndQuery`
 
-For more information on how it works, join the discord server: https://discord.gg/PmYMpY9thJ
+After that go to the build folder **(/FortniteGame/Binaries/Win69)** and create a file with the name **launch.bat** or whatever you prefer and insert this code inside it:
+
+```bat
+@echo off
+set /p code=code: 
+start "" "FortniteLauncher.exe" -obfuscationid=WXis54njnKX1MJqoH0uRwdzlbQ1uqQ -AUTH_LOGIN=unused -AUTH_PASSWORD=%code% -AUTH_TYPE=exchangecode -epicapp=Fortnite -epicenv=Prod -EpicPortal -epicsandboxid=fn -noeac -noeaceos -fromfl=be 
+```
+
+Launch it, then go to Discord and type **/exchange-code**, copy the code and paste it into the .bat file.
 
 ### Tested versions: 
 Right now the only tested version is **27.11**, if you test version, have questions or anything please make a ticket or a pull request [In the official repo](https://github.com/xLoigi/CalderaService).
@@ -168,4 +176,4 @@ Credits have been moved to the **Contributors** section of github.
 
 ---
 
-**Reload Backend** is under continuous development and there may be errors of any kind, if you want to give advice on what to add and how to improve the project or report any errors you can do so via our [Discord](https://discord.gg/PmYMpY9thJ) server
+**Reload Backend** is under continuous development and there could be errors of any kind, if you want to give advice on what to add and how to improve the project or report any errors you can do so by writing to **burlone413** on Discord
