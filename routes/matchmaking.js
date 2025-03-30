@@ -27,62 +27,7 @@ app.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/*", verifyToken,
         return res.status(400).end();
     }
     const rawPlaylist = bucketId.split(":")[3];
-    let playlist = rawPlaylist.toLowerCase();
-    if (playlist === "2") {
-        playlist = "playlist_defaultsolo";
-    } else if (playlist === "10") {
-        playlist = "playlist_defaultduo";
-    } else if (playlist === "9") {
-        playlist = "playlist_defaultsquad";
-    } else if (playlist === "50") {
-        playlist = "playlist_50v50";
-    } else if (playlist === "11") {
-        playlist = "playlist_50v50";
-    } else if (playlist === "13") {
-        playlist = "playlist_highexplosives_squads";
-    } else if (playlist === "22") {
-        playlist = "playlist_5x20";
-    } else if (playlist === "36") {
-        playlist = "playlist_blitz_solo";
-    } else if (playlist === "37") {
-        playlist = "playlist_blitz_duos";
-    } else if (playlist === "19") {
-        playlist = "playlist_blitz_squad";
-    } else if (playlist === "33") {
-        playlist = "playlist_carmine";
-    } else if (playlist === "32") {
-        playlist = "playlist_fortnite";
-    } else if (playlist === "23") {
-        playlist = "playlist_highexplosives_solo";
-    } else if (playlist === "24") {
-        playlist = "playlist_highexplosives_squads";
-    } else if (playlist === "44") {
-        playlist = "playlist_impact_solo";
-    } else if (playlist === "45") {
-        playlist = "playlist_impact_duos";
-    } else if (playlist === "46") {
-        playlist = "playlist_impact_squads";
-    } else if (playlist === "35") {
-        playlist = "playlist_playground";
-    } else if (playlist === "30") {
-        playlist = "playlist_skysupply";
-    } else if (playlist === "42") {
-        playlist = "playlist_skysupply_duos";
-    } else if (playlist === "43") {
-        playlist = "playlist_skysupply_squads";
-    } else if (playlist === "41") {
-        playlist = "playlist_snipers";
-    } else if (playlist === "39") {
-        playlist = "playlist_snipers_solo";
-    } else if (playlist === "40") {
-        playlist = "playlist_snipers_duos";
-    } else if (playlist === "26") {
-        playlist = "playlist_solidgold_solo";
-    } else if (playlist === "27") {
-        playlist = "playlist_solidgold_squads";
-    } else if (playlist === "28") {
-        playlist = "playlist_showdownalt_solo";
-    }
+    let playlist = functions.PlaylistNames(rawPlaylist).toLowerCase();
 
     const gameServers = config.gameServerIP;
     let selectedServer = gameServers.find(server => server.split(":")[2].toLowerCase() === playlist);
