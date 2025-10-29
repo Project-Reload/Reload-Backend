@@ -63,6 +63,8 @@ Created by [Burlone](https://github.com/burlone0), This is a modded backend, all
 - [ ] Differentiate ports between xmpp and matchmaker
 - [ ] Create a support with save the world
 - [ ] Create a support with creative
+- [ ] Add Support for Tournaments
+- [ ] Create custom playlist code for adding custom playlists and tournaments
 
 ## Discord Bot Commands
 ### User Commands:
