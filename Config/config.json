@@ -23,10 +23,13 @@
     
     "Api": {
       "bApiKey": "ur-api-key",
-      "reasons": {
-        "Kill": 25,
-        "Win": 50
+      "vbucks": {
+         "Win": 950
+      },      
+      "battlepass": {
+         "Kill": 1
       }
+
     },
 
     "Website": {

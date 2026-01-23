@@ -159,12 +159,6 @@ app.get("/d98eeaac-2bfa-4bf4-8a59-bdc95469c693", async (req, res) => {
     })
 })
 
-app.post("/fortnite/api/feedback/*", (req, res) => {
-    log.debug("POST /fortnite/api/feedback/* called");
-    res.status(200);
-    res.end();
-});
-
 app.post("/fortnite/api/statsv2/query", (req, res) => {
     log.debug("POST /fortnite/api/statsv2/query called");
     res.json([]);

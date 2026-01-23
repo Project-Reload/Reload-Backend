@@ -20,7 +20,7 @@ app.get("/api/reload/vbucks", async (req, res) => {
         return res.status(400).json({ code: "400", error: "Missing reason." });
     }
 
-    const validReasons = config.Api.reasons;
+    const validReasons = config.Api.vbucks;
     const addValue = validReasons[reason];
 
     if (addValue === undefined) {
