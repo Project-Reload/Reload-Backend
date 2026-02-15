@@ -15,6 +15,12 @@ const functions = require("./structs/functions.js");
 const CheckForUpdate = require("./structs/checkforupdate.js");
 const AutoBackendRestart = require("./structs/autobackendrestart.js");
 
+function DateAddHours(pdate, number) {
+    let date = pdate;
+    date.setHours(date.getHours() + number);
+    return date;
+}
+
 const app = express();
 
 if (!fs.existsSync("./ClientSettings")) fs.mkdirSync("./ClientSettings");
@@ -34,10 +40,6 @@ if (config.bEnableHTTPS) {
 
     httpsServer = https.createServer(httpsOptions, app);
 }
-
-if (!fs.existsSync("./ClientSettings")) fs.mkdirSync("./ClientSettings");
-
-global.JWT_SECRET = functions.MakeID();
 
 console.log('Welcome to Reload Backend\n');
 
@@ -272,12 +274,5 @@ app.use((req, res, next) => {
         undefined, 1004, undefined, 404, res
     );
 });
-
-function DateAddHours(pdate, number) {
-    let date = pdate;
-    date.setHours(date.getHours() + number);
-
-    return date;
-}
 
 module.exports = app;
