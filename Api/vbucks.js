@@ -5,7 +5,7 @@ const Profile = require("../model/profiles.js");
 const log = require("../structs/log.js");
 const fs = require("fs");
 const uuid = require("uuid");
-const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const config = require('../Config/config.js');
 
 app.get("/api/reload/vbucks", async (req, res) => {
     const { apikey, username, reason } = req.query;

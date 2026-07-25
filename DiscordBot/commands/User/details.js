@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const User = require("../../../model/user.js");
 const Profiles = require('../../../model/profiles.js');
 
@@ -17,8 +17,8 @@ module.exports = {
 
         let onlineStatus = global.Clients.some(i => i.accountId == user.accountId);
 
-        let embed = new MessageEmbed()
-        .setColor("GREEN")
+        let embed = new EmbedBuilder()
+        .setColor(Colors.Green)
         .setDescription("These are your account details")
         .setFields(
             { name: 'Username:', value: user.username },

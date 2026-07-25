@@ -1,6 +1,6 @@
 const XMLBuilder = require("xmlbuilder");
 const uuid = require("uuid");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const fs = require("fs");
 const crypto = require("crypto");
 const path = require("path");

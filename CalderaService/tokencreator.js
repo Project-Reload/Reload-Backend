@@ -1,9 +1,8 @@
 const jwt = require("jsonwebtoken");
-const fs = require("fs");
 
 const guids = require("./guids.json")
 
-const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const config = require('../Config/config.js');
 
 var CalderaGenerated = 0;
 

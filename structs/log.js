@@ -1,5 +1,5 @@
 const fs = require("fs");
-const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const config = require('../Config/config.js');
 
 function getTimestamp() {
     const now = new Date();

@@ -4,7 +4,7 @@ const XMLParser = require("xml-parser");
 const express = require("express");
 const fs = require("fs");
 const https = require("https");
-const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const config = require('../Config/config.js');
 
 const app = express();
 const log = require("../structs/log.js");
@@ -13,7 +13,7 @@ const User = require("../model/user.js");
 const Friends = require("../model/friends.js");
 const matchmaker = require("../matchmaker/matchmaker.js")
 
-const port = config.bEnableHTTPS ? 443 : 80;
+const port = config.bEnableHTTPS ? config.xmppPortHTTPS : config.xmppPort;
 let wss;
 
 let httpsOptions;

@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const Profiles = require('../../../model/profiles.js');
 const Users = require('../../../model/user.js');
 
@@ -18,7 +18,7 @@ module.exports = {
     {
         return interaction.editReply({ content: "You are not registered!", ephemeral: true });
     }
-    const embed = new MessageEmbed()
+    const embed = new EmbedBuilder()
         .setTitle("V-Bucks Count:")
         .setDescription(`You currently have **` + currency + " V-Bucks** in your Account!")
         .setTimestamp()
@@ -27,7 +27,7 @@ module.exports = {
             text: "Reload Backend",
             iconURL: "https://i.imgur.com/2RImwlb.png"
         })
-        .setColor("WHITE")
+        .setColor(Colors.White)
     await interaction.editReply({ embeds: [embed], ephemeral: true });
 }
 }

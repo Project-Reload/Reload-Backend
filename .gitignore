@@ -1,3 +1,4 @@
 ClientSettings/
 *.Sav
 node_modules/
+.env

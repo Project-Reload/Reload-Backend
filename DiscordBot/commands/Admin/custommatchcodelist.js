@@ -1,7 +1,7 @@
 const MMCodes = require("../../../model/mmcodes.js");
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const log = require("../../../structs/log.js");
-const config = require('../../../Config/config.json')
+const config = require('../../../Config/config.js')
 
 module.exports = {
     commandInfo: {
@@ -20,10 +20,10 @@ module.exports = {
                 return interaction.reply({ content: "No custom matchmaking codes found.", ephemeral: true });
             }
 
-            const embed = new MessageEmbed()
+            const embed = new EmbedBuilder()
                 .setTitle("Custom Matchmaking Codes")
                 .setDescription("Here is the list of all custom matchmaking codes:")
-                .setColor("GREEN")
+                .setColor(Colors.Green)
                 .setTimestamp()
                 .setThumbnail("https://i.imgur.com/2RImwlb.png")
                 .setFooter({

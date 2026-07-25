@@ -1,7 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
-const config = require('../Config/config.json');
+const config = require('../Config/config.js');
 const log = require("./log.js");
 
 const webhook = config.bItemShopWebhook; 

@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const Users = require("../../../model/user.js");
 
 module.exports = {
@@ -25,8 +25,8 @@ module.exports = {
 
     let onlineStatus = global.Clients.some(i => i.accountId == user.accountId);
 
-    let embed = new MessageEmbed()
-        .setColor("GREEN")
+    let embed = new EmbedBuilder()
+        .setColor(Colors.Green)
         .setDescription(`**User Information:**\n- **Discord User:** <@${user.discordId}>\n- **DiscordID:** ${user.discordId}\n- **In-Game Username:** ${user.username}\n- **Banned:** ${user.banned ? "Yes" : "No"}\n- **Online:** ${onlineStatus ? "Yes" : "No"}`)
         .setFooter({
             text: "Reload Backend",

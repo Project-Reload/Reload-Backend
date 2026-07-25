@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express.Router();
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const error = require("../structs/error.js");
 const functions = require("../structs/functions.js");
 const log = require("../structs/log.js");
-const config = require('../Config/config.json')
+const config = require('../Config/config.js')
 
 const tokenCreation = require("../tokenManager/tokenCreation.js");
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");

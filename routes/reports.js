@@ -4,7 +4,7 @@ const { verifyToken } = require("../tokenManager/tokenVerify.js");
 const User = require("../model/user.js");
 const Profiles = require("../model/profiles.js");
 const { Client, Intents, TextChannel } = require('discord.js');
-const config = require('../Config/config.json');
+const config = require('../Config/config.js');
 const log = require("../structs/log.js");
 
 app.post("/fortnite/api/game/v2/toxicity/account/:unsafeReporter/report/:reportedPlayer", verifyToken, async (req, res) => {

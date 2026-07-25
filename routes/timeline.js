@@ -2,7 +2,7 @@ const express = require("express");
 const app = express.Router();
 const functions = require("../structs/functions.js");
 const fs = require("fs")
-const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const config = require('../Config/config.js');
 
 app.get("/fortnite/api/calendar/v1/timeline", async (req, res) => {
     const memory = functions.GetVersionInfo(req);

@@ -1,26 +1,27 @@
-const { Client, Intents, MessageEmbed } = require("discord.js");
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_BANS] });
+const { Client, GatewayIntentBits, Partials, EmbedBuilder, Colors, ActivityType } = require("discord.js");
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildBans] });
 const fs = require("fs");
 const path = require("path");
-const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const config = require('../Config/config.js');
 const log = require("../structs/log.js");
 const Users = require("../model/user.js");
+const functions = require("../structs/functions.js");
 
-client.once("ready", () => {
+client.once("clientReady", () => {
     log.bot("Bot is up and running!");
 
     if (config.bEnableBackendStatus) {
         if (!config.bBackendStatusChannelId || config.bBackendStatusChannelId.trim() === "") {
-            log.error("The channel ID has not been set in config.json for bEnableBackendStatus.");
+            log.error("BACKEND_STATUS_CHANNEL_ID has not been set in .env for ENABLE_BACKEND_STATUS.");
         } else {
             const channel = client.channels.cache.get(config.bBackendStatusChannelId);
             if (!channel) {
                 log.error(`Cannot find the channel with ID ${config.bBackendStatusChannelId}`);
             } else {
-                const embed = new MessageEmbed()
+                const embed = new EmbedBuilder()
                     .setTitle("Backend Online")
                     .setDescription("Reload Backend is now online")
-                    .setColor("GREEN")
+                    .setColor(Colors.Green)
                     .setThumbnail("https://i.imgur.com/2RImwlb.png")
                     .setFooter({
                         text: "Reload Backend",
@@ -38,7 +39,7 @@ client.once("ready", () => {
     if (config.discord.bEnableInGamePlayerCount) {
         function updateBotStatus() {
             if (global.Clients && Array.isArray(global.Clients)) {
-                client.user.setActivity(`${global.Clients.length} player(s)`, { type: "WATCHING" });
+                client.user.setActivity(`${global.Clients.length} player(s)`, { type: ActivityType.Watching });
             }
         }
 
@@ -64,7 +65,7 @@ client.once("ready", () => {
 });
 
 client.on("interactionCreate", async interaction => {
-    if (!interaction.isApplicationCommand()) return;
+    if (!interaction.isChatInputCommand()) return;
 
     const executeCommand = (dir, commandName) => {
         const commandPath = path.join(dir, commandName + ".js");

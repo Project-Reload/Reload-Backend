@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
 const Users = require('../../../model/user.js');
@@ -6,7 +6,7 @@ const Profiles = require('../../../model/profiles.js');
 const SACCodes = require('../../../model/saccodes.js');
 const Friends = require('../../../model/friends.js');
 const log = require("../../../structs/log.js");
-const config = require('../../../Config/config.json');
+const config = require('../../../Config/config.js');
 
 module.exports = {
     commandInfo: {
@@ -74,10 +74,10 @@ module.exports = {
             return;
         }
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle("Account deleted")
             .setDescription(`The account for **${username}** has been **deleted**`)
-            .setColor("GREEN")
+            .setColor(Colors.Green)
             .setFooter({
                 text: "Reload Backend",
                 iconURL: "https://i.imgur.com/2RImwlb.png"

@@ -1,11 +1,11 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const path = require("path");
 const fs = require("fs");
 const Users = require('../../../model/user.js');
 const Profiles = require('../../../model/profiles.js');
 const log = require("../../../structs/log.js");
 const destr = require("destr");
-const config = require('../../../Config/config.json')
+const config = require('../../../Config/config.js')
 
 module.exports = {
     commandInfo: {
@@ -52,10 +52,10 @@ module.exports = {
                 }
             });
 
-            const embed = new MessageEmbed()
+            const embed = new EmbedBuilder()
                 .setTitle("Full Locker Removed")
                 .setDescription("Successfully removed all skins to the selected account")
-                .setColor("GREEN")
+                .setColor(Colors.Green)
                 .setFooter({
                     text: "Reload Backend",
                     iconURL: "https://i.imgur.com/2RImwlb.png"

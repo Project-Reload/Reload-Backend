@@ -1,4 +1,4 @@
-const config = require("../../../Config/config.json");
+const config = require("../../../Config/config.js");
 const SACCodes = require("../../../model/saccodes.js");
 
 module.exports = {

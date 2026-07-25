@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const Users = require("../../../model/user.js");
 const Profiles = require("../../../model/profiles.js");
 const log = require("../../../structs/log.js");
@@ -161,11 +161,11 @@ module.exports = {
                 }
             ];
 
-            const embed = new MessageEmbed()
+            const embed = new EmbedBuilder()
                 .setTitle("Gift Sent!")
                 .setDescription(`Gifted **${vbucks} V-Bucks** to **${recieveuser.username}**`)
                 .setThumbnail("https://i.imgur.com/yLbihQa.png")
-                .setColor("GREEN")
+                .setColor(Colors.Green)
                 .setFooter({
                     text: "Reload Backend",
                     iconURL: "https://i.imgur.com/2RImwlb.png"

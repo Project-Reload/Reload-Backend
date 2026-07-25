@@ -1,7 +1,7 @@
 module.exports = function(websiteApp) {
     const express = require("express");
     const path = require("path");
-    const config = require("../Config/config.json");
+    const config = require("../Config/config.js");
 
     const DISCORD_API_URL = 'https://discord.com/api';
     const CLIENT_ID = config.Website.clientId;

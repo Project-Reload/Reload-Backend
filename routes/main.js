@@ -7,7 +7,7 @@ const path = require("path");
 
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");
 
-const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const config = require('../Config/config.js');
 
 app.post("/fortnite/api/game/v2/chat/*/*/*/pc", (req, res) => {
     log.debug("POST /fortnite/api/game/v2/chat/*/*/*/pc called");

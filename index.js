@@ -5,7 +5,7 @@ const rateLimit = require("express-rate-limit");
 const jwt = require("jsonwebtoken");
 const path = require("path");
 const kv = require("./structs/kv.js");
-const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const config = require('./Config/config.js');
 const WebSocket = require('ws');
 const https = require("https");
 
@@ -104,7 +104,8 @@ fs.readdirSync("./routes").forEach(fileName => {
     try {
         app.use(require(`./routes/${fileName}`));
     } catch (err) {
-        log.error(`Routes Error: Failed to load ${fileName}`)
+        log.error(`Routes Error: Failed to load ${fileName} - ${err.message}`);
+        log.error(err.stack);
     }
 });
 
@@ -112,7 +113,8 @@ fs.readdirSync("./Api").forEach(fileName => {
     try {
         app.use(require(`./Api/${fileName}`));
     } catch (err) {
-        log.error(`Reload API Error: Failed to load ${fileName}`)
+        log.error(`Reload API Error: Failed to load ${fileName} - ${err.message}`);
+        log.error(err.stack);
     }
 });
 

@@ -1,7 +1,7 @@
 const Users = require('../../../model/user');
 const Profiles = require('../../../model/profiles');
-const config = require('../../../Config/config.json');
-const { MessageEmbed } = require('discord.js');
+const config = require('../../../Config/config.js');
+const { EmbedBuilder, Colors } = require('discord.js');
 
 module.exports = {
     commandInfo: {
@@ -76,11 +76,11 @@ module.exports = {
             });
         }
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle("V-Bucks Updated")
             .setDescription(`Successfully removed **${vbucks}** V-Bucks from <@${selectedUserId}>`)
             .setThumbnail("https://i.imgur.com/yLbihQa.png")
-            .setColor("GREEN")
+            .setColor(Colors.Green)
             .setFooter({
                 text: "Reload Backend",
                 iconURL: "https://i.imgur.com/2RImwlb.png"

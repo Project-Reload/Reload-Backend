@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const User = require("../../../model/user.js");
 const functions = require("../../../structs/functions.js");
 
@@ -27,7 +27,7 @@ module.exports = {
             if (exchangeCode != -1) global.exchangeCodes.splice(exchangeCode, 1);
         }, 300000) // remove exchange code in 5 minutes if unused
 
-        let embed = new MessageEmbed()
+        let embed = new EmbedBuilder()
         .setColor("#56ff00")
         .setAuthor({ name: interaction.user.tag, iconURL: interaction.user.avatarURL() })
         .setFields(

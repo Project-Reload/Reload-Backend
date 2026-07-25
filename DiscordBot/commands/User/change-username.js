@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const User = require("../../../model/user.js");
 const Badwords = require("bad-words");
 const functions = require("../../../structs/functions.js");
@@ -58,10 +58,10 @@ module.exports = {
             await functions.UpdateTokens();
         }
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle("Username changed")
             .setDescription(`Your account username has been changed to **${username}**.`)
-            .setColor("GREEN")
+            .setColor(Colors.Green)
             .setFooter({
                 text: "Reload Backend",
                 iconURL: "https://i.imgur.com/2RImwlb.png",

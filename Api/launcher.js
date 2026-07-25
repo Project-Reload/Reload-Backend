@@ -1,10 +1,12 @@
+const bcrypt = require("bcryptjs");
 const express = require("express");
-const app = express.Router();
+
 const User = require("../model/user.js");
 const log = require("../structs/log.js");
-const bcrypt = require("bcrypt");
 
-//Api for launcher login (If u want a POST requesto just replace "app.get" to "app.post" and "req.query" to "req.body")
+const app = express.Router();
+
+// Api for launcher login (If u want a POST requesto just replace "app.get" to "app.post" and "req.query" to "req.body")
 app.get("/api/launcher/login", async (req, res) => {
     const { email, password } = req.query;
 
@@ -27,7 +29,7 @@ app.get("/api/launcher/login", async (req, res) => {
             return res.status(400).send('Error!');
         }
     } catch (err) {
-        log.error('Launcher Api Error:', err);
+        log.error('Launcher API Error:', err);
         return res.status(500).send('Error encountered, look at the console');
     }
 });

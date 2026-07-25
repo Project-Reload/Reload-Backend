@@ -1,5 +1,5 @@
 const log = require("../structs/log.js");
-const fetch = require("node-fetch");
+const fetch = require("node-fetch").default;
 
 class CheckForUpdate {
     static async checkForUpdate(currentVersion) {

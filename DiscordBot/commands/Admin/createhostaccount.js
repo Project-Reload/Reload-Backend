@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const functions = require("../../../structs/functions.js");
 const User = require("../../../model/user.js");
 const log = require("../../../structs/log.js");
@@ -35,7 +35,7 @@ module.exports = {
 
         try {
             await functions.registerUser(null, username, email, password).then(async (resp) => {
-                let embed = new MessageEmbed()
+                let embed = new EmbedBuilder()
                     .setColor(resp.status >= 400 ? "#ff0000" : "#56ff00")
                     .addFields(
                         { name: "Message", value: resp.message },

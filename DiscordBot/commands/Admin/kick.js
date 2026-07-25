@@ -1,7 +1,6 @@
 const User = require("../../../model/user.js");
 const functions = require("../../../structs/functions.js");
-const fs = require("fs");
-const config = JSON.parse(fs.readFileSync("./Config/config.json").toString());
+const config = require('../../../Config/config.js');
 
 module.exports = {
     commandInfo: {

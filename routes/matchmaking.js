@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express.Router();
-const config = require("../Config/config.json");
+const config = require("../Config/config.js");
 const functions = require("../structs/functions.js");
 const log = require("../structs/log.js");
 const MMCode = require("../model/mmcodes.js");

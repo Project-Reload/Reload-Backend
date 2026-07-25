@@ -1,5 +1,5 @@
 const functions = require("../../../structs/functions.js");
-const config = require("../../../Config/config.json");
+const config = require("../../../Config/config.js");
 
 module.exports = {
     commandInfo: {

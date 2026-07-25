@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const User = require("../../../model/user.js")
 const functions = require("../../../structs/functions.js");
 
@@ -67,7 +67,7 @@ module.exports = {
         }
 
         await functions.registerUser(discordId, username, email, password).then(resp => {
-            let embed = new MessageEmbed()
+            let embed = new EmbedBuilder()
             .setColor(resp.status >= 400 ? "#ff0000" : "#56ff00")
             .setThumbnail(interaction.user.avatarURL({ format: 'png', dynamic: true, size: 256 }))
             .addFields({

@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const Users = require('../../../model/user.js');
 const functions = require("../../../structs/functions.js");
 
@@ -52,10 +52,10 @@ module.exports = {
             await functions.UpdateTokens();
         }
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle("Email changed")
             .setDescription("Your account email has been changed.")
-            .setColor("GREEN")
+            .setColor(Colors.Green)
             .setFooter({
                 text: "Reload Backend",
                 iconURL: "https://i.imgur.com/2RImwlb.png",

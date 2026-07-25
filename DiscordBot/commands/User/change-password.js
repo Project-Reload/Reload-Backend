@@ -1,7 +1,7 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, Colors } = require("discord.js");
 const User = require("../../../model/user.js");
-const bcrypt = require("bcrypt");
 const functions = require("../../../structs/functions.js");
+const bcrypt = require("bcryptjs");
 
 module.exports = {
     commandInfo: {
@@ -49,10 +49,10 @@ module.exports = {
             await functions.UpdateTokens();
         }
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle("Password changed")
             .setDescription("Your account password has been changed.")
-            .setColor("GREEN")
+            .setColor(Colors.Green)
             .setFooter({
                 text: "Reload Backend",
                 iconURL: "https://i.imgur.com/2RImwlb.png",
